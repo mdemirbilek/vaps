@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="sylLearningOutcome">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OutcomeType"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Weight"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="9" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AssessmentMethod"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="sylAcademicalAim"
+        Association="sylLearningOutcome_sylAcademicalAim"
+        FromEnd="sylLearningOutcomes"
+        ToEnd="sylAcademicalAims" />
+      <NavigationProperty
+        Name="sylSyllabi"
+        Association="sylLearningOutcome_sylSyllabus"
+        FromEnd="sylLearningOutcomes"
+        ToEnd="sylSyllabi" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="VERPSData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="sylLearningOutcomes"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="sylLearningOutcome" />
+    <QueryOperation
+      Name="sylLearningOutcomes_Single"
+      ReturnType="sylLearningOutcome">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sylLearningOutcomes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="sylLearningOutcomes_SingleOrDefault"
+      ReturnType="sylLearningOutcome">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sylLearningOutcomes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="VERPSDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="sylLearningOutcomes">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="sylLearningOutcomes" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="sylLearningOutcome/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Name"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylLearningOutcome/Properties[Name]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="OutcomeType"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylLearningOutcome/Properties[OutcomeType]" />
+        <SsdlProperty
+          Name="Weight"
+          Nullable="False"
+          Scale="9"
+          Type="decimal"
+          Property="sylLearningOutcome/Properties[Weight]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="AssessmentMethod"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylLearningOutcome/Properties[AssessmentMethod]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="sylLearningOutcome/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="sylLearningOutcome/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="sylLearningOutcome/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="sylLearningOutcome/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="sylLearningOutcome/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="LearningOutcome_AcademicalAim"
+          Nullable="False"
+          Type="int"
+          PropertyName="LearningOutcome_AcademicalAim" />
+        <SsdlForeignKeyProperty
+          Name="LearningOutcome_Syllabus"
+          Nullable="False"
+          Type="int"
+          PropertyName="LearningOutcome_Syllabus" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

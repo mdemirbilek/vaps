@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="hrEmpProfile">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="FullName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="BirthDate"
+        PropertyType=":DateTime">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="BirthPlace"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FathersName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MothersName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="NationalHealth"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IDType"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IDNumber"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IDIssuedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IDDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TaxOffice"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Street"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HouseNr"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FlatNr"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PostalCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="NationalID"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContactNumber"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="BankAccount"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HasPension"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FirstPensionDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HighCostDeclarationCity"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ReceiveHighCostSeperationBenefit"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DontReceiveHighCostSeperationBenefit"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IncomeTax1"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IncomeTax2"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IncomeTax3"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IncomeTax4"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IncomeTax5"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DeclerationOfTrueInformation"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmploymentDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Place"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="erpUniversity"
+        Association="hrEmpProfile_erpUniversity"
+        FromEnd="hrEmpProfiles"
+        ToEnd="erpUniversities" />
+      <NavigationProperty
+        Name="hrPeople"
+        Association="hrEmpProfile_hrPerson"
+        FromEnd="hrEmpProfiles"
+        ToEnd="hrPeople" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="VERPSData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="hrEmpProfiles"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="hrEmpProfile" />
+    <QueryOperation
+      Name="hrEmpProfiles_Single"
+      ReturnType="hrEmpProfile">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrEmpProfiles" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="hrEmpProfiles_SingleOrDefault"
+      ReturnType="hrEmpProfile">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrEmpProfiles" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="VERPSDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="hrEmpProfiles">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="hrEmpProfiles" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          Type="int"
+          Property="hrEmpProfile/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FullName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[FullName]" />
+        <SsdlProperty
+          Name="BirthDate"
+          Nullable="False"
+          Type="datetime"
+          Property="hrEmpProfile/Properties[BirthDate]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="BirthPlace"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[BirthPlace]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FathersName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[FathersName]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="MothersName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[MothersName]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="NationalHealth"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[NationalHealth]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="IDType"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[IDType]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="IDNumber"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[IDNumber]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="IDIssuedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[IDIssuedBy]" />
+        <SsdlProperty
+          Name="IDDate"
+          Nullable="True"
+          Type="datetime"
+          Property="hrEmpProfile/Properties[IDDate]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="TaxOffice"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[TaxOffice]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Street"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[Street]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="HouseNr"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[HouseNr]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FlatNr"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[FlatNr]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="PostalCode"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[PostalCode]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="City"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[City]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="NationalID"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[NationalID]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ContactNumber"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[ContactNumber]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="BankAccount"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[BankAccount]" />
+        <SsdlProperty
+          Name="HasPension"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpProfile/Properties[HasPension]" />
+        <SsdlProperty
+          Name="FirstPensionDate"
+          Nullable="True"
+          Type="datetime"
+          Property="hrEmpProfile/Properties[FirstPensionDate]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="HighCostDeclarationCity"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[HighCostDeclarationCity]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ReceiveHighCostSeperationBenefit"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[ReceiveHighCostSeperationBenefit]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="DontReceiveHighCostSeperationBenefit"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[DontReceiveHighCostSeperationBenefit]" />
+        <SsdlProperty
+          Name="IncomeTax1"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpProfile/Properties[IncomeTax1]" />
+        <SsdlProperty
+          Name="IncomeTax2"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpProfile/Properties[IncomeTax2]" />
+        <SsdlProperty
+          Name="IncomeTax3"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpProfile/Properties[IncomeTax3]" />
+        <SsdlProperty
+          Name="IncomeTax4"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpProfile/Properties[IncomeTax4]" />
+        <SsdlProperty
+          Name="IncomeTax5"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpProfile/Properties[IncomeTax5]" />
+        <SsdlProperty
+          Name="DeclerationOfTrueInformation"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpProfile/Properties[DeclerationOfTrueInformation]" />
+        <SsdlProperty
+          Name="EmploymentDate"
+          Nullable="True"
+          Type="datetime"
+          Property="hrEmpProfile/Properties[EmploymentDate]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Place"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[Place]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="hrEmpProfile/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpProfile/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="hrEmpProfile/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="hrEmpProfile/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpProfile_erpUniversity"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpProfile_erpUniversity" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

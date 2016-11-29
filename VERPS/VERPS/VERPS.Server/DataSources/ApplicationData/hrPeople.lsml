@@ -1,0 +1,1468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="hrPerson">
+    <EntityType.Attributes>
+      <CreatedModifiedPropertiesEnabled />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="FullName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Surname"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmailAddress"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExtUserName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AccessCardID"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Department"
+        Association="hrPerson_hrDepartment"
+        FromEnd="hrPerson"
+        ToEnd="hrDepartment" />
+      <NavigationProperty
+        Name="ManagerOf"
+        Association="hrDepartment_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrDepartment" />
+      <NavigationProperty
+        Name="hrWorkingHour"
+        Association="hrWorkingHour_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrWorkingHour" />
+      <EntityProperty
+        Name="IsAcademician"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="SyllabusCollection"
+        Association="sylSyllabus_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="sylSyllabus" />
+      <NavigationProperty
+        Name="erpAcademicDepartment"
+        Association="hrPerson_erpAcademicDepartment"
+        FromEnd="hrPerson"
+        ToEnd="erpAcademicDepartment" />
+      <NavigationProperty
+        Name="sylAcademicDepartment1"
+        Association="erpAcademicDepartment_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="erpAcademicDepartment" />
+      <NavigationProperty
+        Name="sylCourseTeacher"
+        Association="sylCourseTeacher_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="sylCourseTeacher" />
+      <EntityProperty
+        Name="LSUser"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <VirtualNavigationProperty
+        Name="aspnet_User"
+        FromEnd="hrPerson"
+        ToEnd="aspnet_User"
+        VirtualAssociation="hrPerson_aspnet_User" />
+      <NavigationProperty
+        Name="sylSyllabi"
+        Association="sylSyllabus_hrPerson1"
+        FromEnd="hrPerson"
+        ToEnd="sylSyllabus" />
+      <NavigationProperty
+        Name="hrEmpProfile"
+        Association="hrEmpProfile_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpProfile" />
+      <NavigationProperty
+        Name="hrAddresses"
+        Association="hrAddress_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrAddress" />
+      <NavigationProperty
+        Name="hrEmpFamilyMember"
+        Association="hrEmpFamilyMember_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpFamilyMember" />
+      <NavigationProperty
+        Name="hrEmpEducations"
+        Association="hrEmpEducation_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpEducation" />
+      <NavigationProperty
+        Name="hrEmpPastEmployements"
+        Association="hrEmpPastEmployement_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpPastEmployement" />
+      <NavigationProperty
+        Name="hrEmpSkills"
+        Association="hrEmpSkill_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpSkill" />
+      <NavigationProperty
+        Name="hrEmpLanguages"
+        Association="hrEmpLanguage_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpLanguage" />
+      <NavigationProperty
+        Name="hrEmpMilService"
+        Association="hrEmpMilService_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpMilService" />
+      <NavigationProperty
+        Name="hrEmpDisabilities"
+        Association="hrEmpDisability_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpDisability" />
+      <NavigationProperty
+        Name="hrEmpFamilyHealthInsurances"
+        Association="hrEmpFamilyHealthInsurance_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpFamilyHealthInsurance" />
+      <NavigationProperty
+        Name="hrEmergencyContacts"
+        Association="hrEmergencyContact_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmergencyContact" />
+      <NavigationProperty
+        Name="hrEmpAcademicProfileByHRs"
+        Association="hrEmpAcademicProfileByHR_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpAcademicProfileByHR" />
+      <NavigationProperty
+        Name="hrEmpAcademicProfileByHRs1"
+        Association="hrEmpAcademicProfileByHR_hrPerson1"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpAcademicProfileByHR" />
+      <NavigationProperty
+        Name="hrEmpAcademicProfileByHRs2"
+        Association="hrEmpAcademicProfileByHR_hrPerson2"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpAcademicProfileByHR" />
+      <NavigationProperty
+        Name="hrEmpAcademicProfileByHRs3"
+        Association="hrEmpAcademicProfileByHR_hrPerson3"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpAcademicProfileByHR" />
+      <NavigationProperty
+        Name="hrEmpAcademicProfileByAcademician"
+        Association="hrEmpAcademicProfileByAcademic_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpAcademicProfileByAcademician" />
+      <NavigationProperty
+        Name="hrEmpCourses"
+        Association="hrEmpCourse_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="hrEmpCourse" />
+      <EntityProperty
+        Name="CreatedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="ApplicationData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="hrPeople"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="hrPerson" />
+    <QueryOperation
+      Name="hrPeople_Single"
+      ReturnType="hrPerson">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrPeople" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="hrPeople_SingleOrDefault"
+      ReturnType="hrPerson">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrPeople" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="hrDepartment_hrPersons"
+      Association="hrDepartment_hrPerson">
+      <AssociationSetEnd
+        Name="hrDepartment"
+        EntitySet="hrDepartments" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrWorkingHour_hrPersons"
+      Association="hrWorkingHour_hrPerson">
+      <AssociationSetEnd
+        Name="hrWorkingHour"
+        EntitySet="hrWorkingHours" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylSyllabus_hrPersons"
+      Association="sylSyllabus_hrPerson">
+      <AssociationSetEnd
+        Name="sylSyllabus"
+        EntitySet="sylSyllabi" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="erpAcademicDepartment_hrPersons"
+      Association="erpAcademicDepartment_hrPerson">
+      <AssociationSetEnd
+        Name="erpAcademicDepartment"
+        EntitySet="erpAcademicDepartments" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylCourseTeacher_hrPersons"
+      Association="sylCourseTeacher_hrPerson">
+      <AssociationSetEnd
+        Name="sylCourseTeacher"
+        EntitySet="sylCourseTeachers" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylSyllabus_hrPerson1Set"
+      Association="sylSyllabus_hrPerson1">
+      <AssociationSetEnd
+        Name="sylSyllabus"
+        EntitySet="sylSyllabi" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpProfile_hrPersons"
+      Association="hrEmpProfile_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpProfile"
+        EntitySet="hrEmpProfiles" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrAddress_hrPersons"
+      Association="hrAddress_hrPerson">
+      <AssociationSetEnd
+        Name="hrAddress"
+        EntitySet="hrAddresses" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpFamilyMember_hrPersons"
+      Association="hrEmpFamilyMember_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpFamilyMember"
+        EntitySet="hrEmpFamilyMembers" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpEducation_hrPersons"
+      Association="hrEmpEducation_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpEducation"
+        EntitySet="hrEmpEducations" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpPastEmployement_hrPersons"
+      Association="hrEmpPastEmployement_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpPastEmployement"
+        EntitySet="hrEmpPastEmployements" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpSkill_hrPersons"
+      Association="hrEmpSkill_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpSkill"
+        EntitySet="hrEmpSkills" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpLanguage_hrPersons"
+      Association="hrEmpLanguage_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpLanguage"
+        EntitySet="hrEmpLanguages" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpMilService_hrPersons"
+      Association="hrEmpMilService_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpMilService"
+        EntitySet="hrEmpMilServices" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpDisability_hrPersons"
+      Association="hrEmpDisability_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpDisability"
+        EntitySet="hrEmpDisabilities" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpFamilyHealthInsurance_hrPersons"
+      Association="hrEmpFamilyHealthInsurance_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpFamilyHealthInsurance"
+        EntitySet="hrEmpFamilyHealthInsurances" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmergencyContact_hrPersons"
+      Association="hrEmergencyContact_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmergencyContact"
+        EntitySet="hrEmergencyContacts" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpAcademicProfileByHR_hrPersons"
+      Association="hrEmpAcademicProfileByHR_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpAcademicProfileByHR"
+        EntitySet="hrEmpAcademicProfileByHRs" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpAcademicProfileByHR_hrPerson1Set"
+      Association="hrEmpAcademicProfileByHR_hrPerson1">
+      <AssociationSetEnd
+        Name="hrEmpAcademicProfileByHR"
+        EntitySet="hrEmpAcademicProfileByHRs" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpAcademicProfileByHR_hrPerson2Set"
+      Association="hrEmpAcademicProfileByHR_hrPerson2">
+      <AssociationSetEnd
+        Name="hrEmpAcademicProfileByHR"
+        EntitySet="hrEmpAcademicProfileByHRs" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpAcademicProfileByHR_hrPerson3Set"
+      Association="hrEmpAcademicProfileByHR_hrPerson3">
+      <AssociationSetEnd
+        Name="hrEmpAcademicProfileByHR"
+        EntitySet="hrEmpAcademicProfileByHRs" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpAcademicProfileByAcademic_hrPersons"
+      Association="hrEmpAcademicProfileByAcademic_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpAcademicProfileByAcademician"
+        EntitySet="hrEmpAcademicProfileByAcademicians" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+    <AssociationSet
+      Name="hrEmpCourse_hrPersons"
+      Association="hrEmpCourse_hrPerson">
+      <AssociationSetEnd
+        Name="hrEmpCourse"
+        EntitySet="hrEmpCourses" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
+  </EntityContainer>
+  <DataService
+    Name="ApplicationDataMapping">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="hrPeople">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="Employee_Department"
+          Nullable="True"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="Employee_AcademicDepartment"
+          Nullable="True"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrDepartment_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Department_Employees" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrDepartment_hrPersons]/Members[hrDepartment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrDepartment_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrWorkingHour_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="WorkingHour_Employees" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrWorkingHour_hrPersons]/Members[hrWorkingHour]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="WorkingHour_Employee" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrWorkingHour_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylSyllabus_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Syllabus_Employees" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylSyllabus_hrPersons]/Members[sylSyllabus]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Syllabus_Employee" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylSyllabus_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="erpAcademicDepartment_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="AcademicDepartment_Employees" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[erpAcademicDepartment_hrPersons]/Members[erpAcademicDepartment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="AcademicDepartment_Employee" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[erpAcademicDepartment_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylCourseTeacher_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="CourseTeacher_Employees" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylCourseTeacher_hrPersons]/Members[sylCourseTeacher]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CourseTeacher_Employee" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylCourseTeacher_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylSyllabus_hrPerson1Set">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylSyllabus_hrPerson1Set" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylSyllabus_hrPerson1Set]/Members[sylSyllabus]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylSyllabus_hrPerson1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylSyllabus_hrPerson1Set]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpProfile_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="EmployeeProfile_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpProfile_hrPersons]/Members[hrEmpProfile]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpProfile_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrAddress_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrAddress_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrAddress_hrPersons]/Members[hrAddress]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrAddress_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrAddress_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpFamilyMember_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmplooyeeFamilyMember_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpFamilyMember_hrPersons]/Members[hrEmpFamilyMember]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmplooyeeFamilyMember_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpFamilyMember_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpEducation_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpEducation_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpEducation_hrPersons]/Members[hrEmpEducation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpEducation_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpEducation_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpPastEmployement_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpPastEmployement_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpPastEmployement_hrPersons]/Members[hrEmpPastEmployement]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpPastEmployement_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpPastEmployement_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpSkill_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpSkill_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpSkill_hrPersons]/Members[hrEmpSkill]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpSkill_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpSkill_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpLanguage_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpLanguage_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpLanguage_hrPersons]/Members[hrEmpLanguage]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpLanguage_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpLanguage_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpMilService_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpMilService_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpMilService_hrPersons]/Members[hrEmpMilService]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpMilService_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpDisability_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpDisability_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpDisability_hrPersons]/Members[hrEmpDisability]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpDisability_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpDisability_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpFamilyHealthInsurance_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpFamilyHealthInsurance_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpFamilyHealthInsurance_hrPersons]/Members[hrEmpFamilyHealthInsurance]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpFamilyHealthInsurance_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpFamilyHealthInsurance_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmergencyContact_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmergencyContact_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmergencyContact_hrPersons]/Members[hrEmergencyContact]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmergencyContact_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmergencyContact_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpAcademicProfileByHR_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpAcademicProfileByHR_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByHR_hrPersons]/Members[hrEmpAcademicProfileByHR]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpAcademicProfileByHR_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByHR_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpAcademicProfileByHR_hrPerson1Set">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpAcademicProfileByHR_hrPerson1Set" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByHR_hrPerson1Set]/Members[hrEmpAcademicProfileByHR]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpAcademicProfileByHR_hrPerson1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByHR_hrPerson1Set]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpAcademicProfileByHR_hrPerson2Set">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpAcademicProfileByHR_hrPerson2Set" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByHR_hrPerson2Set]/Members[hrEmpAcademicProfileByHR]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpAcademicProfileByHR_hrPerson2" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByHR_hrPerson2Set]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpAcademicProfileByHR_hrPerson3Set">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpAcademicProfileByHR_hrPerson3Set" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByHR_hrPerson3Set]/Members[hrEmpAcademicProfileByHR]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpAcademicProfileByHR_hrPerson3" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByHR_hrPerson3Set]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpAcademicProfileByAcademic_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpAcademicProfileByAcademic_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByAcademic_hrPersons]/Members[hrEmpAcademicProfileByAcademician]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpAcademicProfileByAcademic_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpCourse_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpCourse_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpCourse_hrPersons]/Members[hrEmpCourse]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpCourse_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrEmpCourse_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+  <Association
+    Name="hrDepartment_hrPerson">
+    <AssociationEnd
+      Name="hrDepartment"
+      EntityType="hrDepartment" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrWorkingHour_hrPerson">
+    <AssociationEnd
+      Name="hrWorkingHour"
+      Multiplicity="Many"
+      EntityType="hrWorkingHour" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="sylSyllabus_hrPerson">
+    <AssociationEnd
+      Name="sylSyllabus"
+      Multiplicity="Many"
+      EntityType="sylSyllabus" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="erpAcademicDepartment_hrPerson">
+    <AssociationEnd
+      Name="erpAcademicDepartment"
+      Multiplicity="Many"
+      EntityType="erpAcademicDepartment" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="sylCourseTeacher_hrPerson">
+    <AssociationEnd
+      Name="sylCourseTeacher"
+      Multiplicity="Many"
+      EntityType="sylCourseTeacher" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="sylSyllabus_hrPerson1">
+    <AssociationEnd
+      Name="sylSyllabus"
+      Multiplicity="Many"
+      EntityType="sylSyllabus" />
+    <AssociationEnd
+      Name="hrPerson"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpProfile_hrPerson">
+    <AssociationEnd
+      Name="hrEmpProfile"
+      EntityType="hrEmpProfile" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrAddress_hrPerson">
+    <AssociationEnd
+      Name="hrAddress"
+      Multiplicity="Many"
+      EntityType="hrAddress" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpFamilyMember_hrPerson">
+    <AssociationEnd
+      Name="hrEmpFamilyMember"
+      Multiplicity="Many"
+      EntityType="hrEmpFamilyMember" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpEducation_hrPerson">
+    <AssociationEnd
+      Name="hrEmpEducation"
+      Multiplicity="Many"
+      EntityType="hrEmpEducation" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpPastEmployement_hrPerson">
+    <AssociationEnd
+      Name="hrEmpPastEmployement"
+      Multiplicity="Many"
+      EntityType="hrEmpPastEmployement" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpSkill_hrPerson">
+    <AssociationEnd
+      Name="hrEmpSkill"
+      Multiplicity="Many"
+      EntityType="hrEmpSkill" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpLanguage_hrPerson">
+    <AssociationEnd
+      Name="hrEmpLanguage"
+      Multiplicity="Many"
+      EntityType="hrEmpLanguage" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpMilService_hrPerson">
+    <AssociationEnd
+      Name="hrEmpMilService"
+      EntityType="hrEmpMilService" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpDisability_hrPerson">
+    <AssociationEnd
+      Name="hrEmpDisability"
+      Multiplicity="Many"
+      EntityType="hrEmpDisability" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpFamilyHealthInsurance_hrPerson">
+    <AssociationEnd
+      Name="hrEmpFamilyHealthInsurance"
+      Multiplicity="Many"
+      EntityType="hrEmpFamilyHealthInsurance" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmergencyContact_hrPerson">
+    <AssociationEnd
+      Name="hrEmergencyContact"
+      Multiplicity="Many"
+      EntityType="hrEmergencyContact" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpAcademicProfileByHR_hrPerson">
+    <AssociationEnd
+      Name="hrEmpAcademicProfileByHR"
+      Multiplicity="Many"
+      EntityType="hrEmpAcademicProfileByHR" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpAcademicProfileByHR_hrPerson1">
+    <AssociationEnd
+      Name="hrEmpAcademicProfileByHR"
+      Multiplicity="Many"
+      EntityType="hrEmpAcademicProfileByHR" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpAcademicProfileByHR_hrPerson2">
+    <AssociationEnd
+      Name="hrEmpAcademicProfileByHR"
+      Multiplicity="Many"
+      EntityType="hrEmpAcademicProfileByHR" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpAcademicProfileByHR_hrPerson3">
+    <AssociationEnd
+      Name="hrEmpAcademicProfileByHR"
+      Multiplicity="Many"
+      EntityType="hrEmpAcademicProfileByHR" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpAcademicProfileByAcademic_hrPerson">
+    <AssociationEnd
+      Name="hrEmpAcademicProfileByAcademician"
+      EntityType="hrEmpAcademicProfileByAcademician" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrEmpCourse_hrPerson">
+    <AssociationEnd
+      Name="hrEmpCourse"
+      Multiplicity="Many"
+      EntityType="hrEmpCourse" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+</ServiceApplication>

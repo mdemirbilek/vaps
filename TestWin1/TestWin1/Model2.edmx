@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VERPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="hrWorkingHours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccessCardID" Type="nvarchar" MaxLength="255" />
+          <Property Name="WorkingDate" Type="datetime" Nullable="false" />
+          <Property Name="RecYear" Type="int" Nullable="false" />
+          <Property Name="RecMonth" Type="int" Nullable="false" />
+          <Property Name="RecDay" Type="int" Nullable="false" />
+          <Property Name="DayOfWeek" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsWorkingDay" Type="bit" Nullable="false" />
+          <Property Name="StdWorkingHour" Type="int" Nullable="false" />
+          <Property Name="EntryTime" Type="datetime" />
+          <Property Name="ExitTime" Type="datetime" />
+          <Property Name="TotalHours" Type="int" />
+          <Property Name="TotalMinutes" Type="int" />
+          <Property Name="Exception" Type="nvarchar" MaxLength="255" />
+          <Property Name="Note" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedWorkingHour" Type="int" />
+          <Property Name="HourDiff" Type="int" />
+          <Property Name="MinuteDiff" Type="int" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="Created" Type="datetimeoffset" Precision="7" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="Modified" Type="datetimeoffset" Precision="7" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="WorkingHour_Employee" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="VERPSModelStoreContainer">
+          <EntitySet Name="hrWorkingHours" EntityType="Self.hrWorkingHours" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VERPSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="VERPSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="hrWorkingHours" EntityType="VERPSModel.hrWorkingHour" />
+        </EntityContainer>
+        <EntityType Name="hrWorkingHour">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccessCardID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WorkingDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RecYear" Type="Int32" Nullable="false" />
+          <Property Name="RecMonth" Type="Int32" Nullable="false" />
+          <Property Name="RecDay" Type="Int32" Nullable="false" />
+          <Property Name="DayOfWeek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsWorkingDay" Type="Boolean" Nullable="false" />
+          <Property Name="StdWorkingHour" Type="Int32" Nullable="false" />
+          <Property Name="EntryTime" Type="DateTime" Precision="3" />
+          <Property Name="ExitTime" Type="DateTime" Precision="3" />
+          <Property Name="TotalHours" Type="Int32" />
+          <Property Name="TotalMinutes" Type="Int32" />
+          <Property Name="Exception" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedWorkingHour" Type="Int32" />
+          <Property Name="HourDiff" Type="Int32" />
+          <Property Name="MinuteDiff" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTimeOffset" Precision="7" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Modified" Type="DateTimeOffset" Precision="7" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="WorkingHour_Employee" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VERPSModelStoreContainer" CdmEntityContainer="VERPSEntities">
+          <EntitySetMapping Name="hrWorkingHours">
+            <EntityTypeMapping TypeName="VERPSModel.hrWorkingHour">
+              <MappingFragment StoreEntitySet="hrWorkingHours">
+                <ScalarProperty Name="WorkingHour_Employee" ColumnName="WorkingHour_Employee" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="MinuteDiff" ColumnName="MinuteDiff" />
+                <ScalarProperty Name="HourDiff" ColumnName="HourDiff" />
+                <ScalarProperty Name="AssignedWorkingHour" ColumnName="AssignedWorkingHour" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+                <ScalarProperty Name="TotalMinutes" ColumnName="TotalMinutes" />
+                <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+                <ScalarProperty Name="ExitTime" ColumnName="ExitTime" />
+                <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
+                <ScalarProperty Name="StdWorkingHour" ColumnName="StdWorkingHour" />
+                <ScalarProperty Name="IsWorkingDay" ColumnName="IsWorkingDay" />
+                <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+                <ScalarProperty Name="RecDay" ColumnName="RecDay" />
+                <ScalarProperty Name="RecMonth" ColumnName="RecMonth" />
+                <ScalarProperty Name="RecYear" ColumnName="RecYear" />
+                <ScalarProperty Name="WorkingDate" ColumnName="WorkingDate" />
+                <ScalarProperty Name="AccessCardID" ColumnName="AccessCardID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

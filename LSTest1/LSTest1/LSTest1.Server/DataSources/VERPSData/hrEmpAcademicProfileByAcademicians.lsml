@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="hrEmpAcademicProfileByAcademician">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="FullName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AssignmentToFieldOfStudy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FoSArea"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FoSKnowledge"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FoSDiscipline"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Speciality"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PBNID"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="NumberQuotedWoS"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IndexHirshaWoS"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Biogram"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="1000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ResearchInterests"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LecturedSubjects"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AbilityToTakeClasses"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="GuestLectures"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ScientificHeldPositions"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OrganisationalHeldPositions"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ResearchActivities"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HasConsultingExperience"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ConsultingSubjectArea"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ConsultingForm"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PracticalActivistToHeldClass"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CurrentPracticalActivist"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UniversityActivity"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="hrPeople"
+        Association="hrEmpAcademicProfileByAcademic_hrPerson"
+        FromEnd="hrEmpAcademicProfileByAcademicians"
+        ToEnd="hrPeople" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="VERPSData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="hrEmpAcademicProfileByAcademicians"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="hrEmpAcademicProfileByAcademician" />
+    <QueryOperation
+      Name="hrEmpAcademicProfileByAcademicians_Single"
+      ReturnType="hrEmpAcademicProfileByAcademician">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrEmpAcademicProfileByAcademicians" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="hrEmpAcademicProfileByAcademicians_SingleOrDefault"
+      ReturnType="hrEmpAcademicProfileByAcademician">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrEmpAcademicProfileByAcademicians" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="VERPSDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="hrEmpAcademicProfileByAcademicians">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="hrEmpAcademicProfileByAcademicians" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          Type="int"
+          Property="hrEmpAcademicProfileByAcademician/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FullName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[FullName]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="AssignmentToFieldOfStudy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[AssignmentToFieldOfStudy]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FoSArea"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[FoSArea]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FoSKnowledge"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[FoSKnowledge]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FoSDiscipline"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[FoSDiscipline]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Speciality"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[Speciality]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="PBNID"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[PBNID]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="NumberQuotedWoS"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[NumberQuotedWoS]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="IndexHirshaWoS"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[IndexHirshaWoS]" />
+        <SsdlProperty
+          MaxLength="1000"
+          Name="Biogram"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[Biogram]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ResearchInterests"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[ResearchInterests]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="LecturedSubjects"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[LecturedSubjects]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="AbilityToTakeClasses"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[AbilityToTakeClasses]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="GuestLectures"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[GuestLectures]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ScientificHeldPositions"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[ScientificHeldPositions]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="OrganisationalHeldPositions"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[OrganisationalHeldPositions]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ResearchActivities"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[ResearchActivities]" />
+        <SsdlProperty
+          Name="HasConsultingExperience"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpAcademicProfileByAcademician/Properties[HasConsultingExperience]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ConsultingSubjectArea"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[ConsultingSubjectArea]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ConsultingForm"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[ConsultingForm]" />
+        <SsdlProperty
+          Name="PracticalActivistToHeldClass"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpAcademicProfileByAcademician/Properties[PracticalActivistToHeldClass]" />
+        <SsdlProperty
+          Name="CurrentPracticalActivist"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpAcademicProfileByAcademician/Properties[CurrentPracticalActivist]" />
+        <SsdlProperty
+          Name="UniversityActivity"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpAcademicProfileByAcademician/Properties[UniversityActivity]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="hrEmpAcademicProfileByAcademician/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByAcademician/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="hrEmpAcademicProfileByAcademician/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="hrEmpAcademicProfileByAcademician/Properties[RowVersion]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="hrEmpCours">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Semestry"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Term"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PlannedHours"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="1" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RealizedHours"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="1" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OtherInfo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ClassTypeCviczenia"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ClassTypeWyklad"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ClassTypeKonwersatoria"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ClassTypeSeminarium"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ClassTypeKonsultacje"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ClassTypeEgzamin"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StudentSemestr"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WeekDay"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Dates"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ConductedHours"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Room"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="erpHRAccountingPeriod"
+        Association="hrEmpCourse_erpHRAccountingPeriod"
+        FromEnd="hrEmpCourses"
+        ToEnd="erpHRAccountingPeriods" />
+      <NavigationProperty
+        Name="erpLanguage"
+        Association="hrEmpCourse_erpLanguage"
+        FromEnd="hrEmpCourses"
+        ToEnd="erpLanguages" />
+      <NavigationProperty
+        Name="hrEmpAcademicProfileByHR"
+        Association="hrEmpCourse_hrEmpAcademicProfileByHR"
+        FromEnd="hrEmpCourses"
+        ToEnd="hrEmpAcademicProfileByHRs" />
+      <NavigationProperty
+        Name="hrEvalStatu"
+        Association="hrEmpCourse_hrEvalStatu"
+        FromEnd="hrEmpCourses"
+        ToEnd="hrEvalStatus" />
+      <NavigationProperty
+        Name="hrPeople"
+        Association="hrEmpCourse_hrPerson"
+        FromEnd="hrEmpCourses"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="sylCours"
+        Association="hrEmpCourse_sylCourse"
+        FromEnd="hrEmpCourses"
+        ToEnd="sylCourses" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="VERPSData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="hrEmpCourses"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="hrEmpCours" />
+    <QueryOperation
+      Name="hrEmpCourses_Single"
+      ReturnType="hrEmpCours">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrEmpCourses" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="hrEmpCourses_SingleOrDefault"
+      ReturnType="hrEmpCours">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrEmpCourses" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="VERPSDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="hrEmpCourses">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="hrEmpCourses" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          Type="int"
+          Property="hrEmpCours/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Semestry"
+          Nullable="False"
+          Type="nvarchar"
+          Property="hrEmpCours/Properties[Semestry]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Term"
+          Nullable="False"
+          Type="nvarchar"
+          Property="hrEmpCours/Properties[Term]" />
+        <SsdlProperty
+          Name="PlannedHours"
+          Nullable="False"
+          Scale="1"
+          Type="decimal"
+          Property="hrEmpCours/Properties[PlannedHours]" />
+        <SsdlProperty
+          Name="RealizedHours"
+          Nullable="False"
+          Scale="1"
+          Type="decimal"
+          Property="hrEmpCours/Properties[RealizedHours]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="OtherInfo"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpCours/Properties[OtherInfo]" />
+        <SsdlProperty
+          Name="ClassTypeCviczenia"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpCours/Properties[ClassTypeCviczenia]" />
+        <SsdlProperty
+          Name="ClassTypeWyklad"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpCours/Properties[ClassTypeWyklad]" />
+        <SsdlProperty
+          Name="ClassTypeKonwersatoria"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpCours/Properties[ClassTypeKonwersatoria]" />
+        <SsdlProperty
+          Name="ClassTypeSeminarium"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpCours/Properties[ClassTypeSeminarium]" />
+        <SsdlProperty
+          Name="ClassTypeKonsultacje"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpCours/Properties[ClassTypeKonsultacje]" />
+        <SsdlProperty
+          Name="ClassTypeEgzamin"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpCours/Properties[ClassTypeEgzamin]" />
+        <SsdlProperty
+          Name="StudentSemestr"
+          Nullable="True"
+          Type="int"
+          Property="hrEmpCours/Properties[StudentSemestr]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="WeekDay"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpCours/Properties[WeekDay]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Dates"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpCours/Properties[Dates]" />
+        <SsdlProperty
+          Name="ConductedHours"
+          Nullable="False"
+          Scale="2"
+          Type="decimal"
+          Property="hrEmpCours/Properties[ConductedHours]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Room"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpCours/Properties[Room]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpCours/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="hrEmpCours/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpCours/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="hrEmpCours/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="hrEmpCours/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpCourse_erpHRAccountingPeriod"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpCourse_erpHRAccountingPeriod" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpCourse_erpLanguage"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpCourse_erpLanguage" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpCourse_hrEmpAcademicProfileByHR"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpCourse_hrEmpAcademicProfileByHR" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpCourse_hrPerson"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpCourse_hrPerson" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpCourse_sylCourse"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpCourse_sylCourse" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

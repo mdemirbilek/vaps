@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="erpAcademicDepartment">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="erpFaculty"
+        Association="erpAcademicDepartment_erpFaculty"
+        FromEnd="erpAcademicDepartments"
+        ToEnd="erpFaculties" />
+      <NavigationProperty
+        Name="hrPeople"
+        Association="erpAcademicDepartment_hrPerson"
+        FromEnd="erpAcademicDepartments"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="hrPeoples"
+        Association="hrPerson_erpAcademicDepartment"
+        FromEnd="erpAcademicDepartments"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="sylCourses"
+        Association="sylCourse_erpAcademicDepartment"
+        FromEnd="erpAcademicDepartments"
+        ToEnd="sylCourses" />
+      <NavigationProperty
+        Name="sylProgramCourses"
+        Association="sylProgramCourse_erpAcademicDepartment"
+        FromEnd="erpAcademicDepartments"
+        ToEnd="sylProgramCourses" />
+      <NavigationProperty
+        Name="sylSyllabis"
+        Association="sylSyllabus_erpAcademicDepartment"
+        FromEnd="erpAcademicDepartments"
+        ToEnd="sylSyllabi" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="hrPerson_erpAcademicDepartment">
+    <AssociationEnd
+      Name="erpAcademicDepartments"
+      EntityType="erpAcademicDepartment">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="hrPeople"
+      Multiplicity="Many"
+      EntityType="hrPeople" />
+  </Association>
+  <Association
+    Name="sylCourse_erpAcademicDepartment">
+    <AssociationEnd
+      Name="erpAcademicDepartments"
+      Multiplicity="One"
+      EntityType="erpAcademicDepartment">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="sylCourses"
+      Multiplicity="Many"
+      EntityType="sylCours" />
+  </Association>
+  <Association
+    Name="sylProgramCourse_erpAcademicDepartment">
+    <AssociationEnd
+      Name="erpAcademicDepartments"
+      Multiplicity="One"
+      EntityType="erpAcademicDepartment">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="sylProgramCourses"
+      Multiplicity="Many"
+      EntityType="sylProgramCours" />
+  </Association>
+  <Association
+    Name="sylSyllabus_erpAcademicDepartment">
+    <AssociationEnd
+      Name="erpAcademicDepartments"
+      Multiplicity="One"
+      EntityType="erpAcademicDepartment">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="sylSyllabi"
+      Multiplicity="Many"
+      EntityType="sylSyllabi" />
+  </Association>
+  <EntityContainer
+    Name="VERPSData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="erpAcademicDepartments"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="erpAcademicDepartment" />
+    <AssociationSet
+      Name="hrPerson_erpAcademicDepartment"
+      Association="hrPerson_erpAcademicDepartment">
+      <AssociationSetEnd
+        Name="erpAcademicDepartments"
+        EntitySet="erpAcademicDepartments" />
+      <AssociationSetEnd
+        Name="hrPeople"
+        EntitySet="hrPeoples" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylCourse_erpAcademicDepartment"
+      Association="sylCourse_erpAcademicDepartment">
+      <AssociationSetEnd
+        Name="erpAcademicDepartments"
+        EntitySet="erpAcademicDepartments" />
+      <AssociationSetEnd
+        Name="sylCourses"
+        EntitySet="sylCourses" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylProgramCourse_erpAcademicDepartment"
+      Association="sylProgramCourse_erpAcademicDepartment">
+      <AssociationSetEnd
+        Name="erpAcademicDepartments"
+        EntitySet="erpAcademicDepartments" />
+      <AssociationSetEnd
+        Name="sylProgramCourses"
+        EntitySet="sylProgramCourses" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylSyllabus_erpAcademicDepartment"
+      Association="sylSyllabus_erpAcademicDepartment">
+      <AssociationSetEnd
+        Name="erpAcademicDepartments"
+        EntitySet="erpAcademicDepartments" />
+      <AssociationSetEnd
+        Name="sylSyllabi"
+        EntitySet="sylSyllabis" />
+    </AssociationSet>
+    <QueryOperation
+      Name="erpAcademicDepartments_Single"
+      ReturnType="erpAcademicDepartment">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="erpAcademicDepartments" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="erpAcademicDepartments_SingleOrDefault"
+      ReturnType="erpAcademicDepartment">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="erpAcademicDepartments" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="VERPSDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="erpAcademicDepartments">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="erpAcademicDepartments" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="erpAcademicDepartment/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Name"
+          Nullable="False"
+          Type="nvarchar"
+          Property="erpAcademicDepartment/Properties[Name]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="erpAcademicDepartment/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="erpAcademicDepartment/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="erpAcademicDepartment/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="erpAcademicDepartment/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="erpAcademicDepartment/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="AcademicDepartment_Faculty"
+          Nullable="False"
+          Type="int"
+          PropertyName="AcademicDepartment_Faculty" />
+        <SsdlForeignKeyProperty
+          Name="AcademicDepartment_Employee"
+          Nullable="False"
+          Type="int"
+          PropertyName="AcademicDepartment_Employee" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrPerson_erpAcademicDepartment">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrPerson_erpAcademicDepartment" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrPerson_erpAcademicDepartment]/Members[erpAcademicDepartments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrPerson_erpAcademicDepartment]/Members[hrPeople]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Employee_AcademicDepartment" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylCourse_erpAcademicDepartment">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylCourse_erpAcademicDepartment" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylCourse_erpAcademicDepartment]/Members[erpAcademicDepartments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylCourse_erpAcademicDepartment]/Members[sylCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Course_AcademicDepartment" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylProgramCourse_erpAcademicDepartment">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylProgramCourse_erpAcademicDepartment" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylProgramCourse_erpAcademicDepartment]/Members[erpAcademicDepartments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylProgramCourse_erpAcademicDepartment]/Members[sylProgramCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ProgramCourse_AcademicDepartment" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylSyllabus_erpAcademicDepartment">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylSyllabus_erpAcademicDepartment" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylSyllabus_erpAcademicDepartment]/Members[erpAcademicDepartments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylSyllabus_erpAcademicDepartment]/Members[sylSyllabi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Syllabus_AcademicDepartment" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

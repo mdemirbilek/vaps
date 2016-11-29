@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="aspnet_User">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <EntityProperty
+        Name="ApplicationId"
+        PropertyType=":Guid">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="UserId"
+        PropertyType=":Guid">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="UserName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="256" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LoweredUserName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="256" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MobileAlias"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="16" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IsAnonymous"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LastActivityDate"
+        PropertyType=":DateTime">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <VirtualNavigationProperty
+        Name="hrPerson"
+        FromEnd="aspnet_User"
+        ToEnd="hrPerson"
+        VirtualAssociation="hrPerson_aspnet_User" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="VERPSData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="aspnet_Users1"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="aspnet_User" />
+    <QueryOperation
+      Name="aspnet_Users1_Single"
+      ReturnType="aspnet_User">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="UserId" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="UserId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="aspnet_Users1" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="UserId"
+        ParameterType="Microsoft.LightSwitch:Guid?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'UserId' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="aspnet_Users1_SingleOrDefault"
+      ReturnType="aspnet_User">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="UserId" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="UserId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="aspnet_Users1" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="UserId"
+        ParameterType="Microsoft.LightSwitch:Guid?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'UserId' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <VirtualAssociation
+    Name="hrPerson_aspnet_User">
+    <VirtualAssociationEnd
+      Name="hrPerson"
+      EntityType="hrPerson" />
+    <VirtualAssociationEnd
+      Name="aspnet_User"
+      Multiplicity="One"
+      EntityType="aspnet_User" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="Employee_aspnet_User_Set"
+    VirtualAssociation="hrPerson_aspnet_User">
+    <VirtualAssociationSetEnd
+      Name="hrPerson"
+      EntityContainer="ApplicationData"
+      EntitySet="hrPeople">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="LSUser" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="aspnet_User"
+      EntityContainer="VERPSData"
+      EntitySet="aspnet_Users1">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="UserName" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
+  <DataService
+    Name="VERPSDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="aspnet_Users1">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="aspnet_Users" />
+        <SsdlProperty
+          Name="ApplicationId"
+          Nullable="False"
+          Type="uniqueidentifier"
+          Property="aspnet_User/Properties[ApplicationId]" />
+        <SsdlProperty
+          Name="UserId"
+          Nullable="False"
+          Type="uniqueidentifier"
+          Property="aspnet_User/Properties[UserId]" />
+        <SsdlProperty
+          MaxLength="256"
+          Name="UserName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="aspnet_User/Properties[UserName]" />
+        <SsdlProperty
+          MaxLength="256"
+          Name="LoweredUserName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="aspnet_User/Properties[LoweredUserName]" />
+        <SsdlProperty
+          MaxLength="16"
+          Name="MobileAlias"
+          Nullable="True"
+          Type="nvarchar"
+          Property="aspnet_User/Properties[MobileAlias]" />
+        <SsdlProperty
+          Name="IsAnonymous"
+          Nullable="False"
+          Type="bit"
+          Property="aspnet_User/Properties[IsAnonymous]" />
+        <SsdlProperty
+          Name="LastActivityDate"
+          Nullable="False"
+          Type="datetime"
+          Property="aspnet_User/Properties[LastActivityDate]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

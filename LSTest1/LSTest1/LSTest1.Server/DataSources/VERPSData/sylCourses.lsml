@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="sylCours">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CourseCode"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Language"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StudyProfile"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StudyMode"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StudyLevel"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="hrEmpCourses"
+        Association="hrEmpCourse_sylCourse"
+        FromEnd="sylCourses"
+        ToEnd="hrEmpCourses" />
+      <NavigationProperty
+        Name="erpAcademicDepartment"
+        Association="sylCourse_erpAcademicDepartment"
+        FromEnd="sylCourses"
+        ToEnd="erpAcademicDepartments" />
+      <NavigationProperty
+        Name="sylPrerequisites"
+        Association="sylPrerequisite_sylCourse"
+        FromEnd="sylCourses"
+        ToEnd="sylPrerequisites" />
+      <NavigationProperty
+        Name="sylProgramCourses"
+        Association="sylProgramCourse_sylCourse"
+        FromEnd="sylCourses"
+        ToEnd="sylProgramCourses" />
+      <NavigationProperty
+        Name="sylSyllabis"
+        Association="sylSyllabus_sylCourse"
+        FromEnd="sylCourses"
+        ToEnd="sylSyllabi" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="hrEmpCourse_sylCourse">
+    <AssociationEnd
+      Name="sylCourses"
+      Multiplicity="One"
+      EntityType="sylCours">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="hrEmpCourses"
+      Multiplicity="Many"
+      EntityType="hrEmpCours" />
+  </Association>
+  <Association
+    Name="sylPrerequisite_sylCourse">
+    <AssociationEnd
+      Name="sylCourses"
+      Multiplicity="One"
+      EntityType="sylCours">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="sylPrerequisites"
+      Multiplicity="Many"
+      EntityType="sylPrerequisite" />
+  </Association>
+  <Association
+    Name="sylProgramCourse_sylCourse">
+    <AssociationEnd
+      Name="sylCourses"
+      Multiplicity="One"
+      EntityType="sylCours">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="sylProgramCourses"
+      Multiplicity="Many"
+      EntityType="sylProgramCours" />
+  </Association>
+  <Association
+    Name="sylSyllabus_sylCourse">
+    <AssociationEnd
+      Name="sylCourses"
+      Multiplicity="One"
+      EntityType="sylCours">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="sylSyllabi"
+      Multiplicity="Many"
+      EntityType="sylSyllabi" />
+  </Association>
+  <EntityContainer
+    Name="VERPSData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="sylCourses"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="sylCours" />
+    <AssociationSet
+      Name="hrEmpCourse_sylCourse"
+      Association="hrEmpCourse_sylCourse">
+      <AssociationSetEnd
+        Name="sylCourses"
+        EntitySet="sylCourses" />
+      <AssociationSetEnd
+        Name="hrEmpCourses"
+        EntitySet="hrEmpCourses" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylPrerequisite_sylCourse"
+      Association="sylPrerequisite_sylCourse">
+      <AssociationSetEnd
+        Name="sylCourses"
+        EntitySet="sylCourses" />
+      <AssociationSetEnd
+        Name="sylPrerequisites"
+        EntitySet="sylPrerequisites" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylProgramCourse_sylCourse"
+      Association="sylProgramCourse_sylCourse">
+      <AssociationSetEnd
+        Name="sylCourses"
+        EntitySet="sylCourses" />
+      <AssociationSetEnd
+        Name="sylProgramCourses"
+        EntitySet="sylProgramCourses" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylSyllabus_sylCourse"
+      Association="sylSyllabus_sylCourse">
+      <AssociationSetEnd
+        Name="sylCourses"
+        EntitySet="sylCourses" />
+      <AssociationSetEnd
+        Name="sylSyllabi"
+        EntitySet="sylSyllabis" />
+    </AssociationSet>
+    <QueryOperation
+      Name="sylCourses_Single"
+      ReturnType="sylCours">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sylCourses" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="sylCourses_SingleOrDefault"
+      ReturnType="sylCours">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sylCourses" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="VERPSDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="sylCourses">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="sylCourses" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="sylCours/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Title"
+          Nullable="True"
+          Type="nvarchar"
+          Property="sylCours/Properties[Title]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Name"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylCours/Properties[Name]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CourseCode"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylCours/Properties[CourseCode]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Language"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylCours/Properties[Language]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="StudyProfile"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylCours/Properties[StudyProfile]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="StudyMode"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylCours/Properties[StudyMode]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="StudyLevel"
+          Nullable="False"
+          Type="nvarchar"
+          Property="sylCours/Properties[StudyLevel]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="sylCours/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="sylCours/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="sylCours/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="sylCours/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="sylCours/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="Course_AcademicDepartment"
+          Nullable="False"
+          Type="int"
+          PropertyName="Course_AcademicDepartment" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpCourse_sylCourse">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpCourse_sylCourse" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrEmpCourse_sylCourse]/Members[sylCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrEmpCourse_sylCourse]/Members[hrEmpCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpCourse_sylCourse" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylPrerequisite_sylCourse">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylPrerequisite_sylCourse" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylPrerequisite_sylCourse]/Members[sylCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylPrerequisite_sylCourse]/Members[sylPrerequisites]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Prerequisite_Course" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylProgramCourse_sylCourse">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylProgramCourse_sylCourse" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylProgramCourse_sylCourse]/Members[sylCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylProgramCourse_sylCourse]/Members[sylProgramCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ProgramCourse_Course" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylSyllabus_sylCourse">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylSyllabus_sylCourse" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylSyllabus_sylCourse]/Members[sylCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[sylSyllabus_sylCourse]/Members[sylSyllabi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Syllabus_Course" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

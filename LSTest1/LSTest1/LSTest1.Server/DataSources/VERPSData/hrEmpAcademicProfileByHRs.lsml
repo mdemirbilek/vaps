@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="hrEmpAcademicProfileByHR">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="FullName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Multiplier"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmploymentBasis"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Degree"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmploymentDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DoesScientificResearch"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PensumBilans"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ObligatoryWorkingHourOfPastYear"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DidacticPensum"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ScientificPensum"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OrganizationalPensum"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OtherArrangements"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OpinionAverage"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="erpFaculty"
+        Association="hrEmpAcademicProfileByHR_erpFaculty"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="erpFaculties" />
+      <NavigationProperty
+        Name="erpPosition"
+        Association="hrEmpAcademicProfileByHR_erpPosition"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="erpPositions" />
+      <NavigationProperty
+        Name="erpProgram"
+        Association="hrEmpAcademicProfileByHR_erpProgram"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="erpPrograms" />
+      <NavigationProperty
+        Name="erpUniversity"
+        Association="hrEmpAcademicProfileByHR_erpUniversity"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="erpUniversities" />
+      <NavigationProperty
+        Name="hrPeople"
+        Association="hrEmpAcademicProfileByHR_hrPerson"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="hrPeople1"
+        Association="hrEmpAcademicProfileByHR_hrPerson1"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="hrPeople2"
+        Association="hrEmpAcademicProfileByHR_hrPerson2"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="hrPeople3"
+        Association="hrEmpAcademicProfileByHR_hrPerson3"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="hrEmpCourses"
+        Association="hrEmpCourse_hrEmpAcademicProfileByHR"
+        FromEnd="hrEmpAcademicProfileByHRs"
+        ToEnd="hrEmpCourses" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="hrEmpCourse_hrEmpAcademicProfileByHR">
+    <AssociationEnd
+      Name="hrEmpAcademicProfileByHRs"
+      Multiplicity="One"
+      EntityType="hrEmpAcademicProfileByHR">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="hrEmpCourses"
+      Multiplicity="Many"
+      EntityType="hrEmpCours" />
+  </Association>
+  <EntityContainer
+    Name="VERPSData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="hrEmpAcademicProfileByHRs"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="hrEmpAcademicProfileByHR" />
+    <AssociationSet
+      Name="hrEmpCourse_hrEmpAcademicProfileByHR"
+      Association="hrEmpCourse_hrEmpAcademicProfileByHR">
+      <AssociationSetEnd
+        Name="hrEmpAcademicProfileByHRs"
+        EntitySet="hrEmpAcademicProfileByHRs" />
+      <AssociationSetEnd
+        Name="hrEmpCourses"
+        EntitySet="hrEmpCourses" />
+    </AssociationSet>
+    <QueryOperation
+      Name="hrEmpAcademicProfileByHRs_Single"
+      ReturnType="hrEmpAcademicProfileByHR">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrEmpAcademicProfileByHRs" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="hrEmpAcademicProfileByHRs_SingleOrDefault"
+      ReturnType="hrEmpAcademicProfileByHR">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="hrEmpAcademicProfileByHRs" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="VERPSDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="hrEmpAcademicProfileByHRs">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="hrEmpAcademicProfileByHRs" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="hrEmpAcademicProfileByHR/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="FullName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByHR/Properties[FullName]" />
+        <SsdlProperty
+          Name="Multiplier"
+          Nullable="False"
+          Type="int"
+          Property="hrEmpAcademicProfileByHR/Properties[Multiplier]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="EmploymentBasis"
+          Nullable="False"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByHR/Properties[EmploymentBasis]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Degree"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByHR/Properties[Degree]" />
+        <SsdlProperty
+          Name="EmploymentDate"
+          Nullable="True"
+          Type="datetime"
+          Property="hrEmpAcademicProfileByHR/Properties[EmploymentDate]" />
+        <SsdlProperty
+          Name="DoesScientificResearch"
+          Nullable="True"
+          Type="bit"
+          Property="hrEmpAcademicProfileByHR/Properties[DoesScientificResearch]" />
+        <SsdlProperty
+          Name="PensumBilans"
+          Nullable="True"
+          Type="int"
+          Property="hrEmpAcademicProfileByHR/Properties[PensumBilans]" />
+        <SsdlProperty
+          Name="ObligatoryWorkingHourOfPastYear"
+          Nullable="True"
+          Type="int"
+          Property="hrEmpAcademicProfileByHR/Properties[ObligatoryWorkingHourOfPastYear]" />
+        <SsdlProperty
+          Name="DidacticPensum"
+          Nullable="True"
+          Type="int"
+          Property="hrEmpAcademicProfileByHR/Properties[DidacticPensum]" />
+        <SsdlProperty
+          Name="ScientificPensum"
+          Nullable="True"
+          Type="int"
+          Property="hrEmpAcademicProfileByHR/Properties[ScientificPensum]" />
+        <SsdlProperty
+          Name="OrganizationalPensum"
+          Nullable="True"
+          Type="int"
+          Property="hrEmpAcademicProfileByHR/Properties[OrganizationalPensum]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="OtherArrangements"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByHR/Properties[OtherArrangements]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="OpinionAverage"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByHR/Properties[OpinionAverage]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByHR/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="hrEmpAcademicProfileByHR/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrEmpAcademicProfileByHR/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="hrEmpAcademicProfileByHR/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="hrEmpAcademicProfileByHR/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpAcademicProfileByHR_erpFaculty"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpAcademicProfileByHR_erpFaculty" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpAcademicProfileByHR_erpPosition"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpAcademicProfileByHR_erpPosition" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpAcademicProfileByHR_erpProgram"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpAcademicProfileByHR_erpProgram" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpAcademicProfileByHR_erpUniversity"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpAcademicProfileByHR_erpUniversity" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpAcademicProfileByHR_hrPerson"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpAcademicProfileByHR_hrPerson" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpAcademicProfileByHR_hrPerson1"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpAcademicProfileByHR_hrPerson1" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpAcademicProfileByHR_hrPerson2"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpAcademicProfileByHR_hrPerson2" />
+        <SsdlForeignKeyProperty
+          Name="hrEmpAcademicProfileByHR_hrPerson3"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrEmpAcademicProfileByHR_hrPerson3" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrEmpCourse_hrEmpAcademicProfileByHR">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrEmpCourse_hrEmpAcademicProfileByHR" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrEmpCourse_hrEmpAcademicProfileByHR]/Members[hrEmpAcademicProfileByHRs]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrEmpCourse_hrEmpAcademicProfileByHR]/Members[hrEmpCourses]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrEmpCourse_hrEmpAcademicProfileByHR" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

@@ -99,6 +99,7 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\BrowseerpFaculties1.lsml" />
     <LightSwitchModel Include="Screens\erpFaculties\AddEditerpFaculty.lsml" />
     <LightSwitchModel Include="Screens\erpFaculties\BrowseerpFaculties.lsml" />
     <LightSwitchModel Include="Screens\erpFaculties\ViewerpFaculty.lsml" />

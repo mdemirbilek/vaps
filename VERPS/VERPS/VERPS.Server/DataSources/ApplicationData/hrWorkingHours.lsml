@@ -40,6 +40,15 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="AccessSysID"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="AccessCardID"
         PropertyType=":String?">
         <EntityProperty.Attributes>
@@ -170,6 +179,35 @@
       </EntityProperty>
       <EntityProperty
         Name="MinuteDiff"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IsOTAccepted"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OTAcceptedBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AcceptedOTeHrs"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AcceptedOTMin"
         PropertyType=":Int32?">
         <EntityProperty.Attributes>
           <NotSearchable />

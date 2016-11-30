@@ -200,6 +200,7 @@
       <DependentUpon>aspnet_Users1.lsml</DependentUpon>
     </Compile>
     <Compile Include="DataSources\VERPSData\_VERPSDataService.lsml.cs" />
+    <Compile Include="GetUserName.ashx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

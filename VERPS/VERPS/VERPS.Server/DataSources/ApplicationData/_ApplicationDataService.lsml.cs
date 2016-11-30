@@ -53,7 +53,7 @@ namespace LightSwitchApplication
 
         public static void InsertDates(hrPerson person)
         {
-            DateTime firstDate = DateTime.Parse("2016-11-01");
+            DateTime firstDate = DateTime.Parse("2016-10-01");
             DateTime lastDate = DateTime.Parse("2017-12-31");
             DateTime actualDate = firstDate;
             bool isExist = false;
@@ -104,6 +104,7 @@ namespace LightSwitchApplication
             wh.hrPerson = person;
             wh.UserName = person.LSUser;
             wh.AccessCardID = person.AccessCardID;
+            wh.AccessSysID = person.AccessSysID;
             wh.WorkingDate = dt;
             wh.RecYear = dt.Year;
             wh.RecMonth = dt.Month;
@@ -114,10 +115,22 @@ namespace LightSwitchApplication
             wh.TotalMinutes = 0;
             wh.Exception = "NA";
             wh.Note = "";
-            wh.StdWorkingHour = 8;
-            wh.AssignedWorkingHour = 8;
+            if (IsStdWorkingDay(dt))
+            {
+                wh.StdWorkingHour = 8;
+                wh.AssignedWorkingHour = 8;
+            }
+            else
+            {
+                wh.StdWorkingHour = 0;
+                wh.AssignedWorkingHour = 0;
+            }
             wh.HourDiff = 0;
             wh.MinuteDiff = 0;
+            wh.IsOTAccepted = false;
+            wh.OTAcceptedBy = "";
+            wh.AcceptedOTeHrs = 0;
+            wh.AcceptedOTMin = 0;
         }
 
         public static bool IsStdWorkingDay(DateTime dt)
@@ -162,5 +175,10 @@ namespace LightSwitchApplication
         {
             //entity.Status = 
         }
+
+        //partial void getTotalWH_PreprocessQuery(string usrName, int? RecYear, int? RecMonth, ref IQueryable<hrWorkingHour> query)
+        //{
+
+        //}
     }
 }

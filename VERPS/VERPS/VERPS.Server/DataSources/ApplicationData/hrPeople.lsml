@@ -122,6 +122,11 @@
         Association="sylCourseTeacher_hrPerson"
         FromEnd="hrPerson"
         ToEnd="sylCourseTeacher" />
+      <VirtualNavigationProperty
+        Name="aspnet_User"
+        FromEnd="hrPerson"
+        ToEnd="aspnet_User"
+        VirtualAssociation="hrPerson_aspnet_User" />
       <EntityProperty
         Name="LSUser"
         PropertyType=":String">
@@ -131,11 +136,14 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <VirtualNavigationProperty
-        Name="aspnet_User"
-        FromEnd="hrPerson"
-        ToEnd="aspnet_User"
-        VirtualAssociation="hrPerson_aspnet_User" />
+      <EntityProperty
+        Name="AccessSysID"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Name="sylSyllabi"
         Association="sylSyllabus_hrPerson1"

@@ -137,7 +137,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="AccessSysID"
+        Name="DoorSysID"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength

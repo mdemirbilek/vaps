@@ -104,7 +104,7 @@ namespace LightSwitchApplication
             wh.hrPerson = person;
             wh.UserName = person.LSUser;
             wh.AccessCardID = person.AccessCardID;
-            wh.AccessSysID = person.AccessSysID;
+            wh.DoorSysID = person.DoorSysID;
             wh.WorkingDate = dt;
             wh.RecYear = dt.Year;
             wh.RecMonth = dt.Month;

@@ -4,27 +4,27 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DOORSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DOORSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="DoorsRawData">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Eventdatetime" Type="datetime" Nullable="false" />
+          <Property Name="UserExtID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EventdatetimeUTC" Type="datetime" />
           <Property Name="OperationID" Type="smallint" />
           <Property Name="Isexit" Type="smallint" />
           <Property Name="Operationdescription" Type="nvarchar" MaxLength="100" />
           <Property Name="Usertype" Type="smallint" />
           <Property Name="Username" Type="nvarchar" MaxLength="50" />
-          <Property Name="UserExtID" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF1" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF2" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF3" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF4" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF5" Type="nvarchar" MaxLength="50" />
           <Property Name="Cardserialnumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="CardID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CardID" Type="nvarchar" MaxLength="50" />
           <Property Name="Doorname" Type="nvarchar" MaxLength="50" />
           <Property Name="DoorExtID" Type="nvarchar" MaxLength="50" />
           <Property Name="DoorGPF1" Type="nvarchar" MaxLength="50" />
@@ -34,11 +34,10 @@
 warning 6002: The table/view 'DOORS.dbo.vw1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw1">
           <Key>
-            <PropertyRef Name="ID" />
             <PropertyRef Name="Eventdatetime" />
-            <PropertyRef Name="CardID" />
+            <PropertyRef Name="UserExtID" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Eventdatetime" Type="datetime" Nullable="false" />
           <Property Name="EventdatetimeUTC" Type="datetime" />
           <Property Name="OperationID" Type="smallint" />
@@ -46,60 +45,37 @@ warning 6002: The table/view 'DOORS.dbo.vw1' does not have a primary key defined
           <Property Name="Operationdescription" Type="nvarchar" MaxLength="100" />
           <Property Name="Usertype" Type="smallint" />
           <Property Name="Username" Type="nvarchar" MaxLength="50" />
-          <Property Name="UserExtID" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserExtID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="UserGPF1" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF2" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF3" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF4" Type="nvarchar" MaxLength="50" />
           <Property Name="UserGPF5" Type="nvarchar" MaxLength="50" />
           <Property Name="Cardserialnumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="CardID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CardID" Type="nvarchar" MaxLength="50" />
           <Property Name="Doorname" Type="nvarchar" MaxLength="50" />
           <Property Name="DoorExtID" Type="nvarchar" MaxLength="50" />
           <Property Name="DoorGPF1" Type="nvarchar" MaxLength="50" />
           <Property Name="DoorGPF2" Type="nvarchar" MaxLength="50" />
           <Property Name="EventDay" Type="datetime" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'DOORS.dbo.vwDoorTimes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwDoorTimes">
           <Key>
-            <PropertyRef Name="CardID" />
+            <PropertyRef Name="UserExtID" />
           </Key>
           <Property Name="EntryTime" Type="datetime" />
           <Property Name="ExitTime" Type="datetime" />
-          <Property Name="CardID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EventDay" Type="datetime" />
+          <Property Name="UserExtID" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'DOORS.dbo.vwMax' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vwMax">
-          <Key>
-            <PropertyRef Name="CardID" />
-          </Key>
-          <Property Name="EventTime" Type="datetime" />
-          <Property Name="CardID" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="EventDay" Type="datetime" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DOORS.dbo.vwMin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vwMin">
-          <Key>
-            <PropertyRef Name="CardID" />
-          </Key>
-          <Property Name="EventTime" Type="datetime" />
-          <Property Name="CardID" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="EventDay" Type="datetime" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DOORS.dbo.vwWorkingTimes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6013: The table/view 'DOORS.dbo.vwWorkingTimes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="vwWorkingTimes">
-          <Key>
-            <PropertyRef Name="CardID" />
-          </Key>
           <Property Name="EntryTime" Type="datetime" />
           <Property Name="ExitTime" Type="datetime" />
-          <Property Name="CardID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EventDay" Type="datetime" />
           <Property Name="TotalHours" Type="int" />
           <Property Name="TotalMinutes" Type="int" />
@@ -111,12 +87,12 @@ warning 6002: The table/view 'DOORS.dbo.vwWorkingTimes' does not have a primary 
           <Property Name="RecYear" Type="int" />
           <Property Name="RecMonth" Type="int" />
           <Property Name="RecDay" Type="int" />
-        </EntityType>
+          <Property Name="UserExtID" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
         <EntityContainer Name="DOORSModelStoreContainer">
           <EntitySet Name="DoorsRawData" EntityType="Self.DoorsRawData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vw1" EntityType="Self.vw1" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vw1].[ID] AS [ID], 
     [vw1].[Eventdatetime] AS [Eventdatetime], 
     [vw1].[EventdatetimeUTC] AS [EventdatetimeUTC], 
     [vw1].[OperationID] AS [OperationID], 
@@ -136,75 +112,57 @@ warning 6002: The table/view 'DOORS.dbo.vwWorkingTimes' does not have a primary 
     [vw1].[DoorExtID] AS [DoorExtID], 
     [vw1].[DoorGPF1] AS [DoorGPF1], 
     [vw1].[DoorGPF2] AS [DoorGPF2], 
-    [vw1].[EventDay] AS [EventDay]
+    [vw1].[EventDay] AS [EventDay], 
+    [vw1].[ID] AS [ID]
     FROM [dbo].[vw1] AS [vw1]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vwDoorTimes" EntityType="Self.vwDoorTimes" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vwDoorTimes].[EntryTime] AS [EntryTime], 
     [vwDoorTimes].[ExitTime] AS [ExitTime], 
-    [vwDoorTimes].[CardID] AS [CardID], 
-    [vwDoorTimes].[EventDay] AS [EventDay]
+    [vwDoorTimes].[EventDay] AS [EventDay], 
+    [vwDoorTimes].[UserExtID] AS [UserExtID]
     FROM [dbo].[vwDoorTimes] AS [vwDoorTimes]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vwMax" EntityType="Self.vwMax" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vwMax].[EventTime] AS [EventTime], 
-    [vwMax].[CardID] AS [CardID], 
-    [vwMax].[EventDay] AS [EventDay]
-    FROM [dbo].[vwMax] AS [vwMax]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwMin" EntityType="Self.vwMin" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vwMin].[EventTime] AS [EventTime], 
-    [vwMin].[CardID] AS [CardID], 
-    [vwMin].[EventDay] AS [EventDay]
-    FROM [dbo].[vwMin] AS [vwMin]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwWorkingTimes" EntityType="Self.vwWorkingTimes" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vwWorkingTimes].[EntryTime] AS [EntryTime], 
-    [vwWorkingTimes].[ExitTime] AS [ExitTime], 
-    [vwWorkingTimes].[CardID] AS [CardID], 
-    [vwWorkingTimes].[EventDay] AS [EventDay], 
-    [vwWorkingTimes].[TotalHours] AS [TotalHours], 
-    [vwWorkingTimes].[TotalMinutes] AS [TotalMinutes], 
-    [vwWorkingTimes].[AndMinutes] AS [AndMinutes], 
-    [vwWorkingTimes].[WorkingHours] AS [WorkingHours], 
-    [vwWorkingTimes].[WorkingMinutes] AS [WorkingMinutes], 
-    [vwWorkingTimes].[HourDiff] AS [HourDiff], 
-    [vwWorkingTimes].[MinuteDiff] AS [MinuteDiff], 
-    [vwWorkingTimes].[RecYear] AS [RecYear], 
-    [vwWorkingTimes].[RecMonth] AS [RecMonth], 
-    [vwWorkingTimes].[RecDay] AS [RecDay]
-    FROM [dbo].[vwWorkingTimes] AS [vwWorkingTimes]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DOORSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vwDoorTime">
+          <Key>
+            <PropertyRef Name="UserExtID" />
+          </Key>
+          <Property Name="EntryTime" Type="DateTime" Precision="3" />
+          <Property Name="ExitTime" Type="DateTime" Precision="3" />
+          <Property Name="EventDay" Type="DateTime" Precision="3" />
+          <Property Name="UserExtID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DOORSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vwDoorTimes" EntityType="Self.vwDoorTime" />
+          <EntitySet Name="DoorsRawDatas" EntityType="DOORSModel.DoorsRawData" />
+          <EntitySet Name="vw1" EntityType="DOORSModel.vw1" />
+          </EntityContainer>
         <EntityType Name="DoorsRawData">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Eventdatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserExtID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EventdatetimeUTC" Type="DateTime" Precision="3" />
           <Property Name="OperationID" Type="Int16" />
           <Property Name="Isexit" Type="Int16" />
           <Property Name="Operationdescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Usertype" Type="Int16" />
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UserExtID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Cardserialnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CardID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CardID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Doorname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DoorExtID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DoorGPF1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -212,11 +170,10 @@ warning 6002: The table/view 'DOORS.dbo.vwWorkingTimes' does not have a primary 
         </EntityType>
         <EntityType Name="vw1">
           <Key>
-            <PropertyRef Name="ID" />
             <PropertyRef Name="Eventdatetime" />
-            <PropertyRef Name="CardID" />
+            <PropertyRef Name="UserExtID" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Eventdatetime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EventdatetimeUTC" Type="DateTime" Precision="3" />
           <Property Name="OperationID" Type="Int16" />
@@ -224,180 +181,91 @@ warning 6002: The table/view 'DOORS.dbo.vwWorkingTimes' does not have a primary 
           <Property Name="Operationdescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Usertype" Type="Int16" />
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UserExtID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserExtID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserGPF5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Cardserialnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CardID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CardID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Doorname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DoorExtID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DoorGPF1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DoorGPF2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EventDay" Type="DateTime" Precision="3" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="vwDoorTime">
-          <Key>
-            <PropertyRef Name="CardID" />
-          </Key>
-          <Property Name="EntryTime" Type="DateTime" Precision="3" />
-          <Property Name="ExitTime" Type="DateTime" Precision="3" />
-          <Property Name="CardID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EventDay" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="vwMax">
-          <Key>
-            <PropertyRef Name="CardID" />
-          </Key>
-          <Property Name="EventTime" Type="DateTime" Precision="3" />
-          <Property Name="CardID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EventDay" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="vwMin">
-          <Key>
-            <PropertyRef Name="CardID" />
-          </Key>
-          <Property Name="EventTime" Type="DateTime" Precision="3" />
-          <Property Name="CardID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EventDay" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="vwWorkingTime">
-          <Key>
-            <PropertyRef Name="CardID" />
-          </Key>
-          <Property Name="EntryTime" Type="DateTime" Precision="3" />
-          <Property Name="ExitTime" Type="DateTime" Precision="3" />
-          <Property Name="CardID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EventDay" Type="DateTime" Precision="3" />
-          <Property Name="TotalHours" Type="Int32" />
-          <Property Name="TotalMinutes" Type="Int32" />
-          <Property Name="AndMinutes" Type="Int32" />
-          <Property Name="WorkingHours" Type="Int32" />
-          <Property Name="WorkingMinutes" Type="Int32" />
-          <Property Name="HourDiff" Type="Int32" />
-          <Property Name="MinuteDiff" Type="Int32" />
-          <Property Name="RecYear" Type="Int32" />
-          <Property Name="RecMonth" Type="Int32" />
-          <Property Name="RecDay" Type="Int32" />
-        </EntityType>
-        <EntityContainer Name="DOORSEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="DoorsRawDatas" EntityType="Self.DoorsRawData" />
-          <EntitySet Name="vw1" EntityType="Self.vw1" />
-          <EntitySet Name="vwDoorTimes" EntityType="Self.vwDoorTime" />
-          <EntitySet Name="vwMaxes" EntityType="Self.vwMax" />
-          <EntitySet Name="vwMins" EntityType="Self.vwMin" />
-          <EntitySet Name="vwWorkingTimes" EntityType="Self.vwWorkingTime" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DOORSModelStoreContainer" CdmEntityContainer="DOORSEntities">
-          <EntitySetMapping Name="DoorsRawDatas">
-            <EntityTypeMapping TypeName="DOORSModel.DoorsRawData">
-              <MappingFragment StoreEntitySet="DoorsRawData">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Eventdatetime" ColumnName="Eventdatetime" />
-                <ScalarProperty Name="EventdatetimeUTC" ColumnName="EventdatetimeUTC" />
-                <ScalarProperty Name="OperationID" ColumnName="OperationID" />
-                <ScalarProperty Name="Isexit" ColumnName="Isexit" />
-                <ScalarProperty Name="Operationdescription" ColumnName="Operationdescription" />
-                <ScalarProperty Name="Usertype" ColumnName="Usertype" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="UserExtID" ColumnName="UserExtID" />
-                <ScalarProperty Name="UserGPF1" ColumnName="UserGPF1" />
-                <ScalarProperty Name="UserGPF2" ColumnName="UserGPF2" />
-                <ScalarProperty Name="UserGPF3" ColumnName="UserGPF3" />
-                <ScalarProperty Name="UserGPF4" ColumnName="UserGPF4" />
-                <ScalarProperty Name="UserGPF5" ColumnName="UserGPF5" />
-                <ScalarProperty Name="Cardserialnumber" ColumnName="Cardserialnumber" />
-                <ScalarProperty Name="CardID" ColumnName="CardID" />
-                <ScalarProperty Name="Doorname" ColumnName="Doorname" />
-                <ScalarProperty Name="DoorExtID" ColumnName="DoorExtID" />
-                <ScalarProperty Name="DoorGPF1" ColumnName="DoorGPF1" />
-                <ScalarProperty Name="DoorGPF2" ColumnName="DoorGPF2" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw1">
-            <EntityTypeMapping TypeName="DOORSModel.vw1">
-              <MappingFragment StoreEntitySet="vw1">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Eventdatetime" ColumnName="Eventdatetime" />
-                <ScalarProperty Name="EventdatetimeUTC" ColumnName="EventdatetimeUTC" />
-                <ScalarProperty Name="OperationID" ColumnName="OperationID" />
-                <ScalarProperty Name="Isexit" ColumnName="Isexit" />
-                <ScalarProperty Name="Operationdescription" ColumnName="Operationdescription" />
-                <ScalarProperty Name="Usertype" ColumnName="Usertype" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="UserExtID" ColumnName="UserExtID" />
-                <ScalarProperty Name="UserGPF1" ColumnName="UserGPF1" />
-                <ScalarProperty Name="UserGPF2" ColumnName="UserGPF2" />
-                <ScalarProperty Name="UserGPF3" ColumnName="UserGPF3" />
-                <ScalarProperty Name="UserGPF4" ColumnName="UserGPF4" />
-                <ScalarProperty Name="UserGPF5" ColumnName="UserGPF5" />
-                <ScalarProperty Name="Cardserialnumber" ColumnName="Cardserialnumber" />
-                <ScalarProperty Name="CardID" ColumnName="CardID" />
-                <ScalarProperty Name="Doorname" ColumnName="Doorname" />
-                <ScalarProperty Name="DoorExtID" ColumnName="DoorExtID" />
-                <ScalarProperty Name="DoorGPF1" ColumnName="DoorGPF1" />
-                <ScalarProperty Name="DoorGPF2" ColumnName="DoorGPF2" />
-                <ScalarProperty Name="EventDay" ColumnName="EventDay" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vwDoorTimes">
             <EntityTypeMapping TypeName="DOORSModel.vwDoorTime">
               <MappingFragment StoreEntitySet="vwDoorTimes">
                 <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
                 <ScalarProperty Name="ExitTime" ColumnName="ExitTime" />
-                <ScalarProperty Name="CardID" ColumnName="CardID" />
                 <ScalarProperty Name="EventDay" ColumnName="EventDay" />
+                <ScalarProperty Name="UserExtID" ColumnName="UserExtID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vwMaxes">
-            <EntityTypeMapping TypeName="DOORSModel.vwMax">
-              <MappingFragment StoreEntitySet="vwMax">
-                <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+          <EntitySetMapping Name="DoorsRawDatas">
+            <EntityTypeMapping TypeName="DOORSModel.DoorsRawData">
+              <MappingFragment StoreEntitySet="DoorsRawData">
+                <ScalarProperty Name="DoorGPF2" ColumnName="DoorGPF2" />
+                <ScalarProperty Name="DoorGPF1" ColumnName="DoorGPF1" />
+                <ScalarProperty Name="DoorExtID" ColumnName="DoorExtID" />
+                <ScalarProperty Name="Doorname" ColumnName="Doorname" />
                 <ScalarProperty Name="CardID" ColumnName="CardID" />
-                <ScalarProperty Name="EventDay" ColumnName="EventDay" />
+                <ScalarProperty Name="Cardserialnumber" ColumnName="Cardserialnumber" />
+                <ScalarProperty Name="UserGPF5" ColumnName="UserGPF5" />
+                <ScalarProperty Name="UserGPF4" ColumnName="UserGPF4" />
+                <ScalarProperty Name="UserGPF3" ColumnName="UserGPF3" />
+                <ScalarProperty Name="UserGPF2" ColumnName="UserGPF2" />
+                <ScalarProperty Name="UserGPF1" ColumnName="UserGPF1" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Usertype" ColumnName="Usertype" />
+                <ScalarProperty Name="Operationdescription" ColumnName="Operationdescription" />
+                <ScalarProperty Name="Isexit" ColumnName="Isexit" />
+                <ScalarProperty Name="OperationID" ColumnName="OperationID" />
+                <ScalarProperty Name="EventdatetimeUTC" ColumnName="EventdatetimeUTC" />
+                <ScalarProperty Name="UserExtID" ColumnName="UserExtID" />
+                <ScalarProperty Name="Eventdatetime" ColumnName="Eventdatetime" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vwMins">
-            <EntityTypeMapping TypeName="DOORSModel.vwMin">
-              <MappingFragment StoreEntitySet="vwMin">
-                <ScalarProperty Name="EventTime" ColumnName="EventTime" />
-                <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <EntitySetMapping Name="vw1">
+            <EntityTypeMapping TypeName="IsTypeOf(DOORSModel.vw1)">
+              <MappingFragment StoreEntitySet="vw1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserExtID" ColumnName="UserExtID" />
+                <ScalarProperty Name="Eventdatetime" ColumnName="Eventdatetime" />
                 <ScalarProperty Name="EventDay" ColumnName="EventDay" />
+                <ScalarProperty Name="DoorGPF2" ColumnName="DoorGPF2" />
+                <ScalarProperty Name="DoorGPF1" ColumnName="DoorGPF1" />
+                <ScalarProperty Name="DoorExtID" ColumnName="DoorExtID" />
+                <ScalarProperty Name="Doorname" ColumnName="Doorname" />
+                <ScalarProperty Name="CardID" ColumnName="CardID" />
+                <ScalarProperty Name="Cardserialnumber" ColumnName="Cardserialnumber" />
+                <ScalarProperty Name="UserGPF5" ColumnName="UserGPF5" />
+                <ScalarProperty Name="UserGPF4" ColumnName="UserGPF4" />
+                <ScalarProperty Name="UserGPF3" ColumnName="UserGPF3" />
+                <ScalarProperty Name="UserGPF2" ColumnName="UserGPF2" />
+                <ScalarProperty Name="UserGPF1" ColumnName="UserGPF1" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Usertype" ColumnName="Usertype" />
+                <ScalarProperty Name="Operationdescription" ColumnName="Operationdescription" />
+                <ScalarProperty Name="Isexit" ColumnName="Isexit" />
+                <ScalarProperty Name="OperationID" ColumnName="OperationID" />
+                <ScalarProperty Name="EventdatetimeUTC" ColumnName="EventdatetimeUTC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vwWorkingTimes">
-            <EntityTypeMapping TypeName="DOORSModel.vwWorkingTime">
-              <MappingFragment StoreEntitySet="vwWorkingTimes">
-                <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
-                <ScalarProperty Name="ExitTime" ColumnName="ExitTime" />
-                <ScalarProperty Name="CardID" ColumnName="CardID" />
-                <ScalarProperty Name="EventDay" ColumnName="EventDay" />
-                <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
-                <ScalarProperty Name="TotalMinutes" ColumnName="TotalMinutes" />
-                <ScalarProperty Name="AndMinutes" ColumnName="AndMinutes" />
-                <ScalarProperty Name="WorkingHours" ColumnName="WorkingHours" />
-                <ScalarProperty Name="WorkingMinutes" ColumnName="WorkingMinutes" />
-                <ScalarProperty Name="HourDiff" ColumnName="HourDiff" />
-                <ScalarProperty Name="MinuteDiff" ColumnName="MinuteDiff" />
-                <ScalarProperty Name="RecYear" ColumnName="RecYear" />
-                <ScalarProperty Name="RecMonth" ColumnName="RecMonth" />
-                <ScalarProperty Name="RecDay" ColumnName="RecDay" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

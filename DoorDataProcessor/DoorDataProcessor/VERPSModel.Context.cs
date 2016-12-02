@@ -13,10 +13,10 @@ namespace DoorDataProcessor
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DOORSEntities : DbContext
+    public partial class VERPSEntities : DbContext
     {
-        public DOORSEntities()
-            : base("name=DOORSEntities")
+        public VERPSEntities()
+            : base("name=VERPSEntities")
         {
         }
     
@@ -25,8 +25,6 @@ namespace DoorDataProcessor
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<vwDoorTime> vwDoorTimes { get; set; }
-        public virtual DbSet<DoorsRawData> DoorsRawDatas { get; set; }
-        public virtual DbSet<vw1> vw1 { get; set; }
+        public virtual DbSet<hrWorkingHour> hrWorkingHours { get; set; }
     }
 }

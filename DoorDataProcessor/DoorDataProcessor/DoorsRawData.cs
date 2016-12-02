@@ -16,13 +16,13 @@ namespace DoorDataProcessor
     {
         public int ID { get; set; }
         public System.DateTime Eventdatetime { get; set; }
+        public string UserExtID { get; set; }
         public Nullable<System.DateTime> EventdatetimeUTC { get; set; }
         public Nullable<short> OperationID { get; set; }
         public Nullable<short> Isexit { get; set; }
         public string Operationdescription { get; set; }
         public Nullable<short> Usertype { get; set; }
         public string Username { get; set; }
-        public string UserExtID { get; set; }
         public string UserGPF1 { get; set; }
         public string UserGPF2 { get; set; }
         public string UserGPF3 { get; set; }

@@ -14,7 +14,6 @@ namespace DoorDataProcessor
     
     public partial class vw1
     {
-        public int ID { get; set; }
         public System.DateTime Eventdatetime { get; set; }
         public Nullable<System.DateTime> EventdatetimeUTC { get; set; }
         public Nullable<short> OperationID { get; set; }
@@ -35,5 +34,6 @@ namespace DoorDataProcessor
         public string DoorGPF1 { get; set; }
         public string DoorGPF2 { get; set; }
         public Nullable<System.DateTime> EventDay { get; set; }
+        public int ID { get; set; }
     }
 }

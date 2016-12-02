@@ -16,7 +16,7 @@ namespace DoorDataProcessor
     {
         public Nullable<System.DateTime> EntryTime { get; set; }
         public Nullable<System.DateTime> ExitTime { get; set; }
-        public string CardID { get; set; }
         public Nullable<System.DateTime> EventDay { get; set; }
+        public string UserExtID { get; set; }
     }
 }

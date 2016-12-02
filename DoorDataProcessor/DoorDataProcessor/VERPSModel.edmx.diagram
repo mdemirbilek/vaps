@@ -4,10 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d32b96e72b594b2d905c01c59e4f9a9e" Name="Diagram1">
-        <EntityTypeShape EntityType="DOORSModel.vwDoorTime" Width="1.5" PointX="4.75" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOORSModel.DoorsRawData" Width="1.5" PointX="3" PointY="0.625" />
-        <EntityTypeShape EntityType="DOORSModel.vw1" Width="1.5" PointX="0.75" PointY="0.75" />
+      <Diagram DiagramId="e92da40b68ea42f7bbfc2fb7bb25ea38" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="VERPSModel.hrWorkingHour" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

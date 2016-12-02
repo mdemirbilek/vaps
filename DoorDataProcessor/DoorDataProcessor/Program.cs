@@ -12,10 +12,15 @@ namespace DoorDataProcessor
 {
     class Program
     {
+
         static void Main(string[] args)
         {
 
             string op = "";
+            int y = 0;
+            int m = 0;
+            int d = 0;
+            DateTime opDate = DateTime.Today;
 
             try
             {
@@ -26,31 +31,167 @@ namespace DoorDataProcessor
                 op = "";
             }
 
-            if (op != "pald")
+            try
             {
-                ParseAndLoadData();
+                y = int.Parse(args[1].Trim().ToString());
+                m = int.Parse(args[2].Trim().ToString());
+                d = int.Parse(args[3].Trim().ToString());
+            }
+            catch (Exception ex)
+            {
+                y = 0;
+                m = 0;
+                d = 0;
             }
 
+            if (y > 0 && m > 0 && d > 0)
+            {
+                try
+                {
+                    opDate = DateTime.Parse(y.ToString() + "-" + m.ToString() + "-" + d.ToString());
 
+                }
+                catch (Exception)
+                {
+                    opDate = DateTime.Today;
+                }
+            }
+
+            if (op != "parseload")
+            {
+                ParseAndLoadData(opDate);
+            }
+            else if (op == "calculate")
+            {
+                CalcWorkingTimes(opDate);
+            }
+
+            //Console.WriteLine(opDate.ToShortDateString());
+
+            //Console.ReadLine();
 
         }
 
-        private static void ParseAndLoadData()
+        private static void ParseAndLoadData(DateTime opDate)
         {
-            DateTime dtNow = DateTime.Now;
-            //\\10.10.5.6\DoorExportFiles
+            var doorsDb = new DOORSEntities();
+            DataAccess.DataTable dt;
 
             string fileName = @"\\10.10.5.6\DoorExportFiles\DoorsNightlyRawData";
-            fileName = fileName + dtNow.Year.ToString() + get2Digit(dtNow.Month.ToString()) + get2Digit(dtNow.Day.ToString());
+            fileName = fileName + opDate.Year.ToString() + get2Digit(opDate.Month.ToString()) + get2Digit(opDate.Day.ToString());
 
-            DataAccess.DataTable dt = DataAccess.DataTable.New.ReadCsv(fileName);
+            try
+            {
+                dt = DataAccess.DataTable.New.ReadCsv(fileName);
+            }
+            catch (Exception)
+            {
+                dt = null;
+            }
 
-            Console.WriteLine(fileName);
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            if (dt != null)
+            {
+                foreach (Row row in dt.Rows)
+                {
+
+                    if (row["Event date/time"].Trim() != "" && row["User ExtID"].Trim() != "")
+                    {
+                        try
+                        {
+                            DoorsRawData drd = new DoorsRawData();
+
+                            drd.Eventdatetime = DateTime.Parse(row["Event date/time"]);
+                            drd.EventdatetimeUTC = DateTime.Parse(row["Event date/time UTC"]);
+                            drd.OperationID = Int16.Parse(row["Operation ID"]);
+                            drd.Isexit = Int16.Parse(row["Is exit"]);
+                            drd.Operationdescription = row["Operation description"];
+                            drd.Usertype = Int16.Parse(row["User type"]);
+                            drd.Username = row["User name"];
+                            drd.UserExtID = row["User ExtID"];
+                            drd.UserGPF1 = row["User GPF1"];
+                            drd.UserGPF2 = row["User GPF2"];
+                            drd.UserGPF3 = row["User GPF3"];
+                            drd.UserGPF4 = row["User GPF4"];
+                            drd.UserGPF5 = row["User GPF5"];
+                            drd.Cardserialnumber = row["Card serial number"];
+                            drd.CardID = row["Card ID"];
+                            drd.Doorname = row["Door name"];
+                            drd.DoorExtID = row["Door ExtID"];
+                            drd.DoorGPF1 = row["Door GPF1"];
+                            drd.DoorGPF2 = row["Door GPF2"];
+
+                            doorsDb.DoorsRawDatas.Add(drd);
+                            i += 1;
+
+                        }
+                        catch (Exception ex)
+                        {
+                            j += 1;
+                        }
+                    }
+                    else
+                    {
+                        k += 1;
+                    }
+
+                }
+
+            }
+
+            doorsDb.SaveChanges();
+
+            dt = null;
+            doorsDb.Dispose();
+
+            Console.WriteLine(i);
+            Console.WriteLine(j);
+            Console.WriteLine(k);
 
             Console.ReadLine();
 
+        }
+
+
+
+        private static void CalcWorkingTimes(DateTime opDate)
+        {
+            //var doorsDb2 = new DOORSEntities();
+            //var verpsDb2 = new VERPSEntities();
+
+            //var doorTimes = from b in doorsDb2.vwWorkingTimes
+            //                where b.RecYear == opDate.Year && b.RecMonth == opDate.Month && b.RecDay == opDate.Day
+            //                select b;
+
+
+            //var empTimes = from b in verpsDb2.hrWorkingHours
+            //               where b.RecYear.Equals(opDate.Year) && b.RecMonth.Equals(opDate.Month) && b.RecDay.Equals(opDate.Day)
+            //               select b;
+
+
+            //foreach (var doorTime in doorTimes)
+            //{
+            //    foreach (var empTime in empTimes)
+            //    {
+
+
+            //        if (doorTime.CardID == empTime.AccessCardID && doorTime.RecYear == empTime.RecYear && doorTime.RecMonth == empTime.RecMonth && doorTime.RecDay == empTime.RecDay)
+            //        {
+            //            empTime.EntryTime = doorTime.EntryTime;
+            //            empTime.ExitTime = doorTime.ExitTime;
+            //            empTime.TotalHours = doorTime.WorkingHours;
+            //            empTime.TotalMinutes = doorTime.WorkingMinutes;
+            //            empTime.Modified = DateTimeOffset.Now;
+            //            //empTime.DayOfWeek = "Sunday";
+            //        }
+            //    }
+            //}
 
         }
+
 
 
         private static string get2Digit(string s)

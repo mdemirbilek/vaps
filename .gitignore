@@ -241,3 +241,5 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /ConsoleTest1/ConsoleTest1/App.config
+
+*.config

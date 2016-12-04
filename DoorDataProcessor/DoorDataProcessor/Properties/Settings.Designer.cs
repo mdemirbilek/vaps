@@ -23,27 +23,31 @@ namespace DoorDataProcessor.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("adm\\mdemirbilek")]
-        public string sysUsr {
+        [global::System.Configuration.DefaultSettingValueAttribute("mdemirbilek")]
+        public string vUser {
             get {
-                return ((string)(this["sysUsr"]));
-            }
-            set {
-                this["sysUsr"] = value;
+                return ((string)(this["vUser"]));
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("De")]
-        public string sysPass {
+        [global::System.Configuration.DefaultSettingValueAttribute("Demirbim!21")]
+        public string vPass {
             get {
-                return ((string)(this["sysPass"]));
+                return ((string)(this["vPass"]));
             }
-            set {
-                this["sysPass"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1234/ApplicationData.svc")]
+        public string vUri {
+            get {
+                return ((string)(this["vUri"]));
             }
         }
     }

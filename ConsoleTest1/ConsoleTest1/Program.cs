@@ -22,22 +22,20 @@ namespace ConsoleTest1
 
             //var ss = ad.Students.Where(r => r.Id == 2).ToList();
 
-
             var studd = ad.Students.Where(p => p.Id == 2).SingleOrDefault();
 
-            //var ents = ad.Entities;
+            int i = 0;
+            studd = null;
 
-
-            studd.Name = "Friday211";
-            studd.Surname = "Saturday211";
-
-            //ad.AddToStudents(s1);
-
-
+            studd = ad.Students.Where(p => p.Id == 2).SingleOrDefault();
+            studd.Name = "qqqqqq";
+            studd.Surname = "aaaa";
             ad.UpdateObject(studd);
 
-
-           
+            studd = ad.Students.Where(p => p.Id == 3).SingleOrDefault();
+            studd.Name = "aaaaaaa";
+            studd.Surname = "bbbb";
+            ad.UpdateObject(studd);
 
 
             ad.SaveChanges();

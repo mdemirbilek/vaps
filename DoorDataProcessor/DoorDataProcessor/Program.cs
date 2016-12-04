@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DataAccess; // namespace that Csv reader lives in
 using System.Data;
 using System.Net;
+using System.Configuration;
 
 
 namespace DoorDataProcessor
@@ -76,10 +77,6 @@ namespace DoorDataProcessor
             {
                 CalcWorkingTimes(opDate);
             }
-
-            //Console.WriteLine(opDate.ToShortDateString());
-
-            //Console.ReadLine();
 
         }
 
@@ -166,74 +163,73 @@ namespace DoorDataProcessor
             Console.WriteLine(j);
             Console.WriteLine(k);
 
-            Console.ReadLine();
-
+            Console.WriteLine("DONE!");
         }
 
 
 
         private static void CalcWorkingTimes(DateTime opDate)
         {
+            var doorsDb = new DOORSEntities();
+            var verpsDb = new VERPSEntities();
+            string vUser = Properties.Settings.Default.vUser;
+            string vPass = Properties.Settings.Default.vPass;
+            string vUri = Properties.Settings.Default.vUri;
 
+            System.Uri myUri = new Uri(vUri);
+            VERPSServiceReference.ApplicationData vsr = new VERPSServiceReference.ApplicationData(myUri);
+            vsr.Credentials = new NetworkCredential(vUser, vPass, "adm");
 
+            int i = 0;
+            int j = 0;
 
+            var doorTimes = from d in doorsDb.vwDoorTimes
+                            where d.EventDay == opDate
+                            select d;
 
+            //////var empTimes = from b in verpsDb.hrWorkingHours
+            //////               where b.WorkingDate.Equals(opDate)
+            //////               select b;
 
+            foreach (var doorT in doorTimes)
+            {
+                //////foreach (var empTime in empTimes)
+                //////{
+                //////    if (doorT.UserExtID == empTime.DoorSysID && doorT.EventDay == empTime.WorkingDate)
+                //////    {
+                //////        empTime.EntryTime = doorT.EntryTime;
+                //////        empTime.ExitTime = doorT.ExitTime;
+                //////        empTime.Modified = DateTimeOffset.Now;
+                //////    }
+                //////}
 
-            System.Uri uri = new Uri(@"http://localhost:1234/ApplicationData.svc");
-            NetworkCredential nc = new NetworkCredential(@"adm\md", @"De");
-            VERPSServiceReference.ApplicationData vsr = new VERPSServiceReference.ApplicationData(uri);
-            vsr.Credentials = nc;
+                string ssss = doorT.UserExtID;
+                try
+                {
+                    var doorTime = vsr.hrWorkingHours.Where(p => p.DoorSysID == doorT.UserExtID && p.WorkingDate == doorT.EventDay).SingleOrDefault();
+                    if (doorTime != null)
+                    {
+                        doorTime.EntryTime = doorT.EntryTime;
+                        doorTime.ExitTime = doorT.ExitTime;
+                        vsr.UpdateObject(doorTime);
 
-            VERPSServiceReference.erpFaculty s1 = new VERPSServiceReference.erpFaculty();
+                        j += 1;
+                    }
+                }
+                catch (Exception ex)
+                {
 
-            //var ss = ad.Students.Where(r => r.Id == 2).ToList();
+                }
 
+                i += 1;
+            }
 
-            var studd = vsr.erpFaculties.Where(p => p.Id == 2999).SingleOrDefault();
-
-            //var ents = ad.Entities;
-
-
-            studd.Name = "Friday211";
-
-            //ad.AddToStudents(s1);
-
-            vsr.UpdateObject(studd);
             vsr.SaveChanges();
-            Console.ReadLine();
+            //////verpsDb.SaveChanges();
 
-            //var doorsDb2 = new DOORSEntities();
-            //var verpsDb2 = new VERPSEntities();
-
-            //var doorTimes = from b in doorsDb2.vwWorkingTimes
-            //                where b.RecYear == opDate.Year && b.RecMonth == opDate.Month && b.RecDay == opDate.Day
-            //                select b;
-
-
-            //var empTimes = from b in verpsDb2.hrWorkingHours
-            //               where b.RecYear.Equals(opDate.Year) && b.RecMonth.Equals(opDate.Month) && b.RecDay.Equals(opDate.Day)
-            //               select b;
-
-
-            //foreach (var doorTime in doorTimes)
-            //{
-            //    foreach (var empTime in empTimes)
-            //    {
-
-
-            //        if (doorTime.CardID == empTime.AccessCardID && doorTime.RecYear == empTime.RecYear && doorTime.RecMonth == empTime.RecMonth && doorTime.RecDay == empTime.RecDay)
-            //        {
-            //            empTime.EntryTime = doorTime.EntryTime;
-            //            empTime.ExitTime = doorTime.ExitTime;
-            //            empTime.TotalHours = doorTime.WorkingHours;
-            //            empTime.TotalMinutes = doorTime.WorkingMinutes;
-            //            empTime.Modified = DateTimeOffset.Now;
-            //            //empTime.DayOfWeek = "Sunday";
-            //        }
-            //    }
-            //}
-
+            Console.WriteLine(i);
+            Console.WriteLine(j);
+            Console.WriteLine("DONE!");
         }
 
 

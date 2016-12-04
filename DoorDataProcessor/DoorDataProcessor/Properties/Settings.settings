@@ -2,11 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DoorDataProcessor.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="sysUsr" Type="System.String" Scope="User">
-      <Value Profile="(Default)">adm\mdemirbilek</Value>
+    <Setting Name="vUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mdemirbilek</Value>
     </Setting>
-    <Setting Name="sysPass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">De</Value>
+    <Setting Name="vPass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Demirbim!21</Value>
+    </Setting>
+    <Setting Name="vUri" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1234/ApplicationData.svc</Value>
     </Setting>
   </Settings>
 </SettingsFile>

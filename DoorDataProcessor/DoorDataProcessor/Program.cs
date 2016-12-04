@@ -166,8 +166,6 @@ namespace DoorDataProcessor
             Console.WriteLine("DONE!");
         }
 
-
-
         private static void CalcWorkingTimes(DateTime opDate)
         {
             var doorsDb = new DOORSEntities();
@@ -231,8 +229,6 @@ namespace DoorDataProcessor
             Console.WriteLine(j);
             Console.WriteLine("DONE!");
         }
-
-
 
         private static string get2Digit(string s)
         {

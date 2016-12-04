@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess; // namespace that Csv reader lives in
 using System.Data;
+using System.Net;
 
 
 namespace DoorDataProcessor
@@ -20,6 +21,7 @@ namespace DoorDataProcessor
             int y = 0;
             int m = 0;
             int d = 0;
+            int dateDiffAsDay = -1;
             DateTime opDate = DateTime.Today;
 
             try
@@ -43,6 +45,14 @@ namespace DoorDataProcessor
                 m = 0;
                 d = 0;
             }
+            try
+            {
+                dateDiffAsDay = int.Parse(args[4].Trim().ToString());
+            }
+            catch (Exception ex)
+            {
+                dateDiffAsDay = -1;
+            }
 
             if (y > 0 && m > 0 && d > 0)
             {
@@ -57,7 +67,9 @@ namespace DoorDataProcessor
                 }
             }
 
-            if (op != "parseload")
+            opDate = opDate.AddDays(dateDiffAsDay); // Hep bir önceki günün işlemi yapılacağı için hani.. yani genelde..
+
+            if (op == "parseload")
             {
                 ParseAndLoadData(opDate);
             }
@@ -77,8 +89,12 @@ namespace DoorDataProcessor
             var doorsDb = new DOORSEntities();
             DataAccess.DataTable dt;
 
+
             string fileName = @"\\10.10.5.6\DoorExportFiles\DoorsNightlyRawData";
             fileName = fileName + opDate.Year.ToString() + get2Digit(opDate.Month.ToString()) + get2Digit(opDate.Day.ToString());
+
+            //Console.WriteLine(fileName);
+            //Console.ReadLine();
 
             try
             {
@@ -159,6 +175,35 @@ namespace DoorDataProcessor
 
         private static void CalcWorkingTimes(DateTime opDate)
         {
+
+
+
+
+
+
+            System.Uri uri = new Uri(@"http://localhost:1234/ApplicationData.svc");
+            NetworkCredential nc = new NetworkCredential(@"adm\md", @"De");
+            VERPSServiceReference.ApplicationData vsr = new VERPSServiceReference.ApplicationData(uri);
+            vsr.Credentials = nc;
+
+            VERPSServiceReference.erpFaculty s1 = new VERPSServiceReference.erpFaculty();
+
+            //var ss = ad.Students.Where(r => r.Id == 2).ToList();
+
+
+            var studd = vsr.erpFaculties.Where(p => p.Id == 2999).SingleOrDefault();
+
+            //var ents = ad.Entities;
+
+
+            studd.Name = "Friday211";
+
+            //ad.AddToStudents(s1);
+
+            vsr.UpdateObject(studd);
+            vsr.SaveChanges();
+            Console.ReadLine();
+
             //var doorsDb2 = new DOORSEntities();
             //var verpsDb2 = new VERPSEntities();
 

@@ -112,7 +112,7 @@
                 <ContentItem
                   Name="AccessCardID"
                   Kind="Value"
-                  DataType=":String">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -514,7 +514,7 @@
               <ContentItem
                 Name="AccessCardID1"
                 Kind="Value"
-                DataType=":String">
+                DataType=":String?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>

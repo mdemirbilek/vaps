@@ -1,0 +1,25 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0">
+    <Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Student">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="Surname" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Created" Type="Edm.DateTimeOffset" />
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Modified" Type="Edm.DateTimeOffset" />
+        <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+      </EntityType>
+      <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Students" EntityType="LightSwitchApplication.Student" />
+        <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
+          <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
+        </FunctionImport>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

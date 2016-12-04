@@ -16,7 +16,6 @@ namespace DoorDataProcessor
 
         static void Main(string[] args)
         {
-
             string op = "";
             int y = 0;
             int m = 0;

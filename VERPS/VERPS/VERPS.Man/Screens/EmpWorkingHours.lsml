@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="WorkingHoursGrid">
+    Name="EmpWorkingHours">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
@@ -19,6 +19,55 @@
           Name="ScreenLayout"
           Kind="Group">
           <ContentItem
+            Name="hrWorkingHourId"
+            Kind="Details"
+            DataType="hrPerson">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="EmpWorkingHours/Properties[hrWorkingHourId]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem
+              Name="RowTemplate"
+              Kind="Details"
+              DataType="hrPerson">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Name="hrWorkingHourRecYear"
+            Kind="Value"
+            DataType=":Int32">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="EmpWorkingHours/Properties[hrWorkingHourRecYear]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Name="hrWorkingHourRecMonth"
+            Kind="Value"
+            DataType=":Int32">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="EmpWorkingHours/Properties[hrWorkingHourRecMonth]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
             Name="grid"
             Kind="Collection"
             DataType="CollectionView$hrWorkingHour">
@@ -26,12 +75,12 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="WorkingHoursGrid/Properties[hrWorkingHours]" />
+                    Member="EmpWorkingHours/Properties[byEmpByYearByMonth]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
             <ContentItem
-              Name="RowTemplate"
+              Name="RowTemplate1"
               Kind="Details"
               DataType="hrWorkingHour">
               <ContentItem.DataSource>
@@ -52,7 +101,7 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="RowTemplate1"
+                  Name="RowTemplate2"
                   Kind="Details"
                   DataType="hrPerson">
                   <ContentItem.DataSource>
@@ -63,27 +112,14 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
-                Name="UserName"
+                Name="DoorSysID"
                 Kind="Value"
-                DataType=":String?">
+                DataType=":String">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="hrWorkingHour/Properties[UserName]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="AccessCardID"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrWorkingHour/Properties[AccessCardID]" />
+                        Member="hrWorkingHour/Properties[DoorSysID]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -97,45 +133,6 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="hrWorkingHour/Properties[WorkingDate]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Year"
-                Kind="Value"
-                DataType=":Int32">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrWorkingHour/Properties[RecYear]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Month"
-                Kind="Value"
-                DataType=":Int32">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrWorkingHour/Properties[RecMonth]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Day"
-                Kind="Value"
-                DataType=":Int32">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrWorkingHour/Properties[RecDay]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -162,6 +159,32 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="hrWorkingHour/Properties[IsWorkingDay]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="StdWorkingHour"
+                Kind="Value"
+                DataType=":Int32">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="hrWorkingHour/Properties[StdWorkingHour]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="AssignedWorkingHour"
+                Kind="Value"
+                DataType=":Int32?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="hrWorkingHour/Properties[AssignedWorkingHour]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -245,53 +268,79 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="CreatedBy"
+                Name="HourDiff"
                 Kind="Value"
-                DataType=":Person?">
+                DataType=":Int32?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="hrWorkingHour/Properties[CreatedBy]" />
+                        Member="hrWorkingHour/Properties[HourDiff]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Created"
+                Name="MinuteDiff"
                 Kind="Value"
-                DataType=":DateTimeOffset?">
+                DataType=":Int32?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="hrWorkingHour/Properties[Created]" />
+                        Member="hrWorkingHour/Properties[MinuteDiff]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="ModifiedBy"
+                Name="IsOTAccepted"
                 Kind="Value"
-                DataType=":Person?">
+                DataType=":Boolean?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="hrWorkingHour/Properties[ModifiedBy]" />
+                        Member="hrWorkingHour/Properties[IsOTAccepted]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Modified"
+                Name="OTAcceptedBy"
                 Kind="Value"
-                DataType=":DateTimeOffset?">
+                DataType=":String?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="hrWorkingHour/Properties[Modified]" />
+                        Member="hrWorkingHour/Properties[OTAcceptedBy]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="AcceptedOTeHrs"
+                Kind="Value"
+                DataType=":Int32?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="hrWorkingHour/Properties[AcceptedOTeHrs]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="AcceptedOTMin"
+                Kind="Value"
+                DataType=":Int32?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="hrWorkingHour/Properties[AcceptedOTMin]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -299,13 +348,13 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="hrWorkingHours_AddAndEditNew"
+                Name="byEmpByYearByMonth_AddAndEditNew"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="WorkingHoursGrid/Properties[hrWorkingHours]" />
+                        Member="EmpWorkingHours/Properties[byEmpByYearByMonth]" />
                       <CallExpression
                         Target="AddAndEditNew" />
                     </ChainExpression>
@@ -313,13 +362,13 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="hrWorkingHours_EditSelected"
+                Name="byEmpByYearByMonth_EditSelected"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="WorkingHoursGrid/Properties[hrWorkingHours]" />
+                        Member="EmpWorkingHours/Properties[byEmpByYearByMonth]" />
                       <CallExpression
                         Target="EditSelected" />
                     </ChainExpression>
@@ -327,13 +376,13 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="hrWorkingHours_DeleteSelected"
+                Name="byEmpByYearByMonth_DeleteSelected"
                 Kind="Command">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="WorkingHoursGrid/Properties[hrWorkingHours]" />
+                        Member="EmpWorkingHours/Properties[byEmpByYearByMonth]" />
                       <CallExpression
                         Target="DeleteSelected" />
                     </ChainExpression>
@@ -373,7 +422,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="WorkingHoursGrid/Methods[Save]" />
+                    Target="EmpWorkingHours/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -385,7 +434,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="WorkingHoursGrid/Methods[Refresh]" />
+                    Target="EmpWorkingHours/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -425,12 +474,12 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="hrWorkingHours"
+        Name="byEmpByYearByMonth"
         PageSize="45"
         PropertyType="CollectionView$hrWorkingHour">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="hrWorkingHoursQuery"
+            Name="byEmpByYearByMonthQuery"
             ReturnType="hrWorkingHour*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
@@ -438,7 +487,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="ApplicationData/Members[hrWorkingHours]" />
+                  Member="ApplicationData/Members[byEmpByYearByMonth]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -446,18 +495,51 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="WorkingHoursGrid/Properties[hrWorkingHours]/Query" />
+              Target="EmpWorkingHours/Properties[byEmpByYearByMonth]/Query">
+              <ArgumentExpression
+                Parameter="Id">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="EmpWorkingHours/Properties[hrWorkingHourId]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="RecYear">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="EmpWorkingHours/Properties[hrWorkingHourRecYear]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="RecMonth">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="EmpWorkingHours/Properties[hrWorkingHourRecMonth]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="hrWorkingHourId"
+        PropertyType="hrPerson" />
+      <ScreenProperty
+        Name="hrWorkingHourRecYear"
+        PropertyType=":Int32" />
+      <ScreenProperty
+        Name="hrWorkingHourRecMonth"
+        PropertyType=":Int32" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowWorkingHoursGrid">
+      Name="ShowEmpWorkingHours">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="WorkingHoursGrid" />
+          TargetScreen="EmpWorkingHours" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

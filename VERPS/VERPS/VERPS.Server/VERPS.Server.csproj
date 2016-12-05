@@ -257,6 +257,12 @@
     <LightSwitchModel Include="DataSources\ApplicationData\erpHRAccountingPeriods.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\erpLanguages.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\hrEvalStatus.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\byEmpByYearByMonth.lsml">
+      <DependentUpon>hrWorkingHours.lsml</DependentUpon>
+    </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\ApplicationData\byDepartment.lsml">
+      <DependentUpon>hrPeople.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -51,9 +51,6 @@
       Name="ScreenCommandShowDepartments"
       Target="!module/Methods[ShowDepartments]" />
     <ApplicationCommand
-      Name="ScreenCommandShowPeople"
-      Target="!module/Methods[ShowPeople]" />
-    <ApplicationCommand
       Name="ScreenCommandShowAcademicalAims"
       Target="!module/Methods[ShowAcademicalAims]" />
     <ApplicationCommand
@@ -90,8 +87,17 @@
       Name="ScreenCommandShowaspnet_Users"
       Target="!module/Methods[Showaspnet_Users]" />
     <ApplicationCommand
-      Name="ScreenCommandShowWorkingHoursGrid"
-      Target="!module/Methods[ShowWorkingHoursGrid]" />
+      Name="ScreenCommandShowEmpWorkingHours"
+      Target="!module/Methods[ShowEmpWorkingHours]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNewPerson"
+      Target="!module/Methods[ShowNewPerson]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowPeople"
+      Target="!module/Methods[ShowPeople]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowWHAssignment"
+      Target="!module/Methods[ShowWHAssignment]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -108,11 +114,18 @@
         Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
-      Name="Tasks">
+      Name="Tasks"
+      DefaultItem="!module/NavigationItems[Tasks]/Children[link15]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Config" />
       </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="aspnet_Users"
+        Command="!module/Commands[ScreenCommandShowaspnet_Users]" />
+      <ApplicationNavigationLink
+        Name="link15"
+        Command="!module/Commands[ScreenCommandShowNewPerson]" />
       <ApplicationNavigationLink
         Name="Faculties"
         Command="!module/Commands[ScreenCommandShowFaculties]" />
@@ -122,12 +135,6 @@
       <ApplicationNavigationLink
         Name="Departments"
         Command="!module/Commands[ScreenCommandShowDepartments]" />
-      <ApplicationNavigationLink
-        Name="People"
-        Command="!module/Commands[ScreenCommandShowPeople]" />
-      <ApplicationNavigationLink
-        Name="aspnet_Users"
-        Command="!module/Commands[ScreenCommandShowaspnet_Users]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group1">
@@ -142,11 +149,14 @@
         Name="link13"
         Command="!module/Commands[ScreenCommandShowDepartments]" />
       <ApplicationNavigationLink
-        Name="link14"
+        Name="link16"
         Command="!module/Commands[ScreenCommandShowPeople]" />
       <ApplicationNavigationLink
-        Name="link15"
-        Command="!module/Commands[ScreenCommandShowWorkingHoursGrid]" />
+        Name="link17"
+        Command="!module/Commands[ScreenCommandShowEmpWorkingHours]" />
+      <ApplicationNavigationLink
+        Name="link14"
+        Command="!module/Commands[ScreenCommandShowWHAssignment]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">

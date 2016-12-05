@@ -41,6 +41,10 @@
               Kind="Collection"
               DataType="CollectionView$hrPerson"
               View="Microsoft.LightSwitch.RichClient:List">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Employee" />
+              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
@@ -53,6 +57,10 @@
                 Name="RowTemplate"
                 Kind="Details"
                 DataType="hrPerson">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Employee" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -1467,50 +1475,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
               </ContentItem>
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Name="byDepartment_AddAndEditNew"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="WHAssignment/Properties[byDepartment]" />
-                        <CallExpression
-                          Target="AddAndEditNew" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="byDepartment_EditSelected"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="WHAssignment/Properties[byDepartment]" />
-                        <CallExpression
-                          Target="EditSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="byDepartment_DeleteSelected"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="WHAssignment/Properties[byDepartment]" />
-                        <CallExpression
-                          Target="DeleteSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem.CommandItems>
               <ContentItem.PropertySources>
                 <ControlPropertySource
                   Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
@@ -1584,6 +1548,37 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
+              <ContentItem
+                Name="Group"
+                Kind="Group"
+                View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+                <ContentItem
+                  Name="RecYear"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="WHAssignment/Properties[RecYear]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="RecMonth"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="WHAssignment/Properties[RecMonth]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
               <ContentItem.PropertySources>
                 <ControlPropertySource
                   Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
@@ -1596,32 +1591,6 @@
                   </ScreenExpressionTree>
                 </ControlPropertySource>
               </ContentItem.PropertySources>
-            </ContentItem>
-            <ContentItem
-              Name="RecYear"
-              Kind="Value"
-              DataType=":Int32">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="WHAssignment/Properties[RecYear]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-            </ContentItem>
-            <ContentItem
-              Name="RecMonth"
-              Kind="Value"
-              DataType=":Int32">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="WHAssignment/Properties[RecMonth]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
               Name="hrWorkingHour"
@@ -1646,14 +1615,14 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="UserName"
+                  Name="DayOfWeek"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="hrWorkingHour/Properties[UserName]" />
+                          Member="hrWorkingHour/Properties[DayOfWeek]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -1672,22 +1641,13 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="DayOfWeek"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrWorkingHour/Properties[DayOfWeek]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="IsWorkingDay"
                   Kind="Value"
                   DataType=":Boolean">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Is W. Day" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -1703,7 +1663,7 @@
                   DataType=":Int32">
                   <ContentItem.Attributes>
                     <DisplayName
-                      Value="Standard WH" />
+                      Value="Std WH" />
                   </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>

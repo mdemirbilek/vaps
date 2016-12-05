@@ -176,6 +176,33 @@ namespace LightSwitchApplication
             //entity.Status = 
         }
 
+        partial void hrWorkingHours_Updating(hrWorkingHour entity)
+        {
+
+            if (Application.User.Name != @"adm\mdemirbilek" && entity.EntryTime != null && entity.ExitTime != null)
+            {
+                DateTime startTime = (DateTime)entity.EntryTime;
+                DateTime endTime = (DateTime)entity.ExitTime;
+                TimeSpan timeSpan = endTime.Subtract(startTime);
+
+                int workedMinute = (timeSpan.Hours * 60) + timeSpan.Minutes;
+                int assignedMinute = (int)entity.AssignedWorkingHour * 60;
+                int minuteDiff = workedMinute - assignedMinute;
+
+                entity.TotalHours = timeSpan.Hours;
+                entity.TotalMinutes = timeSpan.Minutes;
+                entity.HourDiff = minuteDiff / 60;
+                entity.MinuteDiff = minuteDiff % 60;
+
+                if (entity.Details.Properties.IsOTAccepted.OriginalValue == false && entity.IsOTAccepted == true)
+                {
+                    entity.OTAcceptedBy = Application.User.Name;
+                }
+
+            }
+
+        }
+
         //partial void getTotalWH_PreprocessQuery(string usrName, int? RecYear, int? RecMonth, ref IQueryable<hrWorkingHour> query)
         //{
 

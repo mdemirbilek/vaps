@@ -75,6 +75,8 @@ namespace DoorDataProcessor
             }
             else if (op == "calculate")
             {
+
+                //opDate = DateTime.Parse("2016-12-2");
                 CalcWorkingTimes(opDate);
             }
 
@@ -209,8 +211,24 @@ namespace DoorDataProcessor
                     {
                         doorTime.EntryTime = doorT.EntryTime;
                         doorTime.ExitTime = doorT.ExitTime;
-                        vsr.UpdateObject(doorTime);
 
+                        DateTime startTime = (DateTime)doorT.EntryTime;
+                        DateTime endTime = (DateTime)doorT.ExitTime;
+                        TimeSpan timeSpan = endTime.Subtract(startTime);
+
+                        int workedMinute = (timeSpan.Hours * 60) + timeSpan.Minutes;
+                        int assignedMinute = (int)doorTime.AssignedWorkingHour * 60;
+                        int minuteDiff = workedMinute - assignedMinute;
+
+                        doorTime.TotalHours = timeSpan.Hours;
+                        doorTime.TotalMinutes = timeSpan.Minutes;
+                        doorTime.HourDiff = minuteDiff / 60;
+                        doorTime.MinuteDiff = minuteDiff % 60;
+
+
+
+
+                        vsr.UpdateObject(doorTime);
                         j += 1;
                     }
                 }

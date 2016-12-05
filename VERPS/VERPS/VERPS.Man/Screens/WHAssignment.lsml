@@ -1618,6 +1618,10 @@
                   Name="DayOfWeek"
                   Kind="Value"
                   DataType=":String?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Week Day" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -1631,6 +1635,10 @@
                   Name="WorkingDate"
                   Kind="Value"
                   DataType=":Date">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Date" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -1646,7 +1654,7 @@
                   DataType=":Boolean">
                   <ContentItem.Attributes>
                     <DisplayName
-                      Value="Is W. Day" />
+                      Value="W. Day" />
                   </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -1658,29 +1666,12 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="StdWorkingHour"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Std WH" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrWorkingHour/Properties[StdWorkingHour]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="AssignedWorkingHour"
                   Kind="Value"
                   DataType=":Int32?">
                   <ContentItem.Attributes>
                     <DisplayName
-                      Value="Assigned WH" />
+                      Value="AWH" />
                   </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -1721,6 +1712,10 @@
                   Name="TotalHours"
                   Kind="Value"
                   DataType=":Int32?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Total Hrs." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -1743,32 +1738,6 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="hrWorkingHour/Properties[TotalMinutes]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Exception"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrWorkingHour/Properties[Exception]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Note"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrWorkingHour/Properties[Note]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -1813,19 +1782,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="OTAcceptedBy"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrWorkingHour/Properties[OTAcceptedBy]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="AcceptedOTeHrs"
                   Kind="Value"
                   DataType=":Int32?">
@@ -1847,6 +1803,45 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="hrWorkingHour/Properties[AcceptedOTMin]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Exception"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrWorkingHour/Properties[Exception]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Note"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrWorkingHour/Properties[Note]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="OTAcceptedBy"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrWorkingHour/Properties[OTAcceptedBy]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>

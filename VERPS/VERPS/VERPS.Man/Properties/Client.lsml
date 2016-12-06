@@ -3,6 +3,7 @@
   Name="LightSwitchApplication.VERPS.Man"
   TargetPlatform="RichClient"
   Version="1.0.0.0"
+  DefaultNavigationItem="!module/NavigationItems[Administration]"
   Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
   Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
   <Application.Attributes>
@@ -98,10 +99,14 @@
     <ApplicationCommand
       Name="ScreenCommandShowWHAssignment"
       Target="!module/Methods[ShowWHAssignment]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowWorkingHours"
+      Target="!module/Methods[ShowWorkingHours]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
-      Name="Administration">
+      Name="Administration"
+      DefaultItem="!module/NavigationItems[Administration]/Children[WorkingHours]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Administration" />
@@ -112,6 +117,9 @@
       <ApplicationNavigationLink
         Name="UsersScreen"
         Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
+      <ApplicationNavigationLink
+        Name="WorkingHours"
+        Command="!module/Commands[ScreenCommandShowWorkingHours]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Tasks"

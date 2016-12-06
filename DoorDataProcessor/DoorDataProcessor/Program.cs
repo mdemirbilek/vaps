@@ -21,7 +21,7 @@ namespace DoorDataProcessor
             int y = 0;
             int m = 0;
             int d = 0;
-            int dateDiffAsDay = -1;
+            int dateDiffAsDay = 0;
             DateTime opDate = DateTime.Today;
 
             try
@@ -51,7 +51,7 @@ namespace DoorDataProcessor
             }
             catch (Exception ex)
             {
-                dateDiffAsDay = -1;
+                dateDiffAsDay = 0;
             }
 
             if (y > 0 && m > 0 && d > 0)
@@ -67,7 +67,7 @@ namespace DoorDataProcessor
                 }
             }
 
-            opDate = opDate.AddDays(dateDiffAsDay); // Hep bir önceki günün işlemi yapılacağı için hani.. yani genelde..
+            opDate = opDate.AddDays(dateDiffAsDay);
 
             if (op == "parseload")
             {
@@ -76,7 +76,7 @@ namespace DoorDataProcessor
             else if (op == "calculate")
             {
 
-                //opDate = DateTime.Parse("2016-12-2");
+                //opDate = DateTime.Parse("2016-12-1");
                 CalcWorkingTimes(opDate);
             }
 

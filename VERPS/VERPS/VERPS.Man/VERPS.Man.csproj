@@ -243,6 +243,9 @@
     <Compile Include="Screens\WHAssignment.lsml.cs">
       <DependentUpon>WHAssignment.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\WHSupervision.lsml.cs">
+      <DependentUpon>WHSupervision.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\WorkingHours.lsml.cs">
       <DependentUpon>WorkingHours.lsml</DependentUpon>
     </Compile>
@@ -276,6 +279,7 @@
     <LightSwitchModel Include="Screens\People.lsml" />
     <LightSwitchModel Include="Screens\WHAssignment.lsml" />
     <LightSwitchModel Include="Screens\WorkingHours.lsml" />
+    <LightSwitchModel Include="Screens\WHSupervision.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\ApplicationData\" />

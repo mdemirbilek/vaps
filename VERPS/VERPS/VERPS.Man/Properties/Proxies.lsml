@@ -550,4 +550,10 @@
         Target="ServiceInterface:hrEmpCourse_hrEvalStatu" />
     </Association.Attributes>
   </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:hrPerson_hrPerson" />
+    </Association.Attributes>
+  </Association>
 </Application>

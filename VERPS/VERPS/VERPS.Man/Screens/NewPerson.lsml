@@ -86,6 +86,29 @@
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
+              Name="Supervisor"
+              Kind="Details"
+              DataType="hrPerson">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="hrPerson/Properties[Supervisor]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="hrPerson"
+                Kind="Details"
+                DataType="hrPerson">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
               Name="ExtUserName"
               Kind="Value"
               DataType=":String">

@@ -234,6 +234,16 @@
         Association="hrEmpCourse_hrPerson"
         FromEnd="hrPerson"
         ToEnd="hrEmpCourse" />
+      <NavigationProperty
+        Name="Supervised"
+        Association="hrPerson_hrPerson"
+        FromEnd="hrPerson1"
+        ToEnd="hrPerson2" />
+      <NavigationProperty
+        Name="Supervisor"
+        Association="hrPerson_hrPerson"
+        FromEnd="hrPerson2"
+        ToEnd="hrPerson1" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -607,6 +617,16 @@
         Name="hrPerson"
         EntitySet="hrPeople" />
     </AssociationSet>
+    <AssociationSet
+      Name="hrPerson_hrPersons"
+      Association="hrPerson_hrPerson">
+      <AssociationSetEnd
+        Name="hrPerson1"
+        EntitySet="hrPeople" />
+      <AssociationSetEnd
+        Name="hrPerson2"
+        EntitySet="hrPeople" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -622,6 +642,10 @@
           Type="int" />
         <SsdlForeignKeyProperty
           Name="Employee_AcademicDepartment"
+          Nullable="True"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="hrPerson_hrPerson"
           Nullable="True"
           Type="int" />
       </EntitySetMapping.Attributes>
@@ -1109,6 +1133,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrPerson_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrPerson_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrPerson_hrPersons]/Members[hrPerson1]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrPerson_hrPersons]/Members[hrPerson2]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrPerson_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="hrDepartment_hrPerson">
@@ -1472,5 +1517,20 @@
           Action="Restrict" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrPerson_hrPerson">
+    <AssociationEnd
+      Name="hrPerson1"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="hrPerson2"
+      Multiplicity="Many"
+      EntityType="hrPerson" />
   </Association>
 </ServiceApplication>

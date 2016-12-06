@@ -102,11 +102,13 @@
     <ApplicationCommand
       Name="ScreenCommandShowWorkingHours"
       Target="!module/Methods[ShowWorkingHours]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowWHSupervision"
+      Target="!module/Methods[ShowWHSupervision]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
-      Name="Administration"
-      DefaultItem="!module/NavigationItems[Administration]/Children[WorkingHours]">
+      Name="Administration">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Administration" />
@@ -117,13 +119,9 @@
       <ApplicationNavigationLink
         Name="UsersScreen"
         Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
-      <ApplicationNavigationLink
-        Name="WorkingHours"
-        Command="!module/Commands[ScreenCommandShowWorkingHours]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
-      Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[link15]">
+      Name="Tasks">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Config" />
@@ -131,9 +129,6 @@
       <ApplicationNavigationLink
         Name="aspnet_Users"
         Command="!module/Commands[ScreenCommandShowaspnet_Users]" />
-      <ApplicationNavigationLink
-        Name="link15"
-        Command="!module/Commands[ScreenCommandShowNewPerson]" />
       <ApplicationNavigationLink
         Name="Faculties"
         Command="!module/Commands[ScreenCommandShowFaculties]" />
@@ -160,11 +155,20 @@
         Name="link16"
         Command="!module/Commands[ScreenCommandShowPeople]" />
       <ApplicationNavigationLink
+        Name="link15"
+        Command="!module/Commands[ScreenCommandShowNewPerson]" />
+      <ApplicationNavigationLink
+        Name="link18"
+        Command="!module/Commands[ScreenCommandShowWorkingHours]" />
+      <ApplicationNavigationLink
         Name="link17"
         Command="!module/Commands[ScreenCommandShowEmpWorkingHours]" />
       <ApplicationNavigationLink
         Name="link14"
         Command="!module/Commands[ScreenCommandShowWHAssignment]" />
+      <ApplicationNavigationLink
+        Name="link19"
+        Command="!module/Commands[ScreenCommandShowWHSupervision]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">

@@ -263,6 +263,9 @@
     <LightSwitchModel Include="DataSources\ApplicationData\byDepartment.lsml">
       <DependentUpon>hrPeople.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\ApplicationData\bySupervisor.lsml">
+      <DependentUpon>hrPeople.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

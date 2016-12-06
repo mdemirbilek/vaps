@@ -179,11 +179,24 @@ namespace LightSwitchApplication
         partial void hrWorkingHours_Updating(hrWorkingHour entity)
         {
 
-            if (Application.User.Name != @"adm\mdemirbilek" && entity.EntryTime != null && entity.ExitTime != null)
+            if (!Application.User.Name.Contains("appmanager"))
             {
-                DateTime startTime = (DateTime)entity.EntryTime;
-                DateTime endTime = (DateTime)entity.ExitTime;
-                TimeSpan timeSpan = endTime.Subtract(startTime);
+                DateTime startTime;
+                DateTime endTime;
+                TimeSpan timeSpan;
+
+                if (entity.EntryTime != null && entity.ExitTime != null)
+                {
+                    startTime = (DateTime)entity.EntryTime;
+                    endTime = (DateTime)entity.ExitTime;
+                    timeSpan = endTime.Subtract(startTime);
+                }
+                else
+                {
+                    DateTime justNow = DateTime.Now;
+                    timeSpan = justNow.Subtract(justNow);
+                }
+
 
                 int workedMinute = (timeSpan.Hours * 60) + timeSpan.Minutes;
                 int assignedMinute = (int)entity.AssignedWorkingHour * 60;

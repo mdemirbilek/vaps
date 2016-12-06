@@ -28,12 +28,6 @@
         Target="ServiceInterface:hrDepartment_hrPerson" />
     </Association.Attributes>
   </Association>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:hrWorkingHour" />
-    </EntityType.Attributes>
-  </EntityType>
   <Association>
     <Association.Attributes>
       <Proxy

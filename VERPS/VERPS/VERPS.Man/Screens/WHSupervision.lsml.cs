@@ -15,6 +15,8 @@ namespace LightSwitchApplication
         partial void WHSupervision_InitializeDataWorkspace(List<IDataService> saveChangesTo)
         {
             this.hrPersonLSUser = this.Application.User.Name;
+            this.RecYear = DateTime.Now.Year;
+            this.RecMonth = DateTime.Now.Month;
         }
     }
 }

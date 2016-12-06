@@ -195,6 +195,9 @@
     <Compile Include="DataSources\ApplicationData\hrPerson.lsml.cs">
       <DependentUpon>hrPeople.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\ApplicationData\hrWorkingHour.lsml.cs">
+      <DependentUpon>hrWorkingHours.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\ApplicationData\_ApplicationDataService.lsml.cs" />
     <Compile Include="DataSources\VERPSData\aspnet_User.lsml.cs">
       <DependentUpon>aspnet_Users1.lsml</DependentUpon>

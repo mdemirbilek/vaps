@@ -214,6 +214,20 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="WorkingTimeDiff"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AcceptedOvertime"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
         PropertyType=":Person?">

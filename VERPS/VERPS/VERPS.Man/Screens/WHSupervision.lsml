@@ -3052,7 +3052,8 @@
                 <ContentItem
                   Name="DayOfWeek"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.RichClient:Label">
                   <ContentItem.Attributes>
                     <DisplayName
                       Value="Day" />

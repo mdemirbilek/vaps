@@ -659,7 +659,7 @@
           End="ApplicationData/Members[hrDepartment_hrPersons]/Members[hrDepartment]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="Id" />
+              Name="hrDepartment_hrPerson" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
@@ -1159,6 +1159,7 @@
     Name="hrDepartment_hrPerson">
     <AssociationEnd
       Name="hrDepartment"
+      Multiplicity="Many"
       EntityType="hrDepartment" />
     <AssociationEnd
       Name="hrPerson"

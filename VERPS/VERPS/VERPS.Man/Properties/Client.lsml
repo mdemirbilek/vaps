@@ -3,7 +3,6 @@
   Name="LightSwitchApplication.VERPS.Man"
   TargetPlatform="RichClient"
   Version="1.0.0.0"
-  DefaultNavigationItem="!module/NavigationItems[Administration]"
   Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
   Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
   <Application.Attributes>
@@ -38,6 +37,24 @@
         Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:StdAdminintration" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:HRManagement" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:EmployeeSupervision" />
+    </Permission.Attributes>
+  </Permission>
   <Application.Commands>
     <ApplicationCommand
       Name="ScreenCommandShowAcademicDepartments"
@@ -105,6 +122,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowWHSupervision"
       Target="!module/Methods[ShowWHSupervision]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowEmployeeWH"
+      Target="!module/Methods[ShowEmployeeWH]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -169,6 +189,9 @@
       <ApplicationNavigationLink
         Name="link19"
         Command="!module/Commands[ScreenCommandShowWHSupervision]" />
+      <ApplicationNavigationLink
+        Name="link20"
+        Command="!module/Commands[ScreenCommandShowEmployeeWH]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">

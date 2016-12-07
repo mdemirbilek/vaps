@@ -36,4 +36,25 @@
         Replacement="$1 $2" />
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
+  <Permission
+    Name="StdAdminintration">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Std Adminintration" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="HRManagement">
+    <Permission.Attributes>
+      <DisplayName
+        Value="HR Management" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="EmployeeSupervision">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Employee Supervision" />
+    </Permission.Attributes>
+  </Permission>
 </ServiceApplication>

@@ -58,29 +58,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Manager"
-                  Kind="Details"
-                  DataType="hrPerson">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrDepartment/Properties[Manager]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate1"
-                    Kind="Details"
-                    DataType="hrPerson">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
                   Name="CreatedBy"
                   Kind="Value"
                   DataType=":Person?">
@@ -248,7 +225,7 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Manager1"
+                Name="Manager"
                 Kind="Details"
                 DataType="hrPerson">
                 <ContentItem.DataSource>
@@ -260,7 +237,7 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="RowTemplate2"
+                  Name="hrPerson"
                   Kind="Details"
                   DataType="hrPerson">
                   <ContentItem.DataSource>
@@ -431,81 +408,6 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="hrPerson/Properties[AccessCardID]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Name3"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrPerson/Properties[ManagerOf]" />
-                        <MemberExpression
-                          Member="Name" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="CreatedBy2"
-                  Kind="Value"
-                  DataType=":Person?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrPerson/Properties[ManagerOf]" />
-                        <MemberExpression
-                          Member="CreatedBy" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Created2"
-                  Kind="Value"
-                  DataType=":DateTimeOffset?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrPerson/Properties[ManagerOf]" />
-                        <MemberExpression
-                          Member="Created" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="ModifiedBy2"
-                  Kind="Value"
-                  DataType=":Person?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrPerson/Properties[ManagerOf]" />
-                        <MemberExpression
-                          Member="ModifiedBy" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Modified2"
-                  Kind="Value"
-                  DataType=":DateTimeOffset?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="hrPerson/Properties[ManagerOf]" />
-                        <MemberExpression
-                          Member="Modified" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>

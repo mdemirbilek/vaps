@@ -208,21 +208,6 @@
               </ContentItem>
             </ContentItem>
             <ContentItem
-              Name="Name1"
-              Kind="Value"
-              DataType=":String">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="hrPerson/Properties[ManagerOf]" />
-                    <MemberExpression
-                      Member="Name" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-            </ContentItem>
-            <ContentItem
               Name="IsAcademician"
               Kind="Value"
               DataType=":Boolean">

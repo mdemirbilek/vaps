@@ -244,7 +244,7 @@
       EntitySet="hrDepartments">
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
-          Name="Id"
+          Name="hrDepartment_hrPerson"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

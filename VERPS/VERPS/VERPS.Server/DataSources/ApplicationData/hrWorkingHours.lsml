@@ -33,10 +33,11 @@
         ToEnd="hrPerson" />
       <EntityProperty
         Name="UserName"
-        PropertyType=":String?">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
+          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

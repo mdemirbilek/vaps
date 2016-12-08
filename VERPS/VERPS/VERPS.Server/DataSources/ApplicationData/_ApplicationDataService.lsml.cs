@@ -119,13 +119,14 @@ namespace LightSwitchApplication
             {
                 wh.StdWorkingHour = 8;
                 wh.AssignedWorkingHour = 8;
+                wh.HourDiff = -8;
             }
             else
             {
                 wh.StdWorkingHour = 0;
                 wh.AssignedWorkingHour = 0;
+                wh.HourDiff = 0;
             }
-            wh.HourDiff = 0;
             wh.MinuteDiff = 0;
             wh.IsOTAccepted = false;
             wh.OTAcceptedBy = "";
@@ -185,6 +186,16 @@ namespace LightSwitchApplication
                 DateTime endTime;
                 TimeSpan timeSpan;
 
+                //if (entity.Details.Properties.IsWorkingDay.OriginalValue == false && entity.IsWorkingDay == true)
+                //{
+                //    entity.HourDiff = entity.AssignedWorkingHour * -1;
+                //}
+
+                //if (entity.Details.Properties.IsWorkingDay.OriginalValue == true && entity.IsWorkingDay == false)
+                //{
+                //    entity.HourDiff = 0; ;
+                //}
+
                 if (entity.EntryTime != null && entity.ExitTime != null)
                 {
                     startTime = (DateTime)entity.EntryTime;
@@ -210,7 +221,20 @@ namespace LightSwitchApplication
                 if (entity.Details.Properties.IsOTAccepted.OriginalValue == false && entity.IsOTAccepted == true)
                 {
                     entity.OTAcceptedBy = Application.User.Name;
+                    if (entity.AcceptedOTeHrs == 0 && entity.AcceptedOTMin == 0)
+                    {
+                        entity.AcceptedOTeHrs = entity.HourDiff;
+                        entity.AcceptedOTMin = entity.MinuteDiff;
+                    }
                 }
+
+                if (entity.Details.Properties.IsOTAccepted.OriginalValue == true && entity.IsOTAccepted == false)
+                {
+                    entity.OTAcceptedBy = "";
+                    entity.AcceptedOTeHrs = 0;
+                    entity.AcceptedOTMin = 0;
+                }
+
 
             }
 

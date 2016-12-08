@@ -1622,7 +1622,7 @@
                 <ContentItem
                   Name="UserName"
                   Kind="Value"
-                  DataType=":String?"
+                  DataType=":String"
                   View="Microsoft.LightSwitch.RichClient:Label">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>

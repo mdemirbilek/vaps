@@ -40,6 +40,11 @@
         Association="sylOutcomeAssesment_sylAssesmentMethod"
         FromEnd="sylAssesmentMethod"
         ToEnd="sylOutcomeAssesment" />
+      <NavigationProperty
+        Name="sylAssesments"
+        Association="sylAssesment_sylAssesmentMethod"
+        FromEnd="sylAssesmentMethod"
+        ToEnd="sylAssesment" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -193,6 +198,16 @@
         Name="sylAssesmentMethod"
         EntitySet="sylAssesmentMethods" />
     </AssociationSet>
+    <AssociationSet
+      Name="sylAssesment_sylAssesmentMethods"
+      Association="sylAssesment_sylAssesmentMethod">
+      <AssociationSetEnd
+        Name="sylAssesment"
+        EntitySet="sylAssesments" />
+      <AssociationSetEnd
+        Name="sylAssesmentMethod"
+        EntitySet="sylAssesmentMethods" />
+    </AssociationSet>
   </EntityContainer>
   <Association
     Name="sylOutcomeAssesment_sylAssesmentMethod">
@@ -236,5 +251,42 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylAssesment_sylAssesmentMethods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylAssesment_sylAssesmentMethods" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylAssesment_sylAssesmentMethods]/Members[sylAssesment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylAssesment_sylAssesmentMethod" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylAssesment_sylAssesmentMethods]/Members[sylAssesmentMethod]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
+  <Association
+    Name="sylAssesment_sylAssesmentMethod">
+    <AssociationEnd
+      Name="sylAssesment"
+      Multiplicity="Many"
+      EntityType="sylAssesment" />
+    <AssociationEnd
+      Name="sylAssesmentMethod"
+      Multiplicity="One"
+      EntityType="sylAssesmentMethod">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
 </ServiceApplication>

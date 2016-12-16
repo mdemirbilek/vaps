@@ -70,6 +70,11 @@
         Association="sylAcademicalAim_erpAcademicDepartment"
         FromEnd="erpAcademicDepartment"
         ToEnd="sylAcademicalAim" />
+      <NavigationProperty
+        Name="ViceHeads"
+        Association="erpAcademicDepartment_hrPerson1"
+        FromEnd="erpAcademicDepartment"
+        ToEnd="hrPerson" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -263,6 +268,16 @@
         Name="erpAcademicDepartment"
         EntitySet="erpAcademicDepartments" />
     </AssociationSet>
+    <AssociationSet
+      Name="erpAcademicDepartment_hrPerson1Set"
+      Association="erpAcademicDepartment_hrPerson1">
+      <AssociationSetEnd
+        Name="erpAcademicDepartment"
+        EntitySet="erpAcademicDepartments" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -387,6 +402,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="erpAcademicDepartment_hrPerson1Set">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="erpAcademicDepartment_hrPerson1Set" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[erpAcademicDepartment_hrPerson1Set]/Members[erpAcademicDepartment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[erpAcademicDepartment_hrPerson1Set]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="erpAcademicDepartment_hrPerson1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="sylCourse_erpAcademicDepartment">
@@ -466,5 +502,20 @@
           Action="Restrict" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
+  </Association>
+  <Association
+    Name="erpAcademicDepartment_hrPerson1">
+    <AssociationEnd
+      Name="erpAcademicDepartment"
+      EntityType="erpAcademicDepartment">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="Many"
+      EntityType="hrPerson" />
   </Association>
 </ServiceApplication>

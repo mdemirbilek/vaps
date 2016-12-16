@@ -244,6 +244,11 @@
         Association="hrPerson_hrPerson"
         FromEnd="hrPerson2"
         ToEnd="hrPerson1" />
+      <NavigationProperty
+        Name="erpAcademicDepartment1"
+        Association="erpAcademicDepartment_hrPerson1"
+        FromEnd="hrPerson"
+        ToEnd="erpAcademicDepartment" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -646,6 +651,10 @@
           Type="int" />
         <SsdlForeignKeyProperty
           Name="hrPerson_hrPerson"
+          Nullable="True"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="erpAcademicDepartment_hrPerson1"
           Nullable="True"
           Type="int" />
       </EntitySetMapping.Attributes>

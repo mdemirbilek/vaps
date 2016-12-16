@@ -1171,7 +1171,7 @@
                   <ContentItem
                     Name="ContactHours"
                     Kind="Value"
-                    DataType=":Int32">
+                    DataType=":Double">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -1184,7 +1184,7 @@
                   <ContentItem
                     Name="NonContactHours"
                     Kind="Value"
-                    DataType=":Int32">
+                    DataType=":Double">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>

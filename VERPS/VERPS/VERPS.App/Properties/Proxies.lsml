@@ -610,4 +610,34 @@
         Target="ServiceInterface:sylOutcomeAssesment_sylAssesmentMethod" />
     </Association.Attributes>
   </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylWorkloadStructure_sylTeachingMethod" />
+    </Association.Attributes>
+  </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylAssesment" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylAssesment_sylSyllabus" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylAssesment_sylAssesmentMethod" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:erpAcademicDepartment_hrPerson1" />
+    </Association.Attributes>
+  </Association>
 </Application>

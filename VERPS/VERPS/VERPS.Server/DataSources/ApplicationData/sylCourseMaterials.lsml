@@ -36,6 +36,24 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="MaterialType"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="Compulsory Reading"
+            Value="Compulsory" />
+          <SupportedValue
+            DisplayName="Supplementary Reading"
+            Value="Supplementary" />
+          <SupportedValue
+            DisplayName="Other Materials"
+            Value="OtherMaterials" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Description"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -57,21 +75,6 @@
         Association="sylCourseMaterial_sylSyllabus"
         FromEnd="sylCourseMaterial"
         ToEnd="sylSyllabus" />
-      <EntityProperty
-        Name="MaterialType"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-          <SupportedValue
-            Value="Compulsory Readings" />
-          <SupportedValue
-            Value="Supplementary Readings" />
-          <SupportedValue
-            Value="Other Materials" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"

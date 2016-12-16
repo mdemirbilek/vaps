@@ -34,6 +34,14 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Description"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="4000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Name="sylCourse"
         Association="sylSyllabus_sylCourse"
@@ -102,7 +110,7 @@
         <EntityProperty.Attributes>
           <Required />
           <MaxLength
-            Value="255" />
+            Value="4000" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -110,6 +118,14 @@
         Association="sylLearningOutcome_sylSyllabus"
         FromEnd="sylSyllabus"
         ToEnd="sylLearningOutcome" />
+      <EntityProperty
+        Name="Criteria"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="1000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Name="sylSyllabusMaterial"
         Association="sylCourseMaterial_sylSyllabus"
@@ -195,6 +211,11 @@
         Association="sylSyllabusTeachingMethod_sylSyllabus"
         FromEnd="sylSyllabus"
         ToEnd="sylSyllabusTeachingMethod" />
+      <NavigationProperty
+        Name="sylAssesments"
+        Association="sylAssesment_sylSyllabus"
+        FromEnd="sylSyllabus"
+        ToEnd="sylAssesment" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -408,6 +429,16 @@
         Name="sylSyllabus"
         EntitySet="sylSyllabi" />
     </AssociationSet>
+    <AssociationSet
+      Name="sylAssesment_sylSyllabusSet"
+      Association="sylAssesment_sylSyllabus">
+      <AssociationSetEnd
+        Name="sylAssesment"
+        EntitySet="sylAssesments" />
+      <AssociationSetEnd
+        Name="sylSyllabus"
+        EntitySet="sylSyllabi" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -590,6 +621,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylAssesment_sylSyllabusSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylAssesment_sylSyllabusSet" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylAssesment_sylSyllabusSet]/Members[sylAssesment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylAssesment_sylSyllabus" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylAssesment_sylSyllabusSet]/Members[sylSyllabus]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="sylPrerequisite_sylSyllabus">
@@ -693,6 +745,22 @@
       Name="sylSyllabusTeachingMethod"
       Multiplicity="Many"
       EntityType="sylSyllabusTeachingMethod" />
+    <AssociationEnd
+      Name="sylSyllabus"
+      Multiplicity="One"
+      EntityType="sylSyllabus">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="sylAssesment_sylSyllabus">
+    <AssociationEnd
+      Name="sylAssesment"
+      Multiplicity="Many"
+      EntityType="sylAssesment" />
     <AssociationEnd
       Name="sylSyllabus"
       Multiplicity="One"

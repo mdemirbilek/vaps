@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="sylTeachingMethod">
+    Name="sylAssesment">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -36,15 +36,26 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="sylSyllabusTeachingMethods"
-        Association="sylSyllabusTeachingMethod_sylTeachingMethod"
-        FromEnd="sylTeachingMethod"
-        ToEnd="sylSyllabusTeachingMethod" />
+        Name="sylAssesmentMethod"
+        Association="sylAssesment_sylAssesmentMethod"
+        FromEnd="sylAssesment"
+        ToEnd="sylAssesmentMethod" />
       <NavigationProperty
-        Name="sylWorkloadStructures"
-        Association="sylWorkloadStructure_sylTeachingMethod"
-        FromEnd="sylTeachingMethod"
-        ToEnd="sylWorkloadStructure" />
+        Name="sylSyllabus"
+        Association="sylAssesment_sylSyllabus"
+        FromEnd="sylAssesment"
+        ToEnd="sylSyllabus" />
+      <EntityProperty
+        Name="Percentage"
+        PropertyType="Microsoft.LightSwitch.Extensions:Percent">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="9" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -103,14 +114,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="sylTeachingMethods"
+      Name="sylAssesments"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="sylTeachingMethod" />
+      EntityType="sylAssesment" />
     <QueryOperation
-      Name="sylTeachingMethods_Single"
-      ReturnType="sylTeachingMethod">
+      Name="sylAssesments_Single"
+      ReturnType="sylAssesment">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -136,7 +147,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylTeachingMethods" />
+            Member="sylAssesments" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -149,8 +160,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="sylTeachingMethods_SingleOrDefault"
-      ReturnType="sylTeachingMethod">
+      Name="sylAssesments_SingleOrDefault"
+      ReturnType="sylAssesment">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -176,7 +187,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylTeachingMethods" />
+            Member="sylAssesments" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -188,105 +199,24 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="sylSyllabusTeachingMethod_sylTeachingMethods"
-      Association="sylSyllabusTeachingMethod_sylTeachingMethod">
-      <AssociationSetEnd
-        Name="sylSyllabusTeachingMethod"
-        EntitySet="sylSyllabusTeachingMethods" />
-      <AssociationSetEnd
-        Name="sylTeachingMethod"
-        EntitySet="sylTeachingMethods" />
-    </AssociationSet>
-    <AssociationSet
-      Name="sylWorkloadStructure_sylTeachingMethods"
-      Association="sylWorkloadStructure_sylTeachingMethod">
-      <AssociationSetEnd
-        Name="sylWorkloadStructure"
-        EntitySet="sylWorkloadStructures" />
-      <AssociationSetEnd
-        Name="sylTeachingMethod"
-        EntitySet="sylTeachingMethods" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="sylSyllabusTeachingMethod_sylTeachingMethod">
-    <AssociationEnd
-      Name="sylSyllabusTeachingMethod"
-      Multiplicity="Many"
-      EntityType="sylSyllabusTeachingMethod" />
-    <AssociationEnd
-      Name="sylTeachingMethod"
-      Multiplicity="One"
-      EntityType="sylTeachingMethod">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
   <DataService
     Name="ApplicationDataMapping">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
-    <AssociationSetMapping
-      AssociationSet="sylSyllabusTeachingMethod_sylTeachingMethods">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="sylSyllabusTeachingMethod_sylTeachingMethods" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[sylSyllabusTeachingMethod_sylTeachingMethods]/Members[sylSyllabusTeachingMethod]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="sylSyllabusTeachingMethod_sylTeachingMethod" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[sylSyllabusTeachingMethod_sylTeachingMethods]/Members[sylTeachingMethod]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="sylWorkloadStructure_sylTeachingMethods">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="sylWorkloadStructure_sylTeachingMethods" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[sylWorkloadStructure_sylTeachingMethods]/Members[sylWorkloadStructure]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="sylWorkloadStructure_sylTeachingMethod" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[sylWorkloadStructure_sylTeachingMethods]/Members[sylTeachingMethod]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="sylAssesments">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="sylAssesment_sylSyllabus"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="sylAssesment_sylAssesmentMethod"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
   </DataService>
-  <Association
-    Name="sylWorkloadStructure_sylTeachingMethod">
-    <AssociationEnd
-      Name="sylWorkloadStructure"
-      Multiplicity="Many"
-      EntityType="sylWorkloadStructure" />
-    <AssociationEnd
-      Name="sylTeachingMethod"
-      Multiplicity="One"
-      EntityType="sylTeachingMethod">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
 </ServiceApplication>

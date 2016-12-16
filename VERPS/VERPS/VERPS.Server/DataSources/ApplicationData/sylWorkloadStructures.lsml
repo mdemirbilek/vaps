@@ -35,9 +35,14 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="sylTeachingMethod"
+        Association="sylWorkloadStructure_sylTeachingMethod"
+        FromEnd="sylWorkloadStructure"
+        ToEnd="sylTeachingMethod" />
       <EntityProperty
         Name="ContactHours"
-        PropertyType=":Int32">
+        PropertyType=":Double">
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
@@ -45,7 +50,7 @@
       </EntityProperty>
       <EntityProperty
         Name="NonContactHours"
-        PropertyType=":Int32">
+        PropertyType=":Double">
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
@@ -214,6 +219,10 @@
           Type="int" />
         <SsdlForeignKeyProperty
           Name="WorkloadStructure_Syllabus"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="sylWorkloadStructure_sylTeachingMethod"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

@@ -66,6 +66,10 @@ namespace DoorDataProcessor
                     opDate = DateTime.Today;
                 }
             }
+            else
+            {
+                opDate = DateTime.Today;
+            }
 
             opDate = opDate.AddDays(dateDiffAsDay);
 
@@ -75,8 +79,8 @@ namespace DoorDataProcessor
             }
             else if (op == "calculate")
             {
-
-                //opDate = DateTime.Parse("2016-12-1");
+                //opDate = DateTime.Parse("2016-12-6");
+                opDate = opDate.AddDays(-1);
                 CalcWorkingTimes(opDate);
             }
 
@@ -206,6 +210,11 @@ namespace DoorDataProcessor
                 string ssss = doorT.UserExtID;
                 try
                 {
+                    //if (ssss == "44B14BDB7D23454CADA5C2FDE8168D80")
+                    //{
+                    //    string sssssss = "0";
+                    //}
+
                     var doorTime = vsr.hrWorkingHours.Where(p => p.DoorSysID == doorT.UserExtID && p.WorkingDate == doorT.EventDay).SingleOrDefault();
                     if (doorTime != null)
                     {

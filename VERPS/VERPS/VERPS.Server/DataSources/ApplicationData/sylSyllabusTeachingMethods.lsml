@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="sylPrerequisite">
+    Name="sylSyllabusTeachingMethod">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -27,21 +27,21 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <NavigationProperty
-        Name="sylCourse"
-        Association="sylPrerequisite_sylCourse"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylCourse" />
-      <NavigationProperty
         Name="sylSyllabus"
-        Association="sylPrerequisite_sylSyllabus"
-        FromEnd="sylPrerequisite"
+        Association="sylSyllabusTeachingMethod_sylSyllabus"
+        FromEnd="sylSyllabusTeachingMethod"
         ToEnd="sylSyllabus" />
+      <NavigationProperty
+        Name="sylTeachingMethod"
+        Association="sylSyllabusTeachingMethod_sylTeachingMethod"
+        FromEnd="sylSyllabusTeachingMethod"
+        ToEnd="sylTeachingMethod" />
       <EntityProperty
-        Name="Explanation"
-        PropertyType=":String?">
+        Name="NumberOfHours"
+        PropertyType=":Int32">
         <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
+          <Required />
+          <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -102,14 +102,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="sylPrerequisites"
+      Name="sylSyllabusTeachingMethods"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="sylPrerequisite" />
+      EntityType="sylSyllabusTeachingMethod" />
     <QueryOperation
-      Name="sylPrerequisites_Single"
-      ReturnType="sylPrerequisite">
+      Name="sylSyllabusTeachingMethods_Single"
+      ReturnType="sylSyllabusTeachingMethod">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -135,7 +135,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="sylSyllabusTeachingMethods" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -148,8 +148,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="sylPrerequisites_SingleOrDefault"
-      ReturnType="sylPrerequisite">
+      Name="sylSyllabusTeachingMethods_SingleOrDefault"
+      ReturnType="sylSyllabusTeachingMethod">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -175,7 +175,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="sylSyllabusTeachingMethods" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -194,14 +194,14 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="sylPrerequisites">
+      EntitySet="sylSyllabusTeachingMethods">
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
-          Name="Prerequisite_Syllabus"
+          Name="sylSyllabusTeachingMethod_sylSyllabus"
           Nullable="False"
           Type="int" />
         <SsdlForeignKeyProperty
-          Name="Prerequisite_Course"
+          Name="sylSyllabusTeachingMethod_sylTeachingMethod"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

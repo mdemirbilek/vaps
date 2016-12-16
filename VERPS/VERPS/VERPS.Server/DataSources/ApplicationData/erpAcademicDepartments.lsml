@@ -65,6 +65,11 @@
         Association="erpAcademicDepartment_hrPerson"
         FromEnd="erpAcademicDepartment"
         ToEnd="hrPerson" />
+      <NavigationProperty
+        Name="sylAcademicalAims"
+        Association="sylAcademicalAim_erpAcademicDepartment"
+        FromEnd="erpAcademicDepartment"
+        ToEnd="sylAcademicalAim" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -248,6 +253,16 @@
         Name="erpAcademicDepartment"
         EntitySet="erpAcademicDepartments" />
     </AssociationSet>
+    <AssociationSet
+      Name="sylAcademicalAim_erpAcademicDepartments"
+      Association="sylAcademicalAim_erpAcademicDepartment">
+      <AssociationSetEnd
+        Name="sylAcademicalAim"
+        EntitySet="sylAcademicalAims" />
+      <AssociationSetEnd
+        Name="erpAcademicDepartment"
+        EntitySet="erpAcademicDepartments" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -351,6 +366,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylAcademicalAim_erpAcademicDepartments">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylAcademicalAim_erpAcademicDepartments" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylAcademicalAim_erpAcademicDepartments]/Members[sylAcademicalAim]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylAcademicalAim_erpAcademicDepartment" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylAcademicalAim_erpAcademicDepartments]/Members[erpAcademicDepartment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="sylCourse_erpAcademicDepartment">
@@ -408,6 +444,22 @@
       EntityType="hrPerson" />
     <AssociationEnd
       Name="erpAcademicDepartment"
+      EntityType="erpAcademicDepartment">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="sylAcademicalAim_erpAcademicDepartment">
+    <AssociationEnd
+      Name="sylAcademicalAim"
+      Multiplicity="Many"
+      EntityType="sylAcademicalAim" />
+    <AssociationEnd
+      Name="erpAcademicDepartment"
+      Multiplicity="One"
       EntityType="erpAcademicDepartment">
       <AssociationEnd.Attributes>
         <DeleteRule

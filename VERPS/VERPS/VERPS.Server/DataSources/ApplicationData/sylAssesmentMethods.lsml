@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="sylPrerequisite">
+    Name="sylAssesmentMethod">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -26,24 +26,20 @@
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
-      <NavigationProperty
-        Name="sylCourse"
-        Association="sylPrerequisite_sylCourse"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylCourse" />
-      <NavigationProperty
-        Name="sylSyllabus"
-        Association="sylPrerequisite_sylSyllabus"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylSyllabus" />
       <EntityProperty
-        Name="Explanation"
-        PropertyType=":String?">
+        Name="Name"
+        PropertyType=":String">
         <EntityProperty.Attributes>
+          <Required />
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="sylOutcomeAssesments"
+        Association="sylOutcomeAssesment_sylAssesmentMethod"
+        FromEnd="sylAssesmentMethod"
+        ToEnd="sylOutcomeAssesment" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -102,14 +98,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="sylPrerequisites"
+      Name="sylAssesmentMethods"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="sylPrerequisite" />
+      EntityType="sylAssesmentMethod" />
     <QueryOperation
-      Name="sylPrerequisites_Single"
-      ReturnType="sylPrerequisite">
+      Name="sylAssesmentMethods_Single"
+      ReturnType="sylAssesmentMethod">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -135,7 +131,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="sylAssesmentMethods" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -148,8 +144,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="sylPrerequisites_SingleOrDefault"
-      ReturnType="sylPrerequisite">
+      Name="sylAssesmentMethods_SingleOrDefault"
+      ReturnType="sylAssesmentMethod">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -175,7 +171,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="sylAssesmentMethods" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -187,24 +183,58 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="sylOutcomeAssesment_sylAssesmentMethods"
+      Association="sylOutcomeAssesment_sylAssesmentMethod">
+      <AssociationSetEnd
+        Name="sylOutcomeAssesment"
+        EntitySet="sylOutcomeAssesments" />
+      <AssociationSetEnd
+        Name="sylAssesmentMethod"
+        EntitySet="sylAssesmentMethods" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="sylOutcomeAssesment_sylAssesmentMethod">
+    <AssociationEnd
+      Name="sylOutcomeAssesment"
+      Multiplicity="Many"
+      EntityType="sylOutcomeAssesment" />
+    <AssociationEnd
+      Name="sylAssesmentMethod"
+      Multiplicity="One"
+      EntityType="sylAssesmentMethod">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
   <DataService
     Name="ApplicationDataMapping">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
-    <EntitySetMapping
-      EntitySet="sylPrerequisites">
-      <EntitySetMapping.Attributes>
-        <SsdlForeignKeyProperty
-          Name="Prerequisite_Syllabus"
-          Nullable="False"
-          Type="int" />
-        <SsdlForeignKeyProperty
-          Name="Prerequisite_Course"
-          Nullable="False"
-          Type="int" />
-      </EntitySetMapping.Attributes>
-    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylOutcomeAssesment_sylAssesmentMethods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylOutcomeAssesment_sylAssesmentMethods" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylOutcomeAssesment_sylAssesmentMethods]/Members[sylOutcomeAssesment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylOutcomeAssesment_sylAssesmentMethod" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylOutcomeAssesment_sylAssesmentMethods]/Members[sylAssesmentMethod]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

@@ -157,12 +157,6 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:sylLearningOutcome_sylAcademicalAim" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
         Target="ServiceInterface:sylLearningOutcome_sylSyllabus" />
     </Association.Attributes>
   </Association>
@@ -542,6 +536,78 @@
     <Association.Attributes>
       <Proxy
         Target="ServiceInterface:hrPerson_hrPerson" />
+    </Association.Attributes>
+  </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylTeachingMethod" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylSyllabusTeachingMethod" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylSyllabusTeachingMethod_sylSyllabus" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylSyllabusTeachingMethod_sylTeachingMethod" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylAcademicalAim_erpAcademicDepartment" />
+    </Association.Attributes>
+  </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylOutcomeAim" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylOutcomeAim_sylLearningOutcome" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylOutcomeAim_sylAcademicalAim" />
+    </Association.Attributes>
+  </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylAssesmentMethod" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylOutcomeAssesment" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylOutcomeAssesment_sylLearningOutcome" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:sylOutcomeAssesment_sylAssesmentMethod" />
     </Association.Attributes>
   </Association>
 </Application>

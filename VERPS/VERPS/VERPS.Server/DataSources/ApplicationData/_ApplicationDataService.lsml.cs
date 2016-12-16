@@ -101,6 +101,7 @@ namespace LightSwitchApplication
         {
             hrWorkingHour wh = new hrWorkingHour();
 
+            wh.EmpId = person.Id;
             wh.hrPerson = person;
             wh.UserName = person.LSUser;
             wh.AccessCardID = person.AccessCardID;

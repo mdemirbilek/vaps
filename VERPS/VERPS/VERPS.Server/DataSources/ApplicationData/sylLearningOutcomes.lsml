@@ -62,30 +62,20 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="sylAcademicalAim"
-        Association="sylLearningOutcome_sylAcademicalAim"
-        FromEnd="sylLearningOutcome"
-        ToEnd="sylAcademicalAim" />
-      <NavigationProperty
         Name="sylSyllabus"
         Association="sylLearningOutcome_sylSyllabus"
         FromEnd="sylLearningOutcome"
         ToEnd="sylSyllabus" />
-      <EntityProperty
-        Name="AssessmentMethod"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-          <SupportedValue
-            Value="Midterm Exam" />
-          <SupportedValue
-            Value="Final Exam" />
-          <SupportedValue
-            Value="Presentation" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+      <NavigationProperty
+        Name="sylOutcomeAims"
+        Association="sylOutcomeAim_sylLearningOutcome"
+        FromEnd="sylLearningOutcome"
+        ToEnd="sylOutcomeAim" />
+      <NavigationProperty
+        Name="sylOutcomeAssesments"
+        Association="sylOutcomeAssesment_sylLearningOutcome"
+        FromEnd="sylLearningOutcome"
+        ToEnd="sylOutcomeAssesment" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -229,6 +219,26 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="sylOutcomeAim_sylLearningOutcomes"
+      Association="sylOutcomeAim_sylLearningOutcome">
+      <AssociationSetEnd
+        Name="sylOutcomeAim"
+        EntitySet="sylOutcomeAims" />
+      <AssociationSetEnd
+        Name="sylLearningOutcome"
+        EntitySet="sylLearningOutcomes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="sylOutcomeAssesment_sylLearningOutcomes"
+      Association="sylOutcomeAssesment_sylLearningOutcome">
+      <AssociationSetEnd
+        Name="sylOutcomeAssesment"
+        EntitySet="sylOutcomeAssesments" />
+      <AssociationSetEnd
+        Name="sylLearningOutcome"
+        EntitySet="sylLearningOutcomes" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -256,5 +266,79 @@
           Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylOutcomeAim_sylLearningOutcomes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylOutcomeAim_sylLearningOutcomes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylOutcomeAim_sylLearningOutcomes]/Members[sylOutcomeAim]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylOutcomeAim_sylLearningOutcome" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylOutcomeAim_sylLearningOutcomes]/Members[sylLearningOutcome]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylOutcomeAssesment_sylLearningOutcomes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylOutcomeAssesment_sylLearningOutcomes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylOutcomeAssesment_sylLearningOutcomes]/Members[sylOutcomeAssesment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylOutcomeAssesment_sylLearningOutcome" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylOutcomeAssesment_sylLearningOutcomes]/Members[sylLearningOutcome]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
+  <Association
+    Name="sylOutcomeAim_sylLearningOutcome">
+    <AssociationEnd
+      Name="sylOutcomeAim"
+      Multiplicity="Many"
+      EntityType="sylOutcomeAim" />
+    <AssociationEnd
+      Name="sylLearningOutcome"
+      Multiplicity="One"
+      EntityType="sylLearningOutcome">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="sylOutcomeAssesment_sylLearningOutcome">
+    <AssociationEnd
+      Name="sylOutcomeAssesment"
+      Multiplicity="Many"
+      EntityType="sylOutcomeAssesment" />
+    <AssociationEnd
+      Name="sylLearningOutcome"
+      Multiplicity="One"
+      EntityType="sylLearningOutcome">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
 </ServiceApplication>

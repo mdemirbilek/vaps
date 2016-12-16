@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 12/4/2016 6:15:50 PM
+// Generation date: 12/15/2016 1:45:51 PM
 namespace DoorDataProcessor.VERPSServiceReference
 {
     
@@ -1081,1068 +1081,1091 @@ namespace DoorDataProcessor.VERPSServiceReference
                 "y Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrAddress_hrPerson\" ToRol" +
                 "e=\"hrPerson\" FromRole=\"hrAddress\" /></EntityType><EntityType Name=\"hrDepartment\"" +
                 "><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullab" +
-                "le=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=" +
-                "\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property" +
-                " Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Ed" +
-                "m.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" " +
-                "/><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode" +
-                "=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=" +
-                "\"Manager\" Relationship=\"LightSwitchApplication.hrDepartment_hrPerson\" ToRole=\"hr" +
-                "Person\" FromRole=\"hrDepartment\" /><NavigationProperty Name=\"Employees\" Relations" +
-                "hip=\"LightSwitchApplication.hrPerson_hrDepartment\" ToRole=\"hrPerson\" FromRole=\"h" +
-                "rDepartment\" /></EntityType><EntityType Name=\"hrEmergencyContact\"><Key><Property" +
-                "Ref Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" anno" +
-                "tation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"hrEmergencyContact_hrP" +
-                "erson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.Strin" +
-                "g\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Surname\" Type=\"Edm.String\"" +
-                " Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Address\" Type=\"Edm.String\" M" +
-                "axLength=\"255\" /><Property Name=\"Phone\" Type=\"Edm.String\" Nullable=\"false\" MaxLe" +
+                "le=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Name\" T" +
+                "ype=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"hrDepartment" +
+                "_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"" +
+                "Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\"" +
+                " /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Nam" +
+                "e=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.B" +
+                "inary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern" +
+                "=\"Computed\" /><NavigationProperty Name=\"Manager\" Relationship=\"LightSwitchApplic" +
+                "ation.hrDepartment_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrDepartment\" /><Naviga" +
+                "tionProperty Name=\"Employees\" Relationship=\"LightSwitchApplication.hrPerson_hrDe" +
+                "partment\" ToRole=\"hrPerson\" FromRole=\"hrDepartment\" /></EntityType><EntityType N" +
+                "ame=\"hrEmergencyContact\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\"" +
+                " Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /" +
+                "><Property Name=\"hrEmergencyContact_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" " +
+                "/><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Pr" +
+                "operty Name=\"Surname\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Prop" +
+                "erty Name=\"Address\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Phone\" T" +
+                "ype=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" T" +
+                "ype=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOf" +
+                "fset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Propert" +
+                "y Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"" +
+                "Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPa" +
+                "ttern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"LightSwitch" +
+                "Application.hrEmergencyContact_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmergency" +
+                "Contact\" /></EntityType><EntityType Name=\"hrEmpAcademicProfileByAcademician\"><Ke" +
+                "y><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"" +
+                "false\" /><Property Name=\"FullName\" Type=\"Edm.String\" MaxLength=\"255\" /><Property" +
+                " Name=\"AssignmentToFieldOfStudy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property N" +
+                "ame=\"FoSArea\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"FoSKnowledge\" " +
+                "Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"FoSDiscipline\" Type=\"Edm.Str" +
+                "ing\" MaxLength=\"255\" /><Property Name=\"Speciality\" Type=\"Edm.String\" MaxLength=\"" +
+                "255\" /><Property Name=\"PBNID\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name" +
+                "=\"NumberQuotedWoS\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"IndexHirs" +
+                "haWoS\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Biogram\" Type=\"Edm.St" +
+                "ring\" MaxLength=\"1000\" /><Property Name=\"ResearchInterests\" Type=\"Edm.String\" Ma" +
+                "xLength=\"255\" /><Property Name=\"LecturedSubjects\" Type=\"Edm.String\" MaxLength=\"2" +
+                "55\" /><Property Name=\"AbilityToTakeClasses\" Type=\"Edm.String\" MaxLength=\"255\" />" +
+                "<Property Name=\"GuestLectures\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Nam" +
+                "e=\"ScientificHeldPositions\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"" +
+                "OrganisationalHeldPositions\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=" +
+                "\"ResearchActivities\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"HasCons" +
+                "ultingExperience\" Type=\"Edm.Boolean\" /><Property Name=\"ConsultingSubjectArea\" Ty" +
+                "pe=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"ConsultingForm\" Type=\"Edm.Stri" +
+                "ng\" MaxLength=\"255\" /><Property Name=\"PracticalActivistToHeldClass\" Type=\"Edm.Bo" +
+                "olean\" /><Property Name=\"CurrentPracticalActivist\" Type=\"Edm.Boolean\" /><Propert" +
+                "y Name=\"UniversityActivity\" Type=\"Edm.Boolean\" /><Property Name=\"CreatedBy\" Type" +
+                "=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffse" +
+                "t\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property N" +
+                "ame=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm" +
+                ".Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPatte" +
+                "rn=\"Computed\" /><NavigationProperty Name=\"Academician\" Relationship=\"LightSwitch" +
+                "Application.hrEmpAcademicProfileByAcademic_hrPerson\" ToRole=\"hrPerson\" FromRole=" +
+                "\"hrEmpAcademicProfileByAcademician\" /></EntityType><EntityType Name=\"hrEmpAcadem" +
+                "icProfileByHR\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm" +
+                ".Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property" +
+                " Name=\"FullName\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"hrEmpAcadem" +
+                "icProfileByHR_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Mult" +
+                "iplier\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"EmploymentBasis\" Typ" +
+                "e=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"hrEmpAcademicP" +
+                "rofileByHR_erpUniversity\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"hr" +
+                "EmpAcademicProfileByHR_erpPosition\" Type=\"Edm.Int32\" Nullable=\"false\" /><Propert" +
+                "y Name=\"Degree\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"EmploymentDa" +
+                "te\" Type=\"Edm.DateTime\" /><Property Name=\"hrEmpAcademicProfileByHR_erpFaculty\" T" +
+                "ype=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"hrEmpAcademicProfileByHR_erpP" +
+                "rogram\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"DoesScientificResear" +
+                "ch\" Type=\"Edm.Boolean\" /><Property Name=\"PensumBilans\" Type=\"Edm.Int32\" /><Prope" +
+                "rty Name=\"ObligatoryWorkingHourOfPastYear\" Type=\"Edm.Int32\" /><Property Name=\"hr" +
+                "EmpAcademicProfileByHR_hrPerson1\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property " +
+                "Name=\"DidacticPensum\" Type=\"Edm.Int32\" /><Property Name=\"hrEmpAcademicProfileByH" +
+                "R_hrPerson2\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"ScientificPensu" +
+                "m\" Type=\"Edm.Int32\" /><Property Name=\"hrEmpAcademicProfileByHR_hrPerson3\" Type=\"" +
+                "Edm.Int32\" Nullable=\"false\" /><Property Name=\"OrganizationalPensum\" Type=\"Edm.In" +
+                "t32\" /><Property Name=\"OtherArrangements\" Type=\"Edm.String\" MaxLength=\"255\" /><P" +
+                "roperty Name=\"OpinionAverage\" Type=\"Edm.String\" MaxLength=\"";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart2 = "255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property N" +
+                "ame=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm." +
+                "String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" />" +
+                "<Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"" +
+                "Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"A" +
+                "cademician\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByHR_hrPers" +
+                "on\" ToRole=\"hrPerson\" FromRole=\"hrEmpAcademicProfileByHR\" /><NavigationProperty " +
+                "Name=\"University\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByHR_" +
+                "erpUniversity\" ToRole=\"erpUniversity\" FromRole=\"hrEmpAcademicProfileByHR\" /><Nav" +
+                "igationProperty Name=\"Position\" Relationship=\"LightSwitchApplication.hrEmpAcadem" +
+                "icProfileByHR_erpPosition\" ToRole=\"erpPosition\" FromRole=\"hrEmpAcademicProfileBy" +
+                "HR\" /><NavigationProperty Name=\"Faculty\" Relationship=\"LightSwitchApplication.hr" +
+                "EmpAcademicProfileByHR_erpFaculty\" ToRole=\"erpFaculty\" FromRole=\"hrEmpAcademicPr" +
+                "ofileByHR\" /><NavigationProperty Name=\"Program\" Relationship=\"LightSwitchApplica" +
+                "tion.hrEmpAcademicProfileByHR_erpProgram\" ToRole=\"erpProgram\" FromRole=\"hrEmpAca" +
+                "demicProfileByHR\" /><NavigationProperty Name=\"DidacticSupervisor\" Relationship=\"" +
+                "LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson1\" ToRole=\"hrPerson\" Fro" +
+                "mRole=\"hrEmpAcademicProfileByHR\" /><NavigationProperty Name=\"ScientificSuperviso" +
+                "r\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson2\" ToRo" +
+                "le=\"hrPerson\" FromRole=\"hrEmpAcademicProfileByHR\" /><NavigationProperty Name=\"Or" +
+                "ganizationalSupervisor\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfil" +
+                "eByHR_hrPerson3\" ToRole=\"hrPerson\" FromRole=\"hrEmpAcademicProfileByHR\" /><Naviga" +
+                "tionProperty Name=\"hrEmpCourses\" Relationship=\"LightSwitchApplication.hrEmpCours" +
+                "e_hrEmpAcademicProfileByHR\" ToRole=\"hrEmpCourse\" FromRole=\"hrEmpAcademicProfileB" +
+                "yHR\" /></EntityType><EntityType Name=\"hrEmpCourse\"><Key><PropertyRef Name=\"Id\" /" +
+                "></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"h" +
+                "rEmpCourse_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"hrEmpCo" +
+                "urse_hrEmpAcademicProfileByHR\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Nam" +
+                "e=\"hrEmpCourse_erpHRAccountingPeriod\" Type=\"Edm.Int32\" Nullable=\"false\" /><Prope" +
+                "rty Name=\"Semestry\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Proper" +
+                "ty Name=\"Term\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Na" +
+                "me=\"hrEmpCourse_sylCourse\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"h" +
+                "rEmpCourse_erpLanguage\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Plan" +
+                "nedHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"1\" /><Proper" +
+                "ty Name=\"RealizedHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale" +
+                "=\"1\" /><Property Name=\"OtherInfo\" Type=\"Edm.String\" MaxLength=\"255\" /><Property " +
+                "Name=\"ClassTypeCviczenia\" Type=\"Edm.Boolean\" /><Property Name=\"ClassTypeWyklad\" " +
+                "Type=\"Edm.Boolean\" /><Property Name=\"ClassTypeKonwersatoria\" Type=\"Edm.Boolean\" " +
+                "/><Property Name=\"ClassTypeSeminarium\" Type=\"Edm.Boolean\" /><Property Name=\"Clas" +
+                "sTypeKonsultacje\" Type=\"Edm.Boolean\" /><Property Name=\"ClassTypeEgzamin\" Type=\"E" +
+                "dm.Boolean\" /><Property Name=\"StudentSemestr\" Type=\"Edm.Int32\" /><Property Name=" +
+                "\"WeekDay\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Dates\" Type=\"Edm.S" +
+                "tring\" MaxLength=\"255\" /><Property Name=\"ConductedHours\" Type=\"Edm.Decimal\" Null" +
+                "able=\"false\" Precision=\"18\" Scale=\"2\" /><Property Name=\"Room\" Type=\"Edm.String\" " +
+                "MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /" +
+                "><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy" +
+                "\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTi" +
+                "meOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Concu" +
+                "rrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProp" +
+                "erty Name=\"Academician\" Relationship=\"LightSwitchApplication.hrEmpCourse_hrPerso" +
+                "n\" ToRole=\"hrPerson\" FromRole=\"hrEmpCourse\" /><NavigationProperty Name=\"ForPensu" +
+                "mOf\" Relationship=\"LightSwitchApplication.hrEmpCourse_hrEmpAcademicProfileByHR\" " +
+                "ToRole=\"hrEmpAcademicProfileByHR\" FromRole=\"hrEmpCourse\" /><NavigationProperty N" +
+                "ame=\"erpHRAccountingPeriod\" Relationship=\"LightSwitchApplication.hrEmpCourse_erp" +
+                "HRAccountingPeriod\" ToRole=\"erpHRAccountingPeriod\" FromRole=\"hrEmpCourse\" /><Nav" +
+                "igationProperty Name=\"NameOfSubject\" Relationship=\"LightSwitchApplication.hrEmpC" +
+                "ourse_sylCourse\" ToRole=\"sylCourse\" FromRole=\"hrEmpCourse\" /><NavigationProperty" +
+                " Name=\"ClassLanguage\" Relationship=\"LightSwitchApplication.hrEmpCourse_erpLangua" +
+                "ge\" ToRole=\"erpLanguage\" FromRole=\"hrEmpCourse\" /><NavigationProperty Name=\"Stat" +
+                "us\" Relationship=\"LightSwitchApplication.hrEmpCourse_hrEvalStatu\" ToRole=\"hrEval" +
+                "Statu\" FromRole=\"hrEmpCourse\" /></EntityType><EntityType Name=\"hrEmpDisability\">" +
+                "<Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullabl" +
+                "e=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"hrEmpDis" +
+                "ability_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"DecisionNu" +
+                "mber\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Creat" +
+                "edBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.Dat" +
+                "eTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><" +
+                "Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\"" +
+                " Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGene" +
+                "ratedPattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"Ligh" +
+                "tSwitchApplication.hrEmpDisability_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpDi" +
+                "sability\" /></EntityType><EntityType Name=\"hrEmpEducation\"><Key><PropertyRef Nam" +
+                "e=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:" +
+                "StoreGeneratedPattern=\"Identity\" /><Property Name=\"hrEmpEducation_hrPerson\" Type" +
+                "=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Degree\" Type=\"Edm.String\" Nullab" +
+                "le=\"false\" MaxLength=\"255\" /><Property Name=\"FieldOfStudy\" Type=\"Edm.String\" Nul" +
+                "lable=\"false\" MaxLength=\"255\" /><Property Name=\"AcademicTitle\" Type=\"Edm.String\"" +
+                " Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Academy\" Type=\"Edm.String\" N" +
+                "ullable=\"false\" MaxLength=\"255\" /><Property Name=\"StartDate\" Type=\"Edm.DateTime\"" +
+                " /><Property Name=\"EndDate\" Type=\"Edm.DateTime\" /><Property Name=\"GraduationYear" +
+                "\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.Strin" +
+                "g\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Prope" +
+                "rty Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modifi" +
+                "ed\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nu" +
+                "llable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Compute" +
+                "d\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hr" +
+                "EmpEducation_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpEducation\" /></EntityTyp" +
+                "e><EntityType Name=\"hrEmpFamilyHealthInsurance\"><Key><PropertyRef Name=\"Id\" /></" +
+                "Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGenera" +
+                "tedPattern=\"Identity\" /><Property Name=\"hrEmpFamilyHealthInsurance_hrPerson\" Typ" +
+                "e=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Surname\" Type=\"Edm.String\" Null" +
+                "able=\"false\" MaxLength=\"255\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=" +
+                "\"false\" MaxLength=\"255\" /><Property Name=\"NationalIDNr\" Type=\"Edm.String\" Nullab" +
+                "le=\"false\" MaxLength=\"255\" /><Property Name=\"BirthDate\" Typ";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart3 = "e=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"RegistrationDate\" Type=\"Edm.D" +
+                "ateTime\" /><Property Name=\"FamilyRelationship\" Type=\"Edm.String\" Nullable=\"false" +
+                "\" MaxLength=\"255\" /><Property Name=\"IsLiveInSameHouse\" Type=\"Edm.Boolean\" /><Pro" +
+                "perty Name=\"FamilyMemberDisabilityCode\" Type=\"Edm.String\" MaxLength=\"255\" /><Pro" +
+                "perty Name=\"ContinueStudyinAfter18\" Type=\"Edm.Boolean\" /><Property Name=\"Created" +
+                "By\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateT" +
+                "imeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Pr" +
+                "operty Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" T" +
+                "ype=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGenera" +
+                "tedPattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"LightS" +
+                "witchApplication.hrEmpFamilyHealthInsurance_hrPerson\" ToRole=\"hrPerson\" FromRole" +
+                "=\"hrEmpFamilyHealthInsurance\" /></EntityType><EntityType Name=\"hrEmpFamilyMember" +
+                "\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nulla" +
+                "ble=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"hrEmpl" +
+                "ooyeeFamilyMember_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"" +
+                "FamilyRelationship\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Proper" +
+                "ty Name=\"FullName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Propert" +
+                "y Name=\"BirthDate\" Type=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"Create" +
+                "dBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.Date" +
+                "TimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><P" +
+                "roperty Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" " +
+                "Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGener" +
+                "atedPattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"Light" +
+                "SwitchApplication.hrEmpFamilyMember_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpF" +
+                "amilyMember\" /></EntityType><EntityType Name=\"hrEmpLanguage\"><Key><PropertyRef N" +
+                "ame=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotatio" +
+                "n:StoreGeneratedPattern=\"Identity\" /><Property Name=\"hrEmpLanguage_hrPerson\" Typ" +
+                "e=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Language\" Type=\"Edm.String\" Nul" +
+                "lable=\"false\" MaxLength=\"255\" /><Property Name=\"Level\" Type=\"Edm.String\" Nullabl" +
+                "e=\"false\" MaxLength=\"255\" /><Property Name=\"Certificate\" Type=\"Edm.String\" MaxLe" +
+                "ngth=\"255\" /><Property Name=\"CertificateIssuedBy\" Type=\"Edm.String\" MaxLength=\"2" +
+                "55\" /><Property Name=\"CertificateDate\" Type=\"Edm.DateTime\" /><Property Name=\"Cre" +
+                "atedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.D" +
+                "ateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /" +
+                "><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersio" +
+                "n\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGe" +
+                "neratedPattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"Li" +
+                "ghtSwitchApplication.hrEmpLanguage_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpLa" +
+                "nguage\" /></EntityType><EntityType Name=\"hrEmpMilService\"><Key><PropertyRef Name" +
+                "=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property " +
+                "Name=\"IsThereRelationship\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=" +
+                "\"MilitaryRank\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"MilSpecializa" +
+                "tionNr\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"RecordInArmy\" Type=\"" +
+                "Edm.String\" MaxLength=\"255\" /><Property Name=\"MilServiceCardNr\" Type=\"Edm.String" +
+                "\" MaxLength=\"255\" /><Property Name=\"AssignmentPolishMil\" Type=\"Edm.String\" MaxLe" +
                 "ngth=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Pro" +
                 "perty Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Typ" +
                 "e=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOff" +
                 "set\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Concurrenc" +
                 "yMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty " +
-                "Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrEmergencyContact_hrPerson" +
-                "\" ToRole=\"hrPerson\" FromRole=\"hrEmergencyContact\" /></EntityType><EntityType Nam" +
-                "e=\"hrEmpAcademicProfileByAcademician\"><Key><PropertyRef Name=\"Id\" /></Key><Prope" +
-                "rty Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"FullName\" Type" +
-                "=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"AssignmentToFieldOfStudy\" Type=\"" +
-                "Edm.String\" MaxLength=\"255\" /><Property Name=\"FoSArea\" Type=\"Edm.String\" MaxLeng" +
-                "th=\"255\" /><Property Name=\"FoSKnowledge\" Type=\"Edm.String\" MaxLength=\"255\" /><Pr" +
-                "operty Name=\"FoSDiscipline\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"" +
-                "Speciality\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"PBNID\" Type=\"Edm" +
-                ".String\" MaxLength=\"255\" /><Property Name=\"NumberQuotedWoS\" Type=\"Edm.String\" Ma" +
-                "xLength=\"255\" /><Property Name=\"IndexHirshaWoS\" Type=\"Edm.String\" MaxLength=\"255" +
-                "\" /><Property Name=\"Biogram\" Type=\"Edm.String\" MaxLength=\"1000\" /><Property Name" +
-                "=\"ResearchInterests\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Lecture" +
-                "dSubjects\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"AbilityToTakeClas" +
-                "ses\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"GuestLectures\" Type=\"Ed" +
-                "m.String\" MaxLength=\"255\" /><Property Name=\"ScientificHeldPositions\" Type=\"Edm.S" +
-                "tring\" MaxLength=\"255\" /><Property Name=\"OrganisationalHeldPositions\" Type=\"Edm." +
-                "String\" MaxLength=\"255\" /><Property Name=\"ResearchActivities\" Type=\"Edm.String\" " +
-                "MaxLength=\"255\" /><Property Name=\"HasConsultingExperience\" Type=\"Edm.Boolean\" />" +
-                "<Property Name=\"ConsultingSubjectArea\" Type=\"Edm.String\" MaxLength=\"255\" /><Prop" +
-                "erty Name=\"ConsultingForm\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"P" +
-                "racticalActivistToHeldClass\" Type=\"Edm.Boolean\" /><Property Name=\"CurrentPractic" +
-                "alActivist\" Type=\"Edm.Boolean\" /><Property Name=\"UniversityActivity\" Type=\"Edm.B" +
-                "oolean\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Proper" +
-                "ty Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"" +
-                "Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset" +
-                "\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMo" +
-                "de=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Nam" +
-                "e=\"Academician\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByAcade" +
-                "mic_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpAcademicProfileByAcademician\" /><" +
-                "/EntityType><EntityType Name=\"hrEmpAcademicProfileByHR\"><Key><PropertyRef Name=\"" +
-                "Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:Sto" +
-                "reGeneratedPattern=\"Identity\" /><Property Name=\"FullName\" Type=\"Edm.String\" MaxL" +
-                "ength=\"255\" /><Property Name=\"hrEmpAcademicProfileByHR_hrPerson\" Type=\"Edm.Int32" +
-                "\" Nullable=\"false\" /><Property Name=\"Multiplier\" Type=\"Edm.Int32\" Nullable=\"fals" +
-                "e\" /><Property Name=\"EmploymentBasis\" Type=\"Edm.String\" Nullable=\"false\" MaxLeng" +
-                "th=\"255\" /><Property Name=\"hrEmpAcademicProfileByHR_erpUniversity\" Type=\"Edm.Int" +
-                "32\" Nullable=\"false\" /><Property Name=\"hrEmpAcademicProfileByHR_erpPosition\" Typ" +
-                "e=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Degree\" Type=\"Edm.String\" MaxLe" +
-                "ngth=\"255\" /><Property Name=\"EmploymentDate\" Type=\"Edm.DateTime\" /><Property Nam" +
-                "e=\"hrEmpAcademicProfileByHR_erpFaculty\" Type=\"Edm.Int32\" Nullable=\"false\" /><Pro" +
-                "perty Name=\"hrEmpAcademicProfileByHR_erpProgram\" Type=\"Edm.Int32\" Nullable=\"fals" +
-                "e\" /><Property Name=\"DoesScientificResearch\" Type=\"Edm.Boolean\" /><Property Name" +
-                "=\"PensumBilans\" Type=\"Edm.Int32\" /><Property Name=\"ObligatoryWorkingHourOfPastYe" +
-                "ar\" Type=\"Edm.Int32\" /><Property Name=\"hrEmpAcademicProfileByHR_hrPerson1\" Type=" +
-                "\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"DidacticPensum\" Type=\"Edm.Int32\" " +
-                "/><Property Name=\"hrEmpAcademicProfileByHR_hrPerson2\" Type=\"Edm.Int32\" Nullable=" +
-                "\"false\" /><Property Name=\"ScientificPensum\" Type=\"Edm.Int32\" /><Property Name=\"h" +
-                "rEmpAcademicProfileByHR_hrPerson3\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property" +
-                " Name=\"OrganizationalPensum\" Type=\"Edm.Int32\" /><Property Name=\"OtherArrangement" +
-                "s\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"OpinionAverage\" Type=\"Edm" +
-                ".String\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLengt" +
-                "h=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset";
+                "Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrEmpMilService_hrPerson\" T" +
+                "oRole=\"hrPerson\" FromRole=\"hrEmpMilService\" /></EntityType><EntityType Name=\"hrE" +
+                "mpPastEmployement\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=" +
+                "\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Prop" +
+                "erty Name=\"hrEmpPastEmployement_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><P" +
+                "roperty Name=\"Emplooyer\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><P" +
+                "roperty Name=\"Position\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Pr" +
+                "operty Name=\"StartDate\" Type=\"Edm.DateTime\" /><Property Name=\"EndDate\" Type=\"Edm" +
+                ".DateTime\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Pro" +
+                "perty Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Typ" +
+                "e=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOff" +
+                "set\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Concurrenc" +
+                "yMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty " +
+                "Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrEmpPastEmployement_hrPers" +
+                "on\" ToRole=\"hrPerson\" FromRole=\"hrEmpPastEmployement\" /></EntityType><EntityType" +
+                " Name=\"hrEmpProfile\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Typ" +
+                "e=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"FullName\" Type=\"Edm.String\" Max" +
+                "Length=\"255\" /><Property Name=\"BirthDate\" Type=\"Edm.DateTime\" Nullable=\"false\" /" +
+                "><Property Name=\"BirthPlace\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=" +
+                "\"FathersName\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"MothersName\" T" +
+                "ype=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"NationalHealth\" Type=\"Edm.Str" +
+                "ing\" MaxLength=\"255\" /><Property Name=\"IDType\" Type=\"Edm.String\" MaxLength=\"255\"" +
+                " /><Property Name=\"IDNumber\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=" +
+                "\"IDIssuedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"IDDate\" Type=\"E" +
+                "dm.DateTime\" /><Property Name=\"TaxOffice\" Type=\"Edm.String\" MaxLength=\"255\" /><P" +
+                "roperty Name=\"Street\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"HouseN" +
+                "r\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"FlatNr\" Type=\"Edm.String\"" +
+                " MaxLength=\"255\" /><Property Name=\"PostalCode\" Type=\"Edm.String\" MaxLength=\"255\"" +
+                " /><Property Name=\"City\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Nat" +
+                "ionalID\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"ContactNumber\" Type" +
+                "=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"BankAccount\" Type=\"Edm.String\" M" +
+                "axLength=\"255\" /><Property Name=\"HasPension\" Type=\"Edm.Boolean\" /><Property Name" +
+                "=\"FirstPensionDate\" Type=\"Edm.DateTime\" /><Property Name=\"HighCostDeclarationCit" +
+                "y\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"ReceiveHighCostSeperation" +
+                "Benefit\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"DontReceiveHighCost" +
+                "SeperationBenefit\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"IncomeTax" +
+                "1\" Type=\"Edm.Boolean\" /><Property Name=\"IncomeTax2\" Type=\"Edm.Boolean\" /><Proper" +
+                "ty Name=\"IncomeTax3\" Type=\"Edm.Boolean\" /><Property Name=\"IncomeTax4\" Type=\"Edm." +
+                "Boolean\" /><Property Name=\"IncomeTax5\" Type=\"Edm.Boolean\" /><Property Name=\"Decl" +
+                "erationOfTrueInformation\" Type=\"Edm.Boolean\" /><Property Name=\"hrEmpProfile_erpU" +
+                "niversity\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"EmploymentDate\" T" +
+                "ype=\"Edm.DateTime\" /><Property Name=\"Place\" Type=\"Edm.String\" MaxLength=\"255\" />" +
+                "<Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"C" +
+                "reated\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Modifie";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart2 = "\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Nam" +
-                "e=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.B" +
-                "inary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern" +
-                "=\"Computed\" /><NavigationProperty Name=\"Academician\" Relationship=\"LightSwitchAp" +
-                "plication.hrEmpAcademicProfileByHR_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpAc" +
-                "ademicProfileByHR\" /><NavigationProperty Name=\"University\" Relationship=\"LightSw" +
-                "itchApplication.hrEmpAcademicProfileByHR_erpUniversity\" ToRole=\"erpUniversity\" F" +
-                "romRole=\"hrEmpAcademicProfileByHR\" /><NavigationProperty Name=\"Position\" Relatio" +
-                "nship=\"LightSwitchApplication.hrEmpAcademicProfileByHR_erpPosition\" ToRole=\"erpP" +
-                "osition\" FromRole=\"hrEmpAcademicProfileByHR\" /><NavigationProperty Name=\"Faculty" +
-                "\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByHR_erpFaculty\" ToRo" +
-                "le=\"erpFaculty\" FromRole=\"hrEmpAcademicProfileByHR\" /><NavigationProperty Name=\"" +
-                "Program\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByHR_erpProgra" +
-                "m\" ToRole=\"erpProgram\" FromRole=\"hrEmpAcademicProfileByHR\" /><NavigationProperty" +
-                " Name=\"DidacticSupervisor\" Relationship=\"LightSwitchApplication.hrEmpAcademicPro" +
-                "fileByHR_hrPerson1\" ToRole=\"hrPerson\" FromRole=\"hrEmpAcademicProfileByHR\" /><Nav" +
-                "igationProperty Name=\"ScientificSupervisor\" Relationship=\"LightSwitchApplication" +
-                ".hrEmpAcademicProfileByHR_hrPerson2\" ToRole=\"hrPerson\" FromRole=\"hrEmpAcademicPr" +
-                "ofileByHR\" /><NavigationProperty Name=\"OrganizationalSupervisor\" Relationship=\"L" +
-                "ightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson3\" ToRole=\"hrPerson\" From" +
-                "Role=\"hrEmpAcademicProfileByHR\" /><NavigationProperty Name=\"hrEmpCourses\" Relati" +
-                "onship=\"LightSwitchApplication.hrEmpCourse_hrEmpAcademicProfileByHR\" ToRole=\"hrE" +
-                "mpCourse\" FromRole=\"hrEmpAcademicProfileByHR\" /></EntityType><EntityType Name=\"h" +
-                "rEmpCourse\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.In" +
-                "t32\" Nullable=\"false\" /><Property Name=\"hrEmpCourse_hrPerson\" Type=\"Edm.Int32\" N" +
-                "ullable=\"false\" /><Property Name=\"hrEmpCourse_hrEmpAcademicProfileByHR\" Type=\"Ed" +
-                "m.Int32\" Nullable=\"false\" /><Property Name=\"hrEmpCourse_erpHRAccountingPeriod\" T" +
-                "ype=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Semestry\" Type=\"Edm.String\" N" +
-                "ullable=\"false\" MaxLength=\"255\" /><Property Name=\"Term\" Type=\"Edm.String\" Nullab" +
-                "le=\"false\" MaxLength=\"255\" /><Property Name=\"hrEmpCourse_sylCourse\" Type=\"Edm.In" +
-                "t32\" Nullable=\"false\" /><Property Name=\"hrEmpCourse_erpLanguage\" Type=\"Edm.Int32" +
-                "\" Nullable=\"false\" /><Property Name=\"PlannedHours\" Type=\"Edm.Decimal\" Nullable=\"" +
-                "false\" Precision=\"18\" Scale=\"1\" /><Property Name=\"RealizedHours\" Type=\"Edm.Decim" +
-                "al\" Nullable=\"false\" Precision=\"18\" Scale=\"1\" /><Property Name=\"OtherInfo\" Type=" +
-                "\"Edm.String\" MaxLength=\"255\" /><Property Name=\"ClassTypeCviczenia\" Type=\"Edm.Boo" +
-                "lean\" /><Property Name=\"ClassTypeWyklad\" Type=\"Edm.Boolean\" /><Property Name=\"Cl" +
-                "assTypeKonwersatoria\" Type=\"Edm.Boolean\" /><Property Name=\"ClassTypeSeminarium\" " +
-                "Type=\"Edm.Boolean\" /><Property Name=\"ClassTypeKonsultacje\" Type=\"Edm.Boolean\" />" +
-                "<Property Name=\"ClassTypeEgzamin\" Type=\"Edm.Boolean\" /><Property Name=\"StudentSe" +
-                "mestr\" Type=\"Edm.Int32\" /><Property Name=\"WeekDay\" Type=\"Edm.String\" MaxLength=\"" +
-                "255\" /><Property Name=\"Dates\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name" +
-                "=\"ConductedHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"2\" /" +
-                "><Property Name=\"Room\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Creat" +
-                "edBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.Dat" +
-                "eTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><" +
-                "Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\"" +
-                " Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGene" +
-                "ratedPattern=\"Computed\" /><NavigationProperty Name=\"Academician\" Relationship=\"L" +
-                "ightSwitchApplication.hrEmpCourse_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpCou" +
-                "rse\" /><NavigationProperty Name=\"ForPensumOf\" Relationship=\"LightSwitchApplicati" +
-                "on.hrEmpCourse_hrEmpAcademicProfileByHR\" ToRole=\"hrEmpAcademicProfileByHR\" FromR" +
-                "ole=\"hrEmpCourse\" /><NavigationProperty Name=\"erpHRAccountingPeriod\" Relationshi" +
-                "p=\"LightSwitchApplication.hrEmpCourse_erpHRAccountingPeriod\" ToRole=\"erpHRAccoun" +
-                "tingPeriod\" FromRole=\"hrEmpCourse\" /><NavigationProperty Name=\"NameOfSubject\" Re" +
-                "lationship=\"LightSwitchApplication.hrEmpCourse_sylCourse\" ToRole=\"sylCourse\" Fro" +
-                "mRole=\"hrEmpCourse\" /><NavigationProperty Name=\"ClassLanguage\" Relationship=\"Lig" +
-                "htSwitchApplication.hrEmpCourse_erpLanguage\" ToRole=\"erpLanguage\" FromRole=\"hrEm" +
-                "pCourse\" /><NavigationProperty Name=\"Status\" Relationship=\"LightSwitchApplicatio" +
-                "n.hrEmpCourse_hrEvalStatu\" ToRole=\"hrEvalStatu\" FromRole=\"hrEmpCourse\" /></Entit" +
-                "yType><EntityType Name=\"hrEmpDisability\"><Key><PropertyRef Name=\"Id\" /></Key><Pr" +
-                "operty Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPatt" +
-                "ern=\"Identity\" /><Property Name=\"hrEmpDisability_hrPerson\" Type=\"Edm.Int32\" Null" +
-                "able=\"false\" /><Property Name=\"DecisionNumber\" Type=\"Edm.String\" Nullable=\"false" +
-                "\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\"" +
-                " /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Modified" +
-                "By\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.Date" +
+            private const string ModelPart4 = "dBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.Date" +
                 "TimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Con" +
                 "currencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationPr" +
-                "operty Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrEmpDisability_hrPe" +
-                "rson\" ToRole=\"hrPerson\" FromRole=\"hrEmpDisability\" /></EntityType><EntityType Na" +
-                "me=\"hrEmpEducation\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type" +
-                "=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Pro" +
-                "perty Name=\"hrEmpEducation_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Proper" +
-                "ty Name=\"Degree\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property " +
-                "Name=\"FieldOfStudy\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Proper" +
-                "ty Name=\"AcademicTitle\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Pr" +
-                "operty Name=\"Academy\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Prop" +
-                "erty Name=\"StartDate\" Type=\"Edm.DateTime\" /><Property Name=\"EndDate\" Type=\"Edm.D" +
-                "ateTime\" /><Property Name=\"GraduationYear\" Type=\"Edm.Int32\" Nullable=\"false\" /><" +
-                "Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Cr" +
-                "eated\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\"" +
-                " MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Proper" +
-                "ty Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" " +
-                "annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"hrPerson" +
-                "\" Relationship=\"LightSwitchApplication.hrEmpEducation_hrPerson\" ToRole=\"hrPerson" +
-                "\" FromRole=\"hrEmpEducation\" /></EntityType><EntityType Name=\"hrEmpFamilyHealthIn" +
-                "surance\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32" +
-                "\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=" +
-                "\"hrEmpFamilyHealthInsurance_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Prope" +
-                "rty Name=\"Surname\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Propert" +
-                "y Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Nam" +
-                "e=\"NationalIDNr\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property " +
-                "Name=\"BirthDate\" Type=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"Registra" +
-                "tionDate\" Type=\"Edm.DateTime\" /><Property Name=\"FamilyRelat";
+                "operty Name=\"Employee\" Relationship=\"LightSwitchApplication.hrEmpProfile_hrPerso" +
+                "n\" ToRole=\"hrPerson\" FromRole=\"hrEmpProfile\" /><NavigationProperty Name=\"Employm" +
+                "entPlace\" Relationship=\"LightSwitchApplication.hrEmpProfile_erpUniversity\" ToRol" +
+                "e=\"erpUniversity\" FromRole=\"hrEmpProfile\" /></EntityType><EntityType Name=\"hrEmp" +
+                "Skill\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" " +
+                "Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"h" +
+                "rEmpSkill_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Property" +
+                "Type\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Defin" +
+                "ition\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Crea" +
+                "tedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.Da" +
+                "teTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" />" +
+                "<Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion" +
+                "\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGen" +
+                "eratedPattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"Lig" +
+                "htSwitchApplication.hrEmpSkill_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpSkill\"" +
+                " /></EntityType><EntityType Name=\"hrEvalStatu\"><Key><PropertyRef Name=\"Id\" /></K" +
+                "ey><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGenerat" +
+                "edPattern=\"Identity\" /><Property Name=\"Status\" Type=\"Edm.String\" Nullable=\"false" +
+                "\" MaxLength=\"255\" /><Property Name=\"Note\" Type=\"Edm.String\" MaxLength=\"500\" /><P" +
+                "roperty Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Cre" +
+                "ated\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" " +
+                "MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Propert" +
+                "y Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" a" +
+                "nnotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"hrEmpCour" +
+                "se\" Relationship=\"LightSwitchApplication.hrEmpCourse_hrEvalStatu\" ToRole=\"hrEmpC" +
+                "ourse\" FromRole=\"hrEvalStatu\" /></EntityType><EntityType Name=\"hrPerson\"><Key><P" +
+                "ropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"fals" +
+                "e\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"FullName\" Type=" +
+                "\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=" +
+                "\"false\" MaxLength=\"255\" /><Property Name=\"Surname\" Type=\"Edm.String\" Nullable=\"f" +
+                "alse\" MaxLength=\"255\" /><Property Name=\"EmailAddress\" Type=\"Edm.String\" Nullable" +
+                "=\"false\" MaxLength=\"255\" /><Property Name=\"ExtUserName\" Type=\"Edm.String\" Nullab" +
+                "le=\"false\" MaxLength=\"255\" /><Property Name=\"AccessCardID\" Type=\"Edm.String\" Max" +
+                "Length=\"255\" /><Property Name=\"Employee_Department\" Type=\"Edm.Int32\" /><Property" +
+                " Name=\"IsAcademician\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"Empl" +
+                "oyee_AcademicDepartment\" Type=\"Edm.Int32\" /><Property Name=\"LSUser\" Type=\"Edm.St" +
+                "ring\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"DoorSysID\" Type=\"Edm.St" +
+                "ring\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"hrPerson_hrPerson\" Type" +
+                "=\"Edm.Int32\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><P" +
+                "roperty Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" T" +
+                "ype=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeO" +
+                "ffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Concurre" +
+                "ncyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationPropert" +
+                "y Name=\"Department\" Relationship=\"LightSwitchApplication.hrPerson_hrDepartment\" " +
+                "ToRole=\"hrDepartment\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"ManagerOf\"" +
+                " Relationship=\"LightSwitchApplication.hrDepartment_hrPerson\" ToRole=\"hrDepartmen" +
+                "t\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrWorkingHour\" Relationship=\"" +
+                "LightSwitchApplication.hrWorkingHour_hrPerson\" ToRole=\"hrWorkingHour\" FromRole=\"" +
+                "hrPerson\" /><NavigationProperty Name=\"SyllabusCollection\" Relationship=\"LightSwi" +
+                "tchApplication.sylSyllabus_hrPerson\" ToRole=\"sylSyllabus\" FromRole=\"hrPerson\" />" +
+                "<NavigationProperty Name=\"erpAcademicDepartment\" Relationship=\"LightSwitchApplic" +
+                "ation.hrPerson_erpAcademicDepartment\" ToRole=\"erpAcademicDepartment\" FromRole=\"h" +
+                "rPerson\" /><NavigationProperty Name=\"sylAcademicDepartment1\" Relationship=\"Light" +
+                "SwitchApplication.erpAcademicDepartment_hrPerson\" ToRole=\"erpAcademicDepartment\"" +
+                " FromRole=\"hrPerson\" /><NavigationProperty Name=\"sylCourseTeacher\" Relationship=" +
+                "\"LightSwitchApplication.sylCourseTeacher_hrPerson\" ToRole=\"sylCourseTeacher\" Fro" +
+                "mRole=\"hrPerson\" /><NavigationProperty Name=\"sylSyllabi\" Relationship=\"LightSwit" +
+                "chApplication.sylSyllabus_hrPerson1\" ToRole=\"sylSyllabus\" FromRole=\"hrPerson\" />" +
+                "<NavigationProperty Name=\"hrEmpProfile\" Relationship=\"LightSwitchApplication.hrE" +
+                "mpProfile_hrPerson\" ToRole=\"hrEmpProfile\" FromRole=\"hrPerson\" /><NavigationPrope" +
+                "rty Name=\"hrAddresses\" Relationship=\"LightSwitchApplication.hrAddress_hrPerson\" " +
+                "ToRole=\"hrAddress\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpFamilyMe" +
+                "mber\" Relationship=\"LightSwitchApplication.hrEmpFamilyMember_hrPerson\" ToRole=\"h" +
+                "rEmpFamilyMember\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpEducation" +
+                "s\" Relationship=\"LightSwitchApplication.hrEmpEducation_hrPerson\" ToRole=\"hrEmpEd" +
+                "ucation\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpPastEmployements\" " +
+                "Relationship=\"LightSwitchApplication.hrEmpPastEmployement_hrPerson\" ToRole=\"hrEm" +
+                "pPastEmployement\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpSkills\" R" +
+                "elationship=\"LightSwitchApplication.hrEmpSkill_hrPerson\" ToRole=\"hrEmpSkill\" Fro" +
+                "mRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpLanguages\" Relationship=\"Light" +
+                "SwitchApplication.hrEmpLanguage_hrPerson\" ToRole=\"hrEmpLanguage\" FromRole=\"hrPer" +
+                "son\" /><NavigationProperty Name=\"hrEmpMilService\" Relationship=\"LightSwitchAppli" +
+                "cation.hrEmpMilService_hrPerson\" ToRole=\"hrEmpMilService\" FromRole=\"hrPerson\" />" +
+                "<NavigationProperty Name=\"hrEmpDisabilities\" Relationship=\"LightSwitchApplicatio" +
+                "n.hrEmpDisability_hrPerson\" ToRole=\"hrEmpDisability\" FromRole=\"hrPerson\" /><Navi" +
+                "gationProperty Name=\"hrEmpFamilyHealthInsurances\" Relationship=\"LightSwitchAppli" +
+                "cation.hrEmpFamilyHealthInsurance_hrPerson\" ToRole=\"hrEmpFamilyHealthInsurance\" " +
+                "FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmergencyContacts\" Relationshi" +
+                "p=\"LightSwitchApplication.hrEmergencyContact_hrPerson\" ToRole=\"hrEmergencyContac" +
+                "t\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpAcademicProfileByHRs\" Re" +
+                "lationship=\"LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson\" ToRole=\"hr" +
+                "EmpAcademicProfileByHR\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpAca" +
+                "demicProfileByHRs1\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByH" +
+                "R_hrPerson1\" ToRole=\"hrEmpAcademicProfileByHR\" FromRole=\"hrPerson\" /><Navigation" +
+                "Property Name=\"hrEmpAcademicProfileByHRs2\" Relationship=\"LightSwitchApplication." +
+                "hrEmpAcademicProfileByHR_hrPerson2\" ToRole=\"hrEmpAcademicProfileByHR\" FromRole=\"" +
+                "hrPerson\" /><NavigationProperty Name=\"hrEmpAcademicProfileByHRs3\" Relationship=\"" +
+                "LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson3\" ToRole=\"hrEmpAcademic" +
+                "ProfileByHR\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpAcademicProfil" +
+                "eByAcademician\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByAcade" +
+                "mic_hrPerson\" ToRole=\"hrEmpAcademicProfileByAcademician\" Fr";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart3 = "ionship\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"IsL" +
-                "iveInSameHouse\" Type=\"Edm.Boolean\" /><Property Name=\"FamilyMemberDisabilityCode\"" +
-                " Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"ContinueStudyinAfter18\" Typ" +
-                "e=\"Edm.Boolean\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /" +
-                "><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy" +
-                "\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTi" +
-                "meOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Concu" +
-                "rrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProp" +
-                "erty Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrEmpFamilyHealthInsur" +
-                "ance_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpFamilyHealthInsurance\" /></Entit" +
-                "yType><EntityType Name=\"hrEmpFamilyMember\"><Key><PropertyRef Name=\"Id\" /></Key><" +
-                "Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPa" +
-                "ttern=\"Identity\" /><Property Name=\"hrEmplooyeeFamilyMember_hrPerson\" Type=\"Edm.I" +
-                "nt32\" Nullable=\"false\" /><Property Name=\"FamilyRelationship\" Type=\"Edm.String\" N" +
-                "ullable=\"false\" MaxLength=\"255\" /><Property Name=\"FullName\" Type=\"Edm.String\" Nu" +
-                "llable=\"false\" MaxLength=\"255\" /><Property Name=\"BirthDate\" Type=\"Edm.DateTime\" " +
-                "Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" " +
-                "/><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedB" +
-                "y\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateT" +
-                "imeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Conc" +
-                "urrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationPro" +
-                "perty Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrEmpFamilyMember_hrP" +
-                "erson\" ToRole=\"hrPerson\" FromRole=\"hrEmpFamilyMember\" /></EntityType><EntityType" +
-                " Name=\"hrEmpLanguage\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Ty" +
-                "pe=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><P" +
-                "roperty Name=\"hrEmpLanguage_hrPerson\" Type=\"Edm.Int32\" Nullable=\"false\" /><Prope" +
-                "rty Name=\"Language\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Proper" +
-                "ty Name=\"Level\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property N" +
-                "ame=\"Certificate\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Certificat" +
-                "eIssuedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"CertificateDate\" " +
-                "Type=\"Edm.DateTime\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"25" +
-                "5\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Modifi" +
-                "edBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.Da" +
-                "teTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" C" +
-                "oncurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><Navigation" +
-                "Property Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrEmpLanguage_hrPe" +
-                "rson\" ToRole=\"hrPerson\" FromRole=\"hrEmpLanguage\" /></EntityType><EntityType Name" +
-                "=\"hrEmpMilService\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=" +
-                "\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"IsThereRelationship\" Type=\"Edm.Bo" +
-                "olean\" Nullable=\"false\" /><Property Name=\"MilitaryRank\" Type=\"Edm.String\" MaxLen" +
-                "gth=\"255\" /><Property Name=\"MilSpecializationNr\" Type=\"Edm.String\" MaxLength=\"25" +
-                "5\" /><Property Name=\"RecordInArmy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property" +
-                " Name=\"MilServiceCardNr\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Ass" +
-                "ignmentPolishMil\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"CreatedBy\"" +
-                " Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTime" +
-                "Offset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Prope" +
-                "rty Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type" +
-                "=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGenerated" +
-                "Pattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"LightSwit" +
-                "chApplication.hrEmpMilService_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpMilServ" +
-                "ice\" /></EntityType><EntityType Name=\"hrEmpPastEmployement\"><Key><PropertyRef Na" +
-                "me=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation" +
-                ":StoreGeneratedPattern=\"Identity\" /><Property Name=\"hrEmpPastEmployement_hrPerso" +
-                "n\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Emplooyer\" Type=\"Edm.Stri" +
-                "ng\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Position\" Type=\"Edm.Strin" +
-                "g\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"StartDate\" Type=\"Edm.DateT" +
-                "ime\" /><Property Name=\"EndDate\" Type=\"Edm.DateTime\" /><Property Name=\"CreatedBy\"" +
-                " Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTime" +
-                "Offset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Prope" +
-                "rty Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type" +
-                "=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGenerated" +
-                "Pattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"LightSwit" +
-                "chApplication.hrEmpPastEmployement_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpPa" +
-                "stEmployement\" /></EntityType><EntityType Name=\"hrEmpProfile\"><Key><PropertyRef " +
-                "Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" /><Prope" +
-                "rty Name=\"FullName\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"BirthDat" +
-                "e\" Type=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"BirthPlace\" Type=\"Edm." +
-                "String\" MaxLength=\"255\" /><Property Name=\"FathersName\" Type=\"Edm.String\" MaxLeng" +
-                "th=\"255\" /><Property Name=\"MothersName\" Type=\"Edm.String\" MaxLength=\"255\" /><Pro" +
-                "perty Name=\"NationalHealth\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"" +
-                "IDType\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"IDNumber\" Type=\"Edm." +
-                "String\" MaxLength=\"255\" /><Property Name=\"IDIssuedBy\" Type=\"Edm.String\" MaxLengt" +
-                "h=\"255\" /><Property Name=\"IDDate\" Type=\"Edm.DateTime\" /><Property Name=\"TaxOffic" +
-                "e\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Street\" Type=\"Edm.String\"" +
-                " MaxLength=\"255\" /><Property Name=\"HouseNr\" Type=\"Edm.String\" MaxLength=\"255\" />" +
-                "<Property Name=\"FlatNr\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Post" +
-                "alCode\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"City\" Type=\"Edm.Stri" +
-                "ng\" MaxLength=\"255\" /><Property Name=\"NationalID\" Type=\"Edm.String\" MaxLength=\"2" +
-                "55\" /><Property Name=\"ContactNumber\" Type=\"Edm.String\" MaxLength=\"255\" /><Proper" +
-                "ty Name=\"BankAccount\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"HasPen" +
-                "sion\" Type=\"Edm.Boolean\" /><Property Name=\"FirstPensionDate\" Type=\"Edm.DateTime\"" +
-                " /><Property Name=\"HighCostDeclarationCity\" Type=\"Edm.String\" MaxLength=\"255\" />" +
-                "<Property Name=\"ReceiveHighCostSeperationBenefit\" Type=\"Edm.String\" MaxLength=\"2" +
-                "55\" /><Property Name=\"DontReceiveHighCostSeperationBenefit\" Type=\"Edm.String\" Ma" +
-                "xLength=\"255\" /><Property Name=\"IncomeTax1\" Type=\"Edm.Boolean\" /><Property Name=" +
-                "\"IncomeTax2\" Type=\"Edm.Boolean\" /><Property Name=\"IncomeTax3\" Type=\"Edm.Boolean\"" +
-                " /><Property Name=\"IncomeTax4\" Type=\"Edm.Boolean\" /><Property Name=\"IncomeTax5\" " +
-                "Type=\"Edm.Boolean\" /><Property Name=\"DeclerationOfTrueInformation\" Type=\"Edm.Boo" +
-                "lean\" /><Property Name=\"hrEmpProfile_erpUniversity\" Type=\"Edm.Int32\" Nullable=\"f" +
-                "alse\" /><Property Name=\"EmploymentDate\" Type=\"Edm.DateTime\" /><Property Name=\"Pl" +
-                "ace\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.St" +
-                "ring\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Pr" +
-                "operty Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Mod" +
-                "ified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersi";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart4 = "on\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGe" +
-                "neratedPattern=\"Computed\" /><NavigationProperty Name=\"Employee\" Relationship=\"Li" +
-                "ghtSwitchApplication.hrEmpProfile_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrEmpPro" +
-                "file\" /><NavigationProperty Name=\"EmploymentPlace\" Relationship=\"LightSwitchAppl" +
-                "ication.hrEmpProfile_erpUniversity\" ToRole=\"erpUniversity\" FromRole=\"hrEmpProfil" +
-                "e\" /></EntityType><EntityType Name=\"hrEmpSkill\"><Key><PropertyRef Name=\"Id\" /></" +
-                "Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGenera" +
-                "tedPattern=\"Identity\" /><Property Name=\"hrEmpSkill_hrPerson\" Type=\"Edm.Int32\" Nu" +
-                "llable=\"false\" /><Property Name=\"PropertyType\" Type=\"Edm.String\" Nullable=\"false" +
-                "\" MaxLength=\"255\" /><Property Name=\"Definition\" Type=\"Edm.String\" Nullable=\"fals" +
-                "e\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255" +
-                "\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Modifie" +
-                "dBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.Dat" +
-                "eTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Co" +
-                "ncurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationP" +
-                "roperty Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrEmpSkill_hrPerson" +
-                "\" ToRole=\"hrPerson\" FromRole=\"hrEmpSkill\" /></EntityType><EntityType Name=\"hrEva" +
-                "lStatu\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\"" +
-                " Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"" +
-                "Status\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Not" +
-                "e\" Type=\"Edm.String\" MaxLength=\"500\" /><Property Name=\"CreatedBy\" Type=\"Edm.Stri" +
-                "ng\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Prop" +
-                "erty Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modif" +
-                "ied\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" N" +
-                "ullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Comput" +
-                "ed\" /><NavigationProperty Name=\"hrEmpCourse\" Relationship=\"LightSwitchApplicatio" +
-                "n.hrEmpCourse_hrEvalStatu\" ToRole=\"hrEmpCourse\" FromRole=\"hrEvalStatu\" /></Entit" +
-                "yType><EntityType Name=\"hrPerson\"><Key><PropertyRef Name=\"Id\" /></Key><Property " +
-                "Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Id" +
-                "entity\" /><Property Name=\"FullName\" Type=\"Edm.String\" MaxLength=\"255\" /><Propert" +
-                "y Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Nam" +
-                "e=\"Surname\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=" +
-                "\"EmailAddress\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Na" +
-                "me=\"ExtUserName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property " +
-                "Name=\"AccessCardID\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Employee" +
-                "_Department\" Type=\"Edm.Int32\" /><Property Name=\"IsAcademician\" Type=\"Edm.Boolean" +
-                "\" Nullable=\"false\" /><Property Name=\"Employee_AcademicDepartment\" Type=\"Edm.Int3" +
-                "2\" /><Property Name=\"LSUser\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" " +
-                "/><Property Name=\"DoorSysID\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" " +
-                "/><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=" +
-                "\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.Stri" +
-                "ng\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Pro" +
-                "perty Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixe" +
-                "d\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"Depar" +
-                "tment\" Relationship=\"LightSwitchApplication.hrPerson_hrDepartment\" ToRole=\"hrDep" +
-                "artment\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"ManagerOf\" Relationship" +
-                "=\"LightSwitchApplication.hrDepartment_hrPerson\" ToRole=\"hrDepartment\" FromRole=\"" +
-                "hrPerson\" /><NavigationProperty Name=\"hrWorkingHour\" Relationship=\"LightSwitchAp" +
-                "plication.hrWorkingHour_hrPerson\" ToRole=\"hrWorkingHour\" FromRole=\"hrPerson\" /><" +
-                "NavigationProperty Name=\"SyllabusCollection\" Relationship=\"LightSwitchApplicatio" +
-                "n.sylSyllabus_hrPerson\" ToRole=\"sylSyllabus\" FromRole=\"hrPerson\" /><NavigationPr" +
-                "operty Name=\"erpAcademicDepartment\" Relationship=\"LightSwitchApplication.hrPerso" +
-                "n_erpAcademicDepartment\" ToRole=\"erpAcademicDepartment\" FromRole=\"hrPerson\" /><N" +
-                "avigationProperty Name=\"sylAcademicDepartment1\" Relationship=\"LightSwitchApplica" +
-                "tion.erpAcademicDepartment_hrPerson\" ToRole=\"erpAcademicDepartment\" FromRole=\"hr" +
-                "Person\" /><NavigationProperty Name=\"sylCourseTeacher\" Relationship=\"LightSwitchA" +
-                "pplication.sylCourseTeacher_hrPerson\" ToRole=\"sylCourseTeacher\" FromRole=\"hrPers" +
-                "on\" /><NavigationProperty Name=\"sylSyllabi\" Relationship=\"LightSwitchApplication" +
-                ".sylSyllabus_hrPerson1\" ToRole=\"sylSyllabus\" FromRole=\"hrPerson\" /><NavigationPr" +
-                "operty Name=\"hrEmpProfile\" Relationship=\"LightSwitchApplication.hrEmpProfile_hrP" +
-                "erson\" ToRole=\"hrEmpProfile\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrA" +
-                "ddresses\" Relationship=\"LightSwitchApplication.hrAddress_hrPerson\" ToRole=\"hrAdd" +
-                "ress\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpFamilyMember\" Relatio" +
-                "nship=\"LightSwitchApplication.hrEmpFamilyMember_hrPerson\" ToRole=\"hrEmpFamilyMem" +
-                "ber\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpEducations\" Relationsh" +
-                "ip=\"LightSwitchApplication.hrEmpEducation_hrPerson\" ToRole=\"hrEmpEducation\" From" +
-                "Role=\"hrPerson\" /><NavigationProperty Name=\"hrEmpPastEmployements\" Relationship=" +
-                "\"LightSwitchApplication.hrEmpPastEmployement_hrPerson\" ToRole=\"hrEmpPastEmployem" +
-                "ent\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpSkills\" Relationship=\"" +
-                "LightSwitchApplication.hrEmpSkill_hrPerson\" ToRole=\"hrEmpSkill\" FromRole=\"hrPers" +
-                "on\" /><NavigationProperty Name=\"hrEmpLanguages\" Relationship=\"LightSwitchApplica" +
-                "tion.hrEmpLanguage_hrPerson\" ToRole=\"hrEmpLanguage\" FromRole=\"hrPerson\" /><Navig" +
-                "ationProperty Name=\"hrEmpMilService\" Relationship=\"LightSwitchApplication.hrEmpM" +
-                "ilService_hrPerson\" ToRole=\"hrEmpMilService\" FromRole=\"hrPerson\" /><NavigationPr" +
-                "operty Name=\"hrEmpDisabilities\" Relationship=\"LightSwitchApplication.hrEmpDisabi" +
-                "lity_hrPerson\" ToRole=\"hrEmpDisability\" FromRole=\"hrPerson\" /><NavigationPropert" +
-                "y Name=\"hrEmpFamilyHealthInsurances\" Relationship=\"LightSwitchApplication.hrEmpF" +
-                "amilyHealthInsurance_hrPerson\" ToRole=\"hrEmpFamilyHealthInsurance\" FromRole=\"hrP" +
-                "erson\" /><NavigationProperty Name=\"hrEmergencyContacts\" Relationship=\"LightSwitc" +
-                "hApplication.hrEmergencyContact_hrPerson\" ToRole=\"hrEmergencyContact\" FromRole=\"" +
-                "hrPerson\" /><NavigationProperty Name=\"hrEmpAcademicProfileByHRs\" Relationship=\"L" +
-                "ightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson\" ToRole=\"hrEmpAcademicPr" +
-                "ofileByHR\" FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpAcademicProfileB" +
-                "yHRs1\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson1\" " +
-                "ToRole=\"hrEmpAcademicProfileByHR\" FromRole=\"hrPerson\" /><NavigationProperty Name" +
-                "=\"hrEmpAcademicProfileByHRs2\" Relationship=\"LightSwitchApplication.hrEmpAcademic" +
-                "ProfileByHR_hrPerson2\" ToRole=\"hrEmpAcademicProfileByHR\" FromRole=\"hrPerson\" /><" +
-                "NavigationProperty Name=\"hrEmpAcademicProfileByHRs3\" Relationship=\"LightSwitchAp" +
-                "plication.hrEmpAcademicProfileByHR_hrPerson3\" ToRole=\"hrEmpAcademicProfileByHR\" " +
-                "FromRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpAcademicProfileByAcademicia" +
-                "n\" Relationship=\"LightSwitchApplication.hrEmpAcademicProfileByAcademic_hrPerson\"" +
-                " ToRole=\"hrEmpAcademicProfileByAcademician\" FromRole=\"hrPerson\" /><NavigationPro" +
-                "perty Name=\"hrEmpCourses\" Relationship=\"LightSwitchApplication.hrEmpCourse_hrPer" +
-                "son\" ToRole=\"hrEmpCourse\" FromRole=\"hrPerson\" /></EntityTyp";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart5 = "e><EntityType Name=\"hrWorkingHour\"><Key><PropertyRef Name=\"Id\" /></Key><Property " +
-                "Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Id" +
-                "entity\" /><Property Name=\"WorkingHour_Employee\" Type=\"Edm.Int32\" Nullable=\"false" +
-                "\" /><Property Name=\"UserName\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name" +
-                "=\"DoorSysID\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name" +
-                "=\"AccessCardID\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"WorkingDate\"" +
-                " Type=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"RecYear\" Type=\"Edm.Int32" +
-                "\" Nullable=\"false\" /><Property Name=\"RecMonth\" Type=\"Edm.Int32\" Nullable=\"false\"" +
-                " /><Property Name=\"RecDay\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"D" +
-                "ayOfWeek\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"IsWorkingDay\" Type" +
-                "=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"StdWorkingHour\" Type=\"Edm.Int3" +
-                "2\" Nullable=\"false\" /><Property Name=\"EntryTime\" Type=\"Edm.DateTime\" /><Property" +
-                " Name=\"ExitTime\" Type=\"Edm.DateTime\" /><Property Name=\"TotalHours\" Type=\"Edm.Int" +
-                "32\" /><Property Name=\"TotalMinutes\" Type=\"Edm.Int32\" /><Property Name=\"Exception" +
-                "\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Note\" Type=\"Edm.String\" Ma" +
-                "xLength=\"255\" /><Property Name=\"AssignedWorkingHour\" Type=\"Edm.Int32\" /><Propert" +
-                "y Name=\"HourDiff\" Type=\"Edm.Int32\" /><Property Name=\"MinuteDiff\" Type=\"Edm.Int32" +
-                "\" /><Property Name=\"IsOTAccepted\" Type=\"Edm.Boolean\" /><Property Name=\"OTAccepte" +
-                "dBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"AcceptedOTeHrs\" Type=\"E" +
-                "dm.Int32\" /><Property Name=\"AcceptedOTMin\" Type=\"Edm.Int32\" /><Property Name=\"Cr" +
-                "eatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm." +
-                "DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" " +
-                "/><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersi" +
-                "on\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreG" +
-                "eneratedPattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationship=\"L" +
-                "ightSwitchApplication.hrWorkingHour_hrPerson\" ToRole=\"hrPerson\" FromRole=\"hrWork" +
-                "ingHour\" /></EntityType><EntityType Name=\"sylAcademicalAim\"><Key><PropertyRef Na" +
-                "me=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation" +
-                ":StoreGeneratedPattern=\"Identity\" /><Property Name=\"Name\" Type=\"Edm.String\" Null" +
-                "able=\"false\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxL" +
-                "ength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Nam" +
-                "e=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Typ" +
-                "e=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=" +
-                "\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><N" +
-                "avigationProperty Name=\"sylLearningOutcome\" Relationship=\"LightSwitchApplication" +
-                ".sylLearningOutcome_sylAcademicalAim\" ToRole=\"sylLearningOutcome\" FromRole=\"sylA" +
-                "cademicalAim\" /></EntityType><EntityType Name=\"sylCourseMaterial\"><Key><Property" +
-                "Ref Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" anno" +
-                "tation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Title\" Type=\"Edm.Strin" +
-                "g\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Description\" Type=\"Edm.Str" +
-                "ing\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Link\" Type=\"Edm.String\" " +
-                "MaxLength=\"255\" /><Property Name=\"SyllabusMaterial_Syllabus\" Type=\"Edm.Int32\" Nu" +
-                "llable=\"false\" /><Property Name=\"MaterialType\" Type=\"Edm.String\" Nullable=\"false" +
-                "\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\"" +
-                " /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Modified" +
-                "By\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.Date" +
-                "TimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" Con" +
-                "currencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationPr" +
-                "operty Name=\"sylSyllabus\" Relationship=\"LightSwitchApplication.sylCourseMaterial" +
-                "_sylSyllabus\" ToRole=\"sylSyllabus\" FromRole=\"sylCourseMaterial\" /></EntityType><" +
-                "EntityType Name=\"sylCourse\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"" +
-                "Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity" +
-                "\" /><Property Name=\"Title\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"N" +
-                "ame\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Course" +
-                "Code\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Langu" +
-                "age\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Course" +
-                "_AcademicDepartment\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"StudyPr" +
-                "ofile\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Stud" +
-                "yMode\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Stud" +
-                "yLevel\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Cre" +
+            private const string ModelPart5 = "omRole=\"hrPerson\" /><NavigationProperty Name=\"hrEmpCourses\" Relationship=\"LightSw" +
+                "itchApplication.hrEmpCourse_hrPerson\" ToRole=\"hrEmpCourse\" FromRole=\"hrPerson\" /" +
+                "><NavigationProperty Name=\"Supervised\" Relationship=\"LightSwitchApplication.hrPe" +
+                "rson_hrPerson\" ToRole=\"hrPerson2\" FromRole=\"hrPerson1\" /><NavigationProperty Nam" +
+                "e=\"Supervisor\" Relationship=\"LightSwitchApplication.hrPerson_hrPerson\" ToRole=\"h" +
+                "rPerson1\" FromRole=\"hrPerson2\" /></EntityType><EntityType Name=\"hrWorkingHour\"><" +
+                "Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable" +
+                "=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"WorkingHo" +
+                "ur_Employee\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"UserName\" Type=" +
+                "\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"DoorSysID\" Type=" +
+                "\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"AccessCardID\" Ty" +
+                "pe=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"WorkingDate\" Type=\"Edm.DateTim" +
+                "e\" Nullable=\"false\" /><Property Name=\"RecYear\" Type=\"Edm.Int32\" Nullable=\"false\"" +
+                " /><Property Name=\"RecMonth\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=" +
+                "\"RecDay\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"DayOfWeek\" Type=\"Ed" +
+                "m.String\" MaxLength=\"255\" /><Property Name=\"IsWorkingDay\" Type=\"Edm.Boolean\" Nul" +
+                "lable=\"false\" /><Property Name=\"StdWorkingHour\" Type=\"Edm.Int32\" Nullable=\"false" +
+                "\" /><Property Name=\"EntryTime\" Type=\"Edm.DateTime\" /><Property Name=\"ExitTime\" T" +
+                "ype=\"Edm.DateTime\" /><Property Name=\"TotalHours\" Type=\"Edm.Int32\" /><Property Na" +
+                "me=\"TotalMinutes\" Type=\"Edm.Int32\" /><Property Name=\"Exception\" Type=\"Edm.String" +
+                "\" MaxLength=\"255\" /><Property Name=\"Note\" Type=\"Edm.String\" MaxLength=\"255\" /><P" +
+                "roperty Name=\"AssignedWorkingHour\" Type=\"Edm.Int32\" /><Property Name=\"HourDiff\" " +
+                "Type=\"Edm.Int32\" /><Property Name=\"MinuteDiff\" Type=\"Edm.Int32\" /><Property Name" +
+                "=\"IsOTAccepted\" Type=\"Edm.Boolean\" /><Property Name=\"OTAcceptedBy\" Type=\"Edm.Str" +
+                "ing\" MaxLength=\"255\" /><Property Name=\"AcceptedOTeHrs\" Type=\"Edm.Int32\" /><Prope" +
+                "rty Name=\"AcceptedOTMin\" Type=\"Edm.Int32\" /><Property Name=\"EmpId\" Type=\"Edm.Int" +
+                "32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"2" +
+                "55\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Modif" +
+                "iedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.D" +
+                "ateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" " +
+                "ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><Navigatio" +
+                "nProperty Name=\"hrPerson\" Relationship=\"LightSwitchApplication.hrWorkingHour_hrP" +
+                "erson\" ToRole=\"hrPerson\" FromRole=\"hrWorkingHour\" /></EntityType><EntityType Nam" +
+                "e=\"sylAcademicalAim\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Typ" +
+                "e=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Pr" +
+                "operty Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Propert" +
+                "y Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" " +
+                "Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLen" +
+                "gth=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name" +
+                "=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotat" +
+                "ion:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"sylLearningOutc" +
+                "ome\" Relationship=\"LightSwitchApplication.sylLearningOutcome_sylAcademicalAim\" T" +
+                "oRole=\"sylLearningOutcome\" FromRole=\"sylAcademicalAim\" /></EntityType><EntityTyp" +
+                "e Name=\"sylCourseMaterial\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"I" +
+                "d\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\"" +
+                " /><Property Name=\"Title\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><" +
+                "Property Name=\"Description\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /" +
+                "><Property Name=\"Link\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Sylla" +
+                "busMaterial_Syllabus\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Materi" +
+                "alType\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Cre" +
                 "atedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.D" +
                 "ateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /" +
                 "><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersio" +
                 "n\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGe" +
-                "neratedPattern=\"Computed\" /><NavigationProperty Name=\"erpAcademicDepartment\" Rel" +
-                "ationship=\"LightSwitchApplication.sylCourse_erpAcademicDepartment\" ToRole=\"erpAc" +
-                "ademicDepartment\" FromRole=\"sylCourse\" /><NavigationProperty Name=\"sylProgramCou" +
-                "rse\" Relationship=\"LightSwitchApplication.sylProgramCourse_sylCourse\" ToRole=\"sy" +
-                "lProgramCourse\" FromRole=\"sylCourse\" /><NavigationProperty Name=\"SyllabusCollect" +
-                "ion\" Relationship=\"LightSwitchApplication.sylSyllabus_sylCourse\" ToRole=\"sylSyll" +
-                "abus\" FromRole=\"sylCourse\" /><NavigationProperty Name=\"sylPrerequisite\" Relation" +
-                "ship=\"LightSwitchApplication.sylPrerequisite_sylCourse\" ToRole=\"sylPrerequisite\"" +
-                " FromRole=\"sylCourse\" /><NavigationProperty Name=\"hrEmpCourses\" Relationship=\"Li" +
-                "ghtSwitchApplication.hrEmpCourse_sylCourse\" ToRole=\"hrEmpCourse\" FromRole=\"sylCo" +
-                "urse\" /></EntityType><EntityType Name=\"sylCourseTeacher\"><Key><PropertyRef Name=" +
-                "\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:St" +
-                "oreGeneratedPattern=\"Identity\" /><Property Name=\"CourseTeacher_Employee\" Type=\"E" +
-                "dm.Int32\" Nullable=\"false\" /><Property Name=\"CourseTeacher_Syllabus\" Type=\"Edm.I" +
-                "nt32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=" +
-                "\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Mod" +
-                "ifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm" +
-                ".DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false" +
-                "\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><Navigat" +
-                "ionProperty Name=\"hrPerson\" Relationship=\"LightSwitchApplication.sylCourseTeache" +
-                "r_hrPerson\" ToRole=\"hrPerson\" FromRole=\"sylCourseTeacher\" /><NavigationProperty " +
-                "Name=\"sylSyllabus\" Relationship=\"LightSwitchApplication.sylCourseTeacher_sylSyll" +
-                "abus\" ToRole=\"sylSyllabus\" FromRole=\"sylCourseTeacher\" /></EntityType><EntityTyp" +
-                "e Name=\"sylLearningOutcome\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"" +
-                "Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity" +
-                "\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><" +
-                "Property Name=\"OutcomeType\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /" +
-                "><Property Name=\"Weight\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scal" +
-                "e=\"9\" /><Property Name=\"LearningOutcome_AcademicalAim\" Type=\"Edm.Int32\" Nullable" +
-                "=\"false\" /><Property Name=\"LearningOutcome_Syllabus\" Type=\"";
+                "neratedPattern=\"Computed\" /><NavigationProperty Name=\"sylSyllabus\" Relationship=" +
+                "\"LightSwitchApplication.sylCourseMaterial_sylSyllabus\" ToRole=\"sylSyllabus\" From" +
+                "Role=\"sylCourseMaterial\" /></EntityType><EntityType Name=\"sylCourse\"><Key><Prope" +
+                "rtyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" a" +
+                "nnotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Title\" Type=\"Edm.St" +
+                "ring\" MaxLength=\"255\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\"" +
+                " MaxLength=\"255\" /><Property Name=\"CourseCode\" Type=\"Edm.String\" Nullable=\"false" +
+                "\" MaxLength=\"255\" /><Property Name=\"Language\" Type=\"Edm.String\" Nullable=\"false\"" +
+                " MaxLength=\"255\" /><Property Name=\"Course_AcademicDepartment\" Type=\"Edm.Int32\" N" +
+                "ullable=\"false\" /><Property Name=\"StudyProfile\" Type=\"Edm.String\" Nullable=\"fals" +
+                "e\" MaxLength=\"255\" /><Property Name=\"StudyMode\" Type=\"Edm.String\" Nullable=\"fals" +
+                "e\" MaxLength=\"255\" /><Property Name=\"StudyLevel\" Type=\"Edm.String\" Nullable=\"fal" +
+                "se\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"25" +
+                "5\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Modifi" +
+                "edBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.Da" +
+                "teTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" C" +
+                "oncurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><Navigation" +
+                "Property Name=\"erpAcademicDepartment\" Relationship=\"LightSwitchApplication.sylCo" +
+                "urse_erpAcademicDepartment\" ToRole=\"erpAcademicDepartment\" FromRole=\"sylCourse\" " +
+                "/><NavigationProperty Name=\"sylProgramCourse\" Relationship=\"LightSwitchApplicati" +
+                "on.sylProgramCourse_sylCourse\" ToRole=\"sylProgramCourse\" FromRole=\"sylCourse\" />" +
+                "<NavigationProperty Name=\"SyllabusCollection\" Relationship=\"LightSwitchApplicati" +
+                "on.sylSyllabus_sylCourse\" ToRole=\"sylSyllabus\" FromRole=\"sylCourse\" /><Navigatio" +
+                "nProperty Name=\"sylPrerequisite\" Relationship=\"LightSwitchApplication.sylPrerequ" +
+                "isite_sylCourse\" ToRole=\"sylPrerequisite\" FromRole=\"sylCourse\" /><NavigationProp" +
+                "erty Name=\"hrEmpCourses\" Relationship=\"LightSwitchApplication.hrEmpCourse_sylCou" +
+                "rse\" ToRole=\"hrEmpCourse\" FromRole=\"sylCourse\" /></EntityType><EntityType Name=\"" +
+                "sylCourseTeacher\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"" +
+                "Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Prope" +
+                "rty Name=\"CourseTeacher_Employee\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property " +
+                "Name=\"CourseTeacher_Syllabus\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name" +
+                "=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"" +
+                "Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"2" +
+                "55\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowV" +
+                "ersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:St" +
+                "oreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"hrPerson\" Relationshi" +
+                "p=\"LightSwitchApplication.sylCourseTeacher_hrPerson\" ToRole=\"hrPerson\" FromRole=" +
+                "\"sylCourseTeacher\" /><NavigationProperty Name=\"sylSyllabus\" Relationship=\"LightS" +
+                "witchApplication.sylCourseTeacher_sylSyllabus\" ToRole=\"sylSyllabus\" FromRole=\"sy" +
+                "lCourseTeacher\" /></EntityType><EntityType Name=\"sylLearnin";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart6 = "Edm.Int32\" Nullable=\"false\" /><Property Name=\"AssessmentMethod\" Type=\"Edm.String\"" +
-                " Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\"" +
-                " MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Propert" +
-                "y Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified" +
-                "\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Null" +
-                "able=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\"" +
-                " /><NavigationProperty Name=\"sylAcademicalAim\" Relationship=\"LightSwitchApplicat" +
-                "ion.sylLearningOutcome_sylAcademicalAim\" ToRole=\"sylAcademicalAim\" FromRole=\"syl" +
-                "LearningOutcome\" /><NavigationProperty Name=\"sylSyllabus\" Relationship=\"LightSwi" +
-                "tchApplication.sylLearningOutcome_sylSyllabus\" ToRole=\"sylSyllabus\" FromRole=\"sy" +
-                "lLearningOutcome\" /></EntityType><EntityType Name=\"sylPrerequisite\"><Key><Proper" +
-                "tyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" an" +
-                "notation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Prerequisite_Course\"" +
-                " Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Prerequisite_Syllabus\" Type" +
-                "=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" Max" +
-                "Length=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Na" +
-                "me=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Ty" +
-                "pe=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable" +
-                "=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><" +
-                "NavigationProperty Name=\"sylCourse\" Relationship=\"LightSwitchApplication.sylPrer" +
-                "equisite_sylCourse\" ToRole=\"sylCourse\" FromRole=\"sylPrerequisite\" /><NavigationP" +
-                "roperty Name=\"sylSyllabus\" Relationship=\"LightSwitchApplication.sylPrerequisite_" +
-                "sylSyllabus\" ToRole=\"sylSyllabus\" FromRole=\"sylPrerequisite\" /></EntityType><Ent" +
-                "ityType Name=\"sylProgramCourse\"><Key><PropertyRef Name=\"Id\" /></Key><Property Na" +
-                "me=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Iden" +
-                "tity\" /><Property Name=\"ProgramCourse_Course\" Type=\"Edm.Int32\" Nullable=\"false\" " +
-                "/><Property Name=\"ProgramCourse_AcademicDepartment\" Type=\"Edm.Int32\" Nullable=\"f" +
-                "alse\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property" +
-                " Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Ed" +
-                "m.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" " +
-                "/><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode" +
-                "=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=" +
-                "\"sylCourse\" Relationship=\"LightSwitchApplication.sylProgramCourse_sylCourse\" ToR" +
-                "ole=\"sylCourse\" FromRole=\"sylProgramCourse\" /><NavigationProperty Name=\"erpAcade" +
-                "micDepartment\" Relationship=\"LightSwitchApplication.sylProgramCourse_erpAcademic" +
-                "Department\" ToRole=\"erpAcademicDepartment\" FromRole=\"sylProgramCourse\" /></Entit" +
-                "yType><EntityType Name=\"sylSyllabus\"><Key><PropertyRef Name=\"Id\" /></Key><Proper" +
-                "ty Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=" +
-                "\"Identity\" /><Property Name=\"Title\" Type=\"Edm.String\" MaxLength=\"255\" /><Propert" +
-                "y Name=\"Syllabus_Course\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Syl" +
-                "labus_AcademicDepartment\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Sy" +
-                "llabus_Employee\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Language\" T" +
-                "ype=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Objective\" T" +
-                "ype=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"ECTSCredits\"" +
-                " Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"MinWorkloadHours\" Type=\"Edm" +
-                ".Int32\" Nullable=\"false\" /><Property Name=\"MaxWorkloadHours\" Type=\"Edm.Int32\" Nu" +
-                "llable=\"false\" /><Property Name=\"PreparationDate\" Type=\"Edm.DateTime\" Nullable=\"" +
-                "false\" /><Property Name=\"Status\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"2" +
-                "55\" /><Property Name=\"sylSyllabus_hrPerson1\" Type=\"Edm.Int32\" /><Property Name=\"" +
-                "WFUser\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm" +
-                ".String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" />" +
-                "<Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"" +
-                "Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Bina" +
-                "ry\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"C" +
-                "omputed\" /><NavigationProperty Name=\"sylCourse\" Relationship=\"LightSwitchApplica" +
-                "tion.sylSyllabus_sylCourse\" ToRole=\"sylCourse\" FromRole=\"sylSyllabus\" /><Navigat" +
-                "ionProperty Name=\"erpAcademicDepartment\" Relationship=\"LightSwitchApplication.sy" +
-                "lSyllabus_erpAcademicDepartment\" ToRole=\"erpAcademicDepartment\" FromRole=\"sylSyl" +
-                "labus\" /><NavigationProperty Name=\"CourseCoordinator\" Relationship=\"LightSwitchA" +
-                "pplication.sylSyllabus_hrPerson\" ToRole=\"hrPerson\" FromRole=\"sylSyllabus\" /><Nav" +
-                "igationProperty Name=\"sylPrerequisite\" Relationship=\"LightSwitchApplication.sylP" +
-                "rerequisite_sylSyllabus\" ToRole=\"sylPrerequisite\" FromRole=\"sylSyllabus\" /><Navi" +
-                "gationProperty Name=\"sylLearningOutcome\" Relationship=\"LightSwitchApplication.sy" +
-                "lLearningOutcome_sylSyllabus\" ToRole=\"sylLearningOutcome\" FromRole=\"sylSyllabus\"" +
-                " /><NavigationProperty Name=\"sylSyllabusMaterial\" Relationship=\"LightSwitchAppli" +
-                "cation.sylCourseMaterial_sylSyllabus\" ToRole=\"sylCourseMaterial\" FromRole=\"sylSy" +
-                "llabus\" /><NavigationProperty Name=\"sylWorkloadStructure\" Relationship=\"LightSwi" +
-                "tchApplication.sylWorkloadStructure_sylSyllabus\" ToRole=\"sylWorkloadStructure\" F" +
-                "romRole=\"sylSyllabus\" /><NavigationProperty Name=\"sylCourseTeacher\" Relationship" +
-                "=\"LightSwitchApplication.sylCourseTeacher_sylSyllabus\" ToRole=\"sylCourseTeacher\"" +
-                " FromRole=\"sylSyllabus\" /><NavigationProperty Name=\"SyllabusNotesCollection\" Rel" +
-                "ationship=\"LightSwitchApplication.sylSyllabusNotesSetItem_sylSyllabus\" ToRole=\"s" +
-                "ylSyllabusNotesSetItem\" FromRole=\"sylSyllabus\" /><NavigationProperty Name=\"WFSta" +
-                "te\" Relationship=\"LightSwitchApplication.sylSyllabus_hrPerson1\" ToRole=\"hrPerson" +
-                "\" FromRole=\"sylSyllabus\" /></EntityType><EntityType Name=\"sylSyllabusNotesSetIte" +
-                "m\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Null" +
-                "able=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Title" +
-                "\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Note\" Typ" +
-                "e=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"SyllabusNotes_" +
-                "Syllabus\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"E" +
-                "dm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" " +
-                "/><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name" +
-                "=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Bi" +
-                "nary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=" +
-                "\"Computed\" /><NavigationProperty Name=\"sylSyllabus\" Relationship=\"LightSwitchApp" +
-                "lication.sylSyllabusNotesSetItem_sylSyllabus\" ToRole=\"sylSyllabus\" FromRole=\"syl" +
-                "SyllabusNotesSetItem\" /></EntityType><EntityType Name=\"sylSyllabusTopic\"><Key><P" +
-                "ropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"fals" +
-                "e\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Title\" Type=\"Ed" +
-                "m.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Description\" Type=\"" +
-                "Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"LectureType\" Type" +
-                "=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type" +
-                "=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffse" +
-                "t\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLengt";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart7 = "h=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"R" +
-                "owVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation" +
-                ":StoreGeneratedPattern=\"Computed\" /></EntityType><EntityType Name=\"sylWorkloadSt" +
-                "ructure\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32" +
+            private const string ModelPart6 = "gOutcome\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32" +
                 "\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=" +
-                "\"Title\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Con" +
-                "tactHours\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"NonContactHours\" " +
-                "Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"WorkloadStructure_Syllabus\" " +
-                "Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\"" +
-                " MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Propert" +
-                "y Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified" +
-                "\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Null" +
-                "able=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\"" +
-                " /><NavigationProperty Name=\"sylSyllabus\" Relationship=\"LightSwitchApplication.s" +
-                "ylWorkloadStructure_sylSyllabus\" ToRole=\"sylSyllabus\" FromRole=\"sylWorkloadStruc" +
-                "ture\" /></EntityType><Association Name=\"sylCourse_erpAcademicDepartment\"><End Ro" +
-                "le=\"erpAcademicDepartment\" Type=\"LightSwitchApplication.erpAcademicDepartment\" M" +
-                "ultiplicity=\"1\" /><End Role=\"sylCourse\" Type=\"LightSwitchApplication.sylCourse\" " +
-                "Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"erpAcademicDepartment" +
-                "\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylCourse\"><PropertyRef " +
-                "Name=\"Course_AcademicDepartment\" /></Dependent></ReferentialConstraint></Associa" +
-                "tion><Association Name=\"sylProgramCourse_erpAcademicDepartment\"><End Role=\"erpAc" +
-                "ademicDepartment\" Type=\"LightSwitchApplication.erpAcademicDepartment\" Multiplici" +
-                "ty=\"1\" /><End Role=\"sylProgramCourse\" Type=\"LightSwitchApplication.sylProgramCou" +
-                "rse\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"erpAcademicDepar" +
-                "tment\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylProgramCourse\"><" +
-                "PropertyRef Name=\"ProgramCourse_AcademicDepartment\" /></Dependent></ReferentialC" +
-                "onstraint></Association><Association Name=\"sylSyllabus_erpAcademicDepartment\"><E" +
-                "nd Role=\"erpAcademicDepartment\" Type=\"LightSwitchApplication.erpAcademicDepartme" +
-                "nt\" Multiplicity=\"1\" /><End Role=\"sylSyllabus\" Type=\"LightSwitchApplication.sylS" +
-                "yllabus\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"erpAcademicD" +
-                "epartment\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylSyllabus\"><P" +
-                "ropertyRef Name=\"Syllabus_AcademicDepartment\" /></Dependent></ReferentialConstra" +
-                "int></Association><Association Name=\"hrPerson_erpAcademicDepartment\"><End Role=\"" +
-                "erpAcademicDepartment\" Type=\"LightSwitchApplication.erpAcademicDepartment\" Multi" +
-                "plicity=\"0..1\" /><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Mul" +
-                "tiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"erpAcademicDepartment\"><" +
-                "PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrPerson\"><PropertyRef Name" +
-                "=\"Employee_AcademicDepartment\" /></Dependent></ReferentialConstraint></Associati" +
-                "on><Association Name=\"erpAcademicDepartment_erpFaculty\"><End Role=\"erpFaculty\" T" +
-                "ype=\"LightSwitchApplication.erpFaculty\" Multiplicity=\"1\" /><End Role=\"erpAcademi" +
-                "cDepartment\" Type=\"LightSwitchApplication.erpAcademicDepartment\" Multiplicity=\"*" +
-                "\" /><ReferentialConstraint><Principal Role=\"erpFaculty\"><PropertyRef Name=\"Id\" /" +
-                "></Principal><Dependent Role=\"erpAcademicDepartment\"><PropertyRef Name=\"Academic" +
-                "Department_Faculty\" /></Dependent></ReferentialConstraint></Association><Associa" +
-                "tion Name=\"hrEmpAcademicProfileByHR_erpFaculty\"><End Role=\"erpFaculty\" Type=\"Lig" +
-                "htSwitchApplication.erpFaculty\" Multiplicity=\"1\" /><End Role=\"hrEmpAcademicProfi" +
-                "leByHR\" Type=\"LightSwitchApplication.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" " +
-                "/><ReferentialConstraint><Principal Role=\"erpFaculty\"><PropertyRef Name=\"Id\" /><" +
-                "/Principal><Dependent Role=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hrEmpAc" +
-                "ademicProfileByHR_erpFaculty\" /></Dependent></ReferentialConstraint></Associatio" +
-                "n><Association Name=\"hrEmpCourse_erpHRAccountingPeriod\"><End Role=\"erpHRAccounti" +
-                "ngPeriod\" Type=\"LightSwitchApplication.erpHRAccountingPeriod\" Multiplicity=\"1\" /" +
-                "><End Role=\"hrEmpCourse\" Type=\"LightSwitchApplication.hrEmpCourse\" Multiplicity=" +
-                "\"*\" /><ReferentialConstraint><Principal Role=\"erpHRAccountingPeriod\"><PropertyRe" +
-                "f Name=\"Id\" /></Principal><Dependent Role=\"hrEmpCourse\"><PropertyRef Name=\"hrEmp" +
-                "Course_erpHRAccountingPeriod\" /></Dependent></ReferentialConstraint></Associatio" +
-                "n><Association Name=\"hrEmpCourse_erpLanguage\"><End Role=\"erpLanguage\" Type=\"Ligh" +
-                "tSwitchApplication.erpLanguage\" Multiplicity=\"1\" /><End Role=\"hrEmpCourse\" Type=" +
-                "\"LightSwitchApplication.hrEmpCourse\" Multiplicity=\"*\" /><ReferentialConstraint><" +
-                "Principal Role=\"erpLanguage\"><PropertyRef Name=\"Id\" /></Principal><Dependent Rol" +
-                "e=\"hrEmpCourse\"><PropertyRef Name=\"hrEmpCourse_erpLanguage\" /></Dependent></Refe" +
-                "rentialConstraint></Association><Association Name=\"hrEmpAcademicProfileByHR_erpP" +
-                "osition\"><End Role=\"erpPosition\" Type=\"LightSwitchApplication.erpPosition\" Multi" +
+                "\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"Outc" +
+                "omeType\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"We" +
+                "ight\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"9\" /><Property N" +
+                "ame=\"LearningOutcome_AcademicalAim\" Type=\"Edm.Int32\" Nullable=\"false\" /><Propert" +
+                "y Name=\"LearningOutcome_Syllabus\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property " +
+                "Name=\"AssessmentMethod\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Pr" +
+                "operty Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Crea" +
+                "ted\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" M" +
+                "axLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property" +
+                " Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" an" +
+                "notation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"sylAcademi" +
+                "calAim\" Relationship=\"LightSwitchApplication.sylLearningOutcome_sylAcademicalAim" +
+                "\" ToRole=\"sylAcademicalAim\" FromRole=\"sylLearningOutcome\" /><NavigationProperty " +
+                "Name=\"sylSyllabus\" Relationship=\"LightSwitchApplication.sylLearningOutcome_sylSy" +
+                "llabus\" ToRole=\"sylSyllabus\" FromRole=\"sylLearningOutcome\" /></EntityType><Entit" +
+                "yType Name=\"sylPrerequisite\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=" +
+                "\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identit" +
+                "y\" /><Property Name=\"Prerequisite_Course\" Type=\"Edm.Int32\" Nullable=\"false\" /><P" +
+                "roperty Name=\"Prerequisite_Syllabus\" Type=\"Edm.Int32\" Nullable=\"false\" /><Proper" +
+                "ty Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\"" +
+                " Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLe" +
+                "ngth=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Nam" +
+                "e=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annota" +
+                "tion:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"sylCourse\" Rel" +
+                "ationship=\"LightSwitchApplication.sylPrerequisite_sylCourse\" ToRole=\"sylCourse\" " +
+                "FromRole=\"sylPrerequisite\" /><NavigationProperty Name=\"sylSyllabus\" Relationship" +
+                "=\"LightSwitchApplication.sylPrerequisite_sylSyllabus\" ToRole=\"sylSyllabus\" FromR" +
+                "ole=\"sylPrerequisite\" /></EntityType><EntityType Name=\"sylProgramCourse\"><Key><P" +
+                "ropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"fals" +
+                "e\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"ProgramCourse_C" +
+                "ourse\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"ProgramCourse_Academi" +
+                "cDepartment\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"CreatedBy\" Type" +
+                "=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffse" +
+                "t\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property N" +
+                "ame=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm" +
+                ".Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPatte" +
+                "rn=\"Computed\" /><NavigationProperty Name=\"sylCourse\" Relationship=\"LightSwitchAp" +
+                "plication.sylProgramCourse_sylCourse\" ToRole=\"sylCourse\" FromRole=\"sylProgramCou" +
+                "rse\" /><NavigationProperty Name=\"erpAcademicDepartment\" Relationship=\"LightSwitc" +
+                "hApplication.sylProgramCourse_erpAcademicDepartment\" ToRole=\"erpAcademicDepartme" +
+                "nt\" FromRole=\"sylProgramCourse\" /></EntityType><EntityType Name=\"sylSyllabus\"><K" +
+                "ey><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=" +
+                "\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Title\" Typ" +
+                "e=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Syllabus_Course\" Type=\"Edm.Int3" +
+                "2\" Nullable=\"false\" /><Property Name=\"Syllabus_AcademicDepartment\" Type=\"Edm.Int" +
+                "32\" Nullable=\"false\" /><Property Name=\"Syllabus_Employee\" Type=\"Edm.Int32\" Nulla" +
+                "ble=\"false\" /><Property Name=\"Language\" Type=\"Edm.String\" Nullable=\"false\" MaxLe" +
+                "ngth=\"255\" /><Property Name=\"Objective\" Type=\"Edm.String\" Nullable=\"false\" MaxLe" +
+                "ngth=\"255\" /><Property Name=\"ECTSCredits\" Type=\"Edm.Int32\" Nullable=\"false\" /><P" +
+                "roperty Name=\"MinWorkloadHours\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Na" +
+                "me=\"MaxWorkloadHours\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Prepar" +
+                "ationDate\" Type=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"Status\" Type=\"" +
+                "Edm.String\" Nullable=\"false\" MaxLength=\"255\" /><Property Name=\"sylSyllabus_hrPer" +
+                "son1\" Type=\"Edm.Int32\" /><Property Name=\"WFUser\" Type=\"Edm.String\" MaxLength=\"25" +
+                "5\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Na" +
+                "me=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.S" +
+                "tring\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><" +
+                "Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"F" +
+                "ixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"sy" +
+                "lCourse\" Relationship=\"LightSwitchApplication.sylSyllabus_sylCourse\" ToRole=\"syl" +
+                "Course\" FromRole=\"sylSyllabus\" /><NavigationProperty Name=\"erpAcademicDepartment" +
+                "\" Relationship=\"LightSwitchApplication.sylSyllabus_erpAcademicDepartment\" ToRole" +
+                "=\"erpAcademicDepartment\" FromRole=\"sylSyllabus\" /><NavigationProperty Name=\"Cour" +
+                "seCoordinator\" Relationship=\"LightSwitchApplication.sylSyllabus_hrPerson\" ToRole" +
+                "=\"hrPerson\" FromRole=\"sylSyllabus\" /><NavigationProperty Name=\"sylPrerequisite\" " +
+                "Relationship=\"LightSwitchApplication.sylPrerequisite_sylSyllabus\" ToRole=\"sylPre" +
+                "requisite\" FromRole=\"sylSyllabus\" /><NavigationProperty Name=\"sylLearningOutcome" +
+                "\" Relationship=\"LightSwitchApplication.sylLearningOutcome_sylSyllabus\" ToRole=\"s" +
+                "ylLearningOutcome\" FromRole=\"sylSyllabus\" /><NavigationProperty Name=\"sylSyllabu" +
+                "sMaterial\" Relationship=\"LightSwitchApplication.sylCourseMaterial_sylSyllabus\" T" +
+                "oRole=\"sylCourseMaterial\" FromRole=\"sylSyllabus\" /><NavigationProperty Name=\"syl" +
+                "WorkloadStructure\" Relationship=\"LightSwitchApplication.sylWorkloadStructure_syl" +
+                "Syllabus\" ToRole=\"sylWorkloadStructure\" FromRole=\"sylSyllabus\" /><NavigationProp" +
+                "erty Name=\"sylCourseTeacher\" Relationship=\"LightSwitchApplication.sylCourseTeach" +
+                "er_sylSyllabus\" ToRole=\"sylCourseTeacher\" FromRole=\"sylSyllabus\" /><NavigationPr" +
+                "operty Name=\"SyllabusNotesCollection\" Relationship=\"LightSwitchApplication.sylSy" +
+                "llabusNotesSetItem_sylSyllabus\" ToRole=\"sylSyllabusNotesSetItem\" FromRole=\"sylSy" +
+                "llabus\" /><NavigationProperty Name=\"WFState\" Relationship=\"LightSwitchApplicatio" +
+                "n.sylSyllabus_hrPerson1\" ToRole=\"hrPerson\" FromRole=\"sylSyllabus\" /></EntityType" +
+                "><EntityType Name=\"sylSyllabusNotesSetItem\"><Key><PropertyRef Name=\"Id\" /></Key>" +
+                "<Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGeneratedP" +
+                "attern=\"Identity\" /><Property Name=\"Title\" Type=\"Edm.String\" Nullable=\"false\" Ma" +
+                "xLength=\"255\" /><Property Name=\"Note\" Type=\"Edm.String\" Nullable=\"false\" MaxLeng" +
+                "th=\"255\" /><Property Name=\"SyllabusNotes_Syllabus\" Type=\"Edm.Int32\" Nullable=\"fa" +
+                "lse\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property " +
+                "Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm" +
+                ".String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /" +
+                "><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=" +
+                "\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"" +
+                "sylSyllabus\" Relationship=\"LightSwitchApplication.sylSyllabusNotesSetItem_sylSyl" +
+                "labus\" ToRole=\"sylSyllabus\" FromRole=\"sylSyllabusNotesSetItem\" /></EntityType><E" +
+                "ntityType Name=\"sylSyllabusTopic\"><Key><PropertyRef Name=\"I";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart7 = "d\" /></Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:Store" +
+                "GeneratedPattern=\"Identity\" /><Property Name=\"Title\" Type=\"Edm.String\" Nullable=" +
+                "\"false\" MaxLength=\"255\" /><Property Name=\"Description\" Type=\"Edm.String\" Nullabl" +
+                "e=\"false\" MaxLength=\"255\" /><Property Name=\"LectureType\" Type=\"Edm.String\" Nulla" +
+                "ble=\"false\" MaxLength=\"255\" /><Property Name=\"CreatedBy\" Type=\"Edm.String\" MaxLe" +
+                "ngth=\"255\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" /><Property Name" +
+                "=\"ModifiedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Modified\" Type" +
+                "=\"Edm.DateTimeOffset\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"" +
+                "false\" ConcurrencyMode=\"Fixed\" annotation:StoreGeneratedPattern=\"Computed\" /></E" +
+                "ntityType><EntityType Name=\"sylWorkloadStructure\"><Key><PropertyRef Name=\"Id\" />" +
+                "</Key><Property Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" annotation:StoreGene" +
+                "ratedPattern=\"Identity\" /><Property Name=\"Title\" Type=\"Edm.String\" Nullable=\"fal" +
+                "se\" MaxLength=\"255\" /><Property Name=\"ContactHours\" Type=\"Edm.Int32\" Nullable=\"f" +
+                "alse\" /><Property Name=\"NonContactHours\" Type=\"Edm.Int32\" Nullable=\"false\" /><Pr" +
+                "operty Name=\"WorkloadStructure_Syllabus\" Type=\"Edm.Int32\" Nullable=\"false\" /><Pr" +
+                "operty Name=\"CreatedBy\" Type=\"Edm.String\" MaxLength=\"255\" /><Property Name=\"Crea" +
+                "ted\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"ModifiedBy\" Type=\"Edm.String\" M" +
+                "axLength=\"255\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" /><Property" +
+                " Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" an" +
+                "notation:StoreGeneratedPattern=\"Computed\" /><NavigationProperty Name=\"sylSyllabu" +
+                "s\" Relationship=\"LightSwitchApplication.sylWorkloadStructure_sylSyllabus\" ToRole" +
+                "=\"sylSyllabus\" FromRole=\"sylWorkloadStructure\" /></EntityType><Association Name=" +
+                "\"sylCourse_erpAcademicDepartment\"><End Role=\"erpAcademicDepartment\" Type=\"LightS" +
+                "witchApplication.erpAcademicDepartment\" Multiplicity=\"1\" /><End Role=\"sylCourse\"" +
+                " Type=\"LightSwitchApplication.sylCourse\" Multiplicity=\"*\" /><ReferentialConstrai" +
+                "nt><Principal Role=\"erpAcademicDepartment\"><PropertyRef Name=\"Id\" /></Principal>" +
+                "<Dependent Role=\"sylCourse\"><PropertyRef Name=\"Course_AcademicDepartment\" /></De" +
+                "pendent></ReferentialConstraint></Association><Association Name=\"sylProgramCours" +
+                "e_erpAcademicDepartment\"><End Role=\"erpAcademicDepartment\" Type=\"LightSwitchAppl" +
+                "ication.erpAcademicDepartment\" Multiplicity=\"1\" /><End Role=\"sylProgramCourse\" T" +
+                "ype=\"LightSwitchApplication.sylProgramCourse\" Multiplicity=\"*\" /><ReferentialCon" +
+                "straint><Principal Role=\"erpAcademicDepartment\"><PropertyRef Name=\"Id\" /></Princ" +
+                "ipal><Dependent Role=\"sylProgramCourse\"><PropertyRef Name=\"ProgramCourse_Academi" +
+                "cDepartment\" /></Dependent></ReferentialConstraint></Association><Association Na" +
+                "me=\"sylSyllabus_erpAcademicDepartment\"><End Role=\"erpAcademicDepartment\" Type=\"L" +
+                "ightSwitchApplication.erpAcademicDepartment\" Multiplicity=\"1\" /><End Role=\"sylSy" +
+                "llabus\" Type=\"LightSwitchApplication.sylSyllabus\" Multiplicity=\"*\" /><Referentia" +
+                "lConstraint><Principal Role=\"erpAcademicDepartment\"><PropertyRef Name=\"Id\" /></P" +
+                "rincipal><Dependent Role=\"sylSyllabus\"><PropertyRef Name=\"Syllabus_AcademicDepar" +
+                "tment\" /></Dependent></ReferentialConstraint></Association><Association Name=\"hr" +
+                "Person_erpAcademicDepartment\"><End Role=\"erpAcademicDepartment\" Type=\"LightSwitc" +
+                "hApplication.erpAcademicDepartment\" Multiplicity=\"0..1\" /><End Role=\"hrPerson\" T" +
+                "ype=\"LightSwitchApplication.hrPerson\" Multiplicity=\"*\" /><ReferentialConstraint>" +
+                "<Principal Role=\"erpAcademicDepartment\"><PropertyRef Name=\"Id\" /></Principal><De" +
+                "pendent Role=\"hrPerson\"><PropertyRef Name=\"Employee_AcademicDepartment\" /></Depe" +
+                "ndent></ReferentialConstraint></Association><Association Name=\"erpAcademicDepart" +
+                "ment_erpFaculty\"><End Role=\"erpFaculty\" Type=\"LightSwitchApplication.erpFaculty\"" +
+                " Multiplicity=\"1\" /><End Role=\"erpAcademicDepartment\" Type=\"LightSwitchApplicati" +
+                "on.erpAcademicDepartment\" Multiplicity=\"*\" /><ReferentialConstraint><Principal R" +
+                "ole=\"erpFaculty\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"erpAcadem" +
+                "icDepartment\"><PropertyRef Name=\"AcademicDepartment_Faculty\" /></Dependent></Ref" +
+                "erentialConstraint></Association><Association Name=\"hrEmpAcademicProfileByHR_erp" +
+                "Faculty\"><End Role=\"erpFaculty\" Type=\"LightSwitchApplication.erpFaculty\" Multipl" +
+                "icity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type=\"LightSwitchApplication.hr" +
+                "EmpAcademicProfileByHR\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Rol" +
+                "e=\"erpFaculty\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpAcadem" +
+                "icProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR_erpFaculty\" /></Depen" +
+                "dent></ReferentialConstraint></Association><Association Name=\"hrEmpCourse_erpHRA" +
+                "ccountingPeriod\"><End Role=\"erpHRAccountingPeriod\" Type=\"LightSwitchApplication." +
+                "erpHRAccountingPeriod\" Multiplicity=\"1\" /><End Role=\"hrEmpCourse\" Type=\"LightSwi" +
+                "tchApplication.hrEmpCourse\" Multiplicity=\"*\" /><ReferentialConstraint><Principal" +
+                " Role=\"erpHRAccountingPeriod\"><PropertyRef Name=\"Id\" /></Principal><Dependent Ro" +
+                "le=\"hrEmpCourse\"><PropertyRef Name=\"hrEmpCourse_erpHRAccountingPeriod\" /></Depen" +
+                "dent></ReferentialConstraint></Association><Association Name=\"hrEmpCourse_erpLan" +
+                "guage\"><End Role=\"erpLanguage\" Type=\"LightSwitchApplication.erpLanguage\" Multipl" +
+                "icity=\"1\" /><End Role=\"hrEmpCourse\" Type=\"LightSwitchApplication.hrEmpCourse\" Mu" +
+                "ltiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"erpLanguage\"><PropertyR" +
+                "ef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpCourse\"><PropertyRef Name=\"hrEm" +
+                "pCourse_erpLanguage\" /></Dependent></ReferentialConstraint></Association><Associ" +
+                "ation Name=\"hrEmpAcademicProfileByHR_erpPosition\"><End Role=\"erpPosition\" Type=\"" +
+                "LightSwitchApplication.erpPosition\" Multiplicity=\"1\" /><End Role=\"hrEmpAcademicP" +
+                "rofileByHR\" Type=\"LightSwitchApplication.hrEmpAcademicProfileByHR\" Multiplicity=" +
+                "\"*\" /><ReferentialConstraint><Principal Role=\"erpPosition\"><PropertyRef Name=\"Id" +
+                "\" /></Principal><Dependent Role=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hr" +
+                "EmpAcademicProfileByHR_erpPosition\" /></Dependent></ReferentialConstraint></Asso" +
+                "ciation><Association Name=\"hrEmpAcademicProfileByHR_erpProgram\"><End Role=\"erpPr" +
+                "ogram\" Type=\"LightSwitchApplication.erpProgram\" Multiplicity=\"1\" /><End Role=\"hr" +
+                "EmpAcademicProfileByHR\" Type=\"LightSwitchApplication.hrEmpAcademicProfileByHR\" M" +
+                "ultiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"erpProgram\"><PropertyR" +
+                "ef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpAcademicProfileByHR\"><PropertyR" +
+                "ef Name=\"hrEmpAcademicProfileByHR_erpProgram\" /></Dependent></ReferentialConstra" +
+                "int></Association><Association Name=\"erpFaculty_erpUniversity\"><End Role=\"erpUni" +
+                "versity\" Type=\"LightSwitchApplication.erpUniversity\" Multiplicity=\"1\" /><End Rol" +
+                "e=\"erpFaculty\" Type=\"LightSwitchApplication.erpFaculty\" Multiplicity=\"*\" /><Refe" +
+                "rentialConstraint><Principal Role=\"erpUniversity\"><PropertyRef Name=\"Id\" /></Pri" +
+                "ncipal><Dependent Role=\"erpFaculty\"><PropertyRef Name=\"Faculty_University\" /></D" +
+                "ependent></ReferentialConstraint></Association><Association Name=\"hrEmpProfile_e" +
+                "rpUniversity\"><End Role=\"erpUniversity\" Type=\"LightSwitchApplication.erpUniversi" +
+                "ty\" Multiplicity=\"1\" /><End Role=\"hrEmpProfile\" Type=\"LightSwitchApplication.hrE" +
+                "mpProfile\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"erpUnivers" +
+                "ity\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpProfile\"><Proper" +
+                "tyRef Name=\"hrEmpProfile_erpUniversity\" /></Dependent></ReferentialConstraint></" +
+                "Association><Association Name=\"hrEmpAcademicProfileByHR_erpUniversity\"><End Role" +
+                "=\"erpUniversity\" Type=\"LightSwitchApplication.erpUniversity";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart8 = "\" Multiplicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type=\"LightSwitchApplic" +
+                "ation.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><ReferentialConstraint><Princ" +
+                "ipal Role=\"erpUniversity\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"" +
+                "hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR_erpUnivers" +
+                "ity\" /></Dependent></ReferentialConstraint></Association><Association Name=\"hrPe" +
+                "rson_hrDepartment\"><End Role=\"hrDepartment\" Type=\"LightSwitchApplication.hrDepar" +
+                "tment\" Multiplicity=\"0..1\" /><End Role=\"hrPerson\" Type=\"LightSwitchApplication.h" +
+                "rPerson\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrDepartment" +
+                "\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrPerson\"><PropertyRef N" +
+                "ame=\"Employee_Department\" /></Dependent></ReferentialConstraint></Association><A" +
+                "ssociation Name=\"hrEmpCourse_hrEmpAcademicProfileByHR\"><End Role=\"hrEmpAcademicP" +
+                "rofileByHR\" Type=\"LightSwitchApplication.hrEmpAcademicProfileByHR\" Multiplicity=" +
+                "\"1\" /><End Role=\"hrEmpCourse\" Type=\"LightSwitchApplication.hrEmpCourse\" Multipli" +
+                "city=\"*\" /><ReferentialConstraint><Principal Role=\"hrEmpAcademicProfileByHR\"><Pr" +
+                "opertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpCourse\"><PropertyRef Nam" +
+                "e=\"hrEmpCourse_hrEmpAcademicProfileByHR\" /></Dependent></ReferentialConstraint><" +
+                "/Association><Association Name=\"hrEmpCourse_hrEvalStatu\"><End Role=\"hrEvalStatu\"" +
+                " Type=\"LightSwitchApplication.hrEvalStatu\" Multiplicity=\"1\"><OnDelete Action=\"Ca" +
+                "scade\" /></End><End Role=\"hrEmpCourse\" Type=\"LightSwitchApplication.hrEmpCourse\"" +
+                " Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"hrEvalStatu\"><Pro" +
+                "pertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpCourse\"><PropertyRef Name" +
+                "=\"Id\" /></Dependent></ReferentialConstraint></Association><Association Name=\"hrD" +
+                "epartment_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" " +
+                "Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Role=\"hrDepartment\" Typ" +
+                "e=\"LightSwitchApplication.hrDepartment\" Multiplicity=\"*\" /><ReferentialConstrain" +
+                "t><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Rol" +
+                "e=\"hrDepartment\"><PropertyRef Name=\"hrDepartment_hrPerson\" /></Dependent></Refer" +
+                "entialConstraint></Association><Association Name=\"hrWorkingHour_hrPerson\"><End R" +
+                "ole=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\" /><End Ro" +
+                "le=\"hrWorkingHour\" Type=\"LightSwitchApplication.hrWorkingHour\" Multiplicity=\"*\" " +
+                "/><ReferentialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></P" +
+                "rincipal><Dependent Role=\"hrWorkingHour\"><PropertyRef Name=\"WorkingHour_Employee" +
+                "\" /></Dependent></ReferentialConstraint></Association><Association Name=\"sylSyll" +
+                "abus_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multi" +
+                "plicity=\"1\" /><End Role=\"sylSyllabus\" Type=\"LightSwitchApplication.sylSyllabus\" " +
+                "Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><PropertyRe" +
+                "f Name=\"Id\" /></Principal><Dependent Role=\"sylSyllabus\"><PropertyRef Name=\"Sylla" +
+                "bus_Employee\" /></Dependent></ReferentialConstraint></Association><Association N" +
+                "ame=\"erpAcademicDepartment_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchAppli" +
+                "cation.hrPerson\" Multiplicity=\"1\" /><End Role=\"erpAcademicDepartment\" Type=\"Ligh" +
+                "tSwitchApplication.erpAcademicDepartment\" Multiplicity=\"*\" /><ReferentialConstra" +
+                "int><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent R" +
+                "ole=\"erpAcademicDepartment\"><PropertyRef Name=\"AcademicDepartment_Employee\" /></" +
+                "Dependent></ReferentialConstraint></Association><Association Name=\"sylCourseTeac" +
+                "her_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multip" +
+                "licity=\"1\" /><End Role=\"sylCourseTeacher\" Type=\"LightSwitchApplication.sylCourse" +
+                "Teacher\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><P" +
+                "ropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylCourseTeacher\"><PropertyR" +
+                "ef Name=\"CourseTeacher_Employee\" /></Dependent></ReferentialConstraint></Associa" +
+                "tion><Association Name=\"sylSyllabus_hrPerson1\"><End Role=\"hrPerson\" Type=\"LightS" +
+                "witchApplication.hrPerson\" Multiplicity=\"0..1\" /><End Role=\"sylSyllabus\" Type=\"L" +
+                "ightSwitchApplication.sylSyllabus\" Multiplicity=\"*\" /><ReferentialConstraint><Pr" +
+                "incipal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sy" +
+                "lSyllabus\"><PropertyRef Name=\"sylSyllabus_hrPerson1\" /></Dependent></Referential" +
+                "Constraint></Association><Association Name=\"hrEmpProfile_hrPerson\"><End Role=\"hr" +
+                "Person\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\"><OnDelete Action" +
+                "=\"Cascade\" /></End><End Role=\"hrEmpProfile\" Type=\"LightSwitchApplication.hrEmpPr" +
+                "ofile\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><" +
+                "PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpProfile\"><PropertyRef " +
+                "Name=\"Id\" /></Dependent></ReferentialConstraint></Association><Association Name=" +
+                "\"hrAddress_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\"" +
+                " Multiplicity=\"1\" /><End Role=\"hrAddress\" Type=\"LightSwitchApplication.hrAddress" +
+                "\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><Property" +
+                "Ref Name=\"Id\" /></Principal><Dependent Role=\"hrAddress\"><PropertyRef Name=\"hrAdd" +
+                "ress_hrPerson\" /></Dependent></ReferentialConstraint></Association><Association " +
+                "Name=\"hrEmpFamilyMember_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplicat" +
+                "ion.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpFamilyMember\" Type=\"LightSwitch" +
+                "Application.hrEmpFamilyMember\" Multiplicity=\"*\" /><ReferentialConstraint><Princi" +
+                "pal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpF" +
+                "amilyMember\"><PropertyRef Name=\"hrEmplooyeeFamilyMember_hrPerson\" /></Dependent>" +
+                "</ReferentialConstraint></Association><Association Name=\"hrEmpEducation_hrPerson" +
+                "\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\" /" +
+                "><End Role=\"hrEmpEducation\" Type=\"LightSwitchApplication.hrEmpEducation\" Multipl" +
+                "icity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=" +
+                "\"Id\" /></Principal><Dependent Role=\"hrEmpEducation\"><PropertyRef Name=\"hrEmpEduc" +
+                "ation_hrPerson\" /></Dependent></ReferentialConstraint></Association><Association" +
+                " Name=\"hrEmpPastEmployement_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchAppl" +
+                "ication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpPastEmployement\" Type=\"Ligh" +
+                "tSwitchApplication.hrEmpPastEmployement\" Multiplicity=\"*\" /><ReferentialConstrai" +
+                "nt><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Ro" +
+                "le=\"hrEmpPastEmployement\"><PropertyRef Name=\"hrEmpPastEmployement_hrPerson\" /></" +
+                "Dependent></ReferentialConstraint></Association><Association Name=\"hrEmpSkill_hr" +
+                "Person\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity" +
+                "=\"1\" /><End Role=\"hrEmpSkill\" Type=\"LightSwitchApplication.hrEmpSkill\" Multiplic" +
+                "ity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"I" +
+                "d\" /></Principal><Dependent Role=\"hrEmpSkill\"><PropertyRef Name=\"hrEmpSkill_hrPe" +
+                "rson\" /></Dependent></ReferentialConstraint></Association><Association Name=\"hrE" +
+                "mpLanguage_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\"" +
+                " Multiplicity=\"1\" /><End Role=\"hrEmpLanguage\" Type=\"LightSwitchApplication.hrEmp" +
+                "Language\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><" +
+                "PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpLanguage\"><PropertyRef" +
+                " Name=\"hrEmpLanguage_hrPerson\" /></Dependent></ReferentialConstraint></Associati" +
+                "on><Association Name=\"hrEmpMilService_hrPerson\"><End Role=\"hrPerson\" Type=\"Light" +
+                "SwitchApplication.hrPerson\" Multiplicity=\"1\"><OnDelete Acti";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart9 = "on=\"Cascade\" /></End><End Role=\"hrEmpMilService\" Type=\"LightSwitchApplication.hrE" +
+                "mpMilService\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"hrPe" +
+                "rson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpMilService\"><Pr" +
+                "opertyRef Name=\"Id\" /></Dependent></ReferentialConstraint></Association><Associa" +
+                "tion Name=\"hrEmpDisability_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchAppli" +
+                "cation.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpDisability\" Type=\"LightSwitc" +
+                "hApplication.hrEmpDisability\" Multiplicity=\"*\" /><ReferentialConstraint><Princip" +
+                "al Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpDi" +
+                "sability\"><PropertyRef Name=\"hrEmpDisability_hrPerson\" /></Dependent></Referenti" +
+                "alConstraint></Association><Association Name=\"hrEmpFamilyHealthInsurance_hrPerso" +
+                "n\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\" " +
+                "/><End Role=\"hrEmpFamilyHealthInsurance\" Type=\"LightSwitchApplication.hrEmpFamil" +
+                "yHealthInsurance\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrP" +
+                "erson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpFamilyHealthIn" +
+                "surance\"><PropertyRef Name=\"hrEmpFamilyHealthInsurance_hrPerson\" /></Dependent><" +
+                "/ReferentialConstraint></Association><Association Name=\"hrEmergencyContact_hrPer" +
+                "son\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1" +
+                "\" /><End Role=\"hrEmergencyContact\" Type=\"LightSwitchApplication.hrEmergencyConta" +
+                "ct\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><Proper" +
+                "tyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmergencyContact\"><PropertyRef " +
+                "Name=\"hrEmergencyContact_hrPerson\" /></Dependent></ReferentialConstraint></Assoc" +
+                "iation><Association Name=\"hrEmpAcademicProfileByHR_hrPerson\"><End Role=\"hrPerson" +
+                "\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\"><OnDelete Action=\"Casc" +
+                "ade\" /></End><End Role=\"hrEmpAcademicProfileByHR\" Type=\"LightSwitchApplication.h" +
+                "rEmpAcademicProfileByHR\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Ro" +
+                "le=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpAcademi" +
+                "cProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR_hrPerson\" /></Dependen" +
+                "t></ReferentialConstraint></Association><Association Name=\"hrEmpAcademicProfileB" +
+                "yHR_hrPerson1\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multi" +
                 "plicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type=\"LightSwitchApplication." +
                 "hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><ReferentialConstraint><Principal R" +
-                "ole=\"erpPosition\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpAca" +
-                "demicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR_erpPosition\" /></D" +
-                "ependent></ReferentialConstraint></Association><Association Name=\"hrEmpAcademicP" +
-                "rofileByHR_erpProgram\"><End Role=\"erpProgram\" Type=\"LightSwitchApplication.erpPr" +
-                "ogram\" Multiplicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type=\"LightSwitch" +
-                "Application.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><ReferentialConstraint>" +
-                "<Principal Role=\"erpProgram\"><PropertyRef Name=\"Id\" /></Principal><Dependent Rol" +
-                "e=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR_erpProg" +
-                "ram\" /></Dependent></ReferentialConstraint></Association><Association Name=\"erpF" +
-                "aculty_erpUniversity\"><End Role=\"erpUniversity\" Type=\"LightSwitchApplication.erp" +
-                "University\" Multiplicity=\"1\" /><End Role=\"erpFaculty\" Type=\"LightSwitchApplicati" +
-                "on.erpFaculty\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"erpUni" +
-                "versity\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"erpFaculty\"><Prop" +
-                "ertyRef Name=\"Faculty_University\" /></Dependent></ReferentialConstraint></Associ" +
-                "ation><Association Name=\"hrEmpProfile_erpUniversity\"><End Role=\"erpUniversity\" T" +
-                "ype=\"LightSwitchApplication.erpUniversity\" Multiplicity=\"1\" /><End Role=\"hrEmpPr" +
-                "ofile\" Type=\"LightSwitchApplication.hrEmpProfile\" Multiplicity=\"*\" /><Referentia" +
-                "lConstraint><Principal Role=\"erpUniversity\"><PropertyRef Name=\"Id\" /></Principal" +
-                "><Dependent Role=\"hrEmpProfile\"><PropertyRef Name=\"hrEmpProfile_erpUniversity\" /" +
-                "></Dependent></ReferentialConstraint></Association><Association Name=\"hrEmpAcade" +
-                "micProfileByHR_erpUniversity\"><End Role=\"erpUniversity\" Type=\"LightSwitchApplica" +
-                "tion.erpUniversity\" Multiplicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type" +
-                "=\"LightSwitchApplication.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><Referenti" +
-                "alConstraint><Principal Role=\"erpUniversity\"><PropertyRef Name=\"Id\" /></Principa" +
-                "l><Dependent Role=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicPro" +
-                "fileByHR_erpUniversity\" /></Dependent></ReferentialConstraint></Association><Ass" +
-                "ociation Name=\"hrPerson_hrDepartment\"><End Role=\"hrDepartment\" Type=\"LightSwitch" +
-                "Application.hrDepartment\" Multiplicity=\"0..1\" /><End Role=\"";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart8 = "hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"*\" /><ReferentialC" +
-                "onstraint><Principal Role=\"hrDepartment\"><PropertyRef Name=\"Id\" /></Principal><D" +
-                "ependent Role=\"hrPerson\"><PropertyRef Name=\"Employee_Department\" /></Dependent><" +
-                "/ReferentialConstraint></Association><Association Name=\"hrEmpCourse_hrEmpAcademi" +
-                "cProfileByHR\"><End Role=\"hrEmpAcademicProfileByHR\" Type=\"LightSwitchApplication." +
-                "hrEmpAcademicProfileByHR\" Multiplicity=\"1\" /><End Role=\"hrEmpCourse\" Type=\"Light" +
-                "SwitchApplication.hrEmpCourse\" Multiplicity=\"*\" /><ReferentialConstraint><Princi" +
-                "pal Role=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"Id\" /></Principal><Depend" +
-                "ent Role=\"hrEmpCourse\"><PropertyRef Name=\"hrEmpCourse_hrEmpAcademicProfileByHR\" " +
-                "/></Dependent></ReferentialConstraint></Association><Association Name=\"hrEmpCour" +
-                "se_hrEvalStatu\"><End Role=\"hrEvalStatu\" Type=\"LightSwitchApplication.hrEvalStatu" +
-                "\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Role=\"hrEmpCourse\" Ty" +
-                "pe=\"LightSwitchApplication.hrEmpCourse\" Multiplicity=\"0..1\" /><ReferentialConstr" +
-                "aint><Principal Role=\"hrEvalStatu\"><PropertyRef Name=\"Id\" /></Principal><Depende" +
-                "nt Role=\"hrEmpCourse\"><PropertyRef Name=\"Id\" /></Dependent></ReferentialConstrai" +
-                "nt></Association><Association Name=\"hrDepartment_hrPerson\"><End Role=\"hrPerson\" " +
-                "Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\"><OnDelete Action=\"Cascad" +
-                "e\" /></End><End Role=\"hrDepartment\" Type=\"LightSwitchApplication.hrDepartment\" M" +
-                "ultiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><Property" +
-                "Ref Name=\"Id\" /></Principal><Dependent Role=\"hrDepartment\"><PropertyRef Name=\"Id" +
-                "\" /></Dependent></ReferentialConstraint></Association><Association Name=\"hrWorki" +
-                "ngHour_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Mul" +
-                "tiplicity=\"1\" /><End Role=\"hrWorkingHour\" Type=\"LightSwitchApplication.hrWorking" +
-                "Hour\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><Prop" +
-                "ertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrWorkingHour\"><PropertyRef Nam" +
-                "e=\"WorkingHour_Employee\" /></Dependent></ReferentialConstraint></Association><As" +
-                "sociation Name=\"sylSyllabus_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchAppl" +
-                "ication.hrPerson\" Multiplicity=\"1\" /><End Role=\"sylSyllabus\" Type=\"LightSwitchAp" +
-                "plication.sylSyllabus\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role" +
-                "=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylSyllabus\"><" +
-                "PropertyRef Name=\"Syllabus_Employee\" /></Dependent></ReferentialConstraint></Ass" +
-                "ociation><Association Name=\"erpAcademicDepartment_hrPerson\"><End Role=\"hrPerson\"" +
-                " Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\" /><End Role=\"erpAcademi" +
-                "cDepartment\" Type=\"LightSwitchApplication.erpAcademicDepartment\" Multiplicity=\"*" +
-                "\" /><ReferentialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /><" +
-                "/Principal><Dependent Role=\"erpAcademicDepartment\"><PropertyRef Name=\"AcademicDe" +
-                "partment_Employee\" /></Dependent></ReferentialConstraint></Association><Associat" +
-                "ion Name=\"sylCourseTeacher_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchAppli" +
-                "cation.hrPerson\" Multiplicity=\"1\" /><End Role=\"sylCourseTeacher\" Type=\"LightSwit" +
-                "chApplication.sylCourseTeacher\" Multiplicity=\"*\" /><ReferentialConstraint><Princ" +
-                "ipal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylCo" +
-                "urseTeacher\"><PropertyRef Name=\"CourseTeacher_Employee\" /></Dependent></Referent" +
-                "ialConstraint></Association><Association Name=\"sylSyllabus_hrPerson1\"><End Role=" +
-                "\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"0..1\" /><End Rol" +
-                "e=\"sylSyllabus\" Type=\"LightSwitchApplication.sylSyllabus\" Multiplicity=\"*\" /><Re" +
-                "ferentialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Princi" +
-                "pal><Dependent Role=\"sylSyllabus\"><PropertyRef Name=\"sylSyllabus_hrPerson1\" /></" +
-                "Dependent></ReferentialConstraint></Association><Association Name=\"hrEmpProfile_" +
-                "hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplici" +
-                "ty=\"1\"><OnDelete Action=\"Cascade\" /></End><End Role=\"hrEmpProfile\" Type=\"LightSw" +
-                "itchApplication.hrEmpProfile\" Multiplicity=\"0..1\" /><ReferentialConstraint><Prin" +
-                "cipal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEm" +
-                "pProfile\"><PropertyRef Name=\"Id\" /></Dependent></ReferentialConstraint></Associa" +
-                "tion><Association Name=\"hrAddress_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwit" +
-                "chApplication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrAddress\" Type=\"LightSwit" +
-                "chApplication.hrAddress\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Ro" +
-                "le=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrAddress\"><" +
-                "PropertyRef Name=\"hrAddress_hrPerson\" /></Dependent></ReferentialConstraint></As" +
-                "sociation><Association Name=\"hrEmpFamilyMember_hrPerson\"><End Role=\"hrPerson\" Ty" +
-                "pe=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpFamilyMe" +
-                "mber\" Type=\"LightSwitchApplication.hrEmpFamilyMember\" Multiplicity=\"*\" /><Refere" +
-                "ntialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal>" +
-                "<Dependent Role=\"hrEmpFamilyMember\"><PropertyRef Name=\"hrEmplooyeeFamilyMember_h" +
-                "rPerson\" /></Dependent></ReferentialConstraint></Association><Association Name=\"" +
-                "hrEmpEducation_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPer" +
-                "son\" Multiplicity=\"1\" /><End Role=\"hrEmpEducation\" Type=\"LightSwitchApplication." +
-                "hrEmpEducation\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPer" +
-                "son\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpEducation\"><Prop" +
-                "ertyRef Name=\"hrEmpEducation_hrPerson\" /></Dependent></ReferentialConstraint></A" +
-                "ssociation><Association Name=\"hrEmpPastEmployement_hrPerson\"><End Role=\"hrPerson" +
-                "\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpPast" +
-                "Employement\" Type=\"LightSwitchApplication.hrEmpPastEmployement\" Multiplicity=\"*\"" +
-                " /><ReferentialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></" +
-                "Principal><Dependent Role=\"hrEmpPastEmployement\"><PropertyRef Name=\"hrEmpPastEmp" +
-                "loyement_hrPerson\" /></Dependent></ReferentialConstraint></Association><Associat" +
-                "ion Name=\"hrEmpSkill_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication" +
-                ".hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpSkill\" Type=\"LightSwitchApplicatio" +
-                "n.hrEmpSkill\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"hrPerso" +
-                "n\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpSkill\"><PropertyRe" +
-                "f Name=\"hrEmpSkill_hrPerson\" /></Dependent></ReferentialConstraint></Association" +
-                "><Association Name=\"hrEmpLanguage_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwit" +
-                "chApplication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpLanguage\" Type=\"Light" +
-                "SwitchApplication.hrEmpLanguage\" Multiplicity=\"*\" /><ReferentialConstraint><Prin" +
-                "cipal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEm" +
-                "pLanguage\"><PropertyRef Name=\"hrEmpLanguage_hrPerson\" /></Dependent></Referentia" +
-                "lConstraint></Association><Association Name=\"hrEmpMilService_hrPerson\"><End Role" +
-                "=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\"><OnDelete Ac" +
-                "tion=\"Cascade\" /></End><End Role=\"hrEmpMilService\" Type=\"LightSwitchApplication." +
-                "hrEmpMilService\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"h" +
-                "rPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpMilService\">" +
-                "<PropertyRef Name=\"Id\" /></Dependent></ReferentialConstraint></Association><Asso" +
-                "ciation Name=\"hrEmpDisability_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchAp" +
-                "plication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpDisability\" Type=\"LightSw" +
-                "itchApplication.hrEmpDisability\" Multiplicity=\"*\" /><Refere";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart9 = "ntialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><" +
-                "Dependent Role=\"hrEmpDisability\"><PropertyRef Name=\"hrEmpDisability_hrPerson\" />" +
-                "</Dependent></ReferentialConstraint></Association><Association Name=\"hrEmpFamily" +
-                "HealthInsurance_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPe" +
-                "rson\" Multiplicity=\"1\" /><End Role=\"hrEmpFamilyHealthInsurance\" Type=\"LightSwitc" +
-                "hApplication.hrEmpFamilyHealthInsurance\" Multiplicity=\"*\" /><ReferentialConstrai" +
-                "nt><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Ro" +
-                "le=\"hrEmpFamilyHealthInsurance\"><PropertyRef Name=\"hrEmpFamilyHealthInsurance_hr" +
-                "Person\" /></Dependent></ReferentialConstraint></Association><Association Name=\"h" +
-                "rEmergencyContact_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hr" +
-                "Person\" Multiplicity=\"1\" /><End Role=\"hrEmergencyContact\" Type=\"LightSwitchAppli" +
-                "cation.hrEmergencyContact\" Multiplicity=\"*\" /><ReferentialConstraint><Principal " +
-                "Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmergenc" +
-                "yContact\"><PropertyRef Name=\"hrEmergencyContact_hrPerson\" /></Dependent></Refere" +
-                "ntialConstraint></Association><Association Name=\"hrEmpAcademicProfileByHR_hrPers" +
-                "on\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\"" +
-                "><OnDelete Action=\"Cascade\" /></End><End Role=\"hrEmpAcademicProfileByHR\" Type=\"L" +
-                "ightSwitchApplication.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><ReferentialC" +
-                "onstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Depen" +
-                "dent Role=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR" +
-                "_hrPerson\" /></Dependent></ReferentialConstraint></Association><Association Name" +
-                "=\"hrEmpAcademicProfileByHR_hrPerson1\"><End Role=\"hrPerson\" Type=\"LightSwitchAppl" +
-                "ication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type=\"" +
-                "LightSwitchApplication.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><Referential" +
-                "Constraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Depe" +
-                "ndent Role=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByH" +
-                "R_hrPerson1\" /></Dependent></ReferentialConstraint></Association><Association Na" +
-                "me=\"hrEmpAcademicProfileByHR_hrPerson2\"><End Role=\"hrPerson\" Type=\"LightSwitchAp" +
-                "plication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type" +
-                "=\"LightSwitchApplication.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><Referenti" +
-                "alConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><De" +
-                "pendent Role=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileB" +
-                "yHR_hrPerson2\" /></Dependent></ReferentialConstraint></Association><Association " +
-                "Name=\"hrEmpAcademicProfileByHR_hrPerson3\"><End Role=\"hrPerson\" Type=\"LightSwitch" +
-                "Application.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Ty" +
-                "pe=\"LightSwitchApplication.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><Referen" +
-                "tialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><" +
-                "Dependent Role=\"hrEmpAcademicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfil" +
-                "eByHR_hrPerson3\" /></Dependent></ReferentialConstraint></Association><Associatio" +
-                "n Name=\"hrEmpAcademicProfileByAcademic_hrPerson\"><End Role=\"hrPerson\" Type=\"Ligh" +
-                "tSwitchApplication.hrPerson\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End" +
-                "><End Role=\"hrEmpAcademicProfileByAcademician\" Type=\"LightSwitchApplication.hrEm" +
-                "pAcademicProfileByAcademician\" Multiplicity=\"0..1\" /><ReferentialConstraint><Pri" +
-                "ncipal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrE" +
-                "mpAcademicProfileByAcademician\"><PropertyRef Name=\"Id\" /></Dependent></Referenti" +
-                "alConstraint></Association><Association Name=\"hrEmpCourse_hrPerson\"><End Role=\"h" +
-                "rPerson\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hr" +
-                "EmpCourse\" Type=\"LightSwitchApplication.hrEmpCourse\" Multiplicity=\"*\" /><Referen" +
-                "tialConstraint><Principal Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><" +
-                "Dependent Role=\"hrEmpCourse\"><PropertyRef Name=\"hrEmpCourse_hrPerson\" /></Depend" +
-                "ent></ReferentialConstraint></Association><Association Name=\"sylLearningOutcome_" +
-                "sylAcademicalAim\"><End Role=\"sylAcademicalAim\" Type=\"LightSwitchApplication.sylA" +
-                "cademicalAim\" Multiplicity=\"1\" /><End Role=\"sylLearningOutcome\" Type=\"LightSwitc" +
-                "hApplication.sylLearningOutcome\" Multiplicity=\"*\" /><ReferentialConstraint><Prin" +
-                "cipal Role=\"sylAcademicalAim\"><PropertyRef Name=\"Id\" /></Principal><Dependent Ro" +
-                "le=\"sylLearningOutcome\"><PropertyRef Name=\"LearningOutcome_AcademicalAim\" /></De" +
-                "pendent></ReferentialConstraint></Association><Association Name=\"sylProgramCours" +
-                "e_sylCourse\"><End Role=\"sylCourse\" Type=\"LightSwitchApplication.sylCourse\" Multi" +
-                "plicity=\"1\" /><End Role=\"sylProgramCourse\" Type=\"LightSwitchApplication.sylProgr" +
-                "amCourse\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"sylCourse\">" +
-                "<PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylProgramCourse\"><Propert" +
-                "yRef Name=\"ProgramCourse_Course\" /></Dependent></ReferentialConstraint></Associa" +
-                "tion><Association Name=\"sylSyllabus_sylCourse\"><End Role=\"sylCourse\" Type=\"Light" +
-                "SwitchApplication.sylCourse\" Multiplicity=\"1\" /><End Role=\"sylSyllabus\" Type=\"Li" +
-                "ghtSwitchApplication.sylSyllabus\" Multiplicity=\"*\" /><ReferentialConstraint><Pri" +
-                "ncipal Role=\"sylCourse\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sy" +
-                "lSyllabus\"><PropertyRef Name=\"Syllabus_Course\" /></Dependent></ReferentialConstr" +
-                "aint></Association><Association Name=\"sylPrerequisite_sylCourse\"><End Role=\"sylC" +
-                "ourse\" Type=\"LightSwitchApplication.sylCourse\" Multiplicity=\"1\" /><End Role=\"syl" +
-                "Prerequisite\" Type=\"LightSwitchApplication.sylPrerequisite\" Multiplicity=\"*\" /><" +
-                "ReferentialConstraint><Principal Role=\"sylCourse\"><PropertyRef Name=\"Id\" /></Pri" +
-                "ncipal><Dependent Role=\"sylPrerequisite\"><PropertyRef Name=\"Prerequisite_Course\"" +
-                " /></Dependent></ReferentialConstraint></Association><Association Name=\"hrEmpCou" +
-                "rse_sylCourse\"><End Role=\"sylCourse\" Type=\"LightSwitchApplication.sylCourse\" Mul" +
-                "tiplicity=\"1\" /><End Role=\"hrEmpCourse\" Type=\"LightSwitchApplication.hrEmpCourse" +
-                "\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"sylCourse\"><Propert" +
-                "yRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpCourse\"><PropertyRef Name=\"hr" +
-                "EmpCourse_sylCourse\" /></Dependent></ReferentialConstraint></Association><Associ" +
-                "ation Name=\"sylPrerequisite_sylSyllabus\"><End Role=\"sylSyllabus\" Type=\"LightSwit" +
-                "chApplication.sylSyllabus\" Multiplicity=\"1\" /><End Role=\"sylPrerequisite\" Type=\"" +
-                "LightSwitchApplication.sylPrerequisite\" Multiplicity=\"*\" /><ReferentialConstrain" +
-                "t><Principal Role=\"sylSyllabus\"><PropertyRef Name=\"Id\" /></Principal><Dependent " +
-                "Role=\"sylPrerequisite\"><PropertyRef Name=\"Prerequisite_Syllabus\" /></Dependent><" +
-                "/ReferentialConstraint></Association><Association Name=\"sylLearningOutcome_sylSy" +
-                "llabus\"><End Role=\"sylSyllabus\" Type=\"LightSwitchApplication.sylSyllabus\" Multip" +
-                "licity=\"1\" /><End Role=\"sylLearningOutcome\" Type=\"LightSwitchApplication.sylLear" +
-                "ningOutcome\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"sylSylla" +
-                "bus\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylLearningOutcome\"><" +
-                "PropertyRef Name=\"LearningOutcome_Syllabus\" /></Dependent></ReferentialConstrain" +
-                "t></Association><Association Name=\"sylCourseMaterial_sylSyllabus\"><End Role=\"syl" +
-                "Syllabus\" Type=\"LightSwitchApplication.sylSyllabus\" Multiplicity=\"1\" /><End Role" +
-                "=\"sylCourseMaterial\" Type=\"LightSwitchApplication.sylCourseMaterial\" Multiplicit" +
-                "y=\"*\" /><ReferentialConstraint><Principal Role=\"sylSyllabus\"><PropertyRef Name=\"" +
-                "Id\" /></Principal><Dependent Role=\"sylCourseMaterial\"><Prop";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart10 = "ertyRef Name=\"SyllabusMaterial_Syllabus\" /></Dependent></ReferentialConstraint></" +
-                "Association><Association Name=\"sylWorkloadStructure_sylSyllabus\"><End Role=\"sylS" +
+                "ole=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpAcadem" +
+                "icProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR_hrPerson1\" /></Depend" +
+                "ent></ReferentialConstraint></Association><Association Name=\"hrEmpAcademicProfil" +
+                "eByHR_hrPerson2\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" Mul" +
+                "tiplicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type=\"LightSwitchApplicatio" +
+                "n.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><ReferentialConstraint><Principal" +
+                " Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpAcad" +
+                "emicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR_hrPerson2\" /></Depe" +
+                "ndent></ReferentialConstraint></Association><Association Name=\"hrEmpAcademicProf" +
+                "ileByHR_hrPerson3\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPerson\" M" +
+                "ultiplicity=\"1\" /><End Role=\"hrEmpAcademicProfileByHR\" Type=\"LightSwitchApplicat" +
+                "ion.hrEmpAcademicProfileByHR\" Multiplicity=\"*\" /><ReferentialConstraint><Princip" +
+                "al Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpAc" +
+                "ademicProfileByHR\"><PropertyRef Name=\"hrEmpAcademicProfileByHR_hrPerson3\" /></De" +
+                "pendent></ReferentialConstraint></Association><Association Name=\"hrEmpAcademicPr" +
+                "ofileByAcademic_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwitchApplication.hrPe" +
+                "rson\" Multiplicity=\"1\"><OnDelete Action=\"Cascade\" /></End><End Role=\"hrEmpAcadem" +
+                "icProfileByAcademician\" Type=\"LightSwitchApplication.hrEmpAcademicProfileByAcade" +
+                "mician\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"hrPerson\">" +
+                "<PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpAcademicProfileByAcad" +
+                "emician\"><PropertyRef Name=\"Id\" /></Dependent></ReferentialConstraint></Associat" +
+                "ion><Association Name=\"hrEmpCourse_hrPerson\"><End Role=\"hrPerson\" Type=\"LightSwi" +
+                "tchApplication.hrPerson\" Multiplicity=\"1\" /><End Role=\"hrEmpCourse\" Type=\"LightS" +
+                "witchApplication.hrEmpCourse\" Multiplicity=\"*\" /><ReferentialConstraint><Princip" +
+                "al Role=\"hrPerson\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"hrEmpCo" +
+                "urse\"><PropertyRef Name=\"hrEmpCourse_hrPerson\" /></Dependent></ReferentialConstr" +
+                "aint></Association><Association Name=\"sylLearningOutcome_sylAcademicalAim\"><End " +
+                "Role=\"sylAcademicalAim\" Type=\"LightSwitchApplication.sylAcademicalAim\" Multiplic" +
+                "ity=\"1\" /><End Role=\"sylLearningOutcome\" Type=\"LightSwitchApplication.sylLearnin" +
+                "gOutcome\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"sylAcademic" +
+                "alAim\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylLearningOutcome\"" +
+                "><PropertyRef Name=\"LearningOutcome_AcademicalAim\" /></Dependent></ReferentialCo" +
+                "nstraint></Association><Association Name=\"sylProgramCourse_sylCourse\"><End Role=" +
+                "\"sylCourse\" Type=\"LightSwitchApplication.sylCourse\" Multiplicity=\"1\" /><End Role" +
+                "=\"sylProgramCourse\" Type=\"LightSwitchApplication.sylProgramCourse\" Multiplicity=" +
+                "\"*\" /><ReferentialConstraint><Principal Role=\"sylCourse\"><PropertyRef Name=\"Id\" " +
+                "/></Principal><Dependent Role=\"sylProgramCourse\"><PropertyRef Name=\"ProgramCours" +
+                "e_Course\" /></Dependent></ReferentialConstraint></Association><Association Name=" +
+                "\"sylSyllabus_sylCourse\"><End Role=\"sylCourse\" Type=\"LightSwitchApplication.sylCo" +
+                "urse\" Multiplicity=\"1\" /><End Role=\"sylSyllabus\" Type=\"LightSwitchApplication.sy" +
+                "lSyllabus\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"sylCourse\"" +
+                "><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylSyllabus\"><PropertyRef" +
+                " Name=\"Syllabus_Course\" /></Dependent></ReferentialConstraint></Association><Ass" +
+                "ociation Name=\"sylPrerequisite_sylCourse\"><End Role=\"sylCourse\" Type=\"LightSwitc" +
+                "hApplication.sylCourse\" Multiplicity=\"1\" /><End Role=\"sylPrerequisite\" Type=\"Lig" +
+                "htSwitchApplication.sylPrerequisite\" Multiplicity=\"*\" /><ReferentialConstraint><" +
+                "Principal Role=\"sylCourse\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=" +
+                "\"sylPrerequisite\"><PropertyRef Name=\"Prerequisite_Course\" /></Dependent></Refere" +
+                "ntialConstraint></Association><Association Name=\"hrEmpCourse_sylCourse\"><End Rol" +
+                "e=\"sylCourse\" Type=\"LightSwitchApplication.sylCourse\" Multiplicity=\"1\" /><End Ro" +
+                "le=\"hrEmpCourse\" Type=\"LightSwitchApplication.hrEmpCourse\" Multiplicity=\"*\" /><R" +
+                "eferentialConstraint><Principal Role=\"sylCourse\"><PropertyRef Name=\"Id\" /></Prin" +
+                "cipal><Dependent Role=\"hrEmpCourse\"><PropertyRef Name=\"hrEmpCourse_sylCourse\" />" +
+                "</Dependent></ReferentialConstraint></Association><Association Name=\"sylPrerequi" +
+                "site_sylSyllabus\"><End Role=\"sylSyllabus\" Type=\"LightSwitchApplication.sylSyllab" +
+                "us\" Multiplicity=\"1\" /><End Role=\"sylPrerequisite\" Type=\"LightSwitchApplication." +
+                "sylPrerequisite\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"sylS" +
+                "yllabus\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylPrerequisite\">" +
+                "<PropertyRef Name=\"Prerequisite_Syllabus\" /></Dependent></ReferentialConstraint>" +
+                "</Association><Association Name=\"sylLearningOutcome_sylSyllabus\"><End Role=\"sylS" +
                 "yllabus\" Type=\"LightSwitchApplication.sylSyllabus\" Multiplicity=\"1\" /><End Role=" +
-                "\"sylWorkloadStructure\" Type=\"LightSwitchApplication.sylWorkloadStructure\" Multip" +
-                "licity=\"*\" /><ReferentialConstraint><Principal Role=\"sylSyllabus\"><PropertyRef N" +
-                "ame=\"Id\" /></Principal><Dependent Role=\"sylWorkloadStructure\"><PropertyRef Name=" +
-                "\"WorkloadStructure_Syllabus\" /></Dependent></ReferentialConstraint></Association" +
-                "><Association Name=\"sylCourseTeacher_sylSyllabus\"><End Role=\"sylSyllabus\" Type=\"" +
-                "LightSwitchApplication.sylSyllabus\" Multiplicity=\"1\" /><End Role=\"sylCourseTeach" +
-                "er\" Type=\"LightSwitchApplication.sylCourseTeacher\" Multiplicity=\"*\" /><Referenti" +
+                "\"sylLearningOutcome\" Type=\"LightSwitchApplication.sylLearningOutcome\" Multiplici" +
+                "ty=\"*\" /><ReferentialConstraint><Principal Role=\"sylSyllabu";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart10 = "s\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylLearningOutcome\"><Pro" +
+                "pertyRef Name=\"LearningOutcome_Syllabus\" /></Dependent></ReferentialConstraint><" +
+                "/Association><Association Name=\"sylCourseMaterial_sylSyllabus\"><End Role=\"sylSyl" +
+                "labus\" Type=\"LightSwitchApplication.sylSyllabus\" Multiplicity=\"1\" /><End Role=\"s" +
+                "ylCourseMaterial\" Type=\"LightSwitchApplication.sylCourseMaterial\" Multiplicity=\"" +
+                "*\" /><ReferentialConstraint><Principal Role=\"sylSyllabus\"><PropertyRef Name=\"Id\"" +
+                " /></Principal><Dependent Role=\"sylCourseMaterial\"><PropertyRef Name=\"SyllabusMa" +
+                "terial_Syllabus\" /></Dependent></ReferentialConstraint></Association><Associatio" +
+                "n Name=\"sylWorkloadStructure_sylSyllabus\"><End Role=\"sylSyllabus\" Type=\"LightSwi" +
+                "tchApplication.sylSyllabus\" Multiplicity=\"1\" /><End Role=\"sylWorkloadStructure\" " +
+                "Type=\"LightSwitchApplication.sylWorkloadStructure\" Multiplicity=\"*\" /><Referenti" +
                 "alConstraint><Principal Role=\"sylSyllabus\"><PropertyRef Name=\"Id\" /></Principal>" +
-                "<Dependent Role=\"sylCourseTeacher\"><PropertyRef Name=\"CourseTeacher_Syllabus\" />" +
-                "</Dependent></ReferentialConstraint></Association><Association Name=\"sylSyllabus" +
-                "NotesSetItem_sylSyllabus\"><End Role=\"sylSyllabus\" Type=\"LightSwitchApplication.s" +
-                "ylSyllabus\" Multiplicity=\"1\" /><End Role=\"sylSyllabusNotesSetItem\" Type=\"LightSw" +
-                "itchApplication.sylSyllabusNotesSetItem\" Multiplicity=\"*\" /><ReferentialConstrai" +
-                "nt><Principal Role=\"sylSyllabus\"><PropertyRef Name=\"Id\" /></Principal><Dependent" +
-                " Role=\"sylSyllabusNotesSetItem\"><PropertyRef Name=\"SyllabusNotes_Syllabus\" /></D" +
-                "ependent></ReferentialConstraint></Association><EntityContainer Name=\"Applicatio" +
-                "nData\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"erpAcademicDepartments" +
-                "\" EntityType=\"LightSwitchApplication.erpAcademicDepartment\" /><EntitySet Name=\"e" +
-                "rpFaculties\" EntityType=\"LightSwitchApplication.erpFaculty\" /><EntitySet Name=\"e" +
-                "rpHRAccountingPeriods\" EntityType=\"LightSwitchApplication.erpHRAccountingPeriod\"" +
-                " /><EntitySet Name=\"erpLanguages\" EntityType=\"LightSwitchApplication.erpLanguage" +
-                "\" /><EntitySet Name=\"erpPositions\" EntityType=\"LightSwitchApplication.erpPositio" +
-                "n\" /><EntitySet Name=\"erpPrograms\" EntityType=\"LightSwitchApplication.erpProgram" +
-                "\" /><EntitySet Name=\"erpUniversities\" EntityType=\"LightSwitchApplication.erpUniv" +
-                "ersity\" /><EntitySet Name=\"hrAddresses\" EntityType=\"LightSwitchApplication.hrAdd" +
-                "ress\" /><EntitySet Name=\"hrDepartments\" EntityType=\"LightSwitchApplication.hrDep" +
-                "artment\" /><EntitySet Name=\"hrEmergencyContacts\" EntityType=\"LightSwitchApplicat" +
-                "ion.hrEmergencyContact\" /><EntitySet Name=\"hrEmpAcademicProfileByAcademicians\" E" +
-                "ntityType=\"LightSwitchApplication.hrEmpAcademicProfileByAcademician\" /><EntitySe" +
-                "t Name=\"hrEmpAcademicProfileByHRs\" EntityType=\"LightSwitchApplication.hrEmpAcade" +
-                "micProfileByHR\" /><EntitySet Name=\"hrEmpCourses\" EntityType=\"LightSwitchApplicat" +
-                "ion.hrEmpCourse\" /><EntitySet Name=\"hrEmpDisabilities\" EntityType=\"LightSwitchAp" +
-                "plication.hrEmpDisability\" /><EntitySet Name=\"hrEmpEducations\" EntityType=\"Light" +
-                "SwitchApplication.hrEmpEducation\" /><EntitySet Name=\"hrEmpFamilyHealthInsurances" +
-                "\" EntityType=\"LightSwitchApplication.hrEmpFamilyHealthInsurance\" /><EntitySet Na" +
-                "me=\"hrEmpFamilyMembers\" EntityType=\"LightSwitchApplication.hrEmpFamilyMember\" />" +
-                "<EntitySet Name=\"hrEmpLanguages\" EntityType=\"LightSwitchApplication.hrEmpLanguag" +
-                "e\" /><EntitySet Name=\"hrEmpMilServices\" EntityType=\"LightSwitchApplication.hrEmp" +
-                "MilService\" /><EntitySet Name=\"hrEmpPastEmployements\" EntityType=\"LightSwitchApp" +
-                "lication.hrEmpPastEmployement\" /><EntitySet Name=\"hrEmpProfiles\" EntityType=\"Lig" +
-                "htSwitchApplication.hrEmpProfile\" /><EntitySet Name=\"hrEmpSkills\" EntityType=\"Li" +
-                "ghtSwitchApplication.hrEmpSkill\" /><EntitySet Name=\"hrEvalStatus\" EntityType=\"Li" +
-                "ghtSwitchApplication.hrEvalStatu\" /><EntitySet Name=\"hrPeople\" EntityType=\"Light" +
-                "SwitchApplication.hrPerson\" /><EntitySet Name=\"hrWorkingHours\" EntityType=\"Light" +
-                "SwitchApplication.hrWorkingHour\" /><EntitySet Name=\"sylAcademicalAims\" EntityTyp" +
-                "e=\"LightSwitchApplication.sylAcademicalAim\" /><EntitySet Name=\"sylCourseMaterial" +
-                "s\" EntityType=\"LightSwitchApplication.sylCourseMaterial\" /><EntitySet Name=\"sylC" +
-                "ourses\" EntityType=\"LightSwitchApplication.sylCourse\" /><EntitySet Name=\"sylCour" +
-                "seTeachers\" EntityType=\"LightSwitchApplication.sylCourseTeacher\" /><EntitySet Na" +
-                "me=\"sylLearningOutcomes\" EntityType=\"LightSwitchApplication.sylLearningOutcome\" " +
-                "/><EntitySet Name=\"sylPrerequisites\" EntityType=\"LightSwitchApplication.sylPrere" +
-                "quisite\" /><EntitySet Name=\"sylProgramCourses\" EntityType=\"LightSwitchApplicatio" +
-                "n.sylProgramCourse\" /><EntitySet Name=\"sylSyllabi\" EntityType=\"LightSwitchApplic" +
-                "ation.sylSyllabus\" /><EntitySet Name=\"sylSyllabusNotesSet\" EntityType=\"LightSwit" +
-                "chApplication.sylSyllabusNotesSetItem\" /><EntitySet Name=\"sylSyllabusTopics\" Ent" +
-                "ityType=\"LightSwitchApplication.sylSyllabusTopic\" /><EntitySet Name=\"sylWorkload" +
-                "Structures\" EntityType=\"LightSwitchApplication.sylWorkloadStructure\" /><Associat" +
-                "ionSet Name=\"sylCourse_erpAcademicDepartment\" Association=\"LightSwitchApplicatio" +
-                "n.sylCourse_erpAcademicDepartment\"><End Role=\"erpAcademicDepartment\" EntitySet=\"" +
-                "erpAcademicDepartments\" /><End Role=\"sylCourse\" EntitySet=\"sylCourses\" /></Assoc" +
-                "iationSet><AssociationSet Name=\"sylProgramCourse_erpAcademicDepartment\" Associat" +
-                "ion=\"LightSwitchApplication.sylProgramCourse_erpAcademicDepartment\"><End Role=\"e" +
-                "rpAcademicDepartment\" EntitySet=\"erpAcademicDepartments\" /><End Role=\"sylProgram" +
-                "Course\" EntitySet=\"sylProgramCourses\" /></AssociationSet><AssociationSet Name=\"s" +
-                "ylSyllabus_erpAcademicDepartment\" Association=\"LightSwitchApplication.sylSyllabu" +
-                "s_erpAcademicDepartment\"><End Role=\"erpAcademicDepartment\" EntitySet=\"erpAcademi" +
-                "cDepartments\" /><End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /></AssociationSe" +
-                "t><AssociationSet Name=\"hrPerson_erpAcademicDepartment\" Association=\"LightSwitch" +
-                "Application.hrPerson_erpAcademicDepartment\"><End Role=\"erpAcademicDepartment\" En" +
-                "titySet=\"erpAcademicDepartments\" /><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><" +
-                "/AssociationSet><AssociationSet Name=\"erpAcademicDepartment_erpFaculty\" Associat" +
-                "ion=\"LightSwitchApplication.erpAcademicDepartment_erpFaculty\"><End Role=\"erpFacu" +
-                "lty\" EntitySet=\"erpFaculties\" /><End Role=\"erpAcademicDepartment\" EntitySet=\"erp" +
-                "AcademicDepartments\" /></AssociationSet><AssociationSet Name=\"hrEmpAcademicProfi" +
-                "leByHR_erpFaculty\" Association=\"LightSwitchApplication.hrEmpAcademicProfileByHR_" +
-                "erpFaculty\"><End Role=\"erpFaculty\" EntitySet=\"erpFaculties\" /><End Role=\"hrEmpAc" +
-                "ademicProfileByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><Ass" +
-                "ociationSet Name=\"hrEmpCourse_erpHRAccountingPeriod\" Association=\"LightSwitchApp" +
-                "lication.hrEmpCourse_erpHRAccountingPeriod\"><End Role=\"erpHRAccountingPeriod\" En" +
-                "titySet=\"erpHRAccountingPeriods\" /><End Role=\"hrEmpCourse\" EntitySet=\"hrEmpCours" +
-                "es\" /></AssociationSet><AssociationSet Name=\"hrEmpCourse_erpLanguage\" Associatio" +
-                "n=\"LightSwitchApplication.hrEmpCourse_erpLanguage\"><End Role=\"erpLanguage\" Entit" +
-                "ySet=\"erpLanguages\" /><End Role=\"hrEmpCourse\" EntitySet=\"hrEmpCourses\" /></Assoc" +
-                "iationSet><AssociationSet Name=\"hrEmpAcademicProfileByHR_erpPosition\" Associatio" +
-                "n=\"LightSwitchApplication.hrEmpAcademicProfileByHR_erpPosition\"><End Role=\"erpPo" +
-                "sition\" EntitySet=\"erpPositions\" /><End Role=\"hrEmpAcademicProfileByHR\" EntitySe" +
-                "t=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><AssociationSet Name=\"hrEmpAcad" +
-                "emicProfileByHR_erpProgram\" Association=\"LightSwitchApplication.hrEmpAcademicPro" +
-                "fileByHR_erpProgram\"><End Role=\"erpProgram\" EntitySet=\"erpPrograms\" /><End Role=" +
-                "\"hrEmpAcademicProfileByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></Association" +
-                "Set><AssociationSet Name=\"erpFaculty_erpUniversity\" Associa";
+                "<Dependent Role=\"sylWorkloadStructure\"><PropertyRef Name=\"WorkloadStructure_Syll" +
+                "abus\" /></Dependent></ReferentialConstraint></Association><Association Name=\"syl" +
+                "CourseTeacher_sylSyllabus\"><End Role=\"sylSyllabus\" Type=\"LightSwitchApplication." +
+                "sylSyllabus\" Multiplicity=\"1\" /><End Role=\"sylCourseTeacher\" Type=\"LightSwitchAp" +
+                "plication.sylCourseTeacher\" Multiplicity=\"*\" /><ReferentialConstraint><Principal" +
+                " Role=\"sylSyllabus\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylCou" +
+                "rseTeacher\"><PropertyRef Name=\"CourseTeacher_Syllabus\" /></Dependent></Referenti" +
+                "alConstraint></Association><Association Name=\"sylSyllabusNotesSetItem_sylSyllabu" +
+                "s\"><End Role=\"sylSyllabus\" Type=\"LightSwitchApplication.sylSyllabus\" Multiplicit" +
+                "y=\"1\" /><End Role=\"sylSyllabusNotesSetItem\" Type=\"LightSwitchApplication.sylSyll" +
+                "abusNotesSetItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"syl" +
+                "Syllabus\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"sylSyllabusNotes" +
+                "SetItem\"><PropertyRef Name=\"SyllabusNotes_Syllabus\" /></Dependent></ReferentialC" +
+                "onstraint></Association><Association Name=\"hrPerson_hrPerson\"><End Role=\"hrPerso" +
+                "n1\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"0..1\" /><End Role=\"hrPe" +
+                "rson2\" Type=\"LightSwitchApplication.hrPerson\" Multiplicity=\"*\" /><ReferentialCon" +
+                "straint><Principal Role=\"hrPerson1\"><PropertyRef Name=\"Id\" /></Principal><Depend" +
+                "ent Role=\"hrPerson2\"><PropertyRef Name=\"hrPerson_hrPerson\" /></Dependent></Refer" +
+                "entialConstraint></Association><EntityContainer Name=\"ApplicationData\" m:IsDefau" +
+                "ltEntityContainer=\"true\"><EntitySet Name=\"erpAcademicDepartments\" EntityType=\"Li" +
+                "ghtSwitchApplication.erpAcademicDepartment\" /><EntitySet Name=\"erpFaculties\" Ent" +
+                "ityType=\"LightSwitchApplication.erpFaculty\" /><EntitySet Name=\"erpHRAccountingPe" +
+                "riods\" EntityType=\"LightSwitchApplication.erpHRAccountingPeriod\" /><EntitySet Na" +
+                "me=\"erpLanguages\" EntityType=\"LightSwitchApplication.erpLanguage\" /><EntitySet N" +
+                "ame=\"erpPositions\" EntityType=\"LightSwitchApplication.erpPosition\" /><EntitySet " +
+                "Name=\"erpPrograms\" EntityType=\"LightSwitchApplication.erpProgram\" /><EntitySet N" +
+                "ame=\"erpUniversities\" EntityType=\"LightSwitchApplication.erpUniversity\" /><Entit" +
+                "ySet Name=\"hrAddresses\" EntityType=\"LightSwitchApplication.hrAddress\" /><EntityS" +
+                "et Name=\"hrDepartments\" EntityType=\"LightSwitchApplication.hrDepartment\" /><Enti" +
+                "tySet Name=\"hrEmergencyContacts\" EntityType=\"LightSwitchApplication.hrEmergencyC" +
+                "ontact\" /><EntitySet Name=\"hrEmpAcademicProfileByAcademicians\" EntityType=\"Light" +
+                "SwitchApplication.hrEmpAcademicProfileByAcademician\" /><EntitySet Name=\"hrEmpAca" +
+                "demicProfileByHRs\" EntityType=\"LightSwitchApplication.hrEmpAcademicProfileByHR\" " +
+                "/><EntitySet Name=\"hrEmpCourses\" EntityType=\"LightSwitchApplication.hrEmpCourse\"" +
+                " /><EntitySet Name=\"hrEmpDisabilities\" EntityType=\"LightSwitchApplication.hrEmpD" +
+                "isability\" /><EntitySet Name=\"hrEmpEducations\" EntityType=\"LightSwitchApplicatio" +
+                "n.hrEmpEducation\" /><EntitySet Name=\"hrEmpFamilyHealthInsurances\" EntityType=\"Li" +
+                "ghtSwitchApplication.hrEmpFamilyHealthInsurance\" /><EntitySet Name=\"hrEmpFamilyM" +
+                "embers\" EntityType=\"LightSwitchApplication.hrEmpFamilyMember\" /><EntitySet Name=" +
+                "\"hrEmpLanguages\" EntityType=\"LightSwitchApplication.hrEmpLanguage\" /><EntitySet " +
+                "Name=\"hrEmpMilServices\" EntityType=\"LightSwitchApplication.hrEmpMilService\" /><E" +
+                "ntitySet Name=\"hrEmpPastEmployements\" EntityType=\"LightSwitchApplication.hrEmpPa" +
+                "stEmployement\" /><EntitySet Name=\"hrEmpProfiles\" EntityType=\"LightSwitchApplicat" +
+                "ion.hrEmpProfile\" /><EntitySet Name=\"hrEmpSkills\" EntityType=\"LightSwitchApplica" +
+                "tion.hrEmpSkill\" /><EntitySet Name=\"hrEvalStatus\" EntityType=\"LightSwitchApplica" +
+                "tion.hrEvalStatu\" /><EntitySet Name=\"hrPeople\" EntityType=\"LightSwitchApplicatio" +
+                "n.hrPerson\" /><EntitySet Name=\"hrWorkingHours\" EntityType=\"LightSwitchApplicatio" +
+                "n.hrWorkingHour\" /><EntitySet Name=\"sylAcademicalAims\" EntityType=\"LightSwitchAp" +
+                "plication.sylAcademicalAim\" /><EntitySet Name=\"sylCourseMaterials\" EntityType=\"L" +
+                "ightSwitchApplication.sylCourseMaterial\" /><EntitySet Name=\"sylCourses\" EntityTy" +
+                "pe=\"LightSwitchApplication.sylCourse\" /><EntitySet Name=\"sylCourseTeachers\" Enti" +
+                "tyType=\"LightSwitchApplication.sylCourseTeacher\" /><EntitySet Name=\"sylLearningO" +
+                "utcomes\" EntityType=\"LightSwitchApplication.sylLearningOutcome\" /><EntitySet Nam" +
+                "e=\"sylPrerequisites\" EntityType=\"LightSwitchApplication.sylPrerequisite\" /><Enti" +
+                "tySet Name=\"sylProgramCourses\" EntityType=\"LightSwitchApplication.sylProgramCour" +
+                "se\" /><EntitySet Name=\"sylSyllabi\" EntityType=\"LightSwitchApplication.sylSyllabu" +
+                "s\" /><EntitySet Name=\"sylSyllabusNotesSet\" EntityType=\"LightSwitchApplication.sy" +
+                "lSyllabusNotesSetItem\" /><EntitySet Name=\"sylSyllabusTopics\" EntityType=\"LightSw" +
+                "itchApplication.sylSyllabusTopic\" /><EntitySet Name=\"sylWorkloadStructures\" Enti" +
+                "tyType=\"LightSwitchApplication.sylWorkloadStructure\" /><AssociationSet Name=\"syl" +
+                "Course_erpAcademicDepartment\" Association=\"LightSwitchApplication.sylCourse_erpA" +
+                "cademicDepartment\"><End Role=\"erpAcademicDepartment\" EntitySet=\"erpAcademicDepar" +
+                "tments\" /><End Role=\"sylCourse\" EntitySet=\"sylCourses\" /></AssociationSet><Assoc" +
+                "iationSet Name=\"sylProgramCourse_erpAcademicDepartment\" Association=\"LightSwitch" +
+                "Application.sylProgramCourse_erpAcademicDepartment\"><End Role=\"erpAcademicDepart" +
+                "ment\" EntitySet=\"erpAcademicDepartments\" /><End Role=\"sylProgramCourse\" EntitySe" +
+                "t=\"sylProgramCourses\" /></AssociationSet><AssociationSet Name=\"sylSyllabus_erpAc" +
+                "ademicDepartment\" Association=\"LightSwitchApplication.sylSyllabus_erpAcademicDep" +
+                "artment\"><End Role=\"erpAcademicDepartment\" EntitySet=\"erpAcademicDepartments\" />" +
+                "<End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /></AssociationSet><AssociationSe" +
+                "t Name=\"hrPerson_erpAcademicDepartment\" Association=\"LightSwitchApplication.hrPe" +
+                "rson_erpAcademicDepartment\"><End Role=\"erpAcademicDepartment\" EntitySet=\"erpAcad" +
+                "emicDepartments\" /><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /></AssociationSet>" +
+                "<AssociationSet Name=\"erpAcademicDepartment_erpFaculty\" Association=\"LightSwitch" +
+                "Application.erpAcademicDepartment_erpFaculty\"><End Role=\"erpFaculty\" EntitySet=\"" +
+                "erpFaculties\" /><End Role=\"erpAcademicDepartment\" EntitySet=\"erpAcademicDepartme" +
+                "nts\" /></AssociationSet><AssociationSet Name=\"hrEmpAcademicProfileByHR_erpFacult" +
+                "y\" Association=\"LightSwitchApplication.hrEmpAcademicProfileByHR_erpFaculty\"><End" +
+                " Role=\"erpFaculty\" EntitySet=\"erpFaculties\" /><End Role=\"hrEmpAcademicProfileByH" +
+                "R\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><AssociationSet Name" +
+                "=\"hrEmpCourse_erpHRAccountingPeriod\" Association=\"LightSwitchApplication.hrEmpCo" +
+                "urse_erpHRAccountingPeriod\"><End Role=\"erpHRAccountingPerio";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart11 = "tion=\"LightSwitchApplication.erpFaculty_erpUniversity\"><End Role=\"erpUniversity\" " +
-                "EntitySet=\"erpUniversities\" /><End Role=\"erpFaculty\" EntitySet=\"erpFaculties\" />" +
-                "</AssociationSet><AssociationSet Name=\"hrEmpProfile_erpUniversity\" Association=\"" +
-                "LightSwitchApplication.hrEmpProfile_erpUniversity\"><End Role=\"erpUniversity\" Ent" +
-                "itySet=\"erpUniversities\" /><End Role=\"hrEmpProfile\" EntitySet=\"hrEmpProfiles\" />" +
-                "</AssociationSet><AssociationSet Name=\"hrEmpAcademicProfileByHR_erpUniversity\" A" +
-                "ssociation=\"LightSwitchApplication.hrEmpAcademicProfileByHR_erpUniversity\"><End " +
-                "Role=\"erpUniversity\" EntitySet=\"erpUniversities\" /><End Role=\"hrEmpAcademicProfi" +
-                "leByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><AssociationSet" +
-                " Name=\"hrPerson_hrDepartment\" Association=\"LightSwitchApplication.hrPerson_hrDep" +
-                "artment\"><End Role=\"hrDepartment\" EntitySet=\"hrDepartments\" /><End Role=\"hrPerso" +
-                "n\" EntitySet=\"hrPeople\" /></AssociationSet><AssociationSet Name=\"hrEmpCourse_hrE" +
-                "mpAcademicProfileByHR\" Association=\"LightSwitchApplication.hrEmpCourse_hrEmpAcad" +
-                "emicProfileByHR\"><End Role=\"hrEmpAcademicProfileByHR\" EntitySet=\"hrEmpAcademicPr" +
-                "ofileByHRs\" /><End Role=\"hrEmpCourse\" EntitySet=\"hrEmpCourses\" /></AssociationSe" +
-                "t><AssociationSet Name=\"hrEmpCourse_hrEvalStatu\" Association=\"LightSwitchApplica" +
-                "tion.hrEmpCourse_hrEvalStatu\"><End Role=\"hrEvalStatu\" EntitySet=\"hrEvalStatus\" /" +
-                "><End Role=\"hrEmpCourse\" EntitySet=\"hrEmpCourses\" /></AssociationSet><Associatio" +
-                "nSet Name=\"hrDepartment_hrPerson\" Association=\"LightSwitchApplication.hrDepartme" +
-                "nt_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrDepartment" +
-                "\" EntitySet=\"hrDepartments\" /></AssociationSet><AssociationSet Name=\"hrWorkingHo" +
-                "ur_hrPerson\" Association=\"LightSwitchApplication.hrWorkingHour_hrPerson\"><End Ro" +
-                "le=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrWorkingHour\" EntitySet=\"hrWork" +
-                "ingHours\" /></AssociationSet><AssociationSet Name=\"sylSyllabus_hrPerson\" Associa" +
-                "tion=\"LightSwitchApplication.sylSyllabus_hrPerson\"><End Role=\"hrPerson\" EntitySe" +
-                "t=\"hrPeople\" /><End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /></AssociationSet" +
-                "><AssociationSet Name=\"erpAcademicDepartment_hrPerson\" Association=\"LightSwitchA" +
-                "pplication.erpAcademicDepartment_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeo" +
-                "ple\" /><End Role=\"erpAcademicDepartment\" EntitySet=\"erpAcademicDepartments\" /></" +
-                "AssociationSet><AssociationSet Name=\"sylCourseTeacher_hrPerson\" Association=\"Lig" +
-                "htSwitchApplication.sylCourseTeacher_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"h" +
-                "rPeople\" /><End Role=\"sylCourseTeacher\" EntitySet=\"sylCourseTeachers\" /></Associ" +
-                "ationSet><AssociationSet Name=\"sylSyllabus_hrPerson1\" Association=\"LightSwitchAp" +
-                "plication.sylSyllabus_hrPerson1\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><En" +
-                "d Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /></AssociationSet><AssociationSet N" +
-                "ame=\"hrEmpProfile_hrPerson\" Association=\"LightSwitchApplication.hrEmpProfile_hrP" +
-                "erson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpProfile\" Enti" +
-                "tySet=\"hrEmpProfiles\" /></AssociationSet><AssociationSet Name=\"hrAddress_hrPerso" +
-                "n\" Association=\"LightSwitchApplication.hrAddress_hrPerson\"><End Role=\"hrPerson\" " +
-                "EntitySet=\"hrPeople\" /><End Role=\"hrAddress\" EntitySet=\"hrAddresses\" /></Associa" +
-                "tionSet><AssociationSet Name=\"hrEmpFamilyMember_hrPerson\" Association=\"LightSwit" +
-                "chApplication.hrEmpFamilyMember_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeop" +
-                "le\" /><End Role=\"hrEmpFamilyMember\" EntitySet=\"hrEmpFamilyMembers\" /></Associati" +
-                "onSet><AssociationSet Name=\"hrEmpEducation_hrPerson\" Association=\"LightSwitchApp" +
-                "lication.hrEmpEducation_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><E" +
-                "nd Role=\"hrEmpEducation\" EntitySet=\"hrEmpEducations\" /></AssociationSet><Associa" +
-                "tionSet Name=\"hrEmpPastEmployement_hrPerson\" Association=\"LightSwitchApplication" +
-                ".hrEmpPastEmployement_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End" +
-                " Role=\"hrEmpPastEmployement\" EntitySet=\"hrEmpPastEmployements\" /></AssociationSe" +
-                "t><AssociationSet Name=\"hrEmpSkill_hrPerson\" Association=\"LightSwitchApplication" +
-                ".hrEmpSkill_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrE" +
-                "mpSkill\" EntitySet=\"hrEmpSkills\" /></AssociationSet><AssociationSet Name=\"hrEmpL" +
-                "anguage_hrPerson\" Association=\"LightSwitchApplication.hrEmpLanguage_hrPerson\"><E" +
-                "nd Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpLanguage\" EntitySet=\"h" +
-                "rEmpLanguages\" /></AssociationSet><AssociationSet Name=\"hrEmpMilService_hrPerson" +
-                "\" Association=\"LightSwitchApplication.hrEmpMilService_hrPerson\"><End Role=\"hrPer" +
-                "son\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpMilService\" EntitySet=\"hrEmpMilServi" +
-                "ces\" /></AssociationSet><AssociationSet Name=\"hrEmpDisability_hrPerson\" Associat" +
-                "ion=\"LightSwitchApplication.hrEmpDisability_hrPerson\"><End Role=\"hrPerson\" Entit" +
-                "ySet=\"hrPeople\" /><End Role=\"hrEmpDisability\" EntitySet=\"hrEmpDisabilities\" /></" +
-                "AssociationSet><AssociationSet Name=\"hrEmpFamilyHealthInsurance_hrPerson\" Associ" +
-                "ation=\"LightSwitchApplication.hrEmpFamilyHealthInsurance_hrPerson\"><End Role=\"hr" +
-                "Person\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpFamilyHealthInsurance\" EntitySet=" +
-                "\"hrEmpFamilyHealthInsurances\" /></AssociationSet><AssociationSet Name=\"hrEmergen" +
-                "cyContact_hrPerson\" Association=\"LightSwitchApplication.hrEmergencyContact_hrPer" +
-                "son\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmergencyContact\" " +
-                "EntitySet=\"hrEmergencyContacts\" /></AssociationSet><AssociationSet Name=\"hrEmpAc" +
-                "ademicProfileByHR_hrPerson\" Association=\"LightSwitchApplication.hrEmpAcademicPro" +
-                "fileByHR_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpA" +
-                "cademicProfileByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><As" +
-                "sociationSet Name=\"hrEmpAcademicProfileByHR_hrPerson1\" Association=\"LightSwitchA" +
-                "pplication.hrEmpAcademicProfileByHR_hrPerson1\"><End Role=\"hrPerson\" EntitySet=\"h" +
-                "rPeople\" /><End Role=\"hrEmpAcademicProfileByHR\" EntitySet=\"hrEmpAcademicProfileB" +
-                "yHRs\" /></AssociationSet><AssociationSet Name=\"hrEmpAcademicProfileByHR_hrPerson" +
-                "2\" Association=\"LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson2\"><End " +
-                "Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpAcademicProfileByHR\" Enti" +
+            private const string ModelPart11 = "d\" EntitySet=\"erpHRAccountingPeriods\" /><End Role=\"hrEmpCourse\" EntitySet=\"hrEmpC" +
+                "ourses\" /></AssociationSet><AssociationSet Name=\"hrEmpCourse_erpLanguage\" Associ" +
+                "ation=\"LightSwitchApplication.hrEmpCourse_erpLanguage\"><End Role=\"erpLanguage\" E" +
+                "ntitySet=\"erpLanguages\" /><End Role=\"hrEmpCourse\" EntitySet=\"hrEmpCourses\" /></A" +
+                "ssociationSet><AssociationSet Name=\"hrEmpAcademicProfileByHR_erpPosition\" Associ" +
+                "ation=\"LightSwitchApplication.hrEmpAcademicProfileByHR_erpPosition\"><End Role=\"e" +
+                "rpPosition\" EntitySet=\"erpPositions\" /><End Role=\"hrEmpAcademicProfileByHR\" Enti" +
                 "tySet=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><AssociationSet Name=\"hrEmp" +
-                "AcademicProfileByHR_hrPerson3\" Association=\"LightSwitchApplication.hrEmpAcademic" +
-                "ProfileByHR_hrPerson3\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hr" +
-                "EmpAcademicProfileByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></AssociationSet" +
-                "><AssociationSet Name=\"hrEmpAcademicProfileByAcademic_hrPerson\" Association=\"Lig" +
-                "htSwitchApplication.hrEmpAcademicProfileByAcademic_hrPerson\"><End Role=\"hrPerson" +
-                "\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpAcademicProfileByAcademician\" EntitySet" +
-                "=\"hrEmpAcademicProfileByAcademicians\" /></AssociationSet><AssociationSet Name=\"h" +
-                "rEmpCourse_hrPerson\" Association=\"LightSwitchApplication.hrEmpCourse_hrPerson\"><" +
-                "End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpCourse\" EntitySet=\"hr" +
-                "EmpCourses\" /></AssociationSet><AssociationSet Name=\"sylLearningOutcome_sylAcade" +
-                "micalAim\" Association=\"LightSwitchApplication.sylLearningOutcome_sylAcademicalAi" +
-                "m\"><End Role=\"sylAcademicalAim\" EntitySet=\"sylAcademicalAims\" /><End Role=\"sylLe" +
-                "arningOutcome\" EntitySet=\"sylLearningOutcomes\" /></AssociationSet><AssociationSe" +
-                "t Name=\"sylProgramCourse_sylCourse\" Association=\"LightSwitchApplication.sylProgr" +
-                "amCourse_sylCourse\"><End Role=\"sylCourse\" EntitySet=\"sylCourses\" /><End Role=\"sy" +
-                "lProgramCourse\" EntitySet=\"sylProgramCourses\" /></AssociationSet><AssociationSet" +
-                " Name=\"sylSyllabus_sylCourse\" Association=\"LightSwitchAppli";
+                "AcademicProfileByHR_erpProgram\" Association=\"LightSwitchApplication.hrEmpAcademi" +
+                "cProfileByHR_erpProgram\"><End Role=\"erpProgram\" EntitySet=\"erpPrograms\" /><End R" +
+                "ole=\"hrEmpAcademicProfileByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></Associa" +
+                "tionSet><AssociationSet Name=\"erpFaculty_erpUniversity\" Association=\"LightSwitch" +
+                "Application.erpFaculty_erpUniversity\"><End Role=\"erpUniversity\" EntitySet=\"erpUn" +
+                "iversities\" /><End Role=\"erpFaculty\" EntitySet=\"erpFaculties\" /></AssociationSet" +
+                "><AssociationSet Name=\"hrEmpProfile_erpUniversity\" Association=\"LightSwitchAppli" +
+                "cation.hrEmpProfile_erpUniversity\"><End Role=\"erpUniversity\" EntitySet=\"erpUnive" +
+                "rsities\" /><End Role=\"hrEmpProfile\" EntitySet=\"hrEmpProfiles\" /></AssociationSet" +
+                "><AssociationSet Name=\"hrEmpAcademicProfileByHR_erpUniversity\" Association=\"Ligh" +
+                "tSwitchApplication.hrEmpAcademicProfileByHR_erpUniversity\"><End Role=\"erpUnivers" +
+                "ity\" EntitySet=\"erpUniversities\" /><End Role=\"hrEmpAcademicProfileByHR\" EntitySe" +
+                "t=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><AssociationSet Name=\"hrPerson_" +
+                "hrDepartment\" Association=\"LightSwitchApplication.hrPerson_hrDepartment\"><End Ro" +
+                "le=\"hrDepartment\" EntitySet=\"hrDepartments\" /><End Role=\"hrPerson\" EntitySet=\"hr" +
+                "People\" /></AssociationSet><AssociationSet Name=\"hrEmpCourse_hrEmpAcademicProfil" +
+                "eByHR\" Association=\"LightSwitchApplication.hrEmpCourse_hrEmpAcademicProfileByHR\"" +
+                "><End Role=\"hrEmpAcademicProfileByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /><E" +
+                "nd Role=\"hrEmpCourse\" EntitySet=\"hrEmpCourses\" /></AssociationSet><AssociationSe" +
+                "t Name=\"hrEmpCourse_hrEvalStatu\" Association=\"LightSwitchApplication.hrEmpCourse" +
+                "_hrEvalStatu\"><End Role=\"hrEvalStatu\" EntitySet=\"hrEvalStatus\" /><End Role=\"hrEm" +
+                "pCourse\" EntitySet=\"hrEmpCourses\" /></AssociationSet><AssociationSet Name=\"hrDep" +
+                "artment_hrPerson\" Association=\"LightSwitchApplication.hrDepartment_hrPerson\"><En" +
+                "d Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrDepartment\" EntitySet=\"hrD" +
+                "epartments\" /></AssociationSet><AssociationSet Name=\"hrWorkingHour_hrPerson\" Ass" +
+                "ociation=\"LightSwitchApplication.hrWorkingHour_hrPerson\"><End Role=\"hrPerson\" En" +
+                "titySet=\"hrPeople\" /><End Role=\"hrWorkingHour\" EntitySet=\"hrWorkingHours\" /></As" +
+                "sociationSet><AssociationSet Name=\"sylSyllabus_hrPerson\" Association=\"LightSwitc" +
+                "hApplication.sylSyllabus_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><" +
+                "End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /></AssociationSet><AssociationSet" +
+                " Name=\"erpAcademicDepartment_hrPerson\" Association=\"LightSwitchApplication.erpAc" +
+                "ademicDepartment_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role" +
+                "=\"erpAcademicDepartment\" EntitySet=\"erpAcademicDepartments\" /></AssociationSet><" +
+                "AssociationSet Name=\"sylCourseTeacher_hrPerson\" Association=\"LightSwitchApplicat" +
+                "ion.sylCourseTeacher_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End " +
+                "Role=\"sylCourseTeacher\" EntitySet=\"sylCourseTeachers\" /></AssociationSet><Associ" +
+                "ationSet Name=\"sylSyllabus_hrPerson1\" Association=\"LightSwitchApplication.sylSyl" +
+                "labus_hrPerson1\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"sylSylla" +
+                "bus\" EntitySet=\"sylSyllabi\" /></AssociationSet><AssociationSet Name=\"hrEmpProfil" +
+                "e_hrPerson\" Association=\"LightSwitchApplication.hrEmpProfile_hrPerson\"><End Role" +
+                "=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpProfile\" EntitySet=\"hrEmpProf" +
+                "iles\" /></AssociationSet><AssociationSet Name=\"hrAddress_hrPerson\" Association=\"" +
+                "LightSwitchApplication.hrAddress_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeo" +
+                "ple\" /><End Role=\"hrAddress\" EntitySet=\"hrAddresses\" /></AssociationSet><Associa" +
+                "tionSet Name=\"hrEmpFamilyMember_hrPerson\" Association=\"LightSwitchApplication.hr" +
+                "EmpFamilyMember_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=" +
+                "\"hrEmpFamilyMember\" EntitySet=\"hrEmpFamilyMembers\" /></AssociationSet><Associati" +
+                "onSet Name=\"hrEmpEducation_hrPerson\" Association=\"LightSwitchApplication.hrEmpEd" +
+                "ucation_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpEd" +
+                "ucation\" EntitySet=\"hrEmpEducations\" /></AssociationSet><AssociationSet Name=\"hr" +
+                "EmpPastEmployement_hrPerson\" Association=\"LightSwitchApplication.hrEmpPastEmploy" +
+                "ement_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpPast" +
+                "Employement\" EntitySet=\"hrEmpPastEmployements\" /></AssociationSet><AssociationSe" +
+                "t Name=\"hrEmpSkill_hrPerson\" Association=\"LightSwitchApplication.hrEmpSkill_hrPe" +
+                "rson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpSkill\" EntityS" +
+                "et=\"hrEmpSkills\" /></AssociationSet><AssociationSet Name=\"hrEmpLanguage_hrPerson" +
+                "\" Association=\"LightSwitchApplication.hrEmpLanguage_hrPerson\"><End Role=\"hrPerso" +
+                "n\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpLanguage\" EntitySet=\"hrEmpLanguages\" /" +
+                "></AssociationSet><AssociationSet Name=\"hrEmpMilService_hrPerson\" Association=\"L" +
+                "ightSwitchApplication.hrEmpMilService_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"" +
+                "hrPeople\" /><End Role=\"hrEmpMilService\" EntitySet=\"hrEmpMilServices\" /></Associa" +
+                "tionSet><AssociationSet Name=\"hrEmpDisability_hrPerson\" Association=\"LightSwitch" +
+                "Application.hrEmpDisability_hrPerson\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" " +
+                "/><End Role=\"hrEmpDisability\" EntitySet=\"hrEmpDisabilities\" /></AssociationSet><" +
+                "AssociationSet Name=\"hrEmpFamilyHealthInsurance_hrPerson\" Association=\"LightSwit" +
+                "chApplication.hrEmpFamilyHealthInsurance_hrPerson\"><End Role=\"hrPerson\" EntitySe" +
+                "t=\"hrPeople\" /><End Role=\"hrEmpFamilyHealthInsurance\" EntitySet=\"hrEmpFamilyHeal" +
+                "thInsurances\" /></AssociationSet><AssociationSet Name=\"hrEmergencyContact_hrPers" +
+                "on\" Association=\"LightSwitchApplication.hrEmergencyContact_hrPerson\"><End Role=\"" +
+                "hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmergencyContact\" EntitySet=\"hrEme" +
+                "rgencyContacts\" /></AssociationSet><AssociationSet Name=\"hrEmpAcademicProfileByH" +
+                "R_hrPerson\" Association=\"LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerso" +
+                "n\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpAcademicProfileBy" +
+                "HR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><AssociationSet Nam" +
+                "e=\"hrEmpAcademicProfileByHR_hrPerson1\" Association=\"LightSwitchApplication.hrEmp" +
+                "AcademicProfileByHR_hrPerson1\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End " +
+                "Role=\"hrEmpAcademicProfileByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></Associ" +
+                "ationSet><AssociationSet Name=\"hrEmpAcademicProfileByHR_hrPerson2\" Association=\"" +
+                "LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson2\"><End Role=\"hrPerson\" " +
+                "EntitySet=\"hrPeople\" /><End Role=\"hrEmpAcademicProfileByHR\" EntitySet=\"hrEmpAcad" +
+                "emicProfileByHRs\" /></AssociationSet><AssociationSet Name=\"hrEmpAcademicProfileB" +
+                "yHR_hrPerson3\" Association=\"LightSwitchApplication.hrEmpAcademicProfileByHR_hrPe" +
+                "rson3\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpAcademicProfi" +
+                "leByHR\" EntitySet=\"hrEmpAcademicProfileByHRs\" /></AssociationSet><AssociationSet" +
+                " Name=\"hrEmpAcademicProfileByAcademic_hrPerson\" Association=\"LightSwitchApplicat" +
+                "ion.hrEmpAcademicProfileByAcademic_hrPerson\"><End Role=\"hrP";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart12 = "cation.sylSyllabus_sylCourse\"><End Role=\"sylCourse\" EntitySet=\"sylCourses\" /><End" +
-                " Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /></AssociationSet><AssociationSet Na" +
-                "me=\"sylPrerequisite_sylCourse\" Association=\"LightSwitchApplication.sylPrerequisi" +
-                "te_sylCourse\"><End Role=\"sylCourse\" EntitySet=\"sylCourses\" /><End Role=\"sylPrere" +
-                "quisite\" EntitySet=\"sylPrerequisites\" /></AssociationSet><AssociationSet Name=\"h" +
-                "rEmpCourse_sylCourse\" Association=\"LightSwitchApplication.hrEmpCourse_sylCourse\"" +
-                "><End Role=\"sylCourse\" EntitySet=\"sylCourses\" /><End Role=\"hrEmpCourse\" EntitySe" +
-                "t=\"hrEmpCourses\" /></AssociationSet><AssociationSet Name=\"sylPrerequisite_sylSyl" +
-                "labus\" Association=\"LightSwitchApplication.sylPrerequisite_sylSyllabus\"><End Rol" +
-                "e=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /><End Role=\"sylPrerequisite\" EntitySet=\"" +
-                "sylPrerequisites\" /></AssociationSet><AssociationSet Name=\"sylLearningOutcome_sy" +
-                "lSyllabus\" Association=\"LightSwitchApplication.sylLearningOutcome_sylSyllabus\"><" +
-                "End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /><End Role=\"sylLearningOutcome\" E" +
-                "ntitySet=\"sylLearningOutcomes\" /></AssociationSet><AssociationSet Name=\"sylCours" +
-                "eMaterial_sylSyllabus\" Association=\"LightSwitchApplication.sylCourseMaterial_syl" +
-                "Syllabus\"><End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /><End Role=\"sylCourseM" +
-                "aterial\" EntitySet=\"sylCourseMaterials\" /></AssociationSet><AssociationSet Name=" +
-                "\"sylWorkloadStructure_sylSyllabus\" Association=\"LightSwitchApplication.sylWorklo" +
-                "adStructure_sylSyllabus\"><End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /><End R" +
-                "ole=\"sylWorkloadStructure\" EntitySet=\"sylWorkloadStructures\" /></AssociationSet>" +
-                "<AssociationSet Name=\"sylCourseTeacher_sylSyllabus\" Association=\"LightSwitchAppl" +
-                "ication.sylCourseTeacher_sylSyllabus\"><End Role=\"sylSyllabus\" EntitySet=\"sylSyll" +
-                "abi\" /><End Role=\"sylCourseTeacher\" EntitySet=\"sylCourseTeachers\" /></Associatio" +
-                "nSet><AssociationSet Name=\"sylSyllabusNotesSetItem_sylSyllabus\" Association=\"Lig" +
-                "htSwitchApplication.sylSyllabusNotesSetItem_sylSyllabus\"><End Role=\"sylSyllabus\"" +
-                " EntitySet=\"sylSyllabi\" /><End Role=\"sylSyllabusNotesSetItem\" EntitySet=\"sylSyll" +
-                "abusNotesSet\" /></AssociationSet><FunctionImport Name=\"byPerson\" EntitySet=\"hrWo" +
-                "rkingHours\" ReturnType=\"Collection(LightSwitchApplication.hrWorkingHour)\" m:Http" +
-                "Method=\"GET\"><Parameter Name=\"personId\" Type=\"Edm.Int32\" Mode=\"In\" /></FunctionI" +
-                "mport><FunctionImport Name=\"byPersonbyMonth\" EntitySet=\"hrWorkingHours\" ReturnTy" +
-                "pe=\"Collection(LightSwitchApplication.hrWorkingHour)\" m:HttpMethod=\"GET\"><Parame" +
-                "ter Name=\"LSUserName\" Type=\"Edm.String\" Mode=\"In\" /><Parameter Name=\"Month\" Type" +
-                "=\"Edm.Int32\" Mode=\"In\" /><Parameter Name=\"Year\" Type=\"Edm.Int32\" Mode=\"In\" /></F" +
-                "unctionImport><FunctionImport Name=\"Microsoft_LightSwitch_GetCanInformation\" Ret" +
-                "urnType=\"Edm.String\" m:HttpMethod=\"GET\"><Parameter Name=\"dataServiceMembers\" Typ" +
-                "e=\"Edm.String\" Mode=\"In\" /></FunctionImport></EntityContainer></Schema></edmx:Da" +
-                "taServices></edmx:Edmx>";
+            private const string ModelPart12 = "erson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpAcademicProfileByAcademician\" Entit" +
+                "ySet=\"hrEmpAcademicProfileByAcademicians\" /></AssociationSet><AssociationSet Nam" +
+                "e=\"hrEmpCourse_hrPerson\" Association=\"LightSwitchApplication.hrEmpCourse_hrPerso" +
+                "n\"><End Role=\"hrPerson\" EntitySet=\"hrPeople\" /><End Role=\"hrEmpCourse\" EntitySet" +
+                "=\"hrEmpCourses\" /></AssociationSet><AssociationSet Name=\"sylLearningOutcome_sylA" +
+                "cademicalAim\" Association=\"LightSwitchApplication.sylLearningOutcome_sylAcademic" +
+                "alAim\"><End Role=\"sylAcademicalAim\" EntitySet=\"sylAcademicalAims\" /><End Role=\"s" +
+                "ylLearningOutcome\" EntitySet=\"sylLearningOutcomes\" /></AssociationSet><Associati" +
+                "onSet Name=\"sylProgramCourse_sylCourse\" Association=\"LightSwitchApplication.sylP" +
+                "rogramCourse_sylCourse\"><End Role=\"sylCourse\" EntitySet=\"sylCourses\" /><End Role" +
+                "=\"sylProgramCourse\" EntitySet=\"sylProgramCourses\" /></AssociationSet><Associatio" +
+                "nSet Name=\"sylSyllabus_sylCourse\" Association=\"LightSwitchApplication.sylSyllabu" +
+                "s_sylCourse\"><End Role=\"sylCourse\" EntitySet=\"sylCourses\" /><End Role=\"sylSyllab" +
+                "us\" EntitySet=\"sylSyllabi\" /></AssociationSet><AssociationSet Name=\"sylPrerequis" +
+                "ite_sylCourse\" Association=\"LightSwitchApplication.sylPrerequisite_sylCourse\"><E" +
+                "nd Role=\"sylCourse\" EntitySet=\"sylCourses\" /><End Role=\"sylPrerequisite\" EntityS" +
+                "et=\"sylPrerequisites\" /></AssociationSet><AssociationSet Name=\"hrEmpCourse_sylCo" +
+                "urse\" Association=\"LightSwitchApplication.hrEmpCourse_sylCourse\"><End Role=\"sylC" +
+                "ourse\" EntitySet=\"sylCourses\" /><End Role=\"hrEmpCourse\" EntitySet=\"hrEmpCourses\"" +
+                " /></AssociationSet><AssociationSet Name=\"sylPrerequisite_sylSyllabus\" Associati" +
+                "on=\"LightSwitchApplication.sylPrerequisite_sylSyllabus\"><End Role=\"sylSyllabus\" " +
+                "EntitySet=\"sylSyllabi\" /><End Role=\"sylPrerequisite\" EntitySet=\"sylPrerequisites" +
+                "\" /></AssociationSet><AssociationSet Name=\"sylLearningOutcome_sylSyllabus\" Assoc" +
+                "iation=\"LightSwitchApplication.sylLearningOutcome_sylSyllabus\"><End Role=\"sylSyl" +
+                "labus\" EntitySet=\"sylSyllabi\" /><End Role=\"sylLearningOutcome\" EntitySet=\"sylLea" +
+                "rningOutcomes\" /></AssociationSet><AssociationSet Name=\"sylCourseMaterial_sylSyl" +
+                "labus\" Association=\"LightSwitchApplication.sylCourseMaterial_sylSyllabus\"><End R" +
+                "ole=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /><End Role=\"sylCourseMaterial\" EntityS" +
+                "et=\"sylCourseMaterials\" /></AssociationSet><AssociationSet Name=\"sylWorkloadStru" +
+                "cture_sylSyllabus\" Association=\"LightSwitchApplication.sylWorkloadStructure_sylS" +
+                "yllabus\"><End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /><End Role=\"sylWorkload" +
+                "Structure\" EntitySet=\"sylWorkloadStructures\" /></AssociationSet><AssociationSet " +
+                "Name=\"sylCourseTeacher_sylSyllabus\" Association=\"LightSwitchApplication.sylCours" +
+                "eTeacher_sylSyllabus\"><End Role=\"sylSyllabus\" EntitySet=\"sylSyllabi\" /><End Role" +
+                "=\"sylCourseTeacher\" EntitySet=\"sylCourseTeachers\" /></AssociationSet><Associatio" +
+                "nSet Name=\"sylSyllabusNotesSetItem_sylSyllabus\" Association=\"LightSwitchApplicat" +
+                "ion.sylSyllabusNotesSetItem_sylSyllabus\"><End Role=\"sylSyllabus\" EntitySet=\"sylS" +
+                "yllabi\" /><End Role=\"sylSyllabusNotesSetItem\" EntitySet=\"sylSyllabusNotesSet\" />" +
+                "</AssociationSet><AssociationSet Name=\"hrPerson_hrPerson\" Association=\"LightSwit" +
+                "chApplication.hrPerson_hrPerson\"><End Role=\"hrPerson1\" EntitySet=\"hrPeople\" /><E" +
+                "nd Role=\"hrPerson2\" EntitySet=\"hrPeople\" /></AssociationSet><FunctionImport Name" +
+                "=\"byPerson\" EntitySet=\"hrWorkingHours\" ReturnType=\"Collection(LightSwitchApplica" +
+                "tion.hrWorkingHour)\" m:HttpMethod=\"GET\"><Parameter Name=\"personId\" Type=\"Edm.Int" +
+                "32\" Mode=\"In\" /></FunctionImport><FunctionImport Name=\"byPersonbyMonth\" EntitySe" +
+                "t=\"hrWorkingHours\" ReturnType=\"Collection(LightSwitchApplication.hrWorkingHour)\"" +
+                " m:HttpMethod=\"GET\"><Parameter Name=\"LSUserName\" Type=\"Edm.String\" Mode=\"In\" /><" +
+                "Parameter Name=\"Month\" Type=\"Edm.Int32\" Mode=\"In\" /><Parameter Name=\"Year\" Type=" +
+                "\"Edm.Int32\" Mode=\"In\" /></FunctionImport><FunctionImport Name=\"byEmpByYearByMont" +
+                "h\" EntitySet=\"hrWorkingHours\" ReturnType=\"Collection(LightSwitchApplication.hrWo" +
+                "rkingHour)\" m:HttpMethod=\"GET\"><Parameter Name=\"Id\" Type=\"Edm.Int32\" Mode=\"In\" /" +
+                "><Parameter Name=\"RecYear\" Type=\"Edm.Int32\" Mode=\"In\" /><Parameter Name=\"RecMont" +
+                "h\" Type=\"Edm.Int32\" Mode=\"In\" /></FunctionImport><FunctionImport Name=\"byDepartm" +
+                "ent\" EntitySet=\"hrPeople\" ReturnType=\"Collection(LightSwitchApplication.hrPerson" +
+                ")\" m:HttpMethod=\"GET\"><Parameter Name=\"LSUser\" Type=\"Edm.String\" Mode=\"In\" /></F" +
+                "unctionImport><FunctionImport Name=\"bySupervisor\" EntitySet=\"hrPeople\" ReturnTyp" +
+                "e=\"Collection(LightSwitchApplication.hrPerson)\" m:HttpMethod=\"GET\"><Parameter Na" +
+                "me=\"LSUser\" Type=\"Edm.String\" Mode=\"In\" /></FunctionImport><FunctionImport Name=" +
+                "\"Microsoft_LightSwitch_GetCanInformation\" ReturnType=\"Edm.String\" m:HttpMethod=\"" +
+                "GET\"><Parameter Name=\"dataServiceMembers\" Type=\"Edm.String\" Mode=\"In\" /></Functi" +
+                "onImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -4321,13 +4344,15 @@ namespace DoorDataProcessor.VERPSServiceReference
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="name">Initial value of Name.</param>
+        /// <param name="hrDepartment_hrPerson">Initial value of hrDepartment_hrPerson.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static hrDepartment CreatehrDepartment(int ID, string name, byte[] rowVersion)
+        public static hrDepartment CreatehrDepartment(int ID, string name, int hrDepartment_hrPerson, byte[] rowVersion)
         {
             hrDepartment hrDepartment = new hrDepartment();
             hrDepartment.Id = ID;
             hrDepartment.Name = name;
+            hrDepartment.hrDepartment_hrPerson = hrDepartment_hrPerson;
             hrDepartment.RowVersion = rowVersion;
             return hrDepartment;
         }
@@ -4375,6 +4400,28 @@ namespace DoorDataProcessor.VERPSServiceReference
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property hrDepartment_hrPerson in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int hrDepartment_hrPerson
+        {
+            get
+            {
+                return this._hrDepartment_hrPerson;
+            }
+            set
+            {
+                this.OnhrDepartment_hrPersonChanging(value);
+                this._hrDepartment_hrPerson = value;
+                this.OnhrDepartment_hrPersonChanged();
+                this.OnPropertyChanged("hrDepartment_hrPerson");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _hrDepartment_hrPerson;
+        partial void OnhrDepartment_hrPersonChanging(int value);
+        partial void OnhrDepartment_hrPersonChanged();
         /// <summary>
         /// There are no comments for Property CreatedBy in the schema.
         /// </summary>
@@ -11155,6 +11202,28 @@ namespace DoorDataProcessor.VERPSServiceReference
         partial void OnDoorSysIDChanging(string value);
         partial void OnDoorSysIDChanged();
         /// <summary>
+        /// There are no comments for Property hrPerson_hrPerson in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<int> hrPerson_hrPerson
+        {
+            get
+            {
+                return this._hrPerson_hrPerson;
+            }
+            set
+            {
+                this.OnhrPerson_hrPersonChanging(value);
+                this._hrPerson_hrPerson = value;
+                this.OnhrPerson_hrPersonChanged();
+                this.OnPropertyChanged("hrPerson_hrPerson");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<int> _hrPerson_hrPerson;
+        partial void OnhrPerson_hrPersonChanging(global::System.Nullable<int> value);
+        partial void OnhrPerson_hrPersonChanged();
+        /// <summary>
         /// There are no comments for Property CreatedBy in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -11293,7 +11362,7 @@ namespace DoorDataProcessor.VERPSServiceReference
         /// There are no comments for ManagerOf in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public hrDepartment ManagerOf
+        public global::System.Data.Services.Client.DataServiceCollection<hrDepartment> ManagerOf
         {
             get
             {
@@ -11306,7 +11375,7 @@ namespace DoorDataProcessor.VERPSServiceReference
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private hrDepartment _ManagerOf;
+        private global::System.Data.Services.Client.DataServiceCollection<hrDepartment> _ManagerOf = new global::System.Data.Services.Client.DataServiceCollection<hrDepartment>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for hrWorkingHour in the schema.
         /// </summary>
@@ -11721,6 +11790,42 @@ namespace DoorDataProcessor.VERPSServiceReference
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<hrEmpCourse> _hrEmpCourses = new global::System.Data.Services.Client.DataServiceCollection<hrEmpCourse>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for Supervised in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<hrPerson> Supervised
+        {
+            get
+            {
+                return this._Supervised;
+            }
+            set
+            {
+                this._Supervised = value;
+                this.OnPropertyChanged("Supervised");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<hrPerson> _Supervised = new global::System.Data.Services.Client.DataServiceCollection<hrPerson>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for Supervisor in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public hrPerson Supervisor
+        {
+            get
+            {
+                return this._Supervisor;
+            }
+            set
+            {
+                this._Supervisor = value;
+                this.OnPropertyChanged("Supervisor");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private hrPerson _Supervisor;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -11747,6 +11852,7 @@ namespace DoorDataProcessor.VERPSServiceReference
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="workingHour_Employee">Initial value of WorkingHour_Employee.</param>
+        /// <param name="userName">Initial value of UserName.</param>
         /// <param name="doorSysID">Initial value of DoorSysID.</param>
         /// <param name="workingDate">Initial value of WorkingDate.</param>
         /// <param name="recYear">Initial value of RecYear.</param>
@@ -11754,13 +11860,15 @@ namespace DoorDataProcessor.VERPSServiceReference
         /// <param name="recDay">Initial value of RecDay.</param>
         /// <param name="isWorkingDay">Initial value of IsWorkingDay.</param>
         /// <param name="stdWorkingHour">Initial value of StdWorkingHour.</param>
+        /// <param name="empId">Initial value of EmpId.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static hrWorkingHour CreatehrWorkingHour(int ID, int workingHour_Employee, string doorSysID, global::System.DateTime workingDate, int recYear, int recMonth, int recDay, bool isWorkingDay, int stdWorkingHour, byte[] rowVersion)
+        public static hrWorkingHour CreatehrWorkingHour(int ID, int workingHour_Employee, string userName, string doorSysID, global::System.DateTime workingDate, int recYear, int recMonth, int recDay, bool isWorkingDay, int stdWorkingHour, int empId, byte[] rowVersion)
         {
             hrWorkingHour hrWorkingHour = new hrWorkingHour();
             hrWorkingHour.Id = ID;
             hrWorkingHour.WorkingHour_Employee = workingHour_Employee;
+            hrWorkingHour.UserName = userName;
             hrWorkingHour.DoorSysID = doorSysID;
             hrWorkingHour.WorkingDate = workingDate;
             hrWorkingHour.RecYear = recYear;
@@ -11768,6 +11876,7 @@ namespace DoorDataProcessor.VERPSServiceReference
             hrWorkingHour.RecDay = recDay;
             hrWorkingHour.IsWorkingDay = isWorkingDay;
             hrWorkingHour.StdWorkingHour = stdWorkingHour;
+            hrWorkingHour.EmpId = empId;
             hrWorkingHour.RowVersion = rowVersion;
             return hrWorkingHour;
         }
@@ -12321,6 +12430,28 @@ namespace DoorDataProcessor.VERPSServiceReference
         private global::System.Nullable<int> _AcceptedOTMin;
         partial void OnAcceptedOTMinChanging(global::System.Nullable<int> value);
         partial void OnAcceptedOTMinChanged();
+        /// <summary>
+        /// There are no comments for Property EmpId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int EmpId
+        {
+            get
+            {
+                return this._EmpId;
+            }
+            set
+            {
+                this.OnEmpIdChanging(value);
+                this._EmpId = value;
+                this.OnEmpIdChanged();
+                this.OnPropertyChanged("EmpId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _EmpId;
+        partial void OnEmpIdChanging(int value);
+        partial void OnEmpIdChanged();
         /// <summary>
         /// There are no comments for Property CreatedBy in the schema.
         /// </summary>

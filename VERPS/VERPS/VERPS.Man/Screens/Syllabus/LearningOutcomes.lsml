@@ -84,29 +84,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="sylAcademicalAim"
-                  Kind="Details"
-                  DataType="sylAcademicalAim">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="sylLearningOutcome/Properties[sylAcademicalAim]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate1"
-                    Kind="Details"
-                    DataType="sylAcademicalAim">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
                   Name="sylSyllabus"
                   Kind="Details"
                   DataType="sylSyllabus">
@@ -128,19 +105,6 @@
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="AssessmentMethod"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="sylLearningOutcome/Properties[AssessmentMethod]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
                   Name="CreatedBy"
@@ -336,29 +300,6 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="sylAcademicalAim1"
-                Kind="Details"
-                DataType="sylAcademicalAim">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="sylLearningOutcome/Properties[sylAcademicalAim]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate3"
-                  Kind="Details"
-                  DataType="sylAcademicalAim">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
                 Name="sylSyllabus1"
                 Kind="Details"
                 DataType="sylSyllabus">
@@ -380,19 +321,6 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="AssessmentMethod1"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="sylLearningOutcome/Properties[AssessmentMethod]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
                 Name="CreatedBy1"

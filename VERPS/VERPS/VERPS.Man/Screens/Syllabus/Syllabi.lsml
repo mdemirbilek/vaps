@@ -864,42 +864,6 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="sylAcademicalAim"
-                    Kind="Details"
-                    DataType="sylAcademicalAim">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="sylLearningOutcome/Properties[sylAcademicalAim]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem
-                      Name="RowTemplate12"
-                      Kind="Details"
-                      DataType="sylAcademicalAim">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                  </ContentItem>
-                  <ContentItem
-                    Name="AssessmentMethod"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="sylLearningOutcome/Properties[AssessmentMethod]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
                     Name="CreatedBy3"
                     Kind="Value"
                     DataType=":Person?">

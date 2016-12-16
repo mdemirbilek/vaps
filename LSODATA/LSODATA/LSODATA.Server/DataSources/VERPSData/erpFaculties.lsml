@@ -5,10 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="sylPrerequisite">
-    <EntityType.Attributes>
-      <CreatedModifiedPropertiesEnabled />
-    </EntityType.Attributes>
+    Name="erpFaculty">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -20,24 +17,25 @@
     <EntityType.Properties>
       <KeyProperty
         Name="Id"
+        IsReadOnly="True"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
+          <Hidden />
           <Required />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
-      <NavigationProperty
-        Name="sylCourse"
-        Association="sylPrerequisite_sylCourse"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylCourse" />
-      <NavigationProperty
-        Name="sylSyllabus"
-        Association="sylPrerequisite_sylSyllabus"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylSyllabus" />
       <EntityProperty
-        Name="Explanation"
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
@@ -45,71 +43,98 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="CreatedBy"
-        IsReadOnly="True"
-        PropertyType=":Person?">
-        <EntityProperty.Attributes>
-          <Generated />
-          <NotSearchable />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Created"
-        IsReadOnly="True"
         PropertyType=":DateTimeOffset?">
         <EntityProperty.Attributes>
-          <Generated />
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="ModifiedBy"
-        IsReadOnly="True"
-        PropertyType=":Person?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <Generated />
-          <NotSearchable />
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Modified"
-        IsReadOnly="True"
         PropertyType=":DateTimeOffset?">
         <EntityProperty.Attributes>
-          <Generated />
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="RowVersion"
+        IsReadOnly="True"
         PropertyType=":RowVersion">
         <EntityProperty.Attributes>
           <Hidden />
           <UseForConcurrency />
-          <Generated />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="erpAcademicDepartments"
+        Association="erpAcademicDepartment_erpFaculty"
+        FromEnd="erpFaculties"
+        ToEnd="erpAcademicDepartments" />
+      <NavigationProperty
+        Name="erpUniversity"
+        Association="erpFaculty_erpUniversity"
+        FromEnd="erpFaculties"
+        ToEnd="erpUniversities" />
     </EntityType.Properties>
   </EntityType>
+  <Association
+    Name="erpAcademicDepartment_erpFaculty">
+    <AssociationEnd
+      Name="erpFaculties"
+      Multiplicity="One"
+      EntityType="erpFaculty">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="erpAcademicDepartments"
+      Multiplicity="Many"
+      EntityType="erpAcademicDepartment" />
+  </Association>
   <EntityContainer
-    Name="ApplicationData">
+    Name="VERPSData">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="sylPrerequisites"
+      Name="erpFaculties"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="sylPrerequisite" />
+      EntityType="erpFaculty" />
+    <AssociationSet
+      Name="erpAcademicDepartment_erpFaculty"
+      Association="erpAcademicDepartment_erpFaculty">
+      <AssociationSetEnd
+        Name="erpFaculties"
+        EntitySet="erpFaculties" />
+      <AssociationSetEnd
+        Name="erpAcademicDepartments"
+        EntitySet="erpAcademicDepartments" />
+    </AssociationSet>
     <QueryOperation
-      Name="sylPrerequisites_Single"
-      ReturnType="sylPrerequisite">
+      Name="erpFaculties_Single"
+      ReturnType="erpFaculty">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -135,12 +160,12 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="erpFaculties" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
         Name="Id"
-        ParameterType=":Int32?">
+        ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
@@ -148,8 +173,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="sylPrerequisites_SingleOrDefault"
-      ReturnType="sylPrerequisite">
+      Name="erpFaculties_SingleOrDefault"
+      ReturnType="erpFaculty">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -175,12 +200,12 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="erpFaculties" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
         Name="Id"
-        ParameterType=":Int32?">
+        ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
@@ -189,22 +214,83 @@
     </QueryOperation>
   </EntityContainer>
   <DataService
-    Name="ApplicationDataMapping">
+    Name="VERPSDataDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="sylPrerequisites">
+      EntitySet="erpFaculties">
       <EntitySetMapping.Attributes>
-        <SsdlForeignKeyProperty
-          Name="Prerequisite_Syllabus"
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="erpFaculties" />
+        <SsdlProperty
+          Name="Id"
           Nullable="False"
-          Type="int" />
-        <SsdlForeignKeyProperty
-          Name="Prerequisite_Course"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="erpFaculty/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Name"
           Nullable="False"
-          Type="int" />
+          Type="nvarchar"
+          Property="erpFaculty/Properties[Name]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="erpFaculty/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="erpFaculty/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="erpFaculty/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="erpFaculty/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="erpFaculty/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="Faculty_University"
+          Nullable="False"
+          Type="int"
+          PropertyName="Faculty_University" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="erpAcademicDepartment_erpFaculty">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="erpAcademicDepartment_erpFaculty" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[erpAcademicDepartment_erpFaculty]/Members[erpFaculties]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[erpAcademicDepartment_erpFaculty]/Members[erpAcademicDepartments]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="AcademicDepartment_Faculty" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

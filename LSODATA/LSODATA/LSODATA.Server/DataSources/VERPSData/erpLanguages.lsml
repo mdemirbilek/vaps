@@ -5,10 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="sylPrerequisite">
-    <EntityType.Attributes>
-      <CreatedModifiedPropertiesEnabled />
-    </EntityType.Attributes>
+    Name="erpLanguage">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -20,24 +17,25 @@
     <EntityType.Properties>
       <KeyProperty
         Name="Id"
+        IsReadOnly="True"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
+          <Hidden />
           <Required />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
-      <NavigationProperty
-        Name="sylCourse"
-        Association="sylPrerequisite_sylCourse"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylCourse" />
-      <NavigationProperty
-        Name="sylSyllabus"
-        Association="sylPrerequisite_sylSyllabus"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylSyllabus" />
       <EntityProperty
-        Name="Explanation"
+        Name="Language"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreatedBy"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
@@ -45,71 +43,63 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="CreatedBy"
-        IsReadOnly="True"
-        PropertyType=":Person?">
-        <EntityProperty.Attributes>
-          <Generated />
-          <NotSearchable />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Created"
-        IsReadOnly="True"
         PropertyType=":DateTimeOffset?">
         <EntityProperty.Attributes>
-          <Generated />
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="ModifiedBy"
-        IsReadOnly="True"
-        PropertyType=":Person?">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <Generated />
-          <NotSearchable />
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Modified"
-        IsReadOnly="True"
         PropertyType=":DateTimeOffset?">
         <EntityProperty.Attributes>
-          <Generated />
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="RowVersion"
+        IsReadOnly="True"
         PropertyType=":RowVersion">
         <EntityProperty.Attributes>
           <Hidden />
           <UseForConcurrency />
-          <Generated />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
-    Name="ApplicationData">
+    Name="VERPSData">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="sylPrerequisites"
+      Name="erpLanguages"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="sylPrerequisite" />
+      EntityType="erpLanguage" />
     <QueryOperation
-      Name="sylPrerequisites_Single"
-      ReturnType="sylPrerequisite">
+      Name="erpLanguages_Single"
+      ReturnType="erpLanguage">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -135,12 +125,12 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="erpLanguages" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
         Name="Id"
-        ParameterType=":Int32?">
+        ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
@@ -148,8 +138,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="sylPrerequisites_SingleOrDefault"
-      ReturnType="sylPrerequisite">
+      Name="erpLanguages_SingleOrDefault"
+      ReturnType="erpLanguage">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -175,12 +165,12 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="erpLanguages" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
         Name="Id"
-        ParameterType=":Int32?">
+        ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
@@ -189,21 +179,56 @@
     </QueryOperation>
   </EntityContainer>
   <DataService
-    Name="ApplicationDataMapping">
+    Name="VERPSDataDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="sylPrerequisites">
+      EntitySet="erpLanguages">
       <EntitySetMapping.Attributes>
-        <SsdlForeignKeyProperty
-          Name="Prerequisite_Syllabus"
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="erpLanguages" />
+        <SsdlProperty
+          Name="Id"
           Nullable="False"
-          Type="int" />
-        <SsdlForeignKeyProperty
-          Name="Prerequisite_Course"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="erpLanguage/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Language"
           Nullable="False"
-          Type="int" />
+          Type="nvarchar"
+          Property="erpLanguage/Properties[Language]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="CreatedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="erpLanguage/Properties[CreatedBy]" />
+        <SsdlProperty
+          Name="Created"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="erpLanguage/Properties[Created]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ModifiedBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="erpLanguage/Properties[ModifiedBy]" />
+        <SsdlProperty
+          Name="Modified"
+          Nullable="True"
+          Type="datetimeoffset"
+          Property="erpLanguage/Properties[Modified]" />
+        <SsdlProperty
+          Name="RowVersion"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="erpLanguage/Properties[RowVersion]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

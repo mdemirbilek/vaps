@@ -31,8 +31,8 @@
     <WCFRIASERVICESSDKPath Condition=" '$(WCFRIASERVICESSDKPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\WCFRIAServices\v1.0@InstallPath)</WCFRIASERVICESSDKPath>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
@@ -82,6 +82,7 @@
     <Reference Include="System.Runtime.Serialization">
       <ProjectCritical>True</ProjectCritical>
     </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml">
       <ProjectCritical>True</ProjectCritical>
     </Reference>
@@ -192,6 +193,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetUserName.ashx.cs">
+      <DependentUpon>GetUserName.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,9 +204,25 @@
     </LightSwitchModel>
   </ItemGroup>
   <ItemGroup>
+    <_ServerFile Include="LogIn.aspx" />
+    <_ServerFile Include="LogOut.aspx" />
     <Content Include="Web.config" />
     <LightSwitchModel Include="DataSources\VERPSData\WorkingHoursSet.lsml" />
     <LightSwitchModel Include="Properties\DataSources\VERPSData.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\erpAcademicDepartments.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\erpFaculties.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\erpHRAccountingPeriods.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\erpLanguages.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\erpPositions.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\erpPrograms.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\erpUniversities.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\hrDepartments.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\hrPeoples.lsml" />
+    <LightSwitchModel Include="DataSources\VERPSData\hrWorkingHours.lsml" />
+    <Content Include="GetUserName.ashx" />
+    <LightSwitchModel Include="DataSources\VERPSData\byUserName.lsml">
+      <DependentUpon>WorkingHoursSet.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

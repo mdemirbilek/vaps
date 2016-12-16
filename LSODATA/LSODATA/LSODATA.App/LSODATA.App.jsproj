@@ -69,6 +69,12 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Screens\MyWorkingHours\BrowseMyWorkingHours.lsml.js">
+      <DependentUpon>BrowseMyWorkingHours.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\MyWorkingHours\ViewMyWorkingHour.lsml.js">
+      <DependentUpon>ViewMyWorkingHour.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.3.js" />
     <Content Include="Scripts\datajs-1.1.3.min.js" />
     <Content Include="Scripts\jquery-2.1.3.intellisense.js" />
@@ -85,9 +91,6 @@
     <Content Include="Scripts\winjs-1.0.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Screens\" />
-  </ItemGroup>
-  <ItemGroup>
     <ServiceMetadataReference Include="..\LSODATA.Server\LSODATA.Server.csproj">
       <Visible>false</Visible>
     </ServiceMetadataReference>
@@ -97,6 +100,9 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Properties\VERPSData\WorkingHoursSet.lsml" />
+    <LightSwitchModel Include="Screens\MyWorkingHours\BrowseMyWorkingHours.lsml" />
+    <LightSwitchModel Include="Screens\MyWorkingHours\ViewMyWorkingHour.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

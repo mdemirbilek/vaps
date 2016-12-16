@@ -104,6 +104,24 @@
           <AnsiConstraint />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <KeyProperty
+        Name="WorkingHour_Employee"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <NavigationProperty
+        Name="hrPeople"
+        Association="WorkingHours_hrPeople"
+        FromEnd="WorkingHours"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="hrWorkingHours"
+        Association="hrWorkingHour_WorkingHours"
+        FromEnd="WorkingHours"
+        ToEnd="hrWorkingHour" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -128,16 +146,36 @@
             NodeType="And">
             <BinaryExpression.Left>
               <BinaryExpression
-                NodeType="Equal">
+                NodeType="And">
                 <BinaryExpression.Left>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="RecMonth" />
-                  </ChainExpression>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="WorkingHour_Employee" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="WorkingHour_Employee" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
-                  <ParameterExpression
-                    Parameter="RecMonth" />
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="RecMonth" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="RecMonth" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Left>
@@ -179,6 +217,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'RecMonth' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="WorkingHour_Employee"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'WorkingHour_Employee' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -196,16 +242,36 @@
             NodeType="And">
             <BinaryExpression.Left>
               <BinaryExpression
-                NodeType="Equal">
+                NodeType="And">
                 <BinaryExpression.Left>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="RecMonth" />
-                  </ChainExpression>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="WorkingHour_Employee" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="WorkingHour_Employee" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
-                  <ParameterExpression
-                    Parameter="RecMonth" />
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="RecMonth" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="RecMonth" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Left>
@@ -249,7 +315,25 @@
             Value="The value of the 'RecMonth' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="WorkingHour_Employee"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'WorkingHour_Employee' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="hrWorkingHour_WorkingHoursSet"
+      Association="hrWorkingHour_WorkingHours">
+      <AssociationSetEnd
+        Name="hrWorkingHour"
+        EntitySet="hrWorkingHours" />
+      <AssociationSetEnd
+        Name="WorkingHours"
+        EntitySet="WorkingHoursSet" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="VERPSDataDataService">
@@ -323,7 +407,59 @@
           Nullable="True"
           Type="varchar"
           Property="WorkingHours/Properties[TotalOvertime]" />
+        <SsdlProperty
+          Name="WorkingHour_Employee"
+          Nullable="False"
+          Type="int"
+          Property="WorkingHours/Properties[WorkingHour_Employee]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrWorkingHour_WorkingHoursSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrWorkingHour_WorkingHoursSet" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrWorkingHour_WorkingHoursSet]/Members[hrWorkingHour]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RecYear" />
+            <SsdlPropertyRef
+              Name="RecMonth" />
+            <SsdlPropertyRef
+              Name="EmpId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrWorkingHour_WorkingHoursSet]/Members[WorkingHours]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RecYear" />
+            <SsdlPropertyRef
+              Name="RecMonth" />
+            <SsdlPropertyRef
+              Name="WorkingHour_Employee" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
+  <Association
+    Name="hrWorkingHour_WorkingHours">
+    <Association.Attributes>
+      <UserDefined />
+    </Association.Attributes>
+    <AssociationEnd
+      Name="hrWorkingHour"
+      Multiplicity="Many"
+      EntityType="hrWorkingHour" />
+    <AssociationEnd
+      Name="WorkingHours"
+      Multiplicity="One"
+      EntityType="WorkingHours">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
 </ServiceApplication>

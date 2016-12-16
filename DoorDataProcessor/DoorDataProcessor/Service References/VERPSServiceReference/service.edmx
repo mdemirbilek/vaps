@@ -129,8 +129,9 @@
         <Key>
           <PropertyRef Name="Id" />
         </Key>
-        <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="hrDepartment_hrPerson" Type="Edm.Int32" Nullable="false" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -486,6 +487,7 @@
         <Property Name="Employee_AcademicDepartment" Type="Edm.Int32" />
         <Property Name="LSUser" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="DoorSysID" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="hrPerson_hrPerson" Type="Edm.Int32" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -516,6 +518,8 @@
         <NavigationProperty Name="hrEmpAcademicProfileByHRs3" Relationship="LightSwitchApplication.hrEmpAcademicProfileByHR_hrPerson3" ToRole="hrEmpAcademicProfileByHR" FromRole="hrPerson" />
         <NavigationProperty Name="hrEmpAcademicProfileByAcademician" Relationship="LightSwitchApplication.hrEmpAcademicProfileByAcademic_hrPerson" ToRole="hrEmpAcademicProfileByAcademician" FromRole="hrPerson" />
         <NavigationProperty Name="hrEmpCourses" Relationship="LightSwitchApplication.hrEmpCourse_hrPerson" ToRole="hrEmpCourse" FromRole="hrPerson" />
+        <NavigationProperty Name="Supervised" Relationship="LightSwitchApplication.hrPerson_hrPerson" ToRole="hrPerson2" FromRole="hrPerson1" />
+        <NavigationProperty Name="Supervisor" Relationship="LightSwitchApplication.hrPerson_hrPerson" ToRole="hrPerson1" FromRole="hrPerson2" />
       </EntityType>
       <EntityType Name="hrWorkingHour">
         <Key>
@@ -523,7 +527,7 @@
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="WorkingHour_Employee" Type="Edm.Int32" Nullable="false" />
-        <Property Name="UserName" Type="Edm.String" MaxLength="255" />
+        <Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="DoorSysID" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="AccessCardID" Type="Edm.String" MaxLength="255" />
         <Property Name="WorkingDate" Type="Edm.DateTime" Nullable="false" />
@@ -546,6 +550,7 @@
         <Property Name="OTAcceptedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="AcceptedOTeHrs" Type="Edm.Int32" />
         <Property Name="AcceptedOTMin" Type="Edm.Int32" />
+        <Property Name="EmpId" Type="Edm.Int32" Nullable="false" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -948,13 +953,13 @@
         <End Role="hrPerson" Type="LightSwitchApplication.hrPerson" Multiplicity="1">
           <OnDelete Action="Cascade" />
         </End>
-        <End Role="hrDepartment" Type="LightSwitchApplication.hrDepartment" Multiplicity="0..1" />
+        <End Role="hrDepartment" Type="LightSwitchApplication.hrDepartment" Multiplicity="*" />
         <ReferentialConstraint>
           <Principal Role="hrPerson">
             <PropertyRef Name="Id" />
           </Principal>
           <Dependent Role="hrDepartment">
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="hrDepartment_hrPerson" />
           </Dependent>
         </ReferentialConstraint>
       </Association>
@@ -1362,6 +1367,18 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
+      <Association Name="hrPerson_hrPerson">
+        <End Role="hrPerson1" Type="LightSwitchApplication.hrPerson" Multiplicity="0..1" />
+        <End Role="hrPerson2" Type="LightSwitchApplication.hrPerson" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="hrPerson1">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="hrPerson2">
+            <PropertyRef Name="hrPerson_hrPerson" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
       <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
         <EntitySet Name="erpAcademicDepartments" EntityType="LightSwitchApplication.erpAcademicDepartment" />
         <EntitySet Name="erpFaculties" EntityType="LightSwitchApplication.erpFaculty" />
@@ -1599,6 +1616,10 @@
           <End Role="sylSyllabus" EntitySet="sylSyllabi" />
           <End Role="sylSyllabusNotesSetItem" EntitySet="sylSyllabusNotesSet" />
         </AssociationSet>
+        <AssociationSet Name="hrPerson_hrPerson" Association="LightSwitchApplication.hrPerson_hrPerson">
+          <End Role="hrPerson1" EntitySet="hrPeople" />
+          <End Role="hrPerson2" EntitySet="hrPeople" />
+        </AssociationSet>
         <FunctionImport Name="byPerson" EntitySet="hrWorkingHours" ReturnType="Collection(LightSwitchApplication.hrWorkingHour)" m:HttpMethod="GET">
           <Parameter Name="personId" Type="Edm.Int32" Mode="In" />
         </FunctionImport>
@@ -1606,6 +1627,17 @@
           <Parameter Name="LSUserName" Type="Edm.String" Mode="In" />
           <Parameter Name="Month" Type="Edm.Int32" Mode="In" />
           <Parameter Name="Year" Type="Edm.Int32" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="byEmpByYearByMonth" EntitySet="hrWorkingHours" ReturnType="Collection(LightSwitchApplication.hrWorkingHour)" m:HttpMethod="GET">
+          <Parameter Name="Id" Type="Edm.Int32" Mode="In" />
+          <Parameter Name="RecYear" Type="Edm.Int32" Mode="In" />
+          <Parameter Name="RecMonth" Type="Edm.Int32" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="byDepartment" EntitySet="hrPeople" ReturnType="Collection(LightSwitchApplication.hrPerson)" m:HttpMethod="GET">
+          <Parameter Name="LSUser" Type="Edm.String" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="bySupervisor" EntitySet="hrPeople" ReturnType="Collection(LightSwitchApplication.hrPerson)" m:HttpMethod="GET">
+          <Parameter Name="LSUser" Type="Edm.String" Mode="In" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
           <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />

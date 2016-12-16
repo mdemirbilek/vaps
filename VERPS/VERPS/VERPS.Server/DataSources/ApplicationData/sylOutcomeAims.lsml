@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="sylPrerequisite">
+    Name="sylOutcomeAim">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -27,23 +27,15 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <NavigationProperty
-        Name="sylCourse"
-        Association="sylPrerequisite_sylCourse"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylCourse" />
+        Name="sylLearningOutcome"
+        Association="sylOutcomeAim_sylLearningOutcome"
+        FromEnd="sylOutcomeAim"
+        ToEnd="sylLearningOutcome" />
       <NavigationProperty
-        Name="sylSyllabus"
-        Association="sylPrerequisite_sylSyllabus"
-        FromEnd="sylPrerequisite"
-        ToEnd="sylSyllabus" />
-      <EntityProperty
-        Name="Explanation"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        Name="sylAcademicalAim"
+        Association="sylOutcomeAim_sylAcademicalAim"
+        FromEnd="sylOutcomeAim"
+        ToEnd="sylAcademicalAim" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -102,14 +94,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="sylPrerequisites"
+      Name="sylOutcomeAims"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="sylPrerequisite" />
+      EntityType="sylOutcomeAim" />
     <QueryOperation
-      Name="sylPrerequisites_Single"
-      ReturnType="sylPrerequisite">
+      Name="sylOutcomeAims_Single"
+      ReturnType="sylOutcomeAim">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -135,7 +127,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="sylOutcomeAims" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -148,8 +140,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="sylPrerequisites_SingleOrDefault"
-      ReturnType="sylPrerequisite">
+      Name="sylOutcomeAims_SingleOrDefault"
+      ReturnType="sylOutcomeAim">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -175,7 +167,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="sylPrerequisites" />
+            Member="sylOutcomeAims" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -194,14 +186,14 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="sylPrerequisites">
+      EntitySet="sylOutcomeAims">
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
-          Name="Prerequisite_Syllabus"
+          Name="sylOutcomeAim_sylLearningOutcome"
           Nullable="False"
           Type="int" />
         <SsdlForeignKeyProperty
-          Name="Prerequisite_Course"
+          Name="sylOutcomeAim_sylAcademicalAim"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

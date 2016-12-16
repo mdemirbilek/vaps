@@ -50,6 +50,30 @@
         FromEnd="sylSyllabus"
         ToEnd="hrPerson" />
       <EntityProperty
+        Name="AcademicYear"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="2016-2017"
+            Value="2016" />
+          <SupportedValue
+            DisplayName="2017-2018"
+            Value="2017" />
+          <SupportedValue
+            DisplayName="2018-2019"
+            Value="2018" />
+          <SupportedValue
+            DisplayName="2019-2020"
+            Value="2019" />
+          <SupportedValue
+            DisplayName="2020-2021"
+            Value="2020" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Language"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -166,6 +190,11 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="sylSyllabusTeachingMethods"
+        Association="sylSyllabusTeachingMethod_sylSyllabus"
+        FromEnd="sylSyllabus"
+        ToEnd="sylSyllabusTeachingMethod" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -369,6 +398,16 @@
         Name="sylSyllabus"
         EntitySet="sylSyllabi" />
     </AssociationSet>
+    <AssociationSet
+      Name="sylSyllabusTeachingMethod_sylSyllabusSet"
+      Association="sylSyllabusTeachingMethod_sylSyllabus">
+      <AssociationSetEnd
+        Name="sylSyllabusTeachingMethod"
+        EntitySet="sylSyllabusTeachingMethods" />
+      <AssociationSetEnd
+        Name="sylSyllabus"
+        EntitySet="sylSyllabi" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -530,6 +569,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylSyllabusTeachingMethod_sylSyllabusSet">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylSyllabusTeachingMethod_sylSyllabusSet" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylSyllabusTeachingMethod_sylSyllabusSet]/Members[sylSyllabusTeachingMethod]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylSyllabusTeachingMethod_sylSyllabus" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylSyllabusTeachingMethod_sylSyllabusSet]/Members[sylSyllabus]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="sylPrerequisite_sylSyllabus">
@@ -617,6 +677,22 @@
       Name="sylSyllabusNotesSetItem"
       Multiplicity="Many"
       EntityType="sylSyllabusNotesSetItem" />
+    <AssociationEnd
+      Name="sylSyllabus"
+      Multiplicity="One"
+      EntityType="sylSyllabus">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="sylSyllabusTeachingMethod_sylSyllabus">
+    <AssociationEnd
+      Name="sylSyllabusTeachingMethod"
+      Multiplicity="Many"
+      EntityType="sylSyllabusTeachingMethod" />
     <AssociationEnd
       Name="sylSyllabus"
       Multiplicity="One"

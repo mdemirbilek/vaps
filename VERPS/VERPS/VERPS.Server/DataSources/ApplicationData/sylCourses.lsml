@@ -99,6 +99,8 @@
             Value="255" />
           <SupportedValue
             Value="Academic" />
+          <SupportedValue
+            Value="Practical" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -109,7 +111,11 @@
           <MaxLength
             Value="255" />
           <SupportedValue
-            Value="Part Time" />
+            DisplayName="Part Time"
+            Value="PartTime" />
+          <SupportedValue
+            DisplayName="Full Time"
+            Value="FullTime" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -120,7 +126,14 @@
           <MaxLength
             Value="255" />
           <SupportedValue
-            Value="First Level" />
+            DisplayName="First Level"
+            Value="FirstLevel" />
+          <SupportedValue
+            DisplayName="Second Level"
+            Value="SecondLevel" />
+          <SupportedValue
+            DisplayName="Third Level"
+            Value="ThirdLevel" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty

@@ -116,6 +116,8 @@ namespace DoorDataProcessor
                 foreach (Row row in dt.Rows)
                 {
 
+                    //DateTime aaaaa = DateTime.Parse(row.Values[0]);
+
                     if (row["Event date/time"].Trim() != "" && row["User ExtID"].Trim() != "")
                     {
                         try

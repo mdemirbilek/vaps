@@ -237,7 +237,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="UserExplanation"
+        Name="UserStory"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength

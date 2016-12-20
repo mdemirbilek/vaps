@@ -1,16 +1,17 @@
 ﻿@model IEnumerable<VERPSWeb.vwWHMonthly>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Working Hours";
 }
 
 <h2>Index</h2>
 
-<h3>Employee: @ViewBag.wh.FullName</h3>
-<h2>@ViewBag.wh.RecYear</h2>
-<h2>@ViewBag.wh.RecYear</h2>
-<h2>@ViewBag.wh.RecYear</h2>
-<h2>@ViewBag.wh.RecYear</h2>
+<h4>Employee: <b>@ViewBag.wh.FullName</b></h4>
+<h4>Period: <b>@ViewBag.wh.RecYear, @ViewBag.wh.RecMonth</b></h4>
+<h4>Assigned WH: <b>@ViewBag.wh.AWH</b></h4>
+<h4>Total Time: <b>@ViewBag.wh.TotalWorkingTime</b></h4>
+<h4>Time Diff: <b>@ViewBag.wh.TimeDiff</b></h4>
+<h4>Total OT: <b>@ViewBag.wh.TotalOvertime</b></h4>
 
 
 <table class="table">

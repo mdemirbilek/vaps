@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="cf275f83ba2f43b1a6208689c49f038a" Name="Diagram1">
         <EntityTypeShape EntityType="VERPSModel.vwWHheader" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel.vwWHMonthly" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VERPSModel.vwWHMonthly" Width="1.5" PointX="4" PointY="0.875" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -243,17 +243,8 @@
     <Compile Include="Screens\EmployeeWH.lsml.cs">
       <DependentUpon>EmployeeWH.lsml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\NewPerson.lsml.cs">
-      <DependentUpon>NewPerson.lsml</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\WHAssignment.lsml.cs">
-      <DependentUpon>WHAssignment.lsml</DependentUpon>
-    </Compile>
     <Compile Include="Screens\WHSupervision.lsml.cs">
       <DependentUpon>WHSupervision.lsml</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\WorkingHours.lsml.cs">
-      <DependentUpon>WorkingHours.lsml</DependentUpon>
     </Compile>
     <Compile Include="UserCode\Application.cs" />
   </ItemGroup>
@@ -266,31 +257,15 @@
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Properties\Config.xml" />
     <LightSwitchModel Include="Properties\Proxies.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\AcademicDepartments.lsml" />
-    <LightSwitchModel Include="Screens\Faculties.lsml" />
-    <LightSwitchModel Include="Screens\Universities.lsml" />
     <LightSwitchModel Include="Screens\Departments.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\AcademicalAims.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\CourseMaterials.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\Courses.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\CourseTeachers.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\LearningOutcomes.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\Prerequisites.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\ProgramCourses.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\Syllabi.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\SyllabusNotes.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\SyllabusTopics.lsml" />
-    <LightSwitchModel Include="Screens\Syllabus\WorkloadStructures.lsml" />
     <LightSwitchModel Include="Screens\aspnet_Users.lsml" />
-    <LightSwitchModel Include="Screens\EmpWorkingHours.lsml" />
-    <LightSwitchModel Include="Screens\NewPerson.lsml" />
     <LightSwitchModel Include="Screens\People.lsml" />
-    <LightSwitchModel Include="Screens\WHAssignment.lsml" />
-    <LightSwitchModel Include="Screens\WorkingHours.lsml" />
     <LightSwitchModel Include="Screens\WHSupervision.lsml" />
     <LightSwitchModel Include="Screens\EmployeeWH.lsml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Screens\Syllabus\" />
+  </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="default.htm">
       <SubFolder>

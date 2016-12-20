@@ -57,68 +57,14 @@
   </Permission>
   <Application.Commands>
     <ApplicationCommand
-      Name="ScreenCommandShowAcademicDepartments"
-      Target="!module/Methods[ShowAcademicDepartments]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowFaculties"
-      Target="!module/Methods[ShowFaculties]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowUniversities"
-      Target="!module/Methods[ShowUniversities]" />
-    <ApplicationCommand
       Name="ScreenCommandShowDepartments"
       Target="!module/Methods[ShowDepartments]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowAcademicalAims"
-      Target="!module/Methods[ShowAcademicalAims]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowCourseMaterials"
-      Target="!module/Methods[ShowCourseMaterials]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowCourses"
-      Target="!module/Methods[ShowCourses]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowCourseTeachers"
-      Target="!module/Methods[ShowCourseTeachers]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowLearningOutcomes"
-      Target="!module/Methods[ShowLearningOutcomes]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowPrerequisites"
-      Target="!module/Methods[ShowPrerequisites]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowProgramCourses"
-      Target="!module/Methods[ShowProgramCourses]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowSyllabi"
-      Target="!module/Methods[ShowSyllabi]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowSyllabusNotes"
-      Target="!module/Methods[ShowSyllabusNotes]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowSyllabusTopics"
-      Target="!module/Methods[ShowSyllabusTopics]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowWorkloadStructures"
-      Target="!module/Methods[ShowWorkloadStructures]" />
     <ApplicationCommand
       Name="ScreenCommandShowaspnet_Users"
       Target="!module/Methods[Showaspnet_Users]" />
     <ApplicationCommand
-      Name="ScreenCommandShowEmpWorkingHours"
-      Target="!module/Methods[ShowEmpWorkingHours]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowNewPerson"
-      Target="!module/Methods[ShowNewPerson]" />
-    <ApplicationCommand
       Name="ScreenCommandShowPeople"
       Target="!module/Methods[ShowPeople]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowWHAssignment"
-      Target="!module/Methods[ShowWHAssignment]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowWorkingHours"
-      Target="!module/Methods[ShowWorkingHours]" />
     <ApplicationCommand
       Name="ScreenCommandShowWHSupervision"
       Target="!module/Methods[ShowWHSupervision]" />
@@ -149,15 +95,6 @@
       <ApplicationNavigationLink
         Name="aspnet_Users"
         Command="!module/Commands[ScreenCommandShowaspnet_Users]" />
-      <ApplicationNavigationLink
-        Name="Faculties"
-        Command="!module/Commands[ScreenCommandShowFaculties]" />
-      <ApplicationNavigationLink
-        Name="Universities"
-        Command="!module/Commands[ScreenCommandShowUniversities]" />
-      <ApplicationNavigationLink
-        Name="Departments"
-        Command="!module/Commands[ScreenCommandShowDepartments]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group1">
@@ -166,26 +103,11 @@
           Value="HR" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
-        Name="link12"
-        Command="!module/Commands[ScreenCommandShowUniversities]" />
-      <ApplicationNavigationLink
         Name="link13"
         Command="!module/Commands[ScreenCommandShowDepartments]" />
       <ApplicationNavigationLink
         Name="link16"
         Command="!module/Commands[ScreenCommandShowPeople]" />
-      <ApplicationNavigationLink
-        Name="link15"
-        Command="!module/Commands[ScreenCommandShowNewPerson]" />
-      <ApplicationNavigationLink
-        Name="link18"
-        Command="!module/Commands[ScreenCommandShowWorkingHours]" />
-      <ApplicationNavigationLink
-        Name="link17"
-        Command="!module/Commands[ScreenCommandShowEmpWorkingHours]" />
-      <ApplicationNavigationLink
-        Name="link14"
-        Command="!module/Commands[ScreenCommandShowWHAssignment]" />
       <ApplicationNavigationLink
         Name="link19"
         Command="!module/Commands[ScreenCommandShowWHSupervision]" />
@@ -199,42 +121,6 @@
         <DisplayName
           Value="Syllabus" />
       </ApplicationNavigationGroup.Attributes>
-      <ApplicationNavigationLink
-        Name="link"
-        Command="!module/Commands[ScreenCommandShowAcademicDepartments]" />
-      <ApplicationNavigationLink
-        Name="link1"
-        Command="!module/Commands[ScreenCommandShowAcademicalAims]" />
-      <ApplicationNavigationLink
-        Name="link2"
-        Command="!module/Commands[ScreenCommandShowCourseMaterials]" />
-      <ApplicationNavigationLink
-        Name="link3"
-        Command="!module/Commands[ScreenCommandShowCourseTeachers]" />
-      <ApplicationNavigationLink
-        Name="link4"
-        Command="!module/Commands[ScreenCommandShowCourses]" />
-      <ApplicationNavigationLink
-        Name="link5"
-        Command="!module/Commands[ScreenCommandShowLearningOutcomes]" />
-      <ApplicationNavigationLink
-        Name="link6"
-        Command="!module/Commands[ScreenCommandShowPrerequisites]" />
-      <ApplicationNavigationLink
-        Name="link7"
-        Command="!module/Commands[ScreenCommandShowProgramCourses]" />
-      <ApplicationNavigationLink
-        Name="link8"
-        Command="!module/Commands[ScreenCommandShowSyllabi]" />
-      <ApplicationNavigationLink
-        Name="link9"
-        Command="!module/Commands[ScreenCommandShowSyllabusNotes]" />
-      <ApplicationNavigationLink
-        Name="link10"
-        Command="!module/Commands[ScreenCommandShowSyllabusTopics]" />
-      <ApplicationNavigationLink
-        Name="link11"
-        Command="!module/Commands[ScreenCommandShowWorkloadStructures]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

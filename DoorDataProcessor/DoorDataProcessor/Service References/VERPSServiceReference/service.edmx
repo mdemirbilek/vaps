@@ -20,6 +20,8 @@
         <NavigationProperty Name="SyllabusCollection" Relationship="LightSwitchApplication.sylSyllabus_erpAcademicDepartment" ToRole="sylSyllabus" FromRole="erpAcademicDepartment" />
         <NavigationProperty Name="hrEmployee" Relationship="LightSwitchApplication.hrPerson_erpAcademicDepartment" ToRole="hrPerson" FromRole="erpAcademicDepartment" />
         <NavigationProperty Name="HeadOfDepartment" Relationship="LightSwitchApplication.erpAcademicDepartment_hrPerson" ToRole="hrPerson" FromRole="erpAcademicDepartment" />
+        <NavigationProperty Name="sylAcademicalAims" Relationship="LightSwitchApplication.sylAcademicalAim_erpAcademicDepartment" ToRole="sylAcademicalAim" FromRole="erpAcademicDepartment" />
+        <NavigationProperty Name="ViceHeads" Relationship="LightSwitchApplication.erpAcademicDepartment_hrPerson1" ToRole="hrPerson" FromRole="erpAcademicDepartment" />
       </EntityType>
       <EntityType Name="erpFaculty">
         <Key>
@@ -488,6 +490,7 @@
         <Property Name="LSUser" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="DoorSysID" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="hrPerson_hrPerson" Type="Edm.Int32" />
+        <Property Name="erpAcademicDepartment_hrPerson1" Type="Edm.Int32" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -520,6 +523,7 @@
         <NavigationProperty Name="hrEmpCourses" Relationship="LightSwitchApplication.hrEmpCourse_hrPerson" ToRole="hrEmpCourse" FromRole="hrPerson" />
         <NavigationProperty Name="Supervised" Relationship="LightSwitchApplication.hrPerson_hrPerson" ToRole="hrPerson2" FromRole="hrPerson1" />
         <NavigationProperty Name="Supervisor" Relationship="LightSwitchApplication.hrPerson_hrPerson" ToRole="hrPerson1" FromRole="hrPerson2" />
+        <NavigationProperty Name="erpAcademicDepartment1" Relationship="LightSwitchApplication.erpAcademicDepartment_hrPerson1" ToRole="erpAcademicDepartment" FromRole="hrPerson" />
       </EntityType>
       <EntityType Name="hrWorkingHour">
         <Key>
@@ -551,6 +555,7 @@
         <Property Name="AcceptedOTeHrs" Type="Edm.Int32" />
         <Property Name="AcceptedOTMin" Type="Edm.Int32" />
         <Property Name="EmpId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="UserStory" Type="Edm.String" MaxLength="255" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -564,12 +569,49 @@
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="AimType" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="AcademicYear" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="StudyLevel" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="sylAcademicalAim_erpAcademicDepartment" Type="Edm.Int32" Nullable="false" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Modified" Type="Edm.DateTimeOffset" />
         <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-        <NavigationProperty Name="sylLearningOutcome" Relationship="LightSwitchApplication.sylLearningOutcome_sylAcademicalAim" ToRole="sylLearningOutcome" FromRole="sylAcademicalAim" />
+        <NavigationProperty Name="erpAcademicDepartment" Relationship="LightSwitchApplication.sylAcademicalAim_erpAcademicDepartment" ToRole="erpAcademicDepartment" FromRole="sylAcademicalAim" />
+        <NavigationProperty Name="sylOutcomeAims" Relationship="LightSwitchApplication.sylOutcomeAim_sylAcademicalAim" ToRole="sylOutcomeAim" FromRole="sylAcademicalAim" />
+      </EntityType>
+      <EntityType Name="sylAssesmentMethod">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Created" Type="Edm.DateTimeOffset" />
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Modified" Type="Edm.DateTimeOffset" />
+        <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+        <NavigationProperty Name="sylOutcomeAssesments" Relationship="LightSwitchApplication.sylOutcomeAssesment_sylAssesmentMethod" ToRole="sylOutcomeAssesment" FromRole="sylAssesmentMethod" />
+        <NavigationProperty Name="sylAssesments" Relationship="LightSwitchApplication.sylAssesment_sylAssesmentMethod" ToRole="sylAssesment" FromRole="sylAssesmentMethod" />
+      </EntityType>
+      <EntityType Name="sylAssesment">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="sylAssesment_sylAssesmentMethod" Type="Edm.Int32" Nullable="false" />
+        <Property Name="sylAssesment_sylSyllabus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Percentage" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="9" />
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Created" Type="Edm.DateTimeOffset" />
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Modified" Type="Edm.DateTimeOffset" />
+        <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+        <NavigationProperty Name="sylAssesmentMethod" Relationship="LightSwitchApplication.sylAssesment_sylAssesmentMethod" ToRole="sylAssesmentMethod" FromRole="sylAssesment" />
+        <NavigationProperty Name="sylSyllabus" Relationship="LightSwitchApplication.sylAssesment_sylSyllabus" ToRole="sylSyllabus" FromRole="sylAssesment" />
       </EntityType>
       <EntityType Name="sylCourseMaterial">
         <Key>
@@ -577,10 +619,10 @@
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="MaterialType" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="Link" Type="Edm.String" MaxLength="255" />
         <Property Name="SyllabusMaterial_Syllabus" Type="Edm.Int32" Nullable="false" />
-        <Property Name="MaterialType" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -635,16 +677,45 @@
         <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="OutcomeType" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="Weight" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="9" />
-        <Property Name="LearningOutcome_AcademicalAim" Type="Edm.Int32" Nullable="false" />
         <Property Name="LearningOutcome_Syllabus" Type="Edm.Int32" Nullable="false" />
-        <Property Name="AssessmentMethod" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Modified" Type="Edm.DateTimeOffset" />
         <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-        <NavigationProperty Name="sylAcademicalAim" Relationship="LightSwitchApplication.sylLearningOutcome_sylAcademicalAim" ToRole="sylAcademicalAim" FromRole="sylLearningOutcome" />
         <NavigationProperty Name="sylSyllabus" Relationship="LightSwitchApplication.sylLearningOutcome_sylSyllabus" ToRole="sylSyllabus" FromRole="sylLearningOutcome" />
+        <NavigationProperty Name="sylOutcomeAims" Relationship="LightSwitchApplication.sylOutcomeAim_sylLearningOutcome" ToRole="sylOutcomeAim" FromRole="sylLearningOutcome" />
+        <NavigationProperty Name="sylOutcomeAssesments" Relationship="LightSwitchApplication.sylOutcomeAssesment_sylLearningOutcome" ToRole="sylOutcomeAssesment" FromRole="sylLearningOutcome" />
+      </EntityType>
+      <EntityType Name="sylOutcomeAim">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <Property Name="sylOutcomeAim_sylLearningOutcome" Type="Edm.Int32" Nullable="false" />
+        <Property Name="sylOutcomeAim_sylAcademicalAim" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Created" Type="Edm.DateTimeOffset" />
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Modified" Type="Edm.DateTimeOffset" />
+        <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+        <NavigationProperty Name="sylLearningOutcome" Relationship="LightSwitchApplication.sylOutcomeAim_sylLearningOutcome" ToRole="sylLearningOutcome" FromRole="sylOutcomeAim" />
+        <NavigationProperty Name="sylAcademicalAim" Relationship="LightSwitchApplication.sylOutcomeAim_sylAcademicalAim" ToRole="sylAcademicalAim" FromRole="sylOutcomeAim" />
+      </EntityType>
+      <EntityType Name="sylOutcomeAssesment">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <Property Name="sylOutcomeAssesment_sylLearningOutcome" Type="Edm.Int32" Nullable="false" />
+        <Property Name="sylOutcomeAssesment_sylAssesmentMethod" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Created" Type="Edm.DateTimeOffset" />
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Modified" Type="Edm.DateTimeOffset" />
+        <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+        <NavigationProperty Name="sylLearningOutcome" Relationship="LightSwitchApplication.sylOutcomeAssesment_sylLearningOutcome" ToRole="sylLearningOutcome" FromRole="sylOutcomeAssesment" />
+        <NavigationProperty Name="sylAssesmentMethod" Relationship="LightSwitchApplication.sylOutcomeAssesment_sylAssesmentMethod" ToRole="sylAssesmentMethod" FromRole="sylOutcomeAssesment" />
       </EntityType>
       <EntityType Name="sylPrerequisite">
         <Key>
@@ -653,6 +724,7 @@
         <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="Prerequisite_Course" Type="Edm.Int32" Nullable="false" />
         <Property Name="Prerequisite_Syllabus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Explanation" Type="Edm.String" MaxLength="255" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -682,11 +754,14 @@
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="Title" Type="Edm.String" MaxLength="255" />
+        <Property Name="Description" Type="Edm.String" MaxLength="4000" />
         <Property Name="Syllabus_Course" Type="Edm.Int32" Nullable="false" />
         <Property Name="Syllabus_AcademicDepartment" Type="Edm.Int32" Nullable="false" />
         <Property Name="Syllabus_Employee" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AcademicYear" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="255" />
-        <Property Name="Objective" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="Objective" Type="Edm.String" Nullable="false" MaxLength="4000" />
+        <Property Name="Criteria" Type="Edm.String" MaxLength="1000" />
         <Property Name="ECTSCredits" Type="Edm.Int32" Nullable="false" />
         <Property Name="MinWorkloadHours" Type="Edm.Int32" Nullable="false" />
         <Property Name="MaxWorkloadHours" Type="Edm.Int32" Nullable="false" />
@@ -709,6 +784,8 @@
         <NavigationProperty Name="sylCourseTeacher" Relationship="LightSwitchApplication.sylCourseTeacher_sylSyllabus" ToRole="sylCourseTeacher" FromRole="sylSyllabus" />
         <NavigationProperty Name="SyllabusNotesCollection" Relationship="LightSwitchApplication.sylSyllabusNotesSetItem_sylSyllabus" ToRole="sylSyllabusNotesSetItem" FromRole="sylSyllabus" />
         <NavigationProperty Name="WFState" Relationship="LightSwitchApplication.sylSyllabus_hrPerson1" ToRole="hrPerson" FromRole="sylSyllabus" />
+        <NavigationProperty Name="sylSyllabusTeachingMethods" Relationship="LightSwitchApplication.sylSyllabusTeachingMethod_sylSyllabus" ToRole="sylSyllabusTeachingMethod" FromRole="sylSyllabus" />
+        <NavigationProperty Name="sylAssesments" Relationship="LightSwitchApplication.sylAssesment_sylSyllabus" ToRole="sylAssesment" FromRole="sylSyllabus" />
       </EntityType>
       <EntityType Name="sylSyllabusNotesSetItem">
         <Key>
@@ -725,6 +802,22 @@
         <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
         <NavigationProperty Name="sylSyllabus" Relationship="LightSwitchApplication.sylSyllabusNotesSetItem_sylSyllabus" ToRole="sylSyllabus" FromRole="sylSyllabusNotesSetItem" />
       </EntityType>
+      <EntityType Name="sylSyllabusTeachingMethod">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <Property Name="sylSyllabusTeachingMethod_sylSyllabus" Type="Edm.Int32" Nullable="false" />
+        <Property Name="sylSyllabusTeachingMethod_sylTeachingMethod" Type="Edm.Int32" Nullable="false" />
+        <Property Name="NumberOfHours" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Created" Type="Edm.DateTimeOffset" />
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Modified" Type="Edm.DateTimeOffset" />
+        <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+        <NavigationProperty Name="sylSyllabus" Relationship="LightSwitchApplication.sylSyllabusTeachingMethod_sylSyllabus" ToRole="sylSyllabus" FromRole="sylSyllabusTeachingMethod" />
+        <NavigationProperty Name="sylTeachingMethod" Relationship="LightSwitchApplication.sylSyllabusTeachingMethod_sylTeachingMethod" ToRole="sylTeachingMethod" FromRole="sylSyllabusTeachingMethod" />
+      </EntityType>
       <EntityType Name="sylSyllabusTopic">
         <Key>
           <PropertyRef Name="Id" />
@@ -739,20 +832,36 @@
         <Property Name="Modified" Type="Edm.DateTimeOffset" />
         <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
       </EntityType>
+      <EntityType Name="sylTeachingMethod">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Created" Type="Edm.DateTimeOffset" />
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Modified" Type="Edm.DateTimeOffset" />
+        <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+        <NavigationProperty Name="sylSyllabusTeachingMethods" Relationship="LightSwitchApplication.sylSyllabusTeachingMethod_sylTeachingMethod" ToRole="sylSyllabusTeachingMethod" FromRole="sylTeachingMethod" />
+        <NavigationProperty Name="sylWorkloadStructures" Relationship="LightSwitchApplication.sylWorkloadStructure_sylTeachingMethod" ToRole="sylWorkloadStructure" FromRole="sylTeachingMethod" />
+      </EntityType>
       <EntityType Name="sylWorkloadStructure">
         <Key>
           <PropertyRef Name="Id" />
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="255" />
-        <Property Name="ContactHours" Type="Edm.Int32" Nullable="false" />
-        <Property Name="NonContactHours" Type="Edm.Int32" Nullable="false" />
+        <Property Name="sylWorkloadStructure_sylTeachingMethod" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ContactHours" Type="Edm.Double" Nullable="false" />
+        <Property Name="NonContactHours" Type="Edm.Double" Nullable="false" />
         <Property Name="WorkloadStructure_Syllabus" Type="Edm.Int32" Nullable="false" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Modified" Type="Edm.DateTimeOffset" />
         <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+        <NavigationProperty Name="sylTeachingMethod" Relationship="LightSwitchApplication.sylWorkloadStructure_sylTeachingMethod" ToRole="sylTeachingMethod" FromRole="sylWorkloadStructure" />
         <NavigationProperty Name="sylSyllabus" Relationship="LightSwitchApplication.sylWorkloadStructure_sylSyllabus" ToRole="sylSyllabus" FromRole="sylWorkloadStructure" />
       </EntityType>
       <Association Name="sylCourse_erpAcademicDepartment">
@@ -800,6 +909,32 @@
           </Principal>
           <Dependent Role="hrPerson">
             <PropertyRef Name="Employee_AcademicDepartment" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylAcademicalAim_erpAcademicDepartment">
+        <End Role="erpAcademicDepartment" Type="LightSwitchApplication.erpAcademicDepartment" Multiplicity="1" />
+        <End Role="sylAcademicalAim" Type="LightSwitchApplication.sylAcademicalAim" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="erpAcademicDepartment">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="sylAcademicalAim">
+            <PropertyRef Name="sylAcademicalAim_erpAcademicDepartment" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="erpAcademicDepartment_hrPerson1">
+        <End Role="erpAcademicDepartment" Type="LightSwitchApplication.erpAcademicDepartment" Multiplicity="0..1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Role="hrPerson" Type="LightSwitchApplication.hrPerson" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="erpAcademicDepartment">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="hrPerson">
+            <PropertyRef Name="erpAcademicDepartment_hrPerson1" />
           </Dependent>
         </ReferentialConstraint>
       </Association>
@@ -1235,15 +1370,51 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
-      <Association Name="sylLearningOutcome_sylAcademicalAim">
+      <Association Name="hrPerson_hrPerson">
+        <End Role="hrPerson1" Type="LightSwitchApplication.hrPerson" Multiplicity="0..1" />
+        <End Role="hrPerson2" Type="LightSwitchApplication.hrPerson" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="hrPerson1">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="hrPerson2">
+            <PropertyRef Name="hrPerson_hrPerson" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylOutcomeAim_sylAcademicalAim">
         <End Role="sylAcademicalAim" Type="LightSwitchApplication.sylAcademicalAim" Multiplicity="1" />
-        <End Role="sylLearningOutcome" Type="LightSwitchApplication.sylLearningOutcome" Multiplicity="*" />
+        <End Role="sylOutcomeAim" Type="LightSwitchApplication.sylOutcomeAim" Multiplicity="*" />
         <ReferentialConstraint>
           <Principal Role="sylAcademicalAim">
             <PropertyRef Name="Id" />
           </Principal>
-          <Dependent Role="sylLearningOutcome">
-            <PropertyRef Name="LearningOutcome_AcademicalAim" />
+          <Dependent Role="sylOutcomeAim">
+            <PropertyRef Name="sylOutcomeAim_sylAcademicalAim" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylOutcomeAssesment_sylAssesmentMethod">
+        <End Role="sylAssesmentMethod" Type="LightSwitchApplication.sylAssesmentMethod" Multiplicity="1" />
+        <End Role="sylOutcomeAssesment" Type="LightSwitchApplication.sylOutcomeAssesment" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="sylAssesmentMethod">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="sylOutcomeAssesment">
+            <PropertyRef Name="sylOutcomeAssesment_sylAssesmentMethod" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylAssesment_sylAssesmentMethod">
+        <End Role="sylAssesmentMethod" Type="LightSwitchApplication.sylAssesmentMethod" Multiplicity="1" />
+        <End Role="sylAssesment" Type="LightSwitchApplication.sylAssesment" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="sylAssesmentMethod">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="sylAssesment">
+            <PropertyRef Name="sylAssesment_sylAssesmentMethod" />
           </Dependent>
         </ReferentialConstraint>
       </Association>
@@ -1292,6 +1463,30 @@
           </Principal>
           <Dependent Role="hrEmpCourse">
             <PropertyRef Name="hrEmpCourse_sylCourse" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylOutcomeAim_sylLearningOutcome">
+        <End Role="sylLearningOutcome" Type="LightSwitchApplication.sylLearningOutcome" Multiplicity="1" />
+        <End Role="sylOutcomeAim" Type="LightSwitchApplication.sylOutcomeAim" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="sylLearningOutcome">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="sylOutcomeAim">
+            <PropertyRef Name="sylOutcomeAim_sylLearningOutcome" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylOutcomeAssesment_sylLearningOutcome">
+        <End Role="sylLearningOutcome" Type="LightSwitchApplication.sylLearningOutcome" Multiplicity="1" />
+        <End Role="sylOutcomeAssesment" Type="LightSwitchApplication.sylOutcomeAssesment" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="sylLearningOutcome">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="sylOutcomeAssesment">
+            <PropertyRef Name="sylOutcomeAssesment_sylLearningOutcome" />
           </Dependent>
         </ReferentialConstraint>
       </Association>
@@ -1367,15 +1562,51 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
-      <Association Name="hrPerson_hrPerson">
-        <End Role="hrPerson1" Type="LightSwitchApplication.hrPerson" Multiplicity="0..1" />
-        <End Role="hrPerson2" Type="LightSwitchApplication.hrPerson" Multiplicity="*" />
+      <Association Name="sylSyllabusTeachingMethod_sylSyllabus">
+        <End Role="sylSyllabus" Type="LightSwitchApplication.sylSyllabus" Multiplicity="1" />
+        <End Role="sylSyllabusTeachingMethod" Type="LightSwitchApplication.sylSyllabusTeachingMethod" Multiplicity="*" />
         <ReferentialConstraint>
-          <Principal Role="hrPerson1">
+          <Principal Role="sylSyllabus">
             <PropertyRef Name="Id" />
           </Principal>
-          <Dependent Role="hrPerson2">
-            <PropertyRef Name="hrPerson_hrPerson" />
+          <Dependent Role="sylSyllabusTeachingMethod">
+            <PropertyRef Name="sylSyllabusTeachingMethod_sylSyllabus" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylAssesment_sylSyllabus">
+        <End Role="sylSyllabus" Type="LightSwitchApplication.sylSyllabus" Multiplicity="1" />
+        <End Role="sylAssesment" Type="LightSwitchApplication.sylAssesment" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="sylSyllabus">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="sylAssesment">
+            <PropertyRef Name="sylAssesment_sylSyllabus" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylSyllabusTeachingMethod_sylTeachingMethod">
+        <End Role="sylTeachingMethod" Type="LightSwitchApplication.sylTeachingMethod" Multiplicity="1" />
+        <End Role="sylSyllabusTeachingMethod" Type="LightSwitchApplication.sylSyllabusTeachingMethod" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="sylTeachingMethod">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="sylSyllabusTeachingMethod">
+            <PropertyRef Name="sylSyllabusTeachingMethod_sylTeachingMethod" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="sylWorkloadStructure_sylTeachingMethod">
+        <End Role="sylTeachingMethod" Type="LightSwitchApplication.sylTeachingMethod" Multiplicity="1" />
+        <End Role="sylWorkloadStructure" Type="LightSwitchApplication.sylWorkloadStructure" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="sylTeachingMethod">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="sylWorkloadStructure">
+            <PropertyRef Name="sylWorkloadStructure_sylTeachingMethod" />
           </Dependent>
         </ReferentialConstraint>
       </Association>
@@ -1406,15 +1637,21 @@
         <EntitySet Name="hrPeople" EntityType="LightSwitchApplication.hrPerson" />
         <EntitySet Name="hrWorkingHours" EntityType="LightSwitchApplication.hrWorkingHour" />
         <EntitySet Name="sylAcademicalAims" EntityType="LightSwitchApplication.sylAcademicalAim" />
+        <EntitySet Name="sylAssesmentMethods" EntityType="LightSwitchApplication.sylAssesmentMethod" />
+        <EntitySet Name="sylAssesments" EntityType="LightSwitchApplication.sylAssesment" />
         <EntitySet Name="sylCourseMaterials" EntityType="LightSwitchApplication.sylCourseMaterial" />
         <EntitySet Name="sylCourses" EntityType="LightSwitchApplication.sylCourse" />
         <EntitySet Name="sylCourseTeachers" EntityType="LightSwitchApplication.sylCourseTeacher" />
         <EntitySet Name="sylLearningOutcomes" EntityType="LightSwitchApplication.sylLearningOutcome" />
+        <EntitySet Name="sylOutcomeAims" EntityType="LightSwitchApplication.sylOutcomeAim" />
+        <EntitySet Name="sylOutcomeAssesments" EntityType="LightSwitchApplication.sylOutcomeAssesment" />
         <EntitySet Name="sylPrerequisites" EntityType="LightSwitchApplication.sylPrerequisite" />
         <EntitySet Name="sylProgramCourses" EntityType="LightSwitchApplication.sylProgramCourse" />
         <EntitySet Name="sylSyllabi" EntityType="LightSwitchApplication.sylSyllabus" />
         <EntitySet Name="sylSyllabusNotesSet" EntityType="LightSwitchApplication.sylSyllabusNotesSetItem" />
+        <EntitySet Name="sylSyllabusTeachingMethods" EntityType="LightSwitchApplication.sylSyllabusTeachingMethod" />
         <EntitySet Name="sylSyllabusTopics" EntityType="LightSwitchApplication.sylSyllabusTopic" />
+        <EntitySet Name="sylTeachingMethods" EntityType="LightSwitchApplication.sylTeachingMethod" />
         <EntitySet Name="sylWorkloadStructures" EntityType="LightSwitchApplication.sylWorkloadStructure" />
         <AssociationSet Name="sylCourse_erpAcademicDepartment" Association="LightSwitchApplication.sylCourse_erpAcademicDepartment">
           <End Role="erpAcademicDepartment" EntitySet="erpAcademicDepartments" />
@@ -1429,6 +1666,14 @@
           <End Role="sylSyllabus" EntitySet="sylSyllabi" />
         </AssociationSet>
         <AssociationSet Name="hrPerson_erpAcademicDepartment" Association="LightSwitchApplication.hrPerson_erpAcademicDepartment">
+          <End Role="erpAcademicDepartment" EntitySet="erpAcademicDepartments" />
+          <End Role="hrPerson" EntitySet="hrPeople" />
+        </AssociationSet>
+        <AssociationSet Name="sylAcademicalAim_erpAcademicDepartment" Association="LightSwitchApplication.sylAcademicalAim_erpAcademicDepartment">
+          <End Role="erpAcademicDepartment" EntitySet="erpAcademicDepartments" />
+          <End Role="sylAcademicalAim" EntitySet="sylAcademicalAims" />
+        </AssociationSet>
+        <AssociationSet Name="erpAcademicDepartment_hrPerson1" Association="LightSwitchApplication.erpAcademicDepartment_hrPerson1">
           <End Role="erpAcademicDepartment" EntitySet="erpAcademicDepartments" />
           <End Role="hrPerson" EntitySet="hrPeople" />
         </AssociationSet>
@@ -1572,9 +1817,21 @@
           <End Role="hrPerson" EntitySet="hrPeople" />
           <End Role="hrEmpCourse" EntitySet="hrEmpCourses" />
         </AssociationSet>
-        <AssociationSet Name="sylLearningOutcome_sylAcademicalAim" Association="LightSwitchApplication.sylLearningOutcome_sylAcademicalAim">
+        <AssociationSet Name="hrPerson_hrPerson" Association="LightSwitchApplication.hrPerson_hrPerson">
+          <End Role="hrPerson1" EntitySet="hrPeople" />
+          <End Role="hrPerson2" EntitySet="hrPeople" />
+        </AssociationSet>
+        <AssociationSet Name="sylOutcomeAim_sylAcademicalAim" Association="LightSwitchApplication.sylOutcomeAim_sylAcademicalAim">
           <End Role="sylAcademicalAim" EntitySet="sylAcademicalAims" />
-          <End Role="sylLearningOutcome" EntitySet="sylLearningOutcomes" />
+          <End Role="sylOutcomeAim" EntitySet="sylOutcomeAims" />
+        </AssociationSet>
+        <AssociationSet Name="sylOutcomeAssesment_sylAssesmentMethod" Association="LightSwitchApplication.sylOutcomeAssesment_sylAssesmentMethod">
+          <End Role="sylAssesmentMethod" EntitySet="sylAssesmentMethods" />
+          <End Role="sylOutcomeAssesment" EntitySet="sylOutcomeAssesments" />
+        </AssociationSet>
+        <AssociationSet Name="sylAssesment_sylAssesmentMethod" Association="LightSwitchApplication.sylAssesment_sylAssesmentMethod">
+          <End Role="sylAssesmentMethod" EntitySet="sylAssesmentMethods" />
+          <End Role="sylAssesment" EntitySet="sylAssesments" />
         </AssociationSet>
         <AssociationSet Name="sylProgramCourse_sylCourse" Association="LightSwitchApplication.sylProgramCourse_sylCourse">
           <End Role="sylCourse" EntitySet="sylCourses" />
@@ -1591,6 +1848,14 @@
         <AssociationSet Name="hrEmpCourse_sylCourse" Association="LightSwitchApplication.hrEmpCourse_sylCourse">
           <End Role="sylCourse" EntitySet="sylCourses" />
           <End Role="hrEmpCourse" EntitySet="hrEmpCourses" />
+        </AssociationSet>
+        <AssociationSet Name="sylOutcomeAim_sylLearningOutcome" Association="LightSwitchApplication.sylOutcomeAim_sylLearningOutcome">
+          <End Role="sylLearningOutcome" EntitySet="sylLearningOutcomes" />
+          <End Role="sylOutcomeAim" EntitySet="sylOutcomeAims" />
+        </AssociationSet>
+        <AssociationSet Name="sylOutcomeAssesment_sylLearningOutcome" Association="LightSwitchApplication.sylOutcomeAssesment_sylLearningOutcome">
+          <End Role="sylLearningOutcome" EntitySet="sylLearningOutcomes" />
+          <End Role="sylOutcomeAssesment" EntitySet="sylOutcomeAssesments" />
         </AssociationSet>
         <AssociationSet Name="sylPrerequisite_sylSyllabus" Association="LightSwitchApplication.sylPrerequisite_sylSyllabus">
           <End Role="sylSyllabus" EntitySet="sylSyllabi" />
@@ -1616,9 +1881,21 @@
           <End Role="sylSyllabus" EntitySet="sylSyllabi" />
           <End Role="sylSyllabusNotesSetItem" EntitySet="sylSyllabusNotesSet" />
         </AssociationSet>
-        <AssociationSet Name="hrPerson_hrPerson" Association="LightSwitchApplication.hrPerson_hrPerson">
-          <End Role="hrPerson1" EntitySet="hrPeople" />
-          <End Role="hrPerson2" EntitySet="hrPeople" />
+        <AssociationSet Name="sylSyllabusTeachingMethod_sylSyllabus" Association="LightSwitchApplication.sylSyllabusTeachingMethod_sylSyllabus">
+          <End Role="sylSyllabus" EntitySet="sylSyllabi" />
+          <End Role="sylSyllabusTeachingMethod" EntitySet="sylSyllabusTeachingMethods" />
+        </AssociationSet>
+        <AssociationSet Name="sylAssesment_sylSyllabus" Association="LightSwitchApplication.sylAssesment_sylSyllabus">
+          <End Role="sylSyllabus" EntitySet="sylSyllabi" />
+          <End Role="sylAssesment" EntitySet="sylAssesments" />
+        </AssociationSet>
+        <AssociationSet Name="sylSyllabusTeachingMethod_sylTeachingMethod" Association="LightSwitchApplication.sylSyllabusTeachingMethod_sylTeachingMethod">
+          <End Role="sylTeachingMethod" EntitySet="sylTeachingMethods" />
+          <End Role="sylSyllabusTeachingMethod" EntitySet="sylSyllabusTeachingMethods" />
+        </AssociationSet>
+        <AssociationSet Name="sylWorkloadStructure_sylTeachingMethod" Association="LightSwitchApplication.sylWorkloadStructure_sylTeachingMethod">
+          <End Role="sylTeachingMethod" EntitySet="sylTeachingMethods" />
+          <End Role="sylWorkloadStructure" EntitySet="sylWorkloadStructures" />
         </AssociationSet>
         <FunctionImport Name="byPerson" EntitySet="hrWorkingHours" ReturnType="Collection(LightSwitchApplication.hrWorkingHour)" m:HttpMethod="GET">
           <Parameter Name="personId" Type="Edm.Int32" Mode="In" />

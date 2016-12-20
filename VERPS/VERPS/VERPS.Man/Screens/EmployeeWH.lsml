@@ -170,7 +170,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="hrPerson/Properties[erpAcademicDepartment]" />
+                          Member="hrPerson/Properties[AcademicDepartment]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>

@@ -262,10 +262,12 @@
     <LightSwitchModel Include="Screens\People.lsml" />
     <LightSwitchModel Include="Screens\WHSupervision.lsml" />
     <LightSwitchModel Include="Screens\EmployeeWH.lsml" />
+    <LightSwitchModel Include="Screens\Syllabus\Universities.lsml" />
+    <LightSwitchModel Include="Screens\Syllabus\Faculties.lsml" />
+    <LightSwitchModel Include="Screens\Syllabus\AcademicDepartments.lsml" />
+    <LightSwitchModel Include="Screens\Syllabus\AcademicPeople.lsml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screens\Syllabus\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <_ClientBuildFile Include="default.htm">
       <SubFolder>

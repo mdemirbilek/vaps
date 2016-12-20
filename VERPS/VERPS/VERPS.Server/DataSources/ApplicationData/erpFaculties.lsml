@@ -50,6 +50,16 @@
         Association="hrEmpAcademicProfileByHR_erpFaculty"
         FromEnd="erpFaculty"
         ToEnd="hrEmpAcademicProfileByHR" />
+      <NavigationProperty
+        Name="Dean"
+        Association="hrPerson_erpFaculty"
+        FromEnd="erpFaculty"
+        ToEnd="hrPerson" />
+      <NavigationProperty
+        Name="ViceDeans"
+        Association="hrPerson_erpFaculty1"
+        FromEnd="erpFaculty"
+        ToEnd="hrPerson" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -213,6 +223,16 @@
         Name="erpFaculty"
         EntitySet="erpFaculties" />
     </AssociationSet>
+    <AssociationSet
+      Name="hrPerson_erpFaculty1Set"
+      Association="hrPerson_erpFaculty1">
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
+      <AssociationSetEnd
+        Name="erpFaculty"
+        EntitySet="erpFaculties" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -224,6 +244,10 @@
       <EntitySetMapping.Attributes>
         <SsdlForeignKeyProperty
           Name="Faculty_University"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="hrPerson_erpFaculty"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>
@@ -270,6 +294,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrPerson_erpFaculty1Set">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrPerson_erpFaculty1Set" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrPerson_erpFaculty1Set]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrPerson_erpFaculty1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[hrPerson_erpFaculty1Set]/Members[erpFaculty]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="erpAcademicDepartment_erpFaculty">
@@ -296,6 +341,21 @@
     <AssociationEnd
       Name="erpFaculty"
       Multiplicity="One"
+      EntityType="erpFaculty">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="hrPerson_erpFaculty1">
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="Many"
+      EntityType="hrPerson" />
+    <AssociationEnd
+      Name="erpFaculty"
       EntityType="erpFaculty">
       <AssociationEnd.Attributes>
         <DeleteRule

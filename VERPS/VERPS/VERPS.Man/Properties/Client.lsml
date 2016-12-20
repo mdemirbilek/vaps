@@ -71,6 +71,18 @@
     <ApplicationCommand
       Name="ScreenCommandShowEmployeeWH"
       Target="!module/Methods[ShowEmployeeWH]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowUniversities"
+      Target="!module/Methods[ShowUniversities]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowFaculties"
+      Target="!module/Methods[ShowFaculties]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcademicDepartments"
+      Target="!module/Methods[ShowAcademicDepartments]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcademicPeople"
+      Target="!module/Methods[ShowAcademicPeople]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -116,11 +128,24 @@
         Command="!module/Commands[ScreenCommandShowEmployeeWH]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
-      Name="group">
+      Name="group"
+      DefaultItem="!module/NavigationItems[group]/Children[link3]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Syllabus" />
       </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link"
+        Command="!module/Commands[ScreenCommandShowUniversities]" />
+      <ApplicationNavigationLink
+        Name="link1"
+        Command="!module/Commands[ScreenCommandShowFaculties]" />
+      <ApplicationNavigationLink
+        Name="link2"
+        Command="!module/Commands[ScreenCommandShowAcademicDepartments]" />
+      <ApplicationNavigationLink
+        Name="link3"
+        Command="!module/Commands[ScreenCommandShowAcademicPeople]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

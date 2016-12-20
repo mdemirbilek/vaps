@@ -664,4 +664,10 @@
         Target="ServiceInterface:hrPerson_erpFaculty1" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Holiday" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

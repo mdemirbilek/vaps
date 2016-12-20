@@ -23,5 +23,6 @@ namespace VERPSWeb1
         public string TotalWorkingTime { get; set; }
         public string TimeDiff { get; set; }
         public string TotalOvertime { get; set; }
+        public int UserId { get; set; }
     }
 }

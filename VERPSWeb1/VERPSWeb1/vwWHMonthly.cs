@@ -36,5 +36,6 @@ namespace VERPSWeb1
         public string UserStory { get; set; }
         public string EmailAddress { get; set; }
         public string FullName { get; set; }
+        public int UserId { get; set; }
     }
 }

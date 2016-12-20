@@ -275,6 +275,7 @@
     <LightSwitchModel Include="DataSources\ApplicationData\sylAssesmentMethods.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\sylOutcomeAssesments.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\sylAssesments.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Holidays.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

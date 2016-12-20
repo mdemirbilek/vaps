@@ -15,7 +15,7 @@ namespace VERPSWeb1.Controllers
         private VERPSEntities db = new VERPSEntities();
 
         // GET: WHMonthly
-        public ActionResult Index(string id)
+        public ActionResult Index()
         {
 
             var whmontly = db.vwWHMonthlies.Where(x => x.EmailAddress.Equals(User.Identity.Name) && x.RecYear == 2016 && x.RecMonth == 12);

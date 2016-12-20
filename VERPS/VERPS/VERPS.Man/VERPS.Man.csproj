@@ -266,6 +266,8 @@
     <LightSwitchModel Include="Screens\Syllabus\Faculties.lsml" />
     <LightSwitchModel Include="Screens\Syllabus\AcademicDepartments.lsml" />
     <LightSwitchModel Include="Screens\Syllabus\AcademicPeople.lsml" />
+    <LightSwitchModel Include="Screens\Syllabus\Courses.lsml" />
+    <LightSwitchModel Include="Screens\HRWH\Holidays.lsml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

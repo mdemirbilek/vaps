@@ -44,5 +44,7 @@ namespace DoorDataProcessor
         public Nullable<System.DateTimeOffset> Modified { get; set; }
         public byte[] RowVersion { get; set; }
         public int WorkingHour_Employee { get; set; }
+        public int EmpId { get; set; }
+        public string UserStory { get; set; }
     }
 }

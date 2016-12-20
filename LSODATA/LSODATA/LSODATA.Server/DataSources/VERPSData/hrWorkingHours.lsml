@@ -278,6 +278,14 @@
         Association="hrWorkingHour_WorkingHours"
         FromEnd="hrWorkingHour"
         ToEnd="WorkingHours" />
+      <EntityProperty
+        Name="UserStory"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -516,6 +524,12 @@
           Nullable="False"
           Type="int"
           Property="hrWorkingHour/Properties[EmpId]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="UserStory"
+          Nullable="True"
+          Type="nvarchar"
+          Property="hrWorkingHour/Properties[UserStory]" />
         <SsdlProperty
           MaxLength="255"
           Name="CreatedBy"

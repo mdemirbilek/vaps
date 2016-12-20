@@ -193,6 +193,11 @@
         Association="WorkingHours_hrPeople"
         FromEnd="hrPeople"
         ToEnd="WorkingHours" />
+      <NavigationProperty
+        Name="erpAcademicDepartment1"
+        Association="erpAcademicDepartment_hrPerson1"
+        FromEnd="hrPeople"
+        ToEnd="erpAcademicDepartments" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -514,6 +519,11 @@
           StoreGeneratedPattern="Computed"
           Type="timestamp"
           Property="hrPeople/Properties[RowVersion]" />
+        <SsdlForeignKeyProperty
+          Name="erpAcademicDepartment_hrPerson1"
+          Nullable="True"
+          Type="int"
+          PropertyName="erpAcademicDepartment_hrPerson1" />
         <SsdlForeignKeyProperty
           Name="Employee_AcademicDepartment"
           Nullable="True"

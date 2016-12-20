@@ -1,0 +1,186 @@
+﻿@model VERPSWeb1.vwWHMonthly
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>vwWHMonthly</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOfWeek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayOfWeek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EntryTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntryTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExitTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExitTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedWorkingHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedWorkingHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcceptedOTeHrs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcceptedOTeHrs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcceptedOTMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcceptedOTMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsOTAccepted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsOTAccepted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HourDiff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HourDiff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinuteDiff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinuteDiff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMinutes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMinutes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exception)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exception)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserStory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserStory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

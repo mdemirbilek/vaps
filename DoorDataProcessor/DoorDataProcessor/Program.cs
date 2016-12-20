@@ -79,7 +79,7 @@ namespace DoorDataProcessor
             }
             else if (op == "calculate")
             {
-                //opDate = DateTime.Parse("2016-12-6");
+                //opDate = DateTime.Parse("2016-12-20");
                 opDate = opDate.AddDays(-1);
                 CalcWorkingTimes(opDate);
             }

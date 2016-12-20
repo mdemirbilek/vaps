@@ -71,7 +71,7 @@
                 <ContentItem
                   Name="UserName"
                   Kind="Value"
-                  DataType=":String">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

@@ -10,7 +10,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="255" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="DoorSysID" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="AccessCardID" Type="nvarchar" MaxLength="255" />
           <Property Name="WorkingDate" Type="datetime" Nullable="false" />
@@ -33,6 +33,8 @@
           <Property Name="OTAcceptedBy" Type="nvarchar" MaxLength="255" />
           <Property Name="AcceptedOTeHrs" Type="int" />
           <Property Name="AcceptedOTMin" Type="int" />
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="UserStory" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
           <Property Name="Created" Type="datetimeoffset" Precision="7" />
           <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
@@ -52,7 +54,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DoorSysID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AccessCardID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="WorkingDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -81,6 +83,8 @@
           <Property Name="Modified" Type="DateTimeOffset" Precision="7" />
           <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="WorkingHour_Employee" Type="Int32" Nullable="false" />
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="UserStory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="VERPSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="hrWorkingHours" EntityType="Self.hrWorkingHour" />
@@ -94,6 +98,8 @@
           <EntitySetMapping Name="hrWorkingHours">
             <EntityTypeMapping TypeName="VERPSModel.hrWorkingHour">
               <MappingFragment StoreEntitySet="hrWorkingHours">
+                <ScalarProperty Name="UserStory" ColumnName="UserStory" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="DoorSysID" ColumnName="DoorSysID" />

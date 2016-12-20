@@ -136,4 +136,10 @@
         Target="ServiceInterface:hrWorkingHour_WorkingHours" />
     </Association.Attributes>
   </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:erpAcademicDepartment_hrPerson1" />
+    </Association.Attributes>
+  </Association>
 </Application>

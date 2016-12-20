@@ -1,0 +1,153 @@
+﻿@model IEnumerable<VERPSWeb1.vwWHMonthly>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecMonth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayOfWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExitTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedWorkingHour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcceptedOTeHrs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcceptedOTMin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsOTAccepted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HourDiff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinuteDiff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalMinutes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exception)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Note)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserStory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecMonth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayOfWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExitTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedWorkingHour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcceptedOTeHrs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcceptedOTMin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsOTAccepted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HourDiff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinuteDiff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalMinutes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Exception)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserStory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

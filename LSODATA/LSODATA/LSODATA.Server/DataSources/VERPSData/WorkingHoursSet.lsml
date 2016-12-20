@@ -17,11 +17,10 @@
     <EntityType.Properties>
       <EntityProperty
         Name="UserName"
-        PropertyType=":String">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
-          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
       <KeyProperty
@@ -335,6 +334,24 @@
         EntitySet="WorkingHoursSet" />
     </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="hrWorkingHour_WorkingHours">
+    <Association.Attributes>
+      <UserDefined />
+    </Association.Attributes>
+    <AssociationEnd
+      Name="hrWorkingHour"
+      Multiplicity="Many"
+      EntityType="hrWorkingHour" />
+    <AssociationEnd
+      Name="WorkingHours"
+      Multiplicity="One"
+      EntityType="WorkingHours">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
   <DataService
     Name="VERPSDataDataService">
     <DataService.Attributes>
@@ -350,7 +367,7 @@
         <SsdlProperty
           MaxLength="255"
           Name="UserName"
-          Nullable="False"
+          Nullable="True"
           Type="nvarchar"
           Property="WorkingHours/Properties[UserName]" />
         <SsdlProperty
@@ -444,22 +461,4 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
   </DataService>
-  <Association
-    Name="hrWorkingHour_WorkingHours">
-    <Association.Attributes>
-      <UserDefined />
-    </Association.Attributes>
-    <AssociationEnd
-      Name="hrWorkingHour"
-      Multiplicity="Many"
-      EntityType="hrWorkingHour" />
-    <AssociationEnd
-      Name="WorkingHours"
-      Multiplicity="One"
-      EntityType="WorkingHours">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
 </ServiceApplication>

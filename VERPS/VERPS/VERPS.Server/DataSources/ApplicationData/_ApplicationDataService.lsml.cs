@@ -128,11 +128,33 @@ namespace LightSwitchApplication
                 wh.AssignedWorkingHour = 0;
                 wh.HourDiff = 0;
             }
+
+            hrHoliday holiday = GetHoliday(dt);
+            if (holiday != null)
+            {
+                wh.Exception = "Holiday";
+                wh.Note = holiday.Name;
+                wh.StdWorkingHour = 0;
+                wh.AssignedWorkingHour = 0;
+                wh.HourDiff = 0;
+            }
+
             wh.MinuteDiff = 0;
             wh.IsOTAccepted = false;
             wh.OTAcceptedBy = "";
             wh.AcceptedOTeHrs = 0;
             wh.AcceptedOTMin = 0;
+        }
+
+        public static hrHoliday GetHoliday(DateTime dt)
+        {
+            hrHoliday holiday = null;
+
+            using (var serverContext = LightSwitchApplication.Application.Current.CreateDataWorkspace())
+            {
+                holiday = (hrHoliday)serverContext.ApplicationData.byHoliday(dt);
+                return holiday;
+            }
         }
 
         public static bool IsStdWorkingDay(DateTime dt)

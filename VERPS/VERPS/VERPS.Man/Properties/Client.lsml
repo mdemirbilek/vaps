@@ -3,7 +3,6 @@
   Name="LightSwitchApplication.VERPS.Man"
   TargetPlatform="RichClient"
   Version="1.0.0.0"
-  DefaultNavigationItem="!module/NavigationItems[Administration]"
   Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
   Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
   <Application.Attributes>
@@ -93,8 +92,7 @@
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
-      Name="Administration"
-      DefaultItem="!module/NavigationItems[Administration]/Children[Courses]">
+      Name="Administration">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Administration" />
@@ -105,12 +103,6 @@
       <ApplicationNavigationLink
         Name="UsersScreen"
         Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
-      <ApplicationNavigationLink
-        Name="Courses"
-        Command="!module/Commands[ScreenCommandShowCourses]" />
-      <ApplicationNavigationLink
-        Name="Holidays"
-        Command="!module/Commands[ScreenCommandShowHolidays]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Tasks">
@@ -131,6 +123,9 @@
       <ApplicationNavigationLink
         Name="link13"
         Command="!module/Commands[ScreenCommandShowDepartments]" />
+      <ApplicationNavigationLink
+        Name="link4"
+        Command="!module/Commands[ScreenCommandShowHolidays]" />
       <ApplicationNavigationLink
         Name="link16"
         Command="!module/Commands[ScreenCommandShowPeople]" />
@@ -160,6 +155,9 @@
       <ApplicationNavigationLink
         Name="link3"
         Command="!module/Commands[ScreenCommandShowAcademicPeople]" />
+      <ApplicationNavigationLink
+        Name="link5"
+        Command="!module/Commands[ScreenCommandShowCourses]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

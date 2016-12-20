@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VERPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'VERPS.dbo.vwWHheader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwWHheader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RecYear" Type="int" Nullable="false" />
+          <Property Name="RecMonth" Type="int" Nullable="false" />
+          <Property Name="AWH" Type="int" />
+          <Property Name="TotalWorkingTime" Type="varchar" MaxLength="62" />
+          <Property Name="TimeDiff" Type="varchar" MaxLength="62" />
+          <Property Name="TotalOvertime" Type="varchar" MaxLength="62" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'VERPS.dbo.vwWHMonthly' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwWHMonthly">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id2" Type="nvarchar" MaxLength="90" />
+          <Property Name="WorkingDate" Type="datetime" Nullable="false" />
+          <Property Name="RecYear" Type="int" Nullable="false" />
+          <Property Name="RecMonth" Type="int" Nullable="false" />
+          <Property Name="RecDay" Type="int" Nullable="false" />
+          <Property Name="DayOfWeek" Type="nvarchar" MaxLength="255" />
+          <Property Name="EntryTime" Type="datetime" />
+          <Property Name="ExitTime" Type="datetime" />
+          <Property Name="AssignedWorkingHour" Type="int" />
+          <Property Name="AcceptedOTeHrs" Type="int" />
+          <Property Name="AcceptedOTMin" Type="int" />
+          <Property Name="IsOTAccepted" Type="bit" />
+          <Property Name="HourDiff" Type="int" />
+          <Property Name="MinuteDiff" Type="int" />
+          <Property Name="TotalHours" Type="int" />
+          <Property Name="TotalMinutes" Type="int" />
+          <Property Name="Exception" Type="nvarchar" MaxLength="255" />
+          <Property Name="Note" Type="nvarchar" MaxLength="255" />
+          <Property Name="UserStory" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="VERPSModelStoreContainer">
+          <EntitySet Name="vwWHheader" EntityType="Self.vwWHheader" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwWHheader].[Id] AS [Id], 
+    [vwWHheader].[FullName] AS [FullName], 
+    [vwWHheader].[EmailAddress] AS [EmailAddress], 
+    [vwWHheader].[RecYear] AS [RecYear], 
+    [vwWHheader].[RecMonth] AS [RecMonth], 
+    [vwWHheader].[AWH] AS [AWH], 
+    [vwWHheader].[TotalWorkingTime] AS [TotalWorkingTime], 
+    [vwWHheader].[TimeDiff] AS [TimeDiff], 
+    [vwWHheader].[TotalOvertime] AS [TotalOvertime], 
+    [vwWHheader].[UserId] AS [UserId]
+    FROM [dbo].[vwWHheader] AS [vwWHheader]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwWHMonthly" EntityType="Self.vwWHMonthly" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwWHMonthly].[Id] AS [Id], 
+    [vwWHMonthly].[Id2] AS [Id2], 
+    [vwWHMonthly].[WorkingDate] AS [WorkingDate], 
+    [vwWHMonthly].[RecYear] AS [RecYear], 
+    [vwWHMonthly].[RecMonth] AS [RecMonth], 
+    [vwWHMonthly].[RecDay] AS [RecDay], 
+    [vwWHMonthly].[DayOfWeek] AS [DayOfWeek], 
+    [vwWHMonthly].[EntryTime] AS [EntryTime], 
+    [vwWHMonthly].[ExitTime] AS [ExitTime], 
+    [vwWHMonthly].[AssignedWorkingHour] AS [AssignedWorkingHour], 
+    [vwWHMonthly].[AcceptedOTeHrs] AS [AcceptedOTeHrs], 
+    [vwWHMonthly].[AcceptedOTMin] AS [AcceptedOTMin], 
+    [vwWHMonthly].[IsOTAccepted] AS [IsOTAccepted], 
+    [vwWHMonthly].[HourDiff] AS [HourDiff], 
+    [vwWHMonthly].[MinuteDiff] AS [MinuteDiff], 
+    [vwWHMonthly].[TotalHours] AS [TotalHours], 
+    [vwWHMonthly].[TotalMinutes] AS [TotalMinutes], 
+    [vwWHMonthly].[Exception] AS [Exception], 
+    [vwWHMonthly].[Note] AS [Note], 
+    [vwWHMonthly].[UserStory] AS [UserStory], 
+    [vwWHMonthly].[EmailAddress] AS [EmailAddress], 
+    [vwWHMonthly].[FullName] AS [FullName], 
+    [vwWHMonthly].[UserId] AS [UserId]
+    FROM [dbo].[vwWHMonthly] AS [vwWHMonthly]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VERPSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vwWHheader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="90" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecYear" Type="Int32" Nullable="false" />
+          <Property Name="RecMonth" Type="Int32" Nullable="false" />
+          <Property Name="AWH" Type="Int32" />
+          <Property Name="TotalWorkingTime" Type="String" MaxLength="62" FixedLength="false" Unicode="false" />
+          <Property Name="TimeDiff" Type="String" MaxLength="62" FixedLength="false" Unicode="false" />
+          <Property Name="TotalOvertime" Type="String" MaxLength="62" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwWHMonthly">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id2" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="WorkingDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RecYear" Type="Int32" Nullable="false" />
+          <Property Name="RecMonth" Type="Int32" Nullable="false" />
+          <Property Name="RecDay" Type="Int32" Nullable="false" />
+          <Property Name="DayOfWeek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EntryTime" Type="DateTime" Precision="3" />
+          <Property Name="ExitTime" Type="DateTime" Precision="3" />
+          <Property Name="AssignedWorkingHour" Type="Int32" />
+          <Property Name="AcceptedOTeHrs" Type="Int32" />
+          <Property Name="AcceptedOTMin" Type="Int32" />
+          <Property Name="IsOTAccepted" Type="Boolean" />
+          <Property Name="HourDiff" Type="Int32" />
+          <Property Name="MinuteDiff" Type="Int32" />
+          <Property Name="TotalHours" Type="Int32" />
+          <Property Name="TotalMinutes" Type="Int32" />
+          <Property Name="Exception" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UserStory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="VERPSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vwWHheaders" EntityType="Self.vwWHheader" />
+          <EntitySet Name="vwWHMonthlies" EntityType="Self.vwWHMonthly" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VERPSModelStoreContainer" CdmEntityContainer="VERPSEntities">
+          <EntitySetMapping Name="vwWHheaders">
+            <EntityTypeMapping TypeName="VERPSModel.vwWHheader">
+              <MappingFragment StoreEntitySet="vwWHheader">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="RecYear" ColumnName="RecYear" />
+                <ScalarProperty Name="RecMonth" ColumnName="RecMonth" />
+                <ScalarProperty Name="AWH" ColumnName="AWH" />
+                <ScalarProperty Name="TotalWorkingTime" ColumnName="TotalWorkingTime" />
+                <ScalarProperty Name="TimeDiff" ColumnName="TimeDiff" />
+                <ScalarProperty Name="TotalOvertime" ColumnName="TotalOvertime" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwWHMonthlies">
+            <EntityTypeMapping TypeName="VERPSModel.vwWHMonthly">
+              <MappingFragment StoreEntitySet="vwWHMonthly">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id2" ColumnName="Id2" />
+                <ScalarProperty Name="WorkingDate" ColumnName="WorkingDate" />
+                <ScalarProperty Name="RecYear" ColumnName="RecYear" />
+                <ScalarProperty Name="RecMonth" ColumnName="RecMonth" />
+                <ScalarProperty Name="RecDay" ColumnName="RecDay" />
+                <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+                <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
+                <ScalarProperty Name="ExitTime" ColumnName="ExitTime" />
+                <ScalarProperty Name="AssignedWorkingHour" ColumnName="AssignedWorkingHour" />
+                <ScalarProperty Name="AcceptedOTeHrs" ColumnName="AcceptedOTeHrs" />
+                <ScalarProperty Name="AcceptedOTMin" ColumnName="AcceptedOTMin" />
+                <ScalarProperty Name="IsOTAccepted" ColumnName="IsOTAccepted" />
+                <ScalarProperty Name="HourDiff" ColumnName="HourDiff" />
+                <ScalarProperty Name="MinuteDiff" ColumnName="MinuteDiff" />
+                <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+                <ScalarProperty Name="TotalMinutes" ColumnName="TotalMinutes" />
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="UserStory" ColumnName="UserStory" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

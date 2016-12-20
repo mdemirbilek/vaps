@@ -154,6 +154,9 @@
           <SupportedValue
             DisplayName="NA"
             Value="NA" />
+          <SupportedValue
+            DisplayName="Public Holiday"
+            Value="Holiday" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

@@ -1,0 +1,90 @@
+﻿@model VERPSWeb.vwWHheader
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>vwWHheader</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AWH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AWH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalWorkingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalWorkingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeDiff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeDiff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalOvertime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalOvertime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

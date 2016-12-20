@@ -667,7 +667,7 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Holiday" />
+        Target="ServiceInterface:hrHoliday" />
     </EntityType.Attributes>
   </EntityType>
 </Application>

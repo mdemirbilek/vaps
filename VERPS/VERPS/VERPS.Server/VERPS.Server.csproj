@@ -275,7 +275,10 @@
     <LightSwitchModel Include="DataSources\ApplicationData\sylAssesmentMethods.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\sylOutcomeAssesments.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\sylAssesments.lsml" />
-    <LightSwitchModel Include="DataSources\ApplicationData\Holidays.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\hrHolidays.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\byHoliday.lsml">
+      <DependentUpon>hrHolidays.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

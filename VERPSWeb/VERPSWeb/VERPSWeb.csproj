@@ -45,6 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -83,6 +91,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -188,11 +197,34 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WHController.cs" />
+    <Compile Include="Controllers\WHMonthliesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="VERPSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VERPSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VERPSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VERPSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VERPSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VERPSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="vwWHheader.cs">
+      <DependentUpon>VERPSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwWHMonthly.cs">
+      <DependentUpon>VERPSModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -219,6 +251,16 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="VERPSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VERPSModel.edmx</DependentUpon>
+      <LastGenOutput>VERPSModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="VERPSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VERPSModel.edmx</DependentUpon>
+      <LastGenOutput>VERPSModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -235,6 +277,23 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\SignOutCallback.cshtml" />
+    <EntityDeploy Include="VERPSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VERPSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="VERPSModel.edmx.diagram">
+      <DependentUpon>VERPSModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\WH\Create.cshtml" />
+    <Content Include="Views\WH\Delete.cshtml" />
+    <Content Include="Views\WH\Details.cshtml" />
+    <Content Include="Views\WH\Edit.cshtml" />
+    <Content Include="Views\WH\Index.cshtml" />
+    <Content Include="Views\WHMonthlies\Create.cshtml" />
+    <Content Include="Views\WHMonthlies\Delete.cshtml" />
+    <Content Include="Views\WHMonthlies\Details.cshtml" />
+    <Content Include="Views\WHMonthlies\Edit.cshtml" />
+    <Content Include="Views\WHMonthlies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -247,6 +306,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

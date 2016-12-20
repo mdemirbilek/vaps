@@ -1,0 +1,116 @@
+﻿@model IEnumerable<VERPSWeb.vwWHMonthly>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h3>Employee: @ViewBag.wh.FullName</h3>
+<h2>@ViewBag.wh.RecYear</h2>
+<h2>@ViewBag.wh.RecYear</h2>
+<h2>@ViewBag.wh.RecYear</h2>
+<h2>@ViewBag.wh.RecYear</h2>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.WorkingDate)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DayOfWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExitTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedWorkingHour)
+        </th>
+        <th>
+            OT Time
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.IsOTAccepted)
+        </th>
+        <th>
+            Time Diff
+        </th>
+
+        <th>
+            Total Time
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Exception)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Note)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserStory)
+        </th>
+
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkingDate)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.DayOfWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExitTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedWorkingHour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcceptedOTeHrs):@Html.DisplayFor(modelItem => item.AcceptedOTMin)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.IsOTAccepted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HourDiff):@Html.DisplayFor(modelItem => item.MinuteDiff)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalHours):@Html.DisplayFor(modelItem => item.TotalMinutes)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Exception)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserStory)
+        </td>
+
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+        </td>
+    </tr>
+}
+
+</table>

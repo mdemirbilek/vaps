@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Holiday">
+    Name="hrHoliday">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -59,6 +59,7 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <IncludeInUniqueIndex />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -119,14 +120,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Holidays"
+      Name="hrHolidays"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Holiday" />
+      EntityType="hrHoliday" />
     <QueryOperation
-      Name="Holidays_Single"
-      ReturnType="Holiday">
+      Name="hrHolidays_Single"
+      ReturnType="hrHoliday">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -152,7 +153,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Holidays" />
+            Member="hrHolidays" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -165,8 +166,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Holidays_SingleOrDefault"
-      ReturnType="Holiday">
+      Name="hrHolidays_SingleOrDefault"
+      ReturnType="hrHoliday">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -192,7 +193,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Holidays" />
+            Member="hrHolidays" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter

@@ -21,7 +21,7 @@
           <ContentItem
             Name="grid"
             Kind="Collection"
-            DataType="CollectionView$Holiday">
+            DataType="CollectionView$hrHoliday">
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
@@ -33,7 +33,7 @@
             <ContentItem
               Name="RowTemplate"
               Kind="Details"
-              DataType="Holiday">
+              DataType="hrHoliday">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression />
@@ -47,7 +47,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Holiday/Properties[Name]" />
+                        Member="hrHoliday/Properties[Name]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -60,7 +60,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Holiday/Properties[Year]" />
+                        Member="hrHoliday/Properties[Year]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -73,7 +73,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Holiday/Properties[HolidayDate]" />
+                        Member="hrHoliday/Properties[HolidayDate]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -209,18 +209,18 @@
       <ScreenCollectionProperty
         Name="Holidays1"
         PageSize="45"
-        PropertyType="CollectionView$Holiday">
+        PropertyType="CollectionView$hrHoliday">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="Holidays1Query"
-            ReturnType="Holiday*">
+            ReturnType="hrHoliday*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="ApplicationData/Members[Holidays]" />
+                  Member="ApplicationData/Members[hrHolidays]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>

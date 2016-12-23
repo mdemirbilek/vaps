@@ -27,5 +27,6 @@ namespace VERPSWeb
     
         public virtual DbSet<vwWHheader> vwWHheaders { get; set; }
         public virtual DbSet<vwWHMonthly> vwWHMonthlies { get; set; }
+        public virtual DbSet<hrWorkingHour> hrWorkingHours { get; set; }
     }
 }

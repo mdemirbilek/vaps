@@ -148,15 +148,15 @@
           <MaxLength
             Value="255" />
           <SupportedValue
-            Value="Sick Leave" />
+            Value="u. wypoczynkowy" />
           <SupportedValue
-            Value="Annual Leave" />
+            Value="u. bezpłatny" />
           <SupportedValue
-            DisplayName="NA"
-            Value="NA" />
+            Value="u. macierzyński/rodzicielski" />
           <SupportedValue
-            DisplayName="Public Holiday"
-            Value="Holiday" />
+            Value="u. ojcowski" />
+          <SupportedValue
+            Value="u. wychowawczy" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

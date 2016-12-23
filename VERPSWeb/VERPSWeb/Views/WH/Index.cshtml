@@ -35,9 +35,6 @@
         <th>
             @Html.DisplayNameFor(model => model.TotalOvertime)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>
         <th></th>
     </tr>
 
@@ -68,10 +65,7 @@
             @Html.DisplayFor(modelItem => item.TotalOvertime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "../whmonthlies/index", new { id=item.Id }) |
+            @Html.ActionLink("Details", "../whmonthlies/index", new { id=item.Id })
         </td>
     </tr>
 }

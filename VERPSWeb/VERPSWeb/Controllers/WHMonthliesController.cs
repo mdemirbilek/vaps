@@ -40,7 +40,9 @@ namespace VERPSWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vwWHMonthly vwWHMonthly = db.vwWHMonthlies.Find(id);
+            //vwWHMonthly vwWHMonthly = db.vwWHMonthlies.Find(id);
+            vwWHMonthly vwWHMonthly = (vwWHMonthly)db.vwWHMonthlies.Where(x => x.EmailAddress.Equals(User.Identity.Name) && x.Id == id).First();
+
             if (vwWHMonthly == null)
             {
                 return HttpNotFound();
@@ -78,7 +80,9 @@ namespace VERPSWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vwWHMonthly vwWHMonthly = db.vwWHMonthlies.Find(id);
+            //vwWHMonthly vwWHMonthly = db.vwWHMonthlies.Find(id);
+            vwWHMonthly vwWHMonthly = (vwWHMonthly)db.vwWHMonthlies.Where(x => x.EmailAddress.Equals(User.Identity.Name) && x.Id == id).First();
+
             if (vwWHMonthly == null)
             {
                 return HttpNotFound();
@@ -93,13 +97,35 @@ namespace VERPSWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Id2,WorkingDate,RecYear,RecMonth,RecDay,DayOfWeek,EntryTime,ExitTime,AssignedWorkingHour,AcceptedOTeHrs,AcceptedOTMin,IsOTAccepted,HourDiff,MinuteDiff,TotalHours,TotalMinutes,Exception,Note,UserStory,EmailAddress,FullName,UserId")] vwWHMonthly vwWHMonthly)
         {
+            int myId = 0;
+
             if (ModelState.IsValid)
             {
-                db.Entry(vwWHMonthly).State = EntityState.Modified;
+
+                int whId = vwWHMonthly.Id;
+                string whId2 = vwWHMonthly.Id2;
+                string whUS = vwWHMonthly.UserStory;
+
+                //db.Entry(vwWHMonthly).State = EntityState.Modified;
+
+                hrWorkingHour hrWH = db.hrWorkingHours.Find(whId);
+                if (hrWH != null)
+                {
+                    hrWH.UserStory = whUS;
+                }
+
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Back to the list..", "../whmonthlies/index", new { id = whId2 });
+
             }
-            return View(vwWHMonthly);
+
+            vwWHMonthly monthly = db.vwWHMonthlies.Find(vwWHMonthly.Id);
+
+            //Response.Write("<script>function myFunction() { alert('I am an alert box!'); } </ script >");
+
+            TempData["msg"] = "<script>alert('Succesfully saved!');</script>";
+
+            return View(monthly);
         }
 
         // GET: WHMonthlies/Delete/5

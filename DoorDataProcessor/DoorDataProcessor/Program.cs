@@ -83,7 +83,49 @@ namespace DoorDataProcessor
                 opDate = opDate.AddDays(-1);
                 CalcWorkingTimes(opDate);
             }
+            else if (op == "addheader")
+            {
+                AddHeaderLine(opDate);
+            }
 
+        }
+
+        public static void AddHeaderLine(DateTime opDate)
+        {
+            string headerFile = @"\\10.10.5.6\DoorExportFiles\empty";
+            string dataFile = @"\\10.10.5.6\DoorExportFiles\DoorsNightlyRawData";
+            string outputFile = @"\\10.10.5.6\DoorExportFiles\DoorsNightlyRawDataProcessed";
+
+            dataFile = dataFile + opDate.Year.ToString() + get2Digit(opDate.Month.ToString()) + get2Digit(opDate.Day.ToString());
+            outputFile = outputFile + opDate.Year.ToString() + get2Digit(opDate.Month.ToString()) + get2Digit(opDate.Day.ToString());
+
+            try
+            {
+                FileInfo MyFile = new FileInfo(dataFile);
+                StreamReader sr = MyFile.OpenText();
+                int firstChar = sr.Read();
+                sr.Close();
+
+                if (firstChar == 50)
+                {
+                    headerFile = @"\\10.10.5.6\DoorExportFiles\header";
+                }
+            }
+            catch (Exception ex)
+            {
+                headerFile = @"\\10.10.5.6\DoorExportFiles\header";
+            }
+
+            using (var output = File.Create(outputFile))
+            {
+                foreach (var file in new[] { headerFile, dataFile })
+                {
+                    using (var input = File.OpenRead(file))
+                    {
+                        input.CopyTo(output);
+                    }
+                }
+            }
         }
 
         private static void ParseAndLoadData(DateTime opDate)
@@ -92,7 +134,7 @@ namespace DoorDataProcessor
             DataAccess.DataTable dt;
 
 
-            string fileName = @"\\10.10.5.6\DoorExportFiles\DoorsNightlyRawData";
+            string fileName = @"\\10.10.5.6\DoorExportFiles\DoorsNightlyRawDataProcessed";
             fileName = fileName + opDate.Year.ToString() + get2Digit(opDate.Month.ToString()) + get2Digit(opDate.Day.ToString());
 
             //Console.WriteLine(fileName);

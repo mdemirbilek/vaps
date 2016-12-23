@@ -134,9 +134,9 @@ namespace LightSwitchApplication
             {
                 wh.Exception = "Holiday";
                 wh.Note = holiday.Name;
-                wh.StdWorkingHour = 0;
-                wh.AssignedWorkingHour = 0;
-                wh.HourDiff = 0;
+                wh.StdWorkingHour = holiday.WorkingHour;
+                wh.AssignedWorkingHour = holiday.WorkingHour;
+                wh.HourDiff = -1 * holiday.WorkingHour;
             }
 
             wh.MinuteDiff = 0;

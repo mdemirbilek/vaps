@@ -199,6 +199,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WHController.cs" />
     <Compile Include="Controllers\WHMonthliesController.cs" />
+    <Compile Include="Controllers\WHPrintoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -243,6 +244,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\Local101.pubxml" />
+    <None Include="Properties\PublishProfiles\ToServer30.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -298,6 +300,12 @@
     <Content Include="Views\WHMonthlies\Details.cshtml" />
     <Content Include="Views\WHMonthlies\Edit.cshtml" />
     <Content Include="Views\WHMonthlies\Index.cshtml" />
+    <Content Include="Views\WHPrinto\Create.cshtml" />
+    <Content Include="Views\WHPrinto\Delete.cshtml" />
+    <Content Include="Views\WHPrinto\Details.cshtml" />
+    <Content Include="Views\WHPrinto\Edit.cshtml" />
+    <Content Include="Views\WHPrinto\Index.cshtml" />
+    <Content Include="Views\WHPrinto\Printo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -30,6 +30,7 @@
         <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="Faculty_University" Type="Edm.Int32" Nullable="false" />
+        <Property Name="hrPerson_erpFaculty" Type="Edm.Int32" Nullable="false" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -38,6 +39,8 @@
         <NavigationProperty Name="erpUniversity" Relationship="LightSwitchApplication.erpFaculty_erpUniversity" ToRole="erpUniversity" FromRole="erpFaculty" />
         <NavigationProperty Name="sylAcademicDepartment" Relationship="LightSwitchApplication.erpAcademicDepartment_erpFaculty" ToRole="erpAcademicDepartment" FromRole="erpFaculty" />
         <NavigationProperty Name="hrEmpAcademicProfileByHRs" Relationship="LightSwitchApplication.hrEmpAcademicProfileByHR_erpFaculty" ToRole="hrEmpAcademicProfileByHR" FromRole="erpFaculty" />
+        <NavigationProperty Name="Dean" Relationship="LightSwitchApplication.hrPerson_erpFaculty" ToRole="hrPerson" FromRole="erpFaculty" />
+        <NavigationProperty Name="ViceDeans" Relationship="LightSwitchApplication.hrPerson_erpFaculty1" ToRole="hrPerson" FromRole="erpFaculty" />
       </EntityType>
       <EntityType Name="erpHRAccountingPeriod">
         <Key>
@@ -97,6 +100,7 @@
         </Key>
         <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="erpUniversity_hrPerson" Type="Edm.Int32" Nullable="false" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -105,6 +109,8 @@
         <NavigationProperty Name="erpFaculty" Relationship="LightSwitchApplication.erpFaculty_erpUniversity" ToRole="erpFaculty" FromRole="erpUniversity" />
         <NavigationProperty Name="hrEmpProfiles" Relationship="LightSwitchApplication.hrEmpProfile_erpUniversity" ToRole="hrEmpProfile" FromRole="erpUniversity" />
         <NavigationProperty Name="hrEmpAcademicProfileByHRs" Relationship="LightSwitchApplication.hrEmpAcademicProfileByHR_erpUniversity" ToRole="hrEmpAcademicProfileByHR" FromRole="erpUniversity" />
+        <NavigationProperty Name="Rector" Relationship="LightSwitchApplication.erpUniversity_hrPerson" ToRole="hrPerson" FromRole="erpUniversity" />
+        <NavigationProperty Name="ViceRectors" Relationship="LightSwitchApplication.erpUniversity_hrPerson1" ToRole="hrPerson" FromRole="erpUniversity" />
       </EntityType>
       <EntityType Name="hrAddress">
         <Key>
@@ -491,6 +497,8 @@
         <Property Name="DoorSysID" Type="Edm.String" Nullable="false" MaxLength="255" />
         <Property Name="hrPerson_hrPerson" Type="Edm.Int32" />
         <Property Name="erpAcademicDepartment_hrPerson1" Type="Edm.Int32" />
+        <Property Name="erpUniversity_hrPerson1" Type="Edm.Int32" />
+        <Property Name="hrPerson_erpFaculty1" Type="Edm.Int32" />
         <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
         <Property Name="Created" Type="Edm.DateTimeOffset" />
         <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
@@ -500,8 +508,8 @@
         <NavigationProperty Name="ManagerOf" Relationship="LightSwitchApplication.hrDepartment_hrPerson" ToRole="hrDepartment" FromRole="hrPerson" />
         <NavigationProperty Name="hrWorkingHour" Relationship="LightSwitchApplication.hrWorkingHour_hrPerson" ToRole="hrWorkingHour" FromRole="hrPerson" />
         <NavigationProperty Name="SyllabusCollection" Relationship="LightSwitchApplication.sylSyllabus_hrPerson" ToRole="sylSyllabus" FromRole="hrPerson" />
-        <NavigationProperty Name="erpAcademicDepartment" Relationship="LightSwitchApplication.hrPerson_erpAcademicDepartment" ToRole="erpAcademicDepartment" FromRole="hrPerson" />
-        <NavigationProperty Name="sylAcademicDepartment1" Relationship="LightSwitchApplication.erpAcademicDepartment_hrPerson" ToRole="erpAcademicDepartment" FromRole="hrPerson" />
+        <NavigationProperty Name="AcademicDepartment" Relationship="LightSwitchApplication.hrPerson_erpAcademicDepartment" ToRole="erpAcademicDepartment" FromRole="hrPerson" />
+        <NavigationProperty Name="AcademicHeadOf" Relationship="LightSwitchApplication.erpAcademicDepartment_hrPerson" ToRole="erpAcademicDepartment" FromRole="hrPerson" />
         <NavigationProperty Name="sylCourseTeacher" Relationship="LightSwitchApplication.sylCourseTeacher_hrPerson" ToRole="sylCourseTeacher" FromRole="hrPerson" />
         <NavigationProperty Name="sylSyllabi" Relationship="LightSwitchApplication.sylSyllabus_hrPerson1" ToRole="sylSyllabus" FromRole="hrPerson" />
         <NavigationProperty Name="hrEmpProfile" Relationship="LightSwitchApplication.hrEmpProfile_hrPerson" ToRole="hrEmpProfile" FromRole="hrPerson" />
@@ -523,7 +531,11 @@
         <NavigationProperty Name="hrEmpCourses" Relationship="LightSwitchApplication.hrEmpCourse_hrPerson" ToRole="hrEmpCourse" FromRole="hrPerson" />
         <NavigationProperty Name="Supervised" Relationship="LightSwitchApplication.hrPerson_hrPerson" ToRole="hrPerson2" FromRole="hrPerson1" />
         <NavigationProperty Name="Supervisor" Relationship="LightSwitchApplication.hrPerson_hrPerson" ToRole="hrPerson1" FromRole="hrPerson2" />
-        <NavigationProperty Name="erpAcademicDepartment1" Relationship="LightSwitchApplication.erpAcademicDepartment_hrPerson1" ToRole="erpAcademicDepartment" FromRole="hrPerson" />
+        <NavigationProperty Name="ViceHeadOf" Relationship="LightSwitchApplication.erpAcademicDepartment_hrPerson1" ToRole="erpAcademicDepartment" FromRole="hrPerson" />
+        <NavigationProperty Name="RectorOf" Relationship="LightSwitchApplication.erpUniversity_hrPerson" ToRole="erpUniversity" FromRole="hrPerson" />
+        <NavigationProperty Name="ViceRectorOf" Relationship="LightSwitchApplication.erpUniversity_hrPerson1" ToRole="erpUniversity" FromRole="hrPerson" />
+        <NavigationProperty Name="DeanOf" Relationship="LightSwitchApplication.hrPerson_erpFaculty" ToRole="erpFaculty" FromRole="hrPerson" />
+        <NavigationProperty Name="ViceDeanOf" Relationship="LightSwitchApplication.hrPerson_erpFaculty1" ToRole="erpFaculty" FromRole="hrPerson" />
       </EntityType>
       <EntityType Name="hrWorkingHour">
         <Key>
@@ -863,6 +875,20 @@
         <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
         <NavigationProperty Name="sylTeachingMethod" Relationship="LightSwitchApplication.sylWorkloadStructure_sylTeachingMethod" ToRole="sylTeachingMethod" FromRole="sylWorkloadStructure" />
         <NavigationProperty Name="sylSyllabus" Relationship="LightSwitchApplication.sylWorkloadStructure_sylSyllabus" ToRole="sylSyllabus" FromRole="sylWorkloadStructure" />
+      </EntityType>
+      <EntityType Name="hrHoliday">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="Year" Type="Edm.Int32" Nullable="false" />
+        <Property Name="HolidayDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Created" Type="Edm.DateTimeOffset" />
+        <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+        <Property Name="Modified" Type="Edm.DateTimeOffset" />
+        <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
       </EntityType>
       <Association Name="sylCourse_erpAcademicDepartment">
         <End Role="erpAcademicDepartment" Type="LightSwitchApplication.erpAcademicDepartment" Multiplicity="1" />
@@ -1610,6 +1636,58 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
+      <Association Name="erpUniversity_hrPerson">
+        <End Role="hrPerson" Type="LightSwitchApplication.hrPerson" Multiplicity="1" />
+        <End Role="erpUniversity" Type="LightSwitchApplication.erpUniversity" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="hrPerson">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="erpUniversity">
+            <PropertyRef Name="erpUniversity_hrPerson" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="erpUniversity_hrPerson1">
+        <End Role="erpUniversity" Type="LightSwitchApplication.erpUniversity" Multiplicity="0..1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Role="hrPerson" Type="LightSwitchApplication.hrPerson" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="erpUniversity">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="hrPerson">
+            <PropertyRef Name="erpUniversity_hrPerson1" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="hrPerson_erpFaculty">
+        <End Role="hrPerson" Type="LightSwitchApplication.hrPerson" Multiplicity="1">
+          <OnDelete Action="Cascade" />
+        </End>
+        <End Role="erpFaculty" Type="LightSwitchApplication.erpFaculty" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="hrPerson">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="erpFaculty">
+            <PropertyRef Name="hrPerson_erpFaculty" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+      <Association Name="hrPerson_erpFaculty1">
+        <End Role="erpFaculty" Type="LightSwitchApplication.erpFaculty" Multiplicity="0..1" />
+        <End Role="hrPerson" Type="LightSwitchApplication.hrPerson" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="erpFaculty">
+            <PropertyRef Name="Id" />
+          </Principal>
+          <Dependent Role="hrPerson">
+            <PropertyRef Name="hrPerson_erpFaculty1" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
       <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
         <EntitySet Name="erpAcademicDepartments" EntityType="LightSwitchApplication.erpAcademicDepartment" />
         <EntitySet Name="erpFaculties" EntityType="LightSwitchApplication.erpFaculty" />
@@ -1653,6 +1731,7 @@
         <EntitySet Name="sylSyllabusTopics" EntityType="LightSwitchApplication.sylSyllabusTopic" />
         <EntitySet Name="sylTeachingMethods" EntityType="LightSwitchApplication.sylTeachingMethod" />
         <EntitySet Name="sylWorkloadStructures" EntityType="LightSwitchApplication.sylWorkloadStructure" />
+        <EntitySet Name="hrHolidays" EntityType="LightSwitchApplication.hrHoliday" />
         <AssociationSet Name="sylCourse_erpAcademicDepartment" Association="LightSwitchApplication.sylCourse_erpAcademicDepartment">
           <End Role="erpAcademicDepartment" EntitySet="erpAcademicDepartments" />
           <End Role="sylCourse" EntitySet="sylCourses" />
@@ -1897,6 +1976,22 @@
           <End Role="sylTeachingMethod" EntitySet="sylTeachingMethods" />
           <End Role="sylWorkloadStructure" EntitySet="sylWorkloadStructures" />
         </AssociationSet>
+        <AssociationSet Name="erpUniversity_hrPerson" Association="LightSwitchApplication.erpUniversity_hrPerson">
+          <End Role="hrPerson" EntitySet="hrPeople" />
+          <End Role="erpUniversity" EntitySet="erpUniversities" />
+        </AssociationSet>
+        <AssociationSet Name="erpUniversity_hrPerson1" Association="LightSwitchApplication.erpUniversity_hrPerson1">
+          <End Role="erpUniversity" EntitySet="erpUniversities" />
+          <End Role="hrPerson" EntitySet="hrPeople" />
+        </AssociationSet>
+        <AssociationSet Name="hrPerson_erpFaculty" Association="LightSwitchApplication.hrPerson_erpFaculty">
+          <End Role="hrPerson" EntitySet="hrPeople" />
+          <End Role="erpFaculty" EntitySet="erpFaculties" />
+        </AssociationSet>
+        <AssociationSet Name="hrPerson_erpFaculty1" Association="LightSwitchApplication.hrPerson_erpFaculty1">
+          <End Role="erpFaculty" EntitySet="erpFaculties" />
+          <End Role="hrPerson" EntitySet="hrPeople" />
+        </AssociationSet>
         <FunctionImport Name="byPerson" EntitySet="hrWorkingHours" ReturnType="Collection(LightSwitchApplication.hrWorkingHour)" m:HttpMethod="GET">
           <Parameter Name="personId" Type="Edm.Int32" Mode="In" />
         </FunctionImport>
@@ -1915,6 +2010,9 @@
         </FunctionImport>
         <FunctionImport Name="bySupervisor" EntitySet="hrPeople" ReturnType="Collection(LightSwitchApplication.hrPerson)" m:HttpMethod="GET">
           <Parameter Name="LSUser" Type="Edm.String" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="byHoliday" EntitySet="hrHolidays" ReturnType="LightSwitchApplication.hrHoliday" m:HttpMethod="GET">
+          <Parameter Name="HolidayDate" Type="Edm.DateTime" Mode="In" />
         </FunctionImport>
         <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
           <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />

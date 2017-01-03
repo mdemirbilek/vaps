@@ -53,7 +53,7 @@ namespace LightSwitchApplication
 
         public static void InsertDates(hrPerson person)
         {
-            DateTime firstDate = DateTime.Parse("2016-10-01");
+            DateTime firstDate = DateTime.Parse("2016-11-01");
             DateTime lastDate = DateTime.Parse("2017-12-31");
             DateTime actualDate = firstDate;
             bool isExist = false;
@@ -132,7 +132,7 @@ namespace LightSwitchApplication
             hrHoliday holiday = GetHoliday(dt);
             if (holiday != null)
             {
-                wh.Exception = "Holiday";
+                //wh.Exception = "PH";
                 wh.Note = holiday.Name;
                 wh.StdWorkingHour = holiday.WorkingHour;
                 wh.AssignedWorkingHour = holiday.WorkingHour;
@@ -240,6 +240,13 @@ namespace LightSwitchApplication
                 entity.TotalMinutes = timeSpan.Minutes;
                 entity.HourDiff = minuteDiff / 60;
                 entity.MinuteDiff = minuteDiff % 60;
+
+                // 8 saatten sonrasını saymıyoruz!
+                if (workedMinute >= 480)
+                {
+                    entity.TotalHours = 8;
+                    entity.TotalMinutes = 0;
+                }
 
                 if (entity.Details.Properties.IsOTAccepted.OriginalValue == false && entity.IsOTAccepted == true)
                 {

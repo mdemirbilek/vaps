@@ -22,6 +22,7 @@ namespace DoorDataProcessor
             int m = 0;
             int d = 0;
             int dateDiffAsDay = 0;
+            int personId = 0;
             DateTime opDate = DateTime.Today;
 
             try
@@ -52,6 +53,14 @@ namespace DoorDataProcessor
             catch (Exception ex)
             {
                 dateDiffAsDay = 0;
+            }
+            try
+            {
+                personId = int.Parse(args[5].Trim().ToString());
+            }
+            catch (Exception ex)
+            {
+                personId = 0;
             }
 
             if (y > 0 && m > 0 && d > 0)
@@ -86,6 +95,11 @@ namespace DoorDataProcessor
             else if (op == "addheader")
             {
                 AddHeaderLine(opDate);
+            }
+            else if (op == "updateperson")
+            {
+                //personId = 111;
+                UpdatePeople(personId);
             }
 
         }
@@ -278,7 +292,11 @@ namespace DoorDataProcessor
                         doorTime.HourDiff = minuteDiff / 60;
                         doorTime.MinuteDiff = minuteDiff % 60;
 
-
+                        if (workedMinute >= 480)
+                        {
+                            doorTime.TotalHours = 8;
+                            doorTime.TotalMinutes = 0;
+                        }
 
 
                         vsr.UpdateObject(doorTime);
@@ -341,6 +359,42 @@ namespace DoorDataProcessor
             table.Columns.Add("DoorGPF2", typeof(string));
 
             return table;
+        }
+
+        private static void UpdatePeople(int pId)
+        {
+            var doorsDb = new DOORSEntities();
+            var verpsDb = new VERPSEntities();
+            string vUser = Properties.Settings.Default.vUser;
+            string vPass = Properties.Settings.Default.vPass;
+            string vUri = Properties.Settings.Default.vUri;
+
+            System.Uri myUri = new Uri(vUri);
+            VERPSServiceReference.ApplicationData vsr = new VERPSServiceReference.ApplicationData(myUri);
+            vsr.Credentials = new NetworkCredential(vUser, vPass, "adm");
+
+            try
+            {
+                var person = vsr.hrPeople.Where(p => p.Id == pId).SingleOrDefault();
+                if (person != null)
+                {
+                    person.AccessCardID = DateTime.Now.ToString();
+                    vsr.UpdateObject(person);
+                    Console.WriteLine("OK");
+                }
+                else
+                {
+                    Console.WriteLine("YOK!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("CART!");
+            }
+
+            vsr.SaveChanges();
+
+            Console.WriteLine("DONE!");
         }
 
     }

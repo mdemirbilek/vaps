@@ -157,6 +157,28 @@
             Value="u. ojcowski" />
           <SupportedValue
             Value="u. wychowawczy" />
+          <SupportedValue
+            Value="u. okolicznościowy" />
+          <SupportedValue
+            Value="u. naukowy" />
+          <SupportedValue
+            Value="op. na dziecko" />
+          <SupportedValue
+            Value="choroba" />
+          <SupportedValue
+            Value="zasiłek cho/op" />
+          <SupportedValue
+            Value="inna" />
+          <SupportedValue
+            Value="nieobecność nieuspr." />
+          <SupportedValue
+            Value="odbiór godzin" />
+          <SupportedValue
+            Value="delegacja" />
+          <SupportedValue
+            Value="praca zdalna" />
+          <SupportedValue
+            Value="świadczenie reh." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

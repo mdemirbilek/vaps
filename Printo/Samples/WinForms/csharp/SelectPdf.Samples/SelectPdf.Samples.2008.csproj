@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10DBE1D3-71D5-4024-9431-3F3A4B0D2DB6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SelectPdf.Samples</RootNamespace>
+    <AssemblyName>SelectPdf.Samples</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ColorCode, Version=1.0.1.62759, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ColorCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Select.HtmlToPdf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Assemblies\net20\Select.HtmlToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutomaticBookmarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutomaticBookmarks.Designer.cs">
+      <DependentUpon>AutomaticBookmarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConversionDelay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConversionDelay.Designer.cs">
+      <DependentUpon>ConversionDelay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertHtmlCodeToPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertHtmlCodeToPdf.Designer.cs">
+      <DependentUpon>ConvertHtmlCodeToPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertUrlToPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertUrlToPdf.Designer.cs">
+      <DependentUpon>ConvertUrlToPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="HtmlToPdfConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlToPdfConverter.Designer.cs">
+      <DependentUpon>HtmlToPdfConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlToPdfConverterLinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlToPdfConverterLinks.Designer.cs">
+      <DependentUpon>HtmlToPdfConverterLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlToPdfHeadersAndFooters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlToPdfHeadersAndFooters.Designer.cs">
+      <DependentUpon>HtmlToPdfHeadersAndFooters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HttpCookies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HttpCookies.Designer.cs">
+      <DependentUpon>HttpCookies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHeaders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HttpHeaders.Designer.cs">
+      <DependentUpon>HttpHeaders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MediaTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MediaTypes.Designer.cs">
+      <DependentUpon>MediaTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBreaks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBreaks.Designer.cs">
+      <DependentUpon>PageBreaks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfConverterProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfConverterProperties.Designer.cs">
+      <DependentUpon>PdfConverterProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfConverterSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfConverterSecurity.Designer.cs">
+      <DependentUpon>PdfConverterSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfConverterViewerPreferences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfConverterViewerPreferences.Designer.cs">
+      <DependentUpon>PdfConverterViewerPreferences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AutomaticBookmarks.resx">
+      <DependentUpon>AutomaticBookmarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConversionDelay.resx">
+      <DependentUpon>ConversionDelay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConvertHtmlCodeToPdf.resx">
+      <DependentUpon>ConvertHtmlCodeToPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConvertUrlToPdf.resx">
+      <DependentUpon>ConvertUrlToPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlToPdfConverter.resx">
+      <DependentUpon>HtmlToPdfConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlToPdfConverterLinks.resx">
+      <DependentUpon>HtmlToPdfConverterLinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlToPdfHeadersAndFooters.resx">
+      <DependentUpon>HtmlToPdfHeadersAndFooters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HttpCookies.resx">
+      <DependentUpon>HttpCookies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HttpHeaders.resx">
+      <DependentUpon>HttpHeaders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MediaTypes.resx">
+      <DependentUpon>MediaTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBreaks.resx">
+      <DependentUpon>PageBreaks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfConverterProperties.resx">
+      <DependentUpon>PdfConverterProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfConverterSecurity.resx">
+      <DependentUpon>PdfConverterSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfConverterViewerPreferences.resx">
+      <DependentUpon>PdfConverterViewerPreferences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="files\doc.pdf" />
+    <None Include="files\doc1.pdf" />
+    <None Include="files\doc2.pdf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="files\document.html" />
+    <Content Include="files\footer.html" />
+    <Content Include="files\header.html" />
+    <Content Include="files\js-conversion.html" />
+    <Content Include="files\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>copy $(SolutionDir)\..\..\..\Assemblies\net20\Select.Html.dep $(TargetDir)\Select.Html.dep</PreBuildEvent>
+  </PropertyGroup>
+</Project>

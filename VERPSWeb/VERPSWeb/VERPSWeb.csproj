@@ -306,6 +306,7 @@
     <Content Include="Views\WHPrinto\Edit.cshtml" />
     <Content Include="Views\WHPrinto\Index.cshtml" />
     <Content Include="Views\WHPrinto\Printo.cshtml" />
+    <Content Include="Views\Shared\_pLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

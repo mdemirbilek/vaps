@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<VERPSWeb.vwWHMonthly>
 
 @{
+    Layout = "~/Views/Shared/_pLayout.cshtml";
     ViewBag.Title = "Working Hours";
 }
 
-<h3><b>@ViewBag.wh.FullName</b>, working hours during <b>@ViewBag.wh.RecYear - @ViewBag.wh.RecMonth</b></h3>
+<h4><b>@ViewBag.wh.FullName</b>, working hours during <b>@ViewBag.wh.RecYear - @ViewBag.wh.RecMonth</b></h4>
 
 <table class="table">
     <tr>
@@ -23,7 +24,7 @@
     </tr>
 </table>
 <table class="table">
-    <caption><h3>Daily Working Hour Details</h3></caption>
+    <caption><h4>Daily Working Hour Details</h4></caption>
     <tr>
         <th>
             Date

@@ -63,6 +63,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pringWHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +84,7 @@
             // fileMenu
             // 
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pringWHToolStripMenuItem,
             this.visitSelectPdf,
             this.samplesToolStripMenuItem,
             this.toolStripSeparator5,
@@ -330,6 +332,13 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
+            // pringWHToolStripMenuItem
+            // 
+            this.pringWHToolStripMenuItem.Name = "pringWHToolStripMenuItem";
+            this.pringWHToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.pringWHToolStripMenuItem.Text = "Pring WH";
+            this.pringWHToolStripMenuItem.Click += new System.EventHandler(this.pringWHToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +399,7 @@
         private System.Windows.Forms.ToolStripMenuItem hTTPCookiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mediaTypesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem internalAndExternalLinksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pringWHToolStripMenuItem;
     }
 }
 

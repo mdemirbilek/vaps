@@ -79,6 +79,7 @@
             this.LblSampleCode.Size = new System.Drawing.Size(114, 15);
             this.LblSampleCode.TabIndex = 16;
             this.LblSampleCode.Text = "Sample Code C#";
+            this.LblSampleCode.Visible = false;
             // 
             // WBSampleCode
             // 
@@ -90,6 +91,7 @@
             this.WBSampleCode.Name = "WBSampleCode";
             this.WBSampleCode.Size = new System.Drawing.Size(825, 179);
             this.WBSampleCode.TabIndex = 15;
+            this.WBSampleCode.Visible = false;
             // 
             // BtnCreatePdf
             // 
@@ -270,6 +272,7 @@
             this.btnGetList.TabIndex = 34;
             this.btnGetList.Text = "Get List";
             this.btnGetList.UseVisualStyleBackColor = true;
+            this.btnGetList.Visible = false;
             // 
             // ConvertUrlToPdf
             // 

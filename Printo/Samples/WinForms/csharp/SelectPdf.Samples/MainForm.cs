@@ -173,5 +173,12 @@ namespace SelectPdf.Samples
         {
             System.Diagnostics.Process.Start("http://selectpdf.com/html-to-pdf/docs/");
         }
+
+        private void pringWHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConvertUrlToPdf form = new ConvertUrlToPdf();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

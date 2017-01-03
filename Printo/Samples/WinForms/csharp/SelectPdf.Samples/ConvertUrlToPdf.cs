@@ -17,21 +17,36 @@ namespace SelectPdf.Samples
         private void BtnCreatePdf_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-
-            VERPSEntities db = new VERPSEntities();
-
-            var list = db.vwWHheaders.Where(x => x.RecYear == 2016 && x.RecMonth == 12).ToList();
-
-
-
-
-
-            string txt = TxtUrl.Text;
-            string[] lst = txt.Split(new Char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string url in lst)
+            int year = 0;
+            int month = 0;
+            try
             {
-                MakeFile(@"Doc" + DateTime.Now.Millisecond.ToString() + ".pdf", url);
+                year = int.Parse(txtYear.Text.Trim());
+                month = int.Parse(txtMonth.Text.Trim());
+            }
+            catch (Exception)
+            {
+                year = 0;
+                month = 0;
+            }
+
+            if (year == 0 || month == 0)
+            {
+                MessageBox.Show("Parametreler Yamuk!");
+                Cursor = Cursors.Arrow;
+            }
+            else
+            {
+                VERPSEntities db = new VERPSEntities();
+                var list = db.vwWHheaders.Where(x => x.RecYear == year && x.RecMonth == month).ToList();
+
+                foreach (var item in list)
+                {
+                    vwWHheader header = (vwWHheader)item;
+                    MakeFile(@"WH_" + item.FullName.Trim() + "_" + year.ToString() + "_" + month.ToString() + ".pdf", TxtUrl.Text.Trim() + item.Id.ToString());
+                }
+                MessageBox.Show("Yeah!");
+                Cursor = Cursors.Arrow;
             }
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConvertUrlToPdf));
             this.TxtUrl = new System.Windows.Forms.TextBox();
             this.LblUrl = new System.Windows.Forms.Label();
             this.LblSampleCode = new System.Windows.Forms.Label();
@@ -51,6 +52,10 @@
             this.txtMonth = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnGetList = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEmailSubject = new System.Windows.Forms.TextBox();
+            this.txtEmailText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TxtUrl
@@ -74,7 +79,7 @@
             // 
             this.LblSampleCode.AutoSize = true;
             this.LblSampleCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSampleCode.Location = new System.Drawing.Point(27, 338);
+            this.LblSampleCode.Location = new System.Drawing.Point(447, 391);
             this.LblSampleCode.Name = "LblSampleCode";
             this.LblSampleCode.Size = new System.Drawing.Size(114, 15);
             this.LblSampleCode.TabIndex = 16;
@@ -86,10 +91,10 @@
             this.WBSampleCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.WBSampleCode.Location = new System.Drawing.Point(30, 356);
+            this.WBSampleCode.Location = new System.Drawing.Point(450, 409);
             this.WBSampleCode.MinimumSize = new System.Drawing.Size(20, 20);
             this.WBSampleCode.Name = "WBSampleCode";
-            this.WBSampleCode.Size = new System.Drawing.Size(825, 179);
+            this.WBSampleCode.Size = new System.Drawing.Size(405, 178);
             this.WBSampleCode.TabIndex = 15;
             this.WBSampleCode.Visible = false;
             // 
@@ -220,7 +225,7 @@
             this.txtDocFolder.Name = "txtDocFolder";
             this.txtDocFolder.Size = new System.Drawing.Size(302, 20);
             this.txtDocFolder.TabIndex = 29;
-            this.txtDocFolder.Text = "D:\\WHPrinto";
+            this.txtDocFolder.Text = "D:\\WHPrinto\\";
             // 
             // label2
             // 
@@ -266,19 +271,61 @@
             // 
             // btnGetList
             // 
-            this.btnGetList.Location = new System.Drawing.Point(327, 205);
+            this.btnGetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnGetList.Location = new System.Drawing.Point(272, 300);
             this.btnGetList.Name = "btnGetList";
             this.btnGetList.Size = new System.Drawing.Size(75, 23);
             this.btnGetList.TabIndex = 34;
-            this.btnGetList.Text = "Get List";
-            this.btnGetList.UseVisualStyleBackColor = true;
-            this.btnGetList.Visible = false;
+            this.btnGetList.Text = "Send Email";
+            this.btnGetList.UseVisualStyleBackColor = false;
+            this.btnGetList.Click += new System.EventHandler(this.btnGetList_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(27, 391);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 15);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Email Text";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(27, 360);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 15);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Email Subject:";
+            // 
+            // txtEmailSubject
+            // 
+            this.txtEmailSubject.Location = new System.Drawing.Point(129, 360);
+            this.txtEmailSubject.Name = "txtEmailSubject";
+            this.txtEmailSubject.Size = new System.Drawing.Size(302, 20);
+            this.txtEmailSubject.TabIndex = 38;
+            this.txtEmailSubject.Text = "Monthly Working Hours";
+            // 
+            // txtEmailText
+            // 
+            this.txtEmailText.Location = new System.Drawing.Point(30, 409);
+            this.txtEmailText.Multiline = true;
+            this.txtEmailText.Name = "txtEmailText";
+            this.txtEmailText.Size = new System.Drawing.Size(401, 178);
+            this.txtEmailText.TabIndex = 39;
+            this.txtEmailText.Text = resources.GetString("txtEmailText.Text");
             // 
             // ConvertUrlToPdf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(884, 613);
+            this.Controls.Add(this.txtEmailText);
+            this.Controls.Add(this.txtEmailSubject);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGetList);
             this.Controls.Add(this.txtMonth);
             this.Controls.Add(this.label4);
@@ -334,5 +381,9 @@
         private System.Windows.Forms.TextBox txtMonth;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnGetList;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtEmailSubject;
+        private System.Windows.Forms.TextBox txtEmailText;
     }
 }

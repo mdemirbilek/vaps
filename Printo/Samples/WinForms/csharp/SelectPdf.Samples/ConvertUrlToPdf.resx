@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtEmailText.Text" xml:space="preserve">
+    <value>Dear Employee;
+
+You can find your monthly working hours as attachment.
+Please print it and deliver to HR Department.
+
+Please note that, this is not an observable mail address. Consult to HR for any of your concern.
+
+Best Regards,
+Vistula Internal Comm.
+
+---
+
+Szanowny Pan/Pani,
+
+W załączniku może Pan/Pani znaleźć miesięczny czas pracy.
+Prosimy to drukować i podać do działu kadr.
+
+Prosimy nie odpowiedzieć na ten mail. Jeżeli Pan/Pani będzie miał wątpliwości to proszę się skontaktować z działem kadr.
+
+Z poważaniem,
+Vistula Internal Comm.
+</value>
+  </data>
 </root>

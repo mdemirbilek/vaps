@@ -3270,7 +3270,7 @@
                   Name="TotalHours"
                   Kind="Value"
                   DataType=":Int32?"
-                  View="Microsoft.LightSwitch.RichClient:Label">
+                  View="Microsoft.LightSwitch.RichClient:TextBox">
                   <ContentItem.Attributes>
                     <DisplayName
                       Value="Total Hrs" />
@@ -3302,7 +3302,7 @@
                   Name="TotalMinutes"
                   Kind="Value"
                   DataType=":Int32?"
-                  View="Microsoft.LightSwitch.RichClient:Label">
+                  View="Microsoft.LightSwitch.RichClient:TextBox">
                   <ContentItem.Attributes>
                     <DisplayName
                       Value="Total Min" />
@@ -3333,7 +3333,8 @@
                 <ContentItem
                   Name="WorkingTimeDiff"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.RichClient:TextBox">
                   <ContentItem.Attributes>
                     <DisplayName
                       Value="Time Diff" />
@@ -3390,6 +3391,20 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="UserStory"
+                  Kind="Value"
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.RichClient:Label">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrWorkingHour/Properties[UserStory]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
                   Name="Note"

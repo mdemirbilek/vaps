@@ -279,6 +279,15 @@
     <LightSwitchModel Include="DataSources\ApplicationData\byHoliday.lsml">
       <DependentUpon>hrHolidays.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\ApplicationData\plActivities.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaDegrees.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaSemesters.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaStudyModes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaStudentSets.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaActivityTypes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaObligationTypes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaEvalTypes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaRoomTypes.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

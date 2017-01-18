@@ -57,4 +57,11 @@
         Value="Employee Supervision" />
     </Permission.Attributes>
   </Permission>
+  <Permission
+    Name="Planning">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Planning" />
+    </Permission.Attributes>
+  </Permission>
 </ServiceApplication>

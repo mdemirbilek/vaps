@@ -42,8 +42,44 @@ namespace LightSwitchApplication
             result = Application.Current.User.HasPermission(Permissions.HRManagement);
         }
 
+        partial void AcaActivityTypes_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.Planning);
+        }
 
+        partial void AcaDegrees_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.Planning);
+        }
 
+        partial void AcaEvalTypes_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.Planning);
+        }
 
+        partial void AcaObligationTypes_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.Planning);
+        }
+
+        partial void AcaRoomTypes_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.Planning);
+        }
+
+        partial void AcaSemesters_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.Planning);
+        }
+
+        partial void AcaStudentSets_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.Planning);
+        }
+
+        partial void AcaStudyModes_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.Planning);
+        }
     }
 }

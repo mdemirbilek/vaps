@@ -55,6 +55,12 @@
         Target="ServiceInterface:EmployeeSupervision" />
     </Permission.Attributes>
   </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:Planning" />
+    </Permission.Attributes>
+  </Permission>
   <Application.Commands>
     <ApplicationCommand
       Name="ScreenCommandShowDepartments"
@@ -89,6 +95,30 @@
     <ApplicationCommand
       Name="ScreenCommandShowHolidays"
       Target="!module/Methods[ShowHolidays]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaActivityTypes"
+      Target="!module/Methods[ShowAcaActivityTypes]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaDegrees"
+      Target="!module/Methods[ShowAcaDegrees]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaEvalTypes"
+      Target="!module/Methods[ShowAcaEvalTypes]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaObligationTypes"
+      Target="!module/Methods[ShowAcaObligationTypes]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaRoomTypes"
+      Target="!module/Methods[ShowAcaRoomTypes]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaSemesters"
+      Target="!module/Methods[ShowAcaSemesters]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaStudentSets"
+      Target="!module/Methods[ShowAcaStudentSets]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaStudyModes"
+      Target="!module/Methods[ShowAcaStudyModes]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -158,6 +188,37 @@
       <ApplicationNavigationLink
         Name="link5"
         Command="!module/Commands[ScreenCommandShowCourses]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group2">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="ACA" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link7"
+        Command="!module/Commands[ScreenCommandShowAcaActivityTypes]" />
+      <ApplicationNavigationLink
+        Name="link6"
+        Command="!module/Commands[ScreenCommandShowAcaDegrees]" />
+      <ApplicationNavigationLink
+        Name="link8"
+        Command="!module/Commands[ScreenCommandShowAcaEvalTypes]" />
+      <ApplicationNavigationLink
+        Name="link9"
+        Command="!module/Commands[ScreenCommandShowAcaObligationTypes]" />
+      <ApplicationNavigationLink
+        Name="link10"
+        Command="!module/Commands[ScreenCommandShowAcaRoomTypes]" />
+      <ApplicationNavigationLink
+        Name="link11"
+        Command="!module/Commands[ScreenCommandShowAcaSemesters]" />
+      <ApplicationNavigationLink
+        Name="link12"
+        Command="!module/Commands[ScreenCommandShowAcaStudentSets]" />
+      <ApplicationNavigationLink
+        Name="link14"
+        Command="!module/Commands[ScreenCommandShowAcaStudyModes]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

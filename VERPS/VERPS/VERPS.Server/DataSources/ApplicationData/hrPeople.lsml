@@ -269,6 +269,11 @@
         Association="hrPerson_erpFaculty1"
         FromEnd="hrPerson"
         ToEnd="erpFaculty" />
+      <NavigationProperty
+        Name="plActivities"
+        Association="plActivity_hrPerson"
+        FromEnd="hrPerson"
+        ToEnd="plActivity" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -671,6 +676,16 @@
       <AssociationSetEnd
         Name="erpFaculty"
         EntitySet="erpFaculties" />
+    </AssociationSet>
+    <AssociationSet
+      Name="plActivity_hrPersons"
+      Association="plActivity_hrPerson">
+      <AssociationSetEnd
+        Name="plActivity"
+        EntitySet="plActivities" />
+      <AssociationSetEnd
+        Name="hrPerson"
+        EntitySet="hrPeople" />
     </AssociationSet>
   </EntityContainer>
   <DataService
@@ -1253,6 +1268,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="plActivity_hrPersons">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="plActivity_hrPersons" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[plActivity_hrPersons]/Members[plActivity]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="plActivity_hrPerson" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[plActivity_hrPersons]/Members[hrPerson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="hrDepartment_hrPerson">
@@ -1664,5 +1700,21 @@
       Name="erpFaculty"
       Multiplicity="Many"
       EntityType="erpFaculty" />
+  </Association>
+  <Association
+    Name="plActivity_hrPerson">
+    <AssociationEnd
+      Name="plActivity"
+      Multiplicity="Many"
+      EntityType="plActivity" />
+    <AssociationEnd
+      Name="hrPerson"
+      Multiplicity="One"
+      EntityType="hrPerson">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
   </Association>
 </ServiceApplication>

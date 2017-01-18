@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="erpLanguage">
+    Name="acaStudentSet">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -27,7 +27,7 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Language"
+        Name="Name"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
@@ -36,14 +36,9 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="hrEmpCourses"
-        Association="hrEmpCourse_erpLanguage"
-        FromEnd="erpLanguage"
-        ToEnd="hrEmpCourse" />
-      <NavigationProperty
         Name="plActivities"
-        Association="plActivity_erpLanguage"
-        FromEnd="erpLanguage"
+        Association="plActivity_acaStudentSet"
+        FromEnd="acaStudentSet"
         ToEnd="plActivity" />
       <EntityProperty
         Name="CreatedBy"
@@ -103,14 +98,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="erpLanguages"
+      Name="acaStudentSets"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="erpLanguage" />
+      EntityType="acaStudentSet" />
     <QueryOperation
-      Name="erpLanguages_Single"
-      ReturnType="erpLanguage">
+      Name="acaStudentSets_Single"
+      ReturnType="acaStudentSet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -136,7 +131,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="erpLanguages" />
+            Member="acaStudentSets" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -149,8 +144,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="erpLanguages_SingleOrDefault"
-      ReturnType="erpLanguage">
+      Name="acaStudentSets_SingleOrDefault"
+      ReturnType="acaStudentSet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -176,7 +171,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="erpLanguages" />
+            Member="acaStudentSets" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -189,36 +184,26 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Name="hrEmpCourse_erpLanguages"
-      Association="hrEmpCourse_erpLanguage">
-      <AssociationSetEnd
-        Name="hrEmpCourse"
-        EntitySet="hrEmpCourses" />
-      <AssociationSetEnd
-        Name="erpLanguage"
-        EntitySet="erpLanguages" />
-    </AssociationSet>
-    <AssociationSet
-      Name="plActivity_erpLanguages"
-      Association="plActivity_erpLanguage">
+      Name="plActivity_acaStudentSets"
+      Association="plActivity_acaStudentSet">
       <AssociationSetEnd
         Name="plActivity"
         EntitySet="plActivities" />
       <AssociationSetEnd
-        Name="erpLanguage"
-        EntitySet="erpLanguages" />
+        Name="acaStudentSet"
+        EntitySet="acaStudentSets" />
     </AssociationSet>
   </EntityContainer>
   <Association
-    Name="hrEmpCourse_erpLanguage">
+    Name="plActivity_acaStudentSet">
     <AssociationEnd
-      Name="hrEmpCourse"
+      Name="plActivity"
       Multiplicity="Many"
-      EntityType="hrEmpCourse" />
+      EntityType="plActivity" />
     <AssociationEnd
-      Name="erpLanguage"
+      Name="acaStudentSet"
       Multiplicity="One"
-      EntityType="erpLanguage">
+      EntityType="acaStudentSet">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -231,40 +216,19 @@
       <Partial />
     </DataService.Attributes>
     <AssociationSetMapping
-      AssociationSet="hrEmpCourse_erpLanguages">
+      AssociationSet="plActivity_acaStudentSets">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="hrEmpCourse_erpLanguages" />
+          Name="plActivity_acaStudentSets" />
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[hrEmpCourse_erpLanguages]/Members[hrEmpCourse]">
+          End="ApplicationData/Members[plActivity_acaStudentSets]/Members[plActivity]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="hrEmpCourse_erpLanguage" />
+              Name="plActivity_acaStudentSet" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[hrEmpCourse_erpLanguages]/Members[erpLanguage]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="plActivity_erpLanguages">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="plActivity_erpLanguages" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[plActivity_erpLanguages]/Members[plActivity]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="plActivity_erpLanguage" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[plActivity_erpLanguages]/Members[erpLanguage]">
+          End="ApplicationData/Members[plActivity_acaStudentSets]/Members[acaStudentSet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -273,20 +237,4 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
   </DataService>
-  <Association
-    Name="plActivity_erpLanguage">
-    <AssociationEnd
-      Name="plActivity"
-      Multiplicity="Many"
-      EntityType="plActivity" />
-    <AssociationEnd
-      Name="erpLanguage"
-      Multiplicity="One"
-      EntityType="erpLanguage">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
 </ServiceApplication>

@@ -268,6 +268,14 @@
     <LightSwitchModel Include="Screens\Syllabus\AcademicPeople.lsml" />
     <LightSwitchModel Include="Screens\Syllabus\Courses.lsml" />
     <LightSwitchModel Include="Screens\HRWH\Holidays.lsml" />
+    <LightSwitchModel Include="Screens\ACA\AcaActivityTypes.lsml" />
+    <LightSwitchModel Include="Screens\ACA\AcaDegrees.lsml" />
+    <LightSwitchModel Include="Screens\ACA\AcaEvalTypes.lsml" />
+    <LightSwitchModel Include="Screens\ACA\AcaObligationTypes.lsml" />
+    <LightSwitchModel Include="Screens\ACA\AcaRoomTypes.lsml" />
+    <LightSwitchModel Include="Screens\ACA\AcaSemesters.lsml" />
+    <LightSwitchModel Include="Screens\ACA\AcaStudentSets.lsml" />
+    <LightSwitchModel Include="Screens\ACA\AcaStudyModes.lsml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

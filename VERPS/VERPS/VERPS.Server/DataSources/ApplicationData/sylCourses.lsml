@@ -141,6 +141,11 @@
         Association="hrEmpCourse_sylCourse"
         FromEnd="sylCourse"
         ToEnd="hrEmpCourse" />
+      <NavigationProperty
+        Name="plActivities"
+        Association="plActivity_sylCourse"
+        FromEnd="sylCourse"
+        ToEnd="plActivity" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -324,6 +329,16 @@
         Name="sylCourse"
         EntitySet="sylCourses" />
     </AssociationSet>
+    <AssociationSet
+      Name="plActivity_sylCourses"
+      Association="plActivity_sylCourse">
+      <AssociationSetEnd
+        Name="plActivity"
+        EntitySet="plActivities" />
+      <AssociationSetEnd
+        Name="sylCourse"
+        EntitySet="sylCourses" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -439,6 +454,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="plActivity_sylCourses">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="plActivity_sylCourses" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[plActivity_sylCourses]/Members[plActivity]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="plActivity_sylCourse" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[plActivity_sylCourses]/Members[sylCourse]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="sylProgramCourse_sylCourse">
@@ -494,6 +530,22 @@
       Name="hrEmpCourse"
       Multiplicity="Many"
       EntityType="hrEmpCourse" />
+    <AssociationEnd
+      Name="sylCourse"
+      Multiplicity="One"
+      EntityType="sylCourse">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="plActivity_sylCourse">
+    <AssociationEnd
+      Name="plActivity"
+      Multiplicity="Many"
+      EntityType="plActivity" />
     <AssociationEnd
       Name="sylCourse"
       Multiplicity="One"

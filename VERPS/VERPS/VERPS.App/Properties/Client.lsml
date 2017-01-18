@@ -56,6 +56,12 @@
         Target="ServiceInterface:EmployeeSupervision" />
     </Permission.Attributes>
   </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:Planning" />
+    </Permission.Attributes>
+  </Permission>
   <Application.NavigationItems>
     <ApplicationNavigationMethodLink
       Name="link"

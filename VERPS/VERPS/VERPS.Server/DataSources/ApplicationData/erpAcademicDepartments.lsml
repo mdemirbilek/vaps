@@ -75,6 +75,11 @@
         Association="erpAcademicDepartment_hrPerson1"
         FromEnd="erpAcademicDepartment"
         ToEnd="hrPerson" />
+      <NavigationProperty
+        Name="plActivities"
+        Association="plActivity_erpAcademicDepartment"
+        FromEnd="erpAcademicDepartment"
+        ToEnd="plActivity" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -278,6 +283,16 @@
         Name="hrPerson"
         EntitySet="hrPeople" />
     </AssociationSet>
+    <AssociationSet
+      Name="plActivity_erpAcademicDepartments"
+      Association="plActivity_erpAcademicDepartment">
+      <AssociationSetEnd
+        Name="plActivity"
+        EntitySet="plActivities" />
+      <AssociationSetEnd
+        Name="erpAcademicDepartment"
+        EntitySet="erpAcademicDepartments" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping">
@@ -423,6 +438,27 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="plActivity_erpAcademicDepartments">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="plActivity_erpAcademicDepartments" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[plActivity_erpAcademicDepartments]/Members[plActivity]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="plActivity_erpAcademicDepartment" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[plActivity_erpAcademicDepartments]/Members[erpAcademicDepartment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
   <Association
     Name="sylCourse_erpAcademicDepartment">
@@ -517,5 +553,21 @@
       Name="hrPerson"
       Multiplicity="Many"
       EntityType="hrPerson" />
+  </Association>
+  <Association
+    Name="plActivity_erpAcademicDepartment">
+    <AssociationEnd
+      Name="plActivity"
+      Multiplicity="Many"
+      EntityType="plActivity" />
+    <AssociationEnd
+      Name="erpAcademicDepartment"
+      Multiplicity="One"
+      EntityType="erpAcademicDepartment">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
   </Association>
 </ServiceApplication>

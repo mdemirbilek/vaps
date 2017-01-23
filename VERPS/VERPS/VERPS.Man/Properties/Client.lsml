@@ -125,6 +125,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowTeachers"
       Target="!module/Methods[ShowTeachers]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowAcaStudyProfiles"
+      Target="!module/Methods[ShowAcaStudyProfiles]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -232,6 +235,9 @@
       <ApplicationNavigationLink
         Name="link17"
         Command="!module/Commands[ScreenCommandShowTeachers]" />
+      <ApplicationNavigationLink
+        Name="link18"
+        Command="!module/Commands[ScreenCommandShowAcaStudyProfiles]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

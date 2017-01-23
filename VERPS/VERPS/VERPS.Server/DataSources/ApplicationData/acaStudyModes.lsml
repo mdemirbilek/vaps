@@ -40,6 +40,11 @@
         Association="plActivity_acaStudyMode"
         FromEnd="acaStudyMode"
         ToEnd="plActivity" />
+      <NavigationProperty
+        Name="sylCourses"
+        Association="sylCourse_acaStudyMode"
+        FromEnd="acaStudyMode"
+        ToEnd="sylCourse" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -193,6 +198,16 @@
         Name="acaStudyMode"
         EntitySet="acaStudyModes" />
     </AssociationSet>
+    <AssociationSet
+      Name="sylCourse_acaStudyModes"
+      Association="sylCourse_acaStudyMode">
+      <AssociationSetEnd
+        Name="sylCourse"
+        EntitySet="sylCourses" />
+      <AssociationSetEnd
+        Name="acaStudyMode"
+        EntitySet="acaStudyModes" />
+    </AssociationSet>
   </EntityContainer>
   <Association
     Name="plActivity_acaStudyMode">
@@ -236,5 +251,42 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sylCourse_acaStudyModes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sylCourse_acaStudyModes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylCourse_acaStudyModes]/Members[sylCourse]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sylCourse_acaStudyMode" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[sylCourse_acaStudyModes]/Members[acaStudyMode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
+  <Association
+    Name="sylCourse_acaStudyMode">
+    <AssociationEnd
+      Name="sylCourse"
+      Multiplicity="Many"
+      EntityType="sylCourse" />
+    <AssociationEnd
+      Name="acaStudyMode"
+      Multiplicity="One"
+      EntityType="acaStudyMode">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
 </ServiceApplication>

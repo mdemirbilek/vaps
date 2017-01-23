@@ -292,6 +292,7 @@
     <LightSwitchModel Include="DataSources\ApplicationData\acaEvalTypes.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\acaRoomTypes.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\acaStaffs.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaStudyProfiles.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

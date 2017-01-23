@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="acaDegree">
+    Name="acaStudyProfile">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -36,14 +36,9 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="plActivities"
-        Association="plActivity_acaDegree"
-        FromEnd="acaDegree"
-        ToEnd="plActivity" />
-      <NavigationProperty
         Name="sylCourses"
-        Association="sylCourse_acaDegree"
-        FromEnd="acaDegree"
+        Association="sylCourse_acaStudyProfile"
+        FromEnd="acaStudyProfile"
         ToEnd="sylCourse" />
       <EntityProperty
         Name="CreatedBy"
@@ -103,14 +98,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="acaDegrees"
+      Name="acaStudyProfiles"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="acaDegree" />
+      EntityType="acaStudyProfile" />
     <QueryOperation
-      Name="acaDegrees_Single"
-      ReturnType="acaDegree">
+      Name="acaStudyProfiles_Single"
+      ReturnType="acaStudyProfile">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -136,7 +131,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="acaDegrees" />
+            Member="acaStudyProfiles" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -149,8 +144,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="acaDegrees_SingleOrDefault"
-      ReturnType="acaDegree">
+      Name="acaStudyProfiles_SingleOrDefault"
+      ReturnType="acaStudyProfile">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -176,7 +171,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="acaDegrees" />
+            Member="acaStudyProfiles" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -189,36 +184,26 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Name="plActivity_acaDegrees"
-      Association="plActivity_acaDegree">
-      <AssociationSetEnd
-        Name="plActivity"
-        EntitySet="plActivities" />
-      <AssociationSetEnd
-        Name="acaDegree"
-        EntitySet="acaDegrees" />
-    </AssociationSet>
-    <AssociationSet
-      Name="sylCourse_acaDegrees"
-      Association="sylCourse_acaDegree">
+      Name="sylCourse_acaStudyProfiles"
+      Association="sylCourse_acaStudyProfile">
       <AssociationSetEnd
         Name="sylCourse"
         EntitySet="sylCourses" />
       <AssociationSetEnd
-        Name="acaDegree"
-        EntitySet="acaDegrees" />
+        Name="acaStudyProfile"
+        EntitySet="acaStudyProfiles" />
     </AssociationSet>
   </EntityContainer>
   <Association
-    Name="plActivity_acaDegree">
+    Name="sylCourse_acaStudyProfile">
     <AssociationEnd
-      Name="plActivity"
+      Name="sylCourse"
       Multiplicity="Many"
-      EntityType="plActivity" />
+      EntityType="sylCourse" />
     <AssociationEnd
-      Name="acaDegree"
+      Name="acaStudyProfile"
       Multiplicity="One"
-      EntityType="acaDegree">
+      EntityType="acaStudyProfile">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -231,40 +216,19 @@
       <Partial />
     </DataService.Attributes>
     <AssociationSetMapping
-      AssociationSet="plActivity_acaDegrees">
+      AssociationSet="sylCourse_acaStudyProfiles">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="plActivity_acaDegrees" />
+          Name="sylCourse_acaStudyProfiles" />
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[plActivity_acaDegrees]/Members[plActivity]">
+          End="ApplicationData/Members[sylCourse_acaStudyProfiles]/Members[sylCourse]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="plActivity_acaDegree" />
+              Name="sylCourse_acaStudyProfile" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[plActivity_acaDegrees]/Members[acaDegree]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="sylCourse_acaDegrees">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="sylCourse_acaDegrees" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[sylCourse_acaDegrees]/Members[sylCourse]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="sylCourse_acaDegree" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[sylCourse_acaDegrees]/Members[acaDegree]">
+          End="ApplicationData/Members[sylCourse_acaStudyProfiles]/Members[acaStudyProfile]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -273,20 +237,4 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
   </DataService>
-  <Association
-    Name="sylCourse_acaDegree">
-    <AssociationEnd
-      Name="sylCourse"
-      Multiplicity="Many"
-      EntityType="sylCourse" />
-    <AssociationEnd
-      Name="acaDegree"
-      Multiplicity="One"
-      EntityType="acaDegree">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
 </ServiceApplication>

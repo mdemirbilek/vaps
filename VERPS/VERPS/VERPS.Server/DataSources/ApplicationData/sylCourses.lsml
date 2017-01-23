@@ -63,6 +63,21 @@
         FromEnd="sylCourse"
         ToEnd="erpAcademicDepartment" />
       <NavigationProperty
+        Name="StudyMode"
+        Association="sylCourse_acaStudyMode"
+        FromEnd="sylCourse"
+        ToEnd="acaStudyMode" />
+      <NavigationProperty
+        Name="StudyLevel"
+        Association="sylCourse_acaDegree"
+        FromEnd="sylCourse"
+        ToEnd="acaDegree" />
+      <NavigationProperty
+        Name="StudyProfile"
+        Association="sylCourse_acaStudyProfile"
+        FromEnd="sylCourse"
+        ToEnd="acaStudyProfile" />
+      <NavigationProperty
         Name="sylProgramCourse"
         Association="sylProgramCourse_sylCourse"
         FromEnd="sylCourse"
@@ -77,52 +92,6 @@
         Association="sylPrerequisite_sylCourse"
         FromEnd="sylCourse"
         ToEnd="sylPrerequisite" />
-      <EntityProperty
-        Name="StudyProfile"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-          <SupportedValue
-            Value="Academic" />
-          <SupportedValue
-            Value="Practical" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="StudyMode"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-          <SupportedValue
-            DisplayName="Part Time"
-            Value="PartTime" />
-          <SupportedValue
-            DisplayName="Full Time"
-            Value="FullTime" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="StudyLevel"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-          <SupportedValue
-            DisplayName="First Level"
-            Value="FirstLevel" />
-          <SupportedValue
-            DisplayName="Second Level"
-            Value="SecondLevel" />
-          <SupportedValue
-            DisplayName="Third Level"
-            Value="ThirdLevel" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <NavigationProperty
         Name="hrEmpCourses"
         Association="hrEmpCourse_sylCourse"
@@ -357,6 +326,18 @@
           Type="int" />
         <SsdlForeignKeyProperty
           Name="sylCourse_erpLanguage"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="sylCourse_acaStudyMode"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="sylCourse_acaDegree"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="sylCourse_acaStudyProfile"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

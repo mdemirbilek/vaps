@@ -5,10 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="People">
+    Name="Teachers">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
+      <DisplayName
+        Value="Aca Teachers" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -31,7 +33,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="People/Properties[hrPeople]" />
+                      Member="Teachers/Properties[hrPeople]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -53,6 +55,19 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="hrPerson/Properties[FullName]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Title"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrPerson/Properties[Title]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -159,7 +174,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="erpAcademicDepartment"
+                  Name="AcademicDepartment"
                   Kind="Details"
                   DataType="erpAcademicDepartment">
                   <ContentItem.DataSource>
@@ -711,7 +726,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="CreatedBy1"
+                  Name="CreatedBy"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -726,7 +741,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Created1"
+                  Name="Created"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -741,7 +756,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="ModifiedBy1"
+                  Name="ModifiedBy"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -756,7 +771,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Modified1"
+                  Name="Modified"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -861,7 +876,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="CreatedBy2"
+                  Name="CreatedBy1"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -876,7 +891,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Created2"
+                  Name="Created1"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -891,7 +906,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="ModifiedBy2"
+                  Name="ModifiedBy1"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -906,7 +921,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Modified2"
+                  Name="Modified1"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -1266,7 +1281,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="CreatedBy3"
+                  Name="CreatedBy2"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -1281,7 +1296,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Created3"
+                  Name="Created2"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -1296,7 +1311,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="ModifiedBy3"
+                  Name="ModifiedBy2"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -1311,7 +1326,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Modified3"
+                  Name="Modified2"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -1326,7 +1341,99 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="CreatedBy4"
+                  Name="Supervisor"
+                  Kind="Details"
+                  DataType="hrPerson">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrPerson/Properties[Supervisor]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate4"
+                    Kind="Details"
+                    DataType="hrPerson">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="ViceHeadOf"
+                  Kind="Details"
+                  DataType="erpAcademicDepartment">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrPerson/Properties[ViceHeadOf]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate5"
+                    Kind="Details"
+                    DataType="erpAcademicDepartment">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="ViceRectorOf"
+                  Kind="Details"
+                  DataType="erpUniversity">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrPerson/Properties[ViceRectorOf]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate6"
+                    Kind="Details"
+                    DataType="erpUniversity">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="ViceDeanOf"
+                  Kind="Details"
+                  DataType="erpFaculty">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="hrPerson/Properties[ViceDeanOf]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate7"
+                    Kind="Details"
+                    DataType="erpFaculty">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="CreatedBy3"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -1339,7 +1446,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Created4"
+                  Name="Created3"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -1352,7 +1459,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="ModifiedBy4"
+                  Name="ModifiedBy3"
                   Kind="Value"
                   DataType=":Person?">
                   <ContentItem.DataSource>
@@ -1365,7 +1472,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Modified4"
+                  Name="Modified3"
                   Kind="Value"
                   DataType=":DateTimeOffset?">
                   <ContentItem.DataSource>
@@ -1386,7 +1493,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="People/Properties[hrPeople]" />
+                          Member="Teachers/Properties[hrPeople]" />
                         <CallExpression
                           Target="AddAndEditNew" />
                       </ChainExpression>
@@ -1400,7 +1507,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="People/Properties[hrPeople]" />
+                          Member="Teachers/Properties[hrPeople]" />
                         <CallExpression
                           Target="EditSelected" />
                       </ChainExpression>
@@ -1414,7 +1521,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="People/Properties[hrPeople]" />
+                          Member="Teachers/Properties[hrPeople]" />
                         <CallExpression
                           Target="DeleteSelected" />
                       </ChainExpression>
@@ -1473,7 +1580,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="People/Properties[hrPeople]" />
+                      Member="Teachers/Properties[hrPeople]" />
                     <MemberExpression
                       Member="SelectedItem" />
                   </ChainExpression>
@@ -1482,8 +1589,7 @@
               <ContentItem
                 Name="FullName3"
                 Kind="Value"
-                DataType=":String?"
-                View="Microsoft.LightSwitch.RichClient:Label">
+                DataType=":String?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -1494,7 +1600,7 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Title"
+                Name="Title1"
                 Kind="Value"
                 DataType=":String?">
                 <ContentItem.DataSource>
@@ -1507,7 +1613,7 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Name2"
+                Name="Name1"
                 Kind="Value"
                 DataType=":String">
                 <ContentItem.DataSource>
@@ -1531,79 +1637,6 @@
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Department1"
-                Kind="Details"
-                DataType="hrDepartment">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrPerson/Properties[Department]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate4"
-                  Kind="Details"
-                  DataType="hrDepartment">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="Supervisor"
-                Kind="Details"
-                DataType="hrPerson">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrPerson/Properties[Supervisor]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="hrPerson"
-                  Kind="Details"
-                  DataType="hrPerson">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="erpAcademicDepartment1"
-                Kind="Details"
-                DataType="erpAcademicDepartment">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Academic Department" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrPerson/Properties[AcademicDepartment]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate5"
-                  Kind="Details"
-                  DataType="erpAcademicDepartment">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
               </ContentItem>
               <ContentItem
                 Name="EmailAddress1"
@@ -1632,60 +1665,21 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="DoorSysID1"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrPerson/Properties[DoorSysID]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="AccessCardID1"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrPerson/Properties[AccessCardID]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="ExtUserName1"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="hrPerson/Properties[ExtUserName]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="aspnet_User1"
+                Name="AcademicDepartment1"
                 Kind="Details"
-                DataType="aspnet_User">
+                DataType="erpAcademicDepartment">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="hrPerson/Properties[aspnet_User]" />
+                        Member="hrPerson/Properties[AcademicDepartment]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="RowTemplate6"
+                  Name="RowTemplate9"
                   Kind="Details"
-                  DataType="aspnet_User">
+                  DataType="erpAcademicDepartment">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression />
@@ -1694,15 +1688,52 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
-                Name="LSUser1"
+                Name="hrEmpAcademicProfileByHRs_SelectedItem_DidacticPensum"
                 Kind="Value"
-                DataType=":String"
-                View="Microsoft.LightSwitch.RichClient:Label">
+                DataType=":Int32?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="hrPerson/Properties[LSUser]" />
+                        Member="Teachers/Properties[hrEmpAcademicProfileByHRs]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="DidacticPensum" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="hrEmpAcademicProfileByHRs_SelectedItem_ScientificPensum"
+                Kind="Value"
+                DataType=":Int32?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Teachers/Properties[hrEmpAcademicProfileByHRs]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="ScientificPensum" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="hrEmpAcademicProfileByHRs_SelectedItem_OrganizationalPensum"
+                Kind="Value"
+                DataType=":Int32?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Teachers/Properties[hrEmpAcademicProfileByHRs]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="OrganizationalPensum" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -1714,6 +1745,368 @@
                     <ChainExpression>
                       <ConstantExpression
                         Value="Top"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="plActivities"
+              Kind="Collection"
+              DataType="CollectionView$plActivity"
+              View="Microsoft.LightSwitch.RichClient:DataGrid">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Teachers/Properties[plActivities]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="RowTemplate15"
+                Kind="Details"
+                DataType="plActivity">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Name2"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[Name]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="NameEN"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[NameEN]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Course"
+                  Kind="Details"
+                  DataType="sylCourse">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[Course]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate16"
+                    Kind="Details"
+                    DataType="sylCourse">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="Language"
+                  Kind="Details"
+                  DataType="erpLanguage">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[Language]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate17"
+                    Kind="Details"
+                    DataType="erpLanguage">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="Degree"
+                  Kind="Details"
+                  DataType="acaDegree">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[Degree]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate18"
+                    Kind="Details"
+                    DataType="acaDegree">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="Semester"
+                  Kind="Details"
+                  DataType="acaSemester">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[Semester]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate19"
+                    Kind="Details"
+                    DataType="acaSemester">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="StudyMode"
+                  Kind="Details"
+                  DataType="acaStudyMode">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[StudyMode]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate20"
+                    Kind="Details"
+                    DataType="acaStudyMode">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="StudentSet"
+                  Kind="Details"
+                  DataType="acaStudentSet">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[StudentSet]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate21"
+                    Kind="Details"
+                    DataType="acaStudentSet">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="ActivityType"
+                  Kind="Details"
+                  DataType="acaActivityType">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[ActivityType]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate22"
+                    Kind="Details"
+                    DataType="acaActivityType">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="ObligationType"
+                  Kind="Details"
+                  DataType="acaObligationType">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[ObligationType]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate23"
+                    Kind="Details"
+                    DataType="acaObligationType">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="TotalHours"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[TotalHours]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="EvalType"
+                  Kind="Details"
+                  DataType="acaEvalType">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[EvalType]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate24"
+                    Kind="Details"
+                    DataType="acaEvalType">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="RoomType"
+                  Kind="Details"
+                  DataType="acaRoomType">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[RoomType]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate25"
+                    Kind="Details"
+                    DataType="acaRoomType">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="ECTS"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="plActivity/Properties[ECTS]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Name="plActivities_AddAndEditNew"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Teachers/Properties[plActivities]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="plActivities_EditSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Teachers/Properties[plActivities]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="plActivities_DeleteSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Teachers/Properties[plActivities]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Stretch"
                         ResultType=":String" />
                     </ChainExpression>
                   </ScreenExpressionTree>
@@ -1752,7 +2145,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="People/Methods[Save]" />
+                    Target="Teachers/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1764,7 +2157,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="People/Methods[Refresh]" />
+                    Target="Teachers/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1825,7 +2218,71 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="People/Properties[hrPeople]/Query" />
+              Target="Teachers/Properties[hrPeople]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="plActivities"
+        PageSize="15"
+        PropertyType="CollectionView$plActivity">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="plActivitiesQuery"
+            ReturnType="plActivity*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Teachers/Properties[hrPeople]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="plActivities" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="Teachers/Properties[plActivities]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="hrEmpAcademicProfileByHRs"
+        PageSize="45"
+        PropertyType="CollectionView$hrEmpAcademicProfileByHR">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="hrEmpAcademicProfileByHRsQuery"
+            ReturnType="hrEmpAcademicProfileByHR*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Teachers/Properties[hrPeople]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="hrEmpAcademicProfileByHRs" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="Teachers/Properties[hrEmpAcademicProfileByHRs]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1833,10 +2290,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowPeople">
+      Name="ShowTeachers">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="People" />
+          TargetScreen="Teachers" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

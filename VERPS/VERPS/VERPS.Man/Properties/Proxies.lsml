@@ -685,12 +685,6 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:plActivity_erpAcademicDepartment" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
         Target="ServiceInterface:plActivity_erpLanguage" />
     </Association.Attributes>
   </Association>
@@ -793,13 +787,25 @@
   <Association>
     <Association.Attributes>
       <Proxy
+        Target="ServiceInterface:plActivity_sylCourse" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:acaStaff_erpAcademicDepartment" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
         Target="ServiceInterface:plActivity_hrPerson" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:plActivity_sylCourse" />
+        Target="ServiceInterface:sylCourse_erpLanguage" />
     </Association.Attributes>
   </Association>
 </Application>

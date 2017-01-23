@@ -35,6 +35,29 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="Title"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="NA"
+            Value="NA" />
+          <SupportedValue
+            Value="mgr" />
+          <SupportedValue
+            Value="dr" />
+          <SupportedValue
+            Value="prof" />
+          <SupportedValue
+            Value="Mr." />
+          <SupportedValue
+            Value="Ms." />
+          <SupportedValue
+            Value="Mrs." />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Name"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -1277,7 +1300,7 @@
           End="ApplicationData/Members[plActivity_hrPersons]/Members[plActivity]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="plActivity_hrPerson" />
+              Name="plActivity_hrPerson1" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd

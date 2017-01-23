@@ -81,5 +81,10 @@ namespace LightSwitchApplication
         {
             result = Application.Current.User.HasPermission(Permissions.Planning);
         }
+
+        partial void ErpLanguages_CanRun(ref bool result)
+        {
+            result = Application.Current.User.HasPermission(Permissions.SecurityAdministration);
+        }
     }
 }

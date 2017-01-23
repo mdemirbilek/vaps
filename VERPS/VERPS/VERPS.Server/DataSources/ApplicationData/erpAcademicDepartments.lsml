@@ -76,10 +76,10 @@
         FromEnd="erpAcademicDepartment"
         ToEnd="hrPerson" />
       <NavigationProperty
-        Name="plActivities"
-        Association="plActivity_erpAcademicDepartment"
+        Name="acaStaffs"
+        Association="acaStaff_erpAcademicDepartment"
         FromEnd="erpAcademicDepartment"
-        ToEnd="plActivity" />
+        ToEnd="acaStaff" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -284,11 +284,11 @@
         EntitySet="hrPeople" />
     </AssociationSet>
     <AssociationSet
-      Name="plActivity_erpAcademicDepartments"
-      Association="plActivity_erpAcademicDepartment">
+      Name="acaStaff_erpAcademicDepartments"
+      Association="acaStaff_erpAcademicDepartment">
       <AssociationSetEnd
-        Name="plActivity"
-        EntitySet="plActivities" />
+        Name="acaStaff"
+        EntitySet="acaStaffs" />
       <AssociationSetEnd
         Name="erpAcademicDepartment"
         EntitySet="erpAcademicDepartments" />
@@ -439,19 +439,19 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
-      AssociationSet="plActivity_erpAcademicDepartments">
+      AssociationSet="acaStaff_erpAcademicDepartments">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="plActivity_erpAcademicDepartments" />
+          Name="acaStaff_erpAcademicDepartments" />
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[plActivity_erpAcademicDepartments]/Members[plActivity]">
+          End="ApplicationData/Members[acaStaff_erpAcademicDepartments]/Members[acaStaff]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="plActivity_erpAcademicDepartment" />
+              Name="acaStaff_erpAcademicDepartment" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[plActivity_erpAcademicDepartments]/Members[erpAcademicDepartment]">
+          End="ApplicationData/Members[acaStaff_erpAcademicDepartments]/Members[erpAcademicDepartment]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -555,11 +555,11 @@
       EntityType="hrPerson" />
   </Association>
   <Association
-    Name="plActivity_erpAcademicDepartment">
+    Name="acaStaff_erpAcademicDepartment">
     <AssociationEnd
-      Name="plActivity"
+      Name="acaStaff"
       Multiplicity="Many"
-      EntityType="plActivity" />
+      EntityType="acaStaff" />
     <AssociationEnd
       Name="erpAcademicDepartment"
       Multiplicity="One"

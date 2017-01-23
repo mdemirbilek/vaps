@@ -11,7 +11,8 @@ namespace LightSwitchApplication
     {
         partial void hrPeople_Inserting(hrPerson entity)
         {
-            entity.FullName = entity.Name + " " + entity.Surname;
+            string s = entity.Title.Trim() + " " + entity.Name + " " + entity.Surname;
+            entity.FullName = s.Trim();
         }
 
         partial void hrPeople_Updating(hrPerson entity)

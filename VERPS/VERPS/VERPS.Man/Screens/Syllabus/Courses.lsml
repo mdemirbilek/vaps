@@ -84,19 +84,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Language"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="sylCourse/Properties[Language]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="erpAcademicDepartment"
                   Kind="Details"
                   DataType="erpAcademicDepartment">
@@ -352,9 +339,9 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Language1"
-                Kind="Value"
-                DataType=":String">
+                Name="Language"
+                Kind="Details"
+                DataType="erpLanguage">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -363,6 +350,16 @@
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+                <ContentItem
+                  Name="erpLanguage"
+                  Kind="Details"
+                  DataType="erpLanguage">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
               </ContentItem>
               <ContentItem
                 Name="erpAcademicDepartment1"

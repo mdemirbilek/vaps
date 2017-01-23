@@ -119,6 +119,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowAcaStudyModes"
       Target="!module/Methods[ShowAcaStudyModes]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowErpLanguages"
+      Target="!module/Methods[ShowErpLanguages]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowTeachers"
+      Target="!module/Methods[ShowTeachers]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -143,6 +149,9 @@
       <ApplicationNavigationLink
         Name="aspnet_Users"
         Command="!module/Commands[ScreenCommandShowaspnet_Users]" />
+      <ApplicationNavigationLink
+        Name="link15"
+        Command="!module/Commands[ScreenCommandShowErpLanguages]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group1">
@@ -190,7 +199,8 @@
         Command="!module/Commands[ScreenCommandShowCourses]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
-      Name="group2">
+      Name="group2"
+      DefaultItem="!module/NavigationItems[group2]/Children[link17]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="ACA" />
@@ -219,6 +229,9 @@
       <ApplicationNavigationLink
         Name="link14"
         Command="!module/Commands[ScreenCommandShowAcaStudyModes]" />
+      <ApplicationNavigationLink
+        Name="link17"
+        Command="!module/Commands[ScreenCommandShowTeachers]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

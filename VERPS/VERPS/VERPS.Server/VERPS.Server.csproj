@@ -192,6 +192,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\ApplicationData\acaStaff.lsml.cs">
+      <DependentUpon>acaStaffs.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\ApplicationData\hrPerson.lsml.cs">
       <DependentUpon>hrPeople.lsml</DependentUpon>
     </Compile>
@@ -288,6 +291,7 @@
     <LightSwitchModel Include="DataSources\ApplicationData\acaObligationTypes.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\acaEvalTypes.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\acaRoomTypes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\acaStaffs.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

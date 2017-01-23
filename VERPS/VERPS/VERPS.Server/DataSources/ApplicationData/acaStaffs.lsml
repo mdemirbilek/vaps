@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="erpLanguage">
+    Name="acaStaff">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -27,7 +27,38 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Language"
+        Name="FullName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="NA"
+            Value="NA" />
+          <SupportedValue
+            Value="mgr" />
+          <SupportedValue
+            Value="dr" />
+          <SupportedValue
+            Value="prof" />
+          <SupportedValue
+            Value="Mr." />
+          <SupportedValue
+            Value="Ms." />
+          <SupportedValue
+            Value="Mrs." />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Name"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
@@ -35,21 +66,19 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="EmailAddress"
+        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
-        Name="hrEmpCourses"
-        Association="hrEmpCourse_erpLanguage"
-        FromEnd="erpLanguage"
-        ToEnd="hrEmpCourse" />
-      <NavigationProperty
-        Name="plActivities"
-        Association="plActivity_erpLanguage"
-        FromEnd="erpLanguage"
-        ToEnd="plActivity" />
-      <NavigationProperty
-        Name="sylCourses"
-        Association="sylCourse_erpLanguage"
-        FromEnd="erpLanguage"
-        ToEnd="sylCourse" />
+        Name="AcademicDepartment"
+        Association="acaStaff_erpAcademicDepartment"
+        FromEnd="acaStaff"
+        ToEnd="erpAcademicDepartment" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -108,14 +137,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="erpLanguages"
+      Name="acaStaffs"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="erpLanguage" />
+      EntityType="acaStaff" />
     <QueryOperation
-      Name="erpLanguages_Single"
-      ReturnType="erpLanguage">
+      Name="acaStaffs_Single"
+      ReturnType="acaStaff">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -141,7 +170,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="erpLanguages" />
+            Member="acaStaffs" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -154,8 +183,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="erpLanguages_SingleOrDefault"
-      ReturnType="erpLanguage">
+      Name="acaStaffs_SingleOrDefault"
+      ReturnType="acaStaff">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -181,7 +210,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="erpLanguages" />
+            Member="acaStaffs" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -193,152 +222,20 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="hrEmpCourse_erpLanguages"
-      Association="hrEmpCourse_erpLanguage">
-      <AssociationSetEnd
-        Name="hrEmpCourse"
-        EntitySet="hrEmpCourses" />
-      <AssociationSetEnd
-        Name="erpLanguage"
-        EntitySet="erpLanguages" />
-    </AssociationSet>
-    <AssociationSet
-      Name="plActivity_erpLanguages"
-      Association="plActivity_erpLanguage">
-      <AssociationSetEnd
-        Name="plActivity"
-        EntitySet="plActivities" />
-      <AssociationSetEnd
-        Name="erpLanguage"
-        EntitySet="erpLanguages" />
-    </AssociationSet>
-    <AssociationSet
-      Name="sylCourse_erpLanguages"
-      Association="sylCourse_erpLanguage">
-      <AssociationSetEnd
-        Name="sylCourse"
-        EntitySet="sylCourses" />
-      <AssociationSetEnd
-        Name="erpLanguage"
-        EntitySet="erpLanguages" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="hrEmpCourse_erpLanguage">
-    <AssociationEnd
-      Name="hrEmpCourse"
-      Multiplicity="Many"
-      EntityType="hrEmpCourse" />
-    <AssociationEnd
-      Name="erpLanguage"
-      Multiplicity="One"
-      EntityType="erpLanguage">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
   <DataService
     Name="ApplicationDataMapping">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
-    <AssociationSetMapping
-      AssociationSet="hrEmpCourse_erpLanguages">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="hrEmpCourse_erpLanguages" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[hrEmpCourse_erpLanguages]/Members[hrEmpCourse]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="hrEmpCourse_erpLanguage" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[hrEmpCourse_erpLanguages]/Members[erpLanguage]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="plActivity_erpLanguages">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="plActivity_erpLanguages" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[plActivity_erpLanguages]/Members[plActivity]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="plActivity_erpLanguage" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[plActivity_erpLanguages]/Members[erpLanguage]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="sylCourse_erpLanguages">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="sylCourse_erpLanguages" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[sylCourse_erpLanguages]/Members[sylCourse]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="sylCourse_erpLanguage" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[sylCourse_erpLanguages]/Members[erpLanguage]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="acaStaffs">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="acaStaff_erpAcademicDepartment"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
   </DataService>
-  <Association
-    Name="plActivity_erpLanguage">
-    <AssociationEnd
-      Name="plActivity"
-      Multiplicity="Many"
-      EntityType="plActivity" />
-    <AssociationEnd
-      Name="erpLanguage"
-      Multiplicity="One"
-      EntityType="erpLanguage">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
-  <Association
-    Name="sylCourse_erpLanguage">
-    <AssociationEnd
-      Name="sylCourse"
-      Multiplicity="Many"
-      EntityType="sylCourse" />
-    <AssociationEnd
-      Name="erpLanguage"
-      Multiplicity="One"
-      EntityType="erpLanguage">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
 </ServiceApplication>

@@ -50,11 +50,6 @@
         FromEnd="plActivity"
         ToEnd="sylCourse" />
       <NavigationProperty
-        Name="AcademicDepartment"
-        Association="plActivity_erpAcademicDepartment"
-        FromEnd="plActivity"
-        ToEnd="erpAcademicDepartment" />
-      <NavigationProperty
         Name="Language"
         Association="plActivity_erpLanguage"
         FromEnd="plActivity"
@@ -107,8 +102,16 @@
         Association="plActivity_acaRoomType"
         FromEnd="plActivity"
         ToEnd="acaRoomType" />
+      <EntityProperty
+        Name="ECTS"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
-        Name="Staff"
+        Name="Teacher"
         Association="plActivity_hrPerson"
         FromEnd="plActivity"
         ToEnd="hrPerson" />
@@ -314,6 +317,14 @@
           Type="int" />
         <SsdlForeignKeyProperty
           Name="plActivity_sylCourse"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="plActivity_acaStaff"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="plActivity_hrPerson1"
           Nullable="False"
           Type="int" />
       </EntitySetMapping.Attributes>

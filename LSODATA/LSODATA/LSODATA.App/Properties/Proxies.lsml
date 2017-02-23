@@ -136,4 +136,28 @@
         Target="ServiceInterface:erpAcademicDepartment_hrPerson1" />
     </Association.Attributes>
   </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:erpUniversity_hrPerson" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:erpUniversity_hrPerson1" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:hrPerson_erpFaculty" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:hrPerson_erpFaculty1" />
+    </Association.Attributes>
+  </Association>
 </Application>

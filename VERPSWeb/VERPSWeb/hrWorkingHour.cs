@@ -46,5 +46,7 @@ namespace VERPSWeb
         public Nullable<System.DateTimeOffset> Modified { get; set; }
         public byte[] RowVersion { get; set; }
         public int WorkingHour_Employee { get; set; }
+    
+        public virtual hrPeople hrPeople { get; set; }
     }
 }

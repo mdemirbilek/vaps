@@ -44,6 +44,38 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="ActivityYear"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="2016-2017"
+            Value="2016" />
+          <SupportedValue
+            DisplayName="2017-2018"
+            Value="2017" />
+          <SupportedValue
+            DisplayName="2018-2019"
+            Value="2018" />
+          <SupportedValue
+            DisplayName="2019-2020"
+            Value="2019" />
+          <SupportedValue
+            DisplayName="2020-2021"
+            Value="2020" />
+          <SupportedValue
+            DisplayName="2021-2022"
+            Value="2021" />
+          <SupportedValue
+            DisplayName="2022-2023"
+            Value="2022" />
+          <SupportedValue
+            DisplayName="2023-2024"
+            Value="2023" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Name="Course"
         Association="plActivity_sylCourse"
@@ -115,6 +147,14 @@
         Association="plActivity_hrPerson"
         FromEnd="plActivity"
         ToEnd="hrPerson" />
+      <EntityProperty
+        Name="Note"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="1000" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"

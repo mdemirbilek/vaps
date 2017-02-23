@@ -283,6 +283,7 @@
     <LightSwitchModel Include="Screens\Config\ErpLanguages.lsml" />
     <LightSwitchModel Include="Screens\ACA\Teachers.lsml" />
     <LightSwitchModel Include="Screens\ACA\AcaStudyProfiles.lsml" />
+    <LightSwitchModel Include="Screens\ACA\plActivities.lsml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

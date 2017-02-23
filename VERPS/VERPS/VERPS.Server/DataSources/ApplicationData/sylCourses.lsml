@@ -57,6 +57,14 @@
         Association="sylCourse_erpLanguage"
         FromEnd="sylCourse"
         ToEnd="erpLanguage" />
+      <EntityProperty
+        Name="ECTS"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Name="erpAcademicDepartment"
         Association="sylCourse_erpAcademicDepartment"

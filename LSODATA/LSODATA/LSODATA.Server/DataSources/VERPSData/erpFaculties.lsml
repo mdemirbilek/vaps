@@ -94,6 +94,16 @@
         Association="erpFaculty_erpUniversity"
         FromEnd="erpFaculties"
         ToEnd="erpUniversities" />
+      <NavigationProperty
+        Name="hrPeople"
+        Association="hrPerson_erpFaculty"
+        FromEnd="erpFaculties"
+        ToEnd="hrPeople" />
+      <NavigationProperty
+        Name="hrPeoples"
+        Association="hrPerson_erpFaculty1"
+        FromEnd="erpFaculties"
+        ToEnd="hrPeople" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -212,7 +222,31 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="hrPerson_erpFaculty1"
+      Association="hrPerson_erpFaculty1">
+      <AssociationSetEnd
+        Name="erpFaculties"
+        EntitySet="erpFaculties" />
+      <AssociationSetEnd
+        Name="hrPeople"
+        EntitySet="hrPeoples" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="hrPerson_erpFaculty1">
+    <AssociationEnd
+      Name="erpFaculties"
+      EntityType="erpFaculty">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="hrPeople"
+      Multiplicity="Many"
+      EntityType="hrPeople" />
+  </Association>
   <DataService
     Name="VERPSDataDataService">
     <DataService.Attributes>
@@ -269,6 +303,11 @@
           Nullable="False"
           Type="int"
           PropertyName="Faculty_University" />
+        <SsdlForeignKeyProperty
+          Name="hrPerson_erpFaculty"
+          Nullable="False"
+          Type="int"
+          PropertyName="hrPerson_erpFaculty" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
@@ -288,6 +327,27 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="AcademicDepartment_Faculty" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="hrPerson_erpFaculty1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="hrPerson_erpFaculty1" />
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrPerson_erpFaculty1]/Members[erpFaculties]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="VERPSData/Members[hrPerson_erpFaculty1]/Members[hrPeople]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="hrPerson_erpFaculty1" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

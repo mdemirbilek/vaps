@@ -323,6 +323,19 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
+                Name="ECTS"
+                Kind="Value"
+                DataType=":Int32">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="sylCourse/Properties[ECTS]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
                 Name="StudyProfile"
                 Kind="Details"
                 DataType="acaStudyProfile">

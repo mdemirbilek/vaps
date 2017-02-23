@@ -128,6 +128,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowAcaStudyProfiles"
       Target="!module/Methods[ShowAcaStudyProfiles]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowplActivities"
+      Target="!module/Methods[ShowplActivities]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -208,6 +211,9 @@
         <DisplayName
           Value="ACA" />
       </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link21"
+        Command="!module/Commands[ScreenCommandShowplActivities]" />
       <ApplicationNavigationLink
         Name="link7"
         Command="!module/Commands[ScreenCommandShowAcaActivityTypes]" />

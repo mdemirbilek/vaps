@@ -190,24 +190,216 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acaActivityType.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaDegree.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaEvalType.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaObligationType.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaRoomType.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaSemester.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaStaff.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaStudentSet.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaStudyMode.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="acaStudyProfile.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="aspnet_Applications.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Membership.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Paths.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_PersonalizationAllUsers.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_PersonalizationPerUser.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Profile.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Roles.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_SchemaVersions.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Users.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_WebEvent_Events.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WHController.cs" />
     <Compile Include="Controllers\WHMonthliesController.cs" />
     <Compile Include="Controllers\WHPrintoController.cs" />
+    <Compile Include="erpAcademicDepartment.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="erpFaculty.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="erpHRAccountingPeriod.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="erpLanguage.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="erpPosition.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="erpProgram.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="erpUniversity.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="hrAddress.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrDepartment.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmergencyContact.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpAcademicProfileByAcademician.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpAcademicProfileByHR.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpCours.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpDisability.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpEducation.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpFamilyHealthInsurance.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpFamilyMember.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpLanguage.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpMilService.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpPastEmployement.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpProfile.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEmpSkill.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrEvalStatu.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrHoliday.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hrPeople.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
     <Compile Include="hrWorkingHour.cs">
-      <DependentUpon>VERPSModel.tt</DependentUpon>
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="plActivity.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolePermission.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="sylAcademicalAim.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylAssesment.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylAssesmentMethod.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylCours.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylCourseMaterial.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylCourseTeacher.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylLearningOutcome.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylOutcomeAim.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylOutcomeAssesment.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylPrerequisite.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylProgramCours.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylSyllabi.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylSyllabusNotesSet.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylSyllabusTeachingMethod.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylSyllabusTopic.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylTeachingMethod.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sylWorkloadStructure.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
     <Compile Include="VERPSModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +414,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VERPSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="VERPSModel2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VERPSModel2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VERPSModel2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VERPSModel2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VERPSModel2.edmx</DependentUpon>
     </Compile>
     <Compile Include="vwWHheader.cs">
       <DependentUpon>VERPSModel.tt</DependentUpon>
@@ -269,6 +476,16 @@
       <DependentUpon>VERPSModel.edmx</DependentUpon>
       <LastGenOutput>VERPSModel.cs</LastGenOutput>
     </Content>
+    <Content Include="VERPSModel2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VERPSModel2.edmx</DependentUpon>
+      <LastGenOutput>VERPSModel2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="VERPSModel2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VERPSModel2.edmx</DependentUpon>
+      <LastGenOutput>VERPSModel2.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -309,6 +526,13 @@
     <Content Include="Views\WHPrinto\Index.cshtml" />
     <Content Include="Views\WHPrinto\Printo.cshtml" />
     <Content Include="Views\Shared\_pLayout.cshtml" />
+    <EntityDeploy Include="VERPSModel2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VERPSModel2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="VERPSModel2.edmx.diagram">
+      <DependentUpon>VERPSModel2.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

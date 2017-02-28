@@ -4,163 +4,178 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7acbd9e98963421cba2494bae07d253e" Name="Diagram1" ZoomLevel="100">
-        <EntityTypeShape EntityType="VERPSModel1.acaActivityType" Width="1.5" PointX="10.5" PointY="60.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaDegree" Width="1.5" PointX="5.25" PointY="69.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaEvalType" Width="1.5" PointX="10.5" PointY="63.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaObligationType" Width="1.5" PointX="10.5" PointY="57.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaRoomType" Width="1.5" PointX="10.5" PointY="53.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaSemester" Width="1.5" PointX="10.5" PointY="87.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaStaff" Width="1.5" PointX="7.5" PointY="72.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaStudentSet" Width="1.5" PointX="10.5" PointY="91.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaStudyMode" Width="1.5" PointX="5.25" PointY="80" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.acaStudyProfile" Width="1.5" PointX="5.25" PointY="83.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_Applications" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_Membership" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_Paths" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_Profile" Width="1.5" PointX="10.5" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_Roles" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_Users" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.aspnet_WebEvent_Events" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.erpAcademicDepartment" Width="1.5" PointX="5.25" PointY="73.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.erpFaculty" Width="1.5" PointX="3" PointY="74.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.erpHRAccountingPeriod" Width="1.5" PointX="18.75" PointY="68.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.erpLanguage" Width="1.5" PointX="5.25" PointY="86.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.erpPosition" Width="1.5" PointX="13.5" PointY="42.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.erpProgram" Width="1.5" PointX="13.5" PointY="108.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.erpUniversity" Width="1.5" PointX="0.75" PointY="74.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrAddress" Width="1.5" PointX="12.75" PointY="45.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrDepartment" Width="1.5" PointX="12.75" PointY="50.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmergencyContact" Width="1.5" PointX="12.75" PointY="54.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpAcademicProfileByAcademician" Width="1.5" PointX="12.75" PointY="58.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpAcademicProfileByHR" Width="1.5" PointX="15.75" PointY="72.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpCours" Width="1.5" PointX="21" PointY="72.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpDisability" Width="1.5" PointX="12.75" PointY="74.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpEducation" Width="1.5" PointX="12.75" PointY="78" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpFamilyHealthInsurance" Width="1.5" PointX="12.75" PointY="82.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpFamilyMember" Width="1.5" PointX="12.75" PointY="87.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpLanguage" Width="1.5" PointX="12.75" PointY="91.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpMilService" Width="1.5" PointX="12.75" PointY="95.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpPastEmployement" Width="1.5" PointX="12.75" PointY="100.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpProfile" Width="1.5" PointX="18.75" PointY="71.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEmpSkill" Width="1.5" PointX="12.75" PointY="104.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrEvalStatu" Width="1.5" PointX="18.75" PointY="64.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrHoliday" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrPeople" Width="1.5" PointX="10.5" PointY="70.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.hrWorkingHour" Width="1.5" PointX="12.75" PointY="117.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.plActivity" Width="1.5" PointX="12.75" PointY="66.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.RolePermission" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylAcademicalAim" Width="1.5" PointX="7.5" PointY="137.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylAssesmentMethod" Width="1.5" PointX="18.75" PointY="99.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylAssesment" Width="1.5" PointX="21" PointY="83.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylCourseMaterial" Width="1.5" PointX="18" PointY="83.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylCours" Width="1.5" PointX="7.5" PointY="76.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylCourseTeacher" Width="1.5" PointX="15.75" PointY="67.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylLearningOutcome" Width="1.5" PointX="18" PointY="87.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylOutcomeAim" Width="1.5" PointX="20.25" PointY="113.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylOutcomeAssesment" Width="1.5" PointX="20.25" PointY="87.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylPrerequisite" Width="1.5" PointX="24" PointY="81" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylProgramCours" Width="1.5" PointX="9.75" PointY="83.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylSyllabi" Width="1.5" PointX="15.75" PointY="81.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylSyllabusNotesSet" Width="1.5" PointX="18" PointY="95.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylSyllabusTeachingMethod" Width="1.5" PointX="23" PointY="87.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylSyllabusTopic" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylTeachingMethod" Width="1.5" PointX="21.75" PointY="68.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VERPSModel1.sylWorkloadStructure" Width="1.5" PointX="24" PointY="76.375" IsExpanded="true" />
-        <AssociationConnector Association="VERPSModel1.plActivity_acaActivityType" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_acaDegree" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylCourse_acaDegree" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_acaEvalType" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_acaObligationType" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_acaRoomType" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_acaSemester" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.acaStaff_erpAcademicDepartment" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_acaStudentSet" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_acaStudyMode" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylCourse_acaStudyMode" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylCourse_acaStudyProfile" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_Membership_ApplicationId_aspnet_Applications_ApplicationId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_Paths_ApplicationId_Applications_ApplicationId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_Roles_ApplicationId_aspnet_Applications_ApplicationId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_Users_ApplicationId_aspnet_Applications_ApplicationId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_Membership_UserId_aspnet_Users_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_PersonalizationAllUsers_PathId_aspnet_Paths_PathId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_PersonalizationPerUser_PathId_aspnet_Paths_PathId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_PersonalizationPerUser_UserId_aspnet_Users_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.FK_aspnet_Profile_UserId_aspnet_Users_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.erpAcademicDepartment_erpFaculty" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.erpAcademicDepartment_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.erpAcademicDepartment_hrPerson1" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrPerson_erpAcademicDepartment" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylAcademicalAim_erpAcademicDepartment" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylCourse_erpAcademicDepartment" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylProgramCourse_erpAcademicDepartment" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylSyllabus_erpAcademicDepartment" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.erpFaculty_erpUniversity" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_erpFaculty" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrPerson_erpFaculty" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrPerson_erpFaculty1" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpCourse_erpHRAccountingPeriod" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpCourse_erpLanguage" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_erpLanguage" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylCourse_erpLanguage" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_erpPosition" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_erpProgram" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.erpUniversity_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.erpUniversity_hrPerson1" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_erpUniversity" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpProfile_erpUniversity" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrAddress_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrDepartment_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrPerson_hrDepartment" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmergencyContact_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByAcademic_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_hrPerson1" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_hrPerson2" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_hrPerson3" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpCourse_hrEmpAcademicProfileByHR" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpCourse_hrEvalStatu" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpCourse_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpCourse_sylCourse" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpDisability_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpEducation_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpFamilyHealthInsurance_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpFamilyMember_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpLanguage_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpMilService_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpPastEmployement_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpProfile_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrEmpSkill_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrPerson_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.hrWorkingHour_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylCourseTeacher_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylSyllabus_hrPerson" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylSyllabus_hrPerson1" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.plActivity_sylCourse" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylOutcomeAim_sylAcademicalAim" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylAssesment_sylAssesmentMethod" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylOutcomeAssesment_sylAssesmentMethod" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylAssesment_sylSyllabus" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylCourseMaterial_sylSyllabus" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylPrerequisite_sylCourse" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylProgramCourse_sylCourse" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylSyllabus_sylCourse" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylCourseTeacher_sylSyllabus" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylLearningOutcome_sylSyllabus" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylOutcomeAim_sylLearningOutcome" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylOutcomeAssesment_sylLearningOutcome" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylPrerequisite_sylSyllabus" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylSyllabusNotesSetItem_sylSyllabus" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylSyllabusTeachingMethod_sylSyllabus" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylWorkloadStructure_sylSyllabus" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylSyllabusTeachingMethod_sylTeachingMethod" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.sylWorkloadStructure_sylTeachingMethod" ManuallyRouted="false" />
-        <AssociationConnector Association="VERPSModel1.aspnet_UsersInRoles" ManuallyRouted="false" />
+      <Diagram DiagramId="7acbd9e98963421cba2494bae07d253e" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="VERPSModel1.acaActivityType" Width="1.5" PointX="13.5" PointY="27.375" />
+        <EntityTypeShape EntityType="VERPSModel1.acaDegree" Width="1.5" PointX="5.25" PointY="69.75" />
+        <EntityTypeShape EntityType="VERPSModel1.acaEvalType" Width="1.5" PointX="13.5" PointY="31.125" />
+        <EntityTypeShape EntityType="VERPSModel1.acaObligationType" Width="1.5" PointX="13.5" PointY="38.5" />
+        <EntityTypeShape EntityType="VERPSModel1.acaRoomType" Width="1.5" PointX="13.5" PointY="93.875" />
+        <EntityTypeShape EntityType="VERPSModel1.acaSemester" Width="1.5" PointX="13.5" PointY="34.75" />
+        <EntityTypeShape EntityType="VERPSModel1.acaStaff" Width="1.5" PointX="7.5" PointY="145.25" />
+        <EntityTypeShape EntityType="VERPSModel1.acaStudentSet" Width="1.5" PointX="13.5" PointY="97.125" />
+        <EntityTypeShape EntityType="VERPSModel1.acaStudyMode" Width="1.5" PointX="5.25" PointY="66.25" />
+        <EntityTypeShape EntityType="VERPSModel1.acaStudyProfile" Width="1.5" PointX="5.25" PointY="79.75" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_Applications" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_Membership" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_Paths" Width="1.5" PointX="3" PointY="12.625" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="16" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="12.625" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_Profile" Width="1.5" PointX="7.5" PointY="8.875" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_Roles" Width="1.5" PointX="3" PointY="15.75" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_Users" Width="1.5" PointX="5.25" PointY="8.375" />
+        <EntityTypeShape EntityType="VERPSModel1.aspnet_WebEvent_Events" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VERPSModel1.erpAcademicDepartment" Width="1.5" PointX="5.25" PointY="74.125" />
+        <EntityTypeShape EntityType="VERPSModel1.erpFaculty" Width="1.5" PointX="3" PointY="74.5" />
+        <EntityTypeShape EntityType="VERPSModel1.erpHRAccountingPeriod" Width="1.5" PointX="18.75" PointY="81.375" />
+        <EntityTypeShape EntityType="VERPSModel1.erpLanguage" Width="1.5" PointX="5.25" PointY="83.125" />
+        <EntityTypeShape EntityType="VERPSModel1.erpPosition" Width="1.5" PointX="16.5" PointY="93.5" />
+        <EntityTypeShape EntityType="VERPSModel1.erpProgram" Width="1.5" PointX="16.5" PointY="96.75" />
+        <EntityTypeShape EntityType="VERPSModel1.erpUniversity" Width="1.5" PointX="0.75" PointY="74.625" />
+        <EntityTypeShape EntityType="VERPSModel1.hrAddress" Width="1.5" PointX="12.75" PointY="123.375" />
+        <EntityTypeShape EntityType="VERPSModel1.hrDepartment" Width="1.5" PointX="12.75" PointY="46" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmergencyContact" Width="1.5" PointX="12.75" PointY="115.625" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpAcademicProfileByAcademician" Width="1.5" PointX="12.75" PointY="49.625" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpAcademicProfileByHR" Width="1.5" PointX="18.75" PointY="72.5" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpCours" Width="1.5" PointX="21" PointY="74.75" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpDisability" Width="1.5" PointX="12.75" PointY="146.5" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpEducation" Width="1.5" PointX="12.75" PointY="132.5" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpFamilyHealthInsurance" Width="1.5" PointX="12.75" PointY="141.5" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpFamilyMember" Width="1.5" PointX="12.75" PointY="57.25" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpLanguage" Width="1.5" PointX="12.75" PointY="137.125" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpMilService" Width="1.5" PointX="12.75" PointY="128.25" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpPastEmployement" Width="1.5" PointX="12.75" PointY="111.625" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpProfile" Width="1.5" PointX="12.75" PointY="72" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEmpSkill" Width="1.5" PointX="12.75" PointY="119.75" />
+        <EntityTypeShape EntityType="VERPSModel1.hrEvalStatu" Width="1.5" PointX="18.75" PointY="89.75" />
+        <EntityTypeShape EntityType="VERPSModel1.hrHoliday" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VERPSModel1.hrPeople" Width="1.5" PointX="10.5" PointY="70.625" />
+        <EntityTypeShape EntityType="VERPSModel1.hrWorkingHour" Width="1.5" PointX="12.75" PointY="103.5" />
+        <EntityTypeShape EntityType="VERPSModel1.plActivity" Width="1.5" PointX="15.75" PointY="72.625" />
+        <EntityTypeShape EntityType="VERPSModel1.RolePermission" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="VERPSModel1.sylAcademicalAim" Width="1.5" PointX="7.5" PointY="140.875" />
+        <EntityTypeShape EntityType="VERPSModel1.sylAssesmentMethod" Width="1.5" PointX="15.75" PointY="56" />
+        <EntityTypeShape EntityType="VERPSModel1.sylAssesment" Width="1.5" PointX="18" PointY="65.75" />
+        <EntityTypeShape EntityType="VERPSModel1.sylCourseMaterial" Width="1.5" PointX="15" PointY="64.625" />
+        <EntityTypeShape EntityType="VERPSModel1.sylCours" Width="1.5" PointX="7.5" PointY="73.5" />
+        <EntityTypeShape EntityType="VERPSModel1.sylCourseTeacher" Width="1.5" PointX="15.75" PointY="69" />
+        <EntityTypeShape EntityType="VERPSModel1.sylLearningOutcome" Width="1.5" PointX="15" PointY="85" />
+        <EntityTypeShape EntityType="VERPSModel1.sylOutcomeAim" Width="1.5" PointX="17.25" PointY="113.25" />
+        <EntityTypeShape EntityType="VERPSModel1.sylOutcomeAssesment" Width="1.5" PointX="17.25" PointY="85.25" />
+        <EntityTypeShape EntityType="VERPSModel1.sylPrerequisite" Width="1.5" PointX="21" PointY="69.875" />
+        <EntityTypeShape EntityType="VERPSModel1.sylProgramCours" Width="1.5" PointX="15.75" PointY="81" />
+        <EntityTypeShape EntityType="VERPSModel1.sylSyllabi" Width="1.5" PointX="12.75" PointY="63.625" />
+        <EntityTypeShape EntityType="VERPSModel1.sylSyllabusNotesSet" Width="1.5" PointX="15" PointY="89.25" />
+        <EntityTypeShape EntityType="VERPSModel1.sylSyllabusTeachingMethod" Width="1.5" PointX="18" PointY="61.875" />
+        <EntityTypeShape EntityType="VERPSModel1.sylSyllabusTopic" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VERPSModel1.sylTeachingMethod" Width="1.5" PointX="12.75" PointY="42" />
+        <EntityTypeShape EntityType="VERPSModel1.sylWorkloadStructure" Width="1.5" PointX="15" PointY="59.625" />
+        <EntityTypeShape EntityType="VERPSModel1.Temp1" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_Applications" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_MembershipUsers" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_Profiles" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_Roles" Width="1.5" PointX="9.75" PointY="10.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_Users" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_UsersInRoles" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="11.75" PointY="10.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vw_aspnet_WebPartState_User" Width="1.5" PointX="13.75" PointY="3.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vwWHheader" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vwWHMonthly" Width="1.5" PointX="7.75" PointY="13.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vwWorkingHour" Width="1.5" PointX="9.75" PointY="13.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vwWorkingHoursByUserByPeriod" Width="1.5" PointX="13.75" PointY="10.75" />
+        <EntityTypeShape EntityType="VERPSModel1.vwWorkingHoursHeaderByUser" Width="1.5" PointX="15.75" PointY="0.75" />
+        <AssociationConnector Association="VERPSModel1.plActivity_acaActivityType" />
+        <AssociationConnector Association="VERPSModel1.plActivity_acaDegree" />
+        <AssociationConnector Association="VERPSModel1.sylCourse_acaDegree" />
+        <AssociationConnector Association="VERPSModel1.plActivity_acaEvalType" />
+        <AssociationConnector Association="VERPSModel1.plActivity_acaObligationType" />
+        <AssociationConnector Association="VERPSModel1.plActivity_acaRoomType" />
+        <AssociationConnector Association="VERPSModel1.plActivity_acaSemester" />
+        <AssociationConnector Association="VERPSModel1.acaStaff_erpAcademicDepartment" />
+        <AssociationConnector Association="VERPSModel1.plActivity_acaStudentSet" />
+        <AssociationConnector Association="VERPSModel1.plActivity_acaStudyMode" />
+        <AssociationConnector Association="VERPSModel1.sylCourse_acaStudyMode" />
+        <AssociationConnector Association="VERPSModel1.sylCourse_acaStudyProfile" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_Membership_ApplicationId_aspnet_Applications_ApplicationId" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_Paths_ApplicationId_Applications_ApplicationId" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_Roles_ApplicationId_aspnet_Applications_ApplicationId" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_Users_ApplicationId_aspnet_Applications_ApplicationId" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_Membership_UserId_aspnet_Users_UserId" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_PersonalizationAllUsers_PathId_aspnet_Paths_PathId" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_PersonalizationPerUser_PathId_aspnet_Paths_PathId" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_PersonalizationPerUser_UserId_aspnet_Users_UserId" />
+        <AssociationConnector Association="VERPSModel1.FK_aspnet_Profile_UserId_aspnet_Users_UserId" />
+        <AssociationConnector Association="VERPSModel1.erpAcademicDepartment_erpFaculty" />
+        <AssociationConnector Association="VERPSModel1.erpAcademicDepartment_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.erpAcademicDepartment_hrPerson1" />
+        <AssociationConnector Association="VERPSModel1.hrPerson_erpAcademicDepartment" />
+        <AssociationConnector Association="VERPSModel1.sylAcademicalAim_erpAcademicDepartment" />
+        <AssociationConnector Association="VERPSModel1.sylCourse_erpAcademicDepartment" />
+        <AssociationConnector Association="VERPSModel1.sylProgramCourse_erpAcademicDepartment" />
+        <AssociationConnector Association="VERPSModel1.sylSyllabus_erpAcademicDepartment" />
+        <AssociationConnector Association="VERPSModel1.erpFaculty_erpUniversity" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_erpFaculty" />
+        <AssociationConnector Association="VERPSModel1.hrPerson_erpFaculty" />
+        <AssociationConnector Association="VERPSModel1.hrPerson_erpFaculty1" />
+        <AssociationConnector Association="VERPSModel1.hrEmpCourse_erpHRAccountingPeriod" />
+        <AssociationConnector Association="VERPSModel1.hrEmpCourse_erpLanguage" />
+        <AssociationConnector Association="VERPSModel1.plActivity_erpLanguage" />
+        <AssociationConnector Association="VERPSModel1.sylCourse_erpLanguage" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_erpPosition" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_erpProgram" />
+        <AssociationConnector Association="VERPSModel1.erpUniversity_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.erpUniversity_hrPerson1" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_erpUniversity" />
+        <AssociationConnector Association="VERPSModel1.hrEmpProfile_erpUniversity" />
+        <AssociationConnector Association="VERPSModel1.hrAddress_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrDepartment_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrPerson_hrDepartment" />
+        <AssociationConnector Association="VERPSModel1.hrEmergencyContact_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByAcademic_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_hrPerson1" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_hrPerson2" />
+        <AssociationConnector Association="VERPSModel1.hrEmpAcademicProfileByHR_hrPerson3" />
+        <AssociationConnector Association="VERPSModel1.hrEmpCourse_hrEmpAcademicProfileByHR" />
+        <AssociationConnector Association="VERPSModel1.hrEmpCourse_hrEvalStatu" />
+        <AssociationConnector Association="VERPSModel1.hrEmpCourse_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpCourse_sylCourse" />
+        <AssociationConnector Association="VERPSModel1.hrEmpDisability_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpEducation_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpFamilyHealthInsurance_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpFamilyMember_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpLanguage_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpMilService_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpPastEmployement_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpProfile_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrEmpSkill_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrPerson_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.hrWorkingHour_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.plActivity_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.sylCourseTeacher_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.sylSyllabus_hrPerson" />
+        <AssociationConnector Association="VERPSModel1.sylSyllabus_hrPerson1" />
+        <AssociationConnector Association="VERPSModel1.plActivity_sylCourse" />
+        <AssociationConnector Association="VERPSModel1.sylOutcomeAim_sylAcademicalAim" />
+        <AssociationConnector Association="VERPSModel1.sylAssesment_sylAssesmentMethod" />
+        <AssociationConnector Association="VERPSModel1.sylOutcomeAssesment_sylAssesmentMethod" />
+        <AssociationConnector Association="VERPSModel1.sylAssesment_sylSyllabus" />
+        <AssociationConnector Association="VERPSModel1.sylCourseMaterial_sylSyllabus" />
+        <AssociationConnector Association="VERPSModel1.sylPrerequisite_sylCourse" />
+        <AssociationConnector Association="VERPSModel1.sylProgramCourse_sylCourse" />
+        <AssociationConnector Association="VERPSModel1.sylSyllabus_sylCourse" />
+        <AssociationConnector Association="VERPSModel1.sylCourseTeacher_sylSyllabus" />
+        <AssociationConnector Association="VERPSModel1.sylLearningOutcome_sylSyllabus" />
+        <AssociationConnector Association="VERPSModel1.sylOutcomeAim_sylLearningOutcome" />
+        <AssociationConnector Association="VERPSModel1.sylOutcomeAssesment_sylLearningOutcome" />
+        <AssociationConnector Association="VERPSModel1.sylPrerequisite_sylSyllabus" />
+        <AssociationConnector Association="VERPSModel1.sylSyllabusNotesSetItem_sylSyllabus" />
+        <AssociationConnector Association="VERPSModel1.sylSyllabusTeachingMethod_sylSyllabus" />
+        <AssociationConnector Association="VERPSModel1.sylWorkloadStructure_sylSyllabus" />
+        <AssociationConnector Association="VERPSModel1.sylSyllabusTeachingMethod_sylTeachingMethod" />
+        <AssociationConnector Association="VERPSModel1.sylWorkloadStructure_sylTeachingMethod" />
+        <AssociationConnector Association="VERPSModel1.aspnet_UsersInRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

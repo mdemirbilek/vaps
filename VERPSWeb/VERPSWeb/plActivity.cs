@@ -17,24 +17,26 @@ namespace VERPSWeb
         public int Id { get; set; }
         public string Name { get; set; }
         public string NameEN { get; set; }
+        public int ActivityYear { get; set; }
         public int TotalHours { get; set; }
         public int ECTS { get; set; }
+        public string Note { get; set; }
         public string CreatedBy { get; set; }
         public Nullable<System.DateTimeOffset> Created { get; set; }
         public string ModifiedBy { get; set; }
         public Nullable<System.DateTimeOffset> Modified { get; set; }
         public byte[] RowVersion { get; set; }
-        public int plActivity_erpLanguage { get; set; }
-        public int plActivity_acaDegree { get; set; }
-        public int plActivity_acaSemester { get; set; }
-        public int plActivity_acaStudyMode { get; set; }
-        public int plActivity_acaStudentSet { get; set; }
         public int plActivity_acaActivityType { get; set; }
-        public int plActivity_acaObligationType { get; set; }
+        public int plActivity_acaDegree { get; set; }
         public int plActivity_acaEvalType { get; set; }
+        public int plActivity_acaObligationType { get; set; }
         public int plActivity_acaRoomType { get; set; }
-        public int plActivity_sylCourse { get; set; }
+        public int plActivity_acaSemester { get; set; }
+        public int plActivity_acaStudentSet { get; set; }
+        public int plActivity_acaStudyMode { get; set; }
+        public int plActivity_erpLanguage { get; set; }
         public int plActivity_hrPerson1 { get; set; }
+        public int plActivity_sylCourse { get; set; }
     
         public virtual acaActivityType acaActivityType { get; set; }
         public virtual acaDegree acaDegree { get; set; }

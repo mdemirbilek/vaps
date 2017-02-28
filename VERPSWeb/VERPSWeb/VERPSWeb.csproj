@@ -400,6 +400,9 @@
     <Compile Include="sylWorkloadStructure.cs">
       <DependentUpon>VERPSModel2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Temp1.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
     <Compile Include="VERPSModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -431,10 +434,46 @@
       <DependentUpon>VERPSModel2.edmx</DependentUpon>
     </Compile>
     <Compile Include="vwWHheader.cs">
-      <DependentUpon>VERPSModel.tt</DependentUpon>
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
     </Compile>
     <Compile Include="vwWHMonthly.cs">
-      <DependentUpon>VERPSModel.tt</DependentUpon>
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwWorkingHour.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwWorkingHoursByUserByPeriod.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwWorkingHoursHeaderByUser.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Applications.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_MembershipUsers.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Profiles.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Roles.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Users.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_UsersInRoles.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_Paths.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_Shared.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_User.cs">
+      <DependentUpon>VERPSModel2.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

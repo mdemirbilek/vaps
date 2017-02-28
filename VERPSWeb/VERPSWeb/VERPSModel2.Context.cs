@@ -90,5 +90,20 @@ namespace VERPSWeb
         public virtual DbSet<sylSyllabusTopic> sylSyllabusTopics { get; set; }
         public virtual DbSet<sylTeachingMethod> sylTeachingMethods { get; set; }
         public virtual DbSet<sylWorkloadStructure> sylWorkloadStructures { get; set; }
+        public virtual DbSet<Temp1> Temp1 { get; set; }
+        public virtual DbSet<vw_aspnet_Applications> vw_aspnet_Applications { get; set; }
+        public virtual DbSet<vw_aspnet_MembershipUsers> vw_aspnet_MembershipUsers { get; set; }
+        public virtual DbSet<vw_aspnet_Profiles> vw_aspnet_Profiles { get; set; }
+        public virtual DbSet<vw_aspnet_Roles> vw_aspnet_Roles { get; set; }
+        public virtual DbSet<vw_aspnet_Users> vw_aspnet_Users { get; set; }
+        public virtual DbSet<vw_aspnet_UsersInRoles> vw_aspnet_UsersInRoles { get; set; }
+        public virtual DbSet<vw_aspnet_WebPartState_Paths> vw_aspnet_WebPartState_Paths { get; set; }
+        public virtual DbSet<vw_aspnet_WebPartState_Shared> vw_aspnet_WebPartState_Shared { get; set; }
+        public virtual DbSet<vw_aspnet_WebPartState_User> vw_aspnet_WebPartState_User { get; set; }
+        public virtual DbSet<vwWHheader> vwWHheaders { get; set; }
+        public virtual DbSet<vwWHMonthly> vwWHMonthlies { get; set; }
+        public virtual DbSet<vwWorkingHour> vwWorkingHours { get; set; }
+        public virtual DbSet<vwWorkingHoursByUserByPeriod> vwWorkingHoursByUserByPeriods { get; set; }
+        public virtual DbSet<vwWorkingHoursHeaderByUser> vwWorkingHoursHeaderByUsers { get; set; }
     }
 }

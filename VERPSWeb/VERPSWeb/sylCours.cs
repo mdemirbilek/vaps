@@ -28,16 +28,17 @@ namespace VERPSWeb
         public string Title { get; set; }
         public string Name { get; set; }
         public string CourseCode { get; set; }
+        public int ECTS { get; set; }
         public string CreatedBy { get; set; }
         public Nullable<System.DateTimeOffset> Created { get; set; }
         public string ModifiedBy { get; set; }
         public Nullable<System.DateTimeOffset> Modified { get; set; }
         public byte[] RowVersion { get; set; }
+        public int sylCourse_acaDegree { get; set; }
+        public int sylCourse_acaStudyMode { get; set; }
+        public int sylCourse_acaStudyProfile { get; set; }
         public int Course_AcademicDepartment { get; set; }
         public int sylCourse_erpLanguage { get; set; }
-        public int sylCourse_acaStudyMode { get; set; }
-        public int sylCourse_acaDegree { get; set; }
-        public int sylCourse_acaStudyProfile { get; set; }
     
         public virtual acaDegree acaDegree { get; set; }
         public virtual acaStudyMode acaStudyMode { get; set; }
